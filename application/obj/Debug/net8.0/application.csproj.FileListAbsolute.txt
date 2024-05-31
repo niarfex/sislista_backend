@@ -1,0 +1,16 @@
+C:\REPO\SISLISTA\backend\application\bin\Debug\net8.0\application.deps.json
+C:\REPO\SISLISTA\backend\application\bin\Debug\net8.0\application.dll
+C:\REPO\SISLISTA\backend\application\bin\Debug\net8.0\application.pdb
+C:\REPO\SISLISTA\backend\application\bin\Debug\net8.0\domain.dll
+C:\REPO\SISLISTA\backend\application\bin\Debug\net8.0\domain.pdb
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.csproj.AssemblyReference.cache
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.GeneratedMSBuildEditorConfig.editorconfig
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.AssemblyInfoInputs.cache
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.AssemblyInfo.cs
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.csproj.CoreCompileInputs.cache
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.sourcelink.json
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\applicat.45FA8C82.Up2Date
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.dll
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\refint\application.dll
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\application.pdb
+C:\REPO\SISLISTA\backend\application\obj\Debug\net8.0\ref\application.dll
