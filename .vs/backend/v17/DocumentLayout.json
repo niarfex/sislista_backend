@@ -3,12 +3,112 @@
   "WorkspaceRootPath": "C:\\REPO\\SISLISTA\\sislista_backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\productoragrariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\productoragrariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\dto\\organizaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\dto\\organizaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\dto\\marcolistadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\dto\\marcolistadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\dto\\productoragrariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\dto\\productoragrariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\productoragrariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\productoragrariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\organizacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\organizacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\marcolistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\marcolistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\organizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\service\\organizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\marcolistaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\service\\marcolistaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\productoragrario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\model\\productoragrario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\parambusqueda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\model\\parambusqueda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\organizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\model\\organizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\marcolista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\model\\marcolista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\input\\iproductoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\input\\iproductoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\adapter\\usuarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\adapter\\usuarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\adapter\\organizacionadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\adapter\\organizacionadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\adapter\\marcolistaadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\adapter\\marcolistaadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\adapter\\productoragrarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\adapter\\productoragrarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\mapper\\productoragrarioprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\mapper\\productoragrarioprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\exceptions\\notdatafoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\exceptions\\notdatafoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\productoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\service\\productoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\output\\iproductoragrarioport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\output\\iproductoragrarioport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\entity\\usuarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +117,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\entity\\productoragrarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\entity\\productoragrarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\general\\dboracle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\general\\dboracle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\productoragrariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\productoragrariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\entity\\marcolistaentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,48 +163,8 @@
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\iproductoragrariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\input\\iproductoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\input\\iproductoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\output\\iproductoragrarioport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\output\\iproductoragrarioport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\productoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\service\\productoragrarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\exceptions\\notdatafoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\exceptions\\notdatafoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\productoragrario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\domain.csproj|solutionrelative:domain\\model\\productoragrario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\productoragrariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\productoragrariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\dto\\productoragrariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\input\\dto\\productoragrariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\mapper\\productoragrarioprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\mapper\\productoragrarioprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\adapter\\productoragrarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\output\\adapter\\productoragrarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\infraestructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\infraestructure.csproj|solutionrelative:infraestructure\\infraestructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -102,7 +174,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,163 +230,215 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrganizacionEntity.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T13:06:13.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MarcoListaEntity.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T13:05:58.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsuarioEntity.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsuarioEntity.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\UsuarioEntity.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsuarioEntity.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Entity\\UsuarioEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T13:05:46.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\UsuarioRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\UsuarioRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAUwDUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:18:52.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductorAgrarioRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:45:33.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductorAgrarioEntity.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwA4AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:46:42.687Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\appsettings.json",
+              "RelativeDocumentMoniker": "infraestructure\\appsettings.json",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\appsettings.json",
+              "RelativeToolTip": "infraestructure\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-04T23:04:26.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "OrganizacionRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAlAAAA",
+              "Title": "OrganizacionController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\OrganizacionController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\OrganizacionController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\OrganizacionController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\OrganizacionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:18:22.596Z",
+              "WhenOpened": "2024-06-04T22:51:09.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductorAgrarioController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:49:12.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MarcoListaDto.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\MarcoListaDto.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\MarcoListaDto.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\MarcoListaDto.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Dto\\MarcoListaDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T22:59:29.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductorAgrarioDto.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:48:53.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrganizacionDto.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\OrganizacionDto.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\OrganizacionDto.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\OrganizacionDto.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Dto\\OrganizacionDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T22:59:54.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioDto.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\UsuarioDto.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\UsuarioDto.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\UsuarioDto.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Dto\\UsuarioDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:00:01.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "MarcoListaRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
+              "Title": "MarcoListaController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\MarcoListaController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\MarcoListaController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\MarcoListaController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\MarcoListaController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:18:41.309Z",
+              "WhenOpened": "2024-06-04T22:50:57.337Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IMarcoListaRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABBAAAA",
+              "Title": "OrganizacionService.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\OrganizacionService.cs",
+              "RelativeDocumentMoniker": "application\\Service\\OrganizacionService.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\OrganizacionService.cs",
+              "RelativeToolTip": "application\\Service\\OrganizacionService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:19:29.754Z",
+              "WhenOpened": "2024-06-04T23:03:58.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "IOrganizacionRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABEAAAA",
+              "Title": "MarcoListaService.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\MarcoListaService.cs",
+              "RelativeDocumentMoniker": "application\\Service\\MarcoListaService.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\MarcoListaService.cs",
+              "RelativeToolTip": "application\\Service\\MarcoListaService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:19:15.368Z",
+              "WhenOpened": "2024-06-04T23:03:43.95Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "IUsuarioRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAsAAAA",
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "application\\Service\\UsuarioService.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\UsuarioService.cs",
+              "RelativeToolTip": "application\\Service\\UsuarioService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:19:42.907Z",
+              "WhenOpened": "2024-06-04T23:03:30.051Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "IProductorAgrarioRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\Usuario.cs",
+              "RelativeDocumentMoniker": "domain\\Model\\Usuario.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\Usuario.cs",
+              "RelativeToolTip": "domain\\Model\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:44:30.06Z",
+              "WhenOpened": "2024-06-04T23:01:13.993Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "ProductorAgrario.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ProductorAgrario.cs",
+              "RelativeDocumentMoniker": "domain\\Model\\ProductorAgrario.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ProductorAgrario.cs",
+              "RelativeToolTip": "domain\\Model\\ProductorAgrario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:50:42.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Organizacion.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\Organizacion.cs",
+              "RelativeDocumentMoniker": "domain\\Model\\Organizacion.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\Organizacion.cs",
+              "RelativeToolTip": "domain\\Model\\Organizacion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:01:20.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MarcoLista.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\MarcoLista.cs",
+              "RelativeDocumentMoniker": "domain\\Model\\MarcoLista.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\MarcoLista.cs",
+              "RelativeToolTip": "domain\\Model\\MarcoLista.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:01:35.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "application.csproj",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
+              "RelativeDocumentMoniker": "application\\Application.csproj",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
+              "RelativeToolTip": "application\\Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-31T14:38:38.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "IProductorAgrarioService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IProductorAgrarioService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IProductorAgrarioService.cs",
@@ -328,84 +452,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "IProductorAgrarioPort.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IProductorAgrarioPort.cs",
-              "RelativeDocumentMoniker": "application\\Output\\IProductorAgrarioPort.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IProductorAgrarioPort.cs",
-              "RelativeToolTip": "application\\Output\\IProductorAgrarioPort.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Title": "ParamBusqueda.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ParamBusqueda.cs",
+              "RelativeDocumentMoniker": "domain\\Model\\ParamBusqueda.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ParamBusqueda.cs",
+              "RelativeToolTip": "domain\\Model\\ParamBusqueda.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:51:53.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductorAgrarioService.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\ProductorAgrarioService.cs",
-              "RelativeDocumentMoniker": "application\\Service\\ProductorAgrarioService.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\ProductorAgrarioService.cs",
-              "RelativeToolTip": "application\\Service\\ProductorAgrarioService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:51:21.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NotDataFoundException.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\NotDataFoundException.cs",
-              "RelativeDocumentMoniker": "domain\\Exceptions\\NotDataFoundException.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\NotDataFoundException.cs",
-              "RelativeToolTip": "domain\\Exceptions\\NotDataFoundException.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:51:05.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ProductorAgrario.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ProductorAgrario.cs",
-              "RelativeDocumentMoniker": "domain\\Model\\ProductorAgrario.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ProductorAgrario.cs",
-              "RelativeToolTip": "domain\\Model\\ProductorAgrario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:50:42.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ProductorAgrarioController.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Controllers\\ProductorAgrarioController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:49:12.129Z",
+              "WhenOpened": "2024-06-04T21:56:13.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "ProductorAgrarioDto.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Dto\\ProductorAgrarioDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Title": "UsuarioAdapter.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:48:53.398Z",
+              "WhenOpened": "2024-06-04T23:00:49.671Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
+              "Title": "OrganizacionAdapter.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:00:40.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MarcoListaAdapter.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\MarcoListaAdapter.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\MarcoListaAdapter.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\MarcoListaAdapter.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Adapter\\MarcoListaAdapter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:00:28.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProductorAgrarioAdapter.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAcAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:47:26.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "ProductorAgrarioProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\ProductorAgrarioProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\ProductorAgrarioProfile.cs",
@@ -418,40 +529,237 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProductorAgrarioAdapter.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Adapter\\ProductorAgrarioAdapter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAaAAAA",
+              "DocumentIndex": 23,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:47:26.49Z",
+              "WhenOpened": "2024-06-04T22:50:43.697Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "infraestructure.csproj",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
-              "RelativeDocumentMoniker": "infraestructure\\infraestructure.csproj",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
-              "RelativeToolTip": "infraestructure\\infraestructure.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-31T14:39:21.924Z"
+              "DocumentIndex": 25,
+              "Title": "ProductorAgrarioService.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\ProductorAgrarioService.cs",
+              "RelativeDocumentMoniker": "application\\Service\\ProductorAgrarioService.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\ProductorAgrarioService.cs",
+              "RelativeToolTip": "application\\Service\\ProductorAgrarioService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:51:21.599Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "application.csproj",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj",
-              "RelativeDocumentMoniker": "application\\application.csproj",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj",
-              "RelativeToolTip": "application\\application.csproj",
+              "DocumentIndex": 26,
+              "Title": "IProductorAgrarioPort.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IProductorAgrarioPort.cs",
+              "RelativeDocumentMoniker": "application\\Output\\IProductorAgrarioPort.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IProductorAgrarioPort.cs",
+              "RelativeToolTip": "application\\Output\\IProductorAgrarioPort.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:51:53.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "NotDataFoundException.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\NotDataFoundException.cs",
+              "RelativeDocumentMoniker": "domain\\Exceptions\\NotDataFoundException.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\NotDataFoundException.cs",
+              "RelativeToolTip": "domain\\Exceptions\\NotDataFoundException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:51:05.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UsuarioEntity.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsuarioEntity.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\UsuarioEntity.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsuarioEntity.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Entity\\UsuarioEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:05:46.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProductorAgrarioEntity.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Entity\\ProductorAgrarioEntity.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwA4AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:46:42.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DBOracle.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\General\\DBOracle.cs",
+              "RelativeDocumentMoniker": "infraestructure\\General\\DBOracle.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\General\\DBOracle.cs",
+              "RelativeToolTip": "infraestructure\\General\\DBOracle.cs",
+              "ViewState": "AQIAABUBAAAAAAAAAADgvyMBAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T21:49:08.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\UsuarioRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\UsuarioRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\UsuarioRepository.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAIwCsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:18:52.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ProductorAgrarioRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\ProductorAgrarioRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:45:33.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "MarcoListaEntity.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:05:58.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "OrganizacionEntity.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:06:13.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "OrganizacionRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\OrganizacionRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:18:22.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MarcoListaRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\MarcoListaRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:18:41.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IMarcoListaRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\IMarcoListaRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:19:29.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IOrganizacionRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\IOrganizacionRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:19:15.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\IUsuarioRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:19:42.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IProductorAgrarioRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\IProductorAgrarioRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:44:30.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "infraestructure.csproj",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
+              "RelativeDocumentMoniker": "infraestructure\\Infraestructure.csproj",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
+              "RelativeToolTip": "infraestructure\\Infraestructure.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-31T14:38:38.242Z"
+              "WhenOpened": "2024-05-31T14:39:21.924Z",
+              "EditorCaption": ""
             }
           ]
         }

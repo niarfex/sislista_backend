@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj": {}
+    "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj": {}
   },
   "projects": {
-    "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj": {
+    "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj",
-        "projectName": "application",
-        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj",
+        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
         "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
         "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\obj\\",
         "projectStyle": "PackageReference",
@@ -73,12 +73,12 @@
         }
       }
     },
-    "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj": {
+    "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
-        "projectName": "domain",
-        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
+        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
         "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -138,12 +138,12 @@
         }
       }
     },
-    "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj": {
+    "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
-        "projectName": "infraestructure",
-        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
+        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
+        "projectName": "Infraestructure",
+        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
         "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
         "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\obj\\",
         "projectStyle": "PackageReference",
@@ -167,11 +167,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj": {
-                "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj"
+              "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj": {
+                "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj"
               },
-              "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj": {
-                "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj"
+              "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj": {
+                "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj"
               }
             }
           }

@@ -358,27 +358,27 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "application/1.0.0": {
+      "Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "domain": "1.0.0"
+          "Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/application.dll": {}
+          "bin/placeholder/Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/application.dll": {}
+          "bin/placeholder/Application.dll": {}
         }
       },
-      "domain/1.0.0": {
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/domain.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/domain.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
@@ -1115,25 +1115,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "application/1.0.0": {
+    "Application/1.0.0": {
       "type": "project",
-      "path": "../application/application.csproj",
-      "msbuildProject": "../application/application.csproj"
+      "path": "../application/Application.csproj",
+      "msbuildProject": "../application/Application.csproj"
     },
-    "domain/1.0.0": {
+    "Domain/1.0.0": {
       "type": "project",
-      "path": "../domain/domain.csproj",
-      "msbuildProject": "../domain/domain.csproj"
+      "path": "../domain/Domain.csproj",
+      "msbuildProject": "../domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Application >= 1.0.0",
       "AutoMapper >= 13.0.1",
       "Dapper >= 2.1.35",
+      "Domain >= 1.0.0",
       "Oracle.ManagedDataAccess.Core >= 23.4.0",
-      "Swashbuckle.AspNetCore >= 6.4.0",
-      "application >= 1.0.0",
-      "domain >= 1.0.0"
+      "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
   "packageFolders": {
@@ -1143,9 +1143,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
-      "projectName": "infraestructure",
-      "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
+      "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
+      "projectName": "Infraestructure",
+      "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
       "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
       "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\obj\\",
       "projectStyle": "PackageReference",
@@ -1169,11 +1169,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj": {
-              "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj"
+            "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj": {
+              "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj"
             },
-            "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj": {
-              "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj"
+            "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj": {
+              "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj"
             }
           }
         }

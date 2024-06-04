@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Dapper;
+using domain.Model;
+using GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -15,52 +17,46 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
+        private DBOracle dBOracle = new DBOracle();
         public UsuarioRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<ProductorAgrarioEntity> getListUsuarios(string filtro)
+        public async Task<List<UsuarioEntity>> getListUsuarios(ParamBusqueda parametros)
         {
             string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            var conn = new OracleConnection(strCon);
 
 
 
-            using (var con = new OracleConnection(strCon))
+
+            List<UsuarioEntity> listUsuarios = new List<UsuarioEntity>();
+            try
             {
-                try
+                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "Esquema.Aqui_va_el_SP", parametros))
                 {
-                    // Se abre la conexión
-                    con.Open();
-
-                    using (var com = new OracleCommand())
+                    if (dr != null)
                     {
-                        // Al comando se le asigna la conexión
-                        com.Connection = con;
-
-                        // Se le indica el tipo de comando y el nombre
-                        com.CommandType = CommandType.StoredProcedure;
-                        com.CommandText = "NombrePaquete.NombreProcedimientoAlmacenado";
-                        com.BindByName = true;
-
-                        // Se añaden los parámetros de entrada
-                        OracleParameter param1 = com.Parameters.Add(new OracleParameter("PARAM1", OracleDbType.Decimal, ParameterDirection.Input));
-                        param1.Value = filtro != null ? (object)Convert.ToString(filtro) : DBNull.Value;
-                       
-
-                        // Se ejecuta el procedimiento y se comprueba la salida
-                        var registrosAfectados = com.ExecuteNonQuery();
+                        if (dr.HasRows)
+                        {
+                  
+                            UsuarioEntity oCampos;
+                            while (dr.Read())
+                            {
+                                oCampos = new UsuarioEntity();
+                                oCampos.TokenReseteoClave = dr["TXT_TOKEN_RESETEO_CLAVE"]==null?null: int.Parse(dr["TXT_TOKEN_RESETEO_CLAVE"].ToString());
+                             
+                                listUsuarios.Add(oCampos);
+                            }
+                        }
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("ERROR : " + ex.Message);
-                }
-                finally
-                {
-                    // Nos aseguramos de cerrar la conexión en caso de error
-                    con.Close();
-                }
+                return listUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
 

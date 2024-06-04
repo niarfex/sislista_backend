@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "domain/1.0.0": {
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/domain.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/domain.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "domain/1.0.0": {
+    "Domain/1.0.0": {
       "type": "project",
-      "path": "../domain/domain.csproj",
-      "msbuildProject": "../domain/domain.csproj"
+      "path": "../domain/Domain.csproj",
+      "msbuildProject": "../domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "domain >= 1.0.0"
+      "Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj",
-      "projectName": "application",
-      "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\application.csproj",
+      "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
+      "projectName": "Application",
+      "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
       "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
       "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\obj\\",
       "projectStyle": "PackageReference",

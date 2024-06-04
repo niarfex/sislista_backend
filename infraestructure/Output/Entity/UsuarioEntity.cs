@@ -1,40 +1,39 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 #nullable disable
 namespace Infra.MarcoLista.Output.Entity
 {
     public class UsuarioEntity
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("IDE_USUARIO", TypeName = "bigint", Order = 0)]
-        public long Id { get; set; }
-
-        [Required]
-        [Column("IDE_PERSONA", TypeName = "varchar", Order = 1)]
+        [Description("IDE_USUARIO")]
+        public long Id { get; set; } 
+        
+        [Description("IDE_PERSONA")]
         public long IdPersona { get; set; }
-        [Required]
-        [Column("TXT_USUARIO", TypeName = "varchar", Order = 1)]
+     
+        [Description("TXT_USUARIO")]
         public string Usuario { get; set; }     
-        [Column("TXT_TOKEN_RESETEO_CLAVE", TypeName = "varchar", Order = 1)]
-        public long TokenReseteoClave { get; set; }
+        [Description("TXT_TOKEN_RESETEO_CLAVE")]
+        public long? TokenReseteoClave { get; set; }
 
-        [Column("FEC_TOKEN_RESETEO_EXPIRACION", TypeName = "varchar", Order = 1)]
-        public DateTime FechaTokenReseteoExpiracion { get; set; }
+        [Description("FEC_TOKEN_RESETEO_EXPIRACION")]
+        public DateTime? FechaTokenReseteoExpiracion { get; set; }
         [Required]
-        [Column("FLG_ESTADO", TypeName = "varchar", Order = 1)]
+        [Description("FLG_ESTADO")]
         public int Estado { get; set; }
     
-        [Column("FEC_CREACION", TypeName = "varchar", Order = 1)]
-        public DateTime FechaRegistro { get; set; }
+        [Description("FEC_CREACION")]
+        public DateTime? FechaRegistro { get; set; }
   
-        [Column("TXT_USUARIO_CREACION", TypeName = "varchar", Order = 1)]
-        public string UsuarioCreacion { get; set; }
+        [Description("TXT_USUARIO_CREACION")]
+        public string? UsuarioCreacion { get; set; }
     
-        [Column("FEC_ACTUALIZACION", TypeName = "timestamp", Order = 1)]
-        public DateTime FechaActualizacion { get; set; }
+        [Description("FEC_ACTUALIZACION")]
+        public DateTime? FechaActualizacion { get; set; }
 
-        [Column("TXT_USUARIO_ACTUALIZACION", TypeName = "varchar", Order = 1)]
-        public string UsuarioActualizacion { get; set; }
+        [Description("TXT_USUARIO_ACTUALIZACION")]
+        public string? UsuarioActualizacion { get; set; }
     }
 }

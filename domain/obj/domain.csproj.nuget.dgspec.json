@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj": {}
+    "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj": {
+    "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
-        "projectName": "domain",
-        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
+        "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
         "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\obj\\",
         "projectStyle": "PackageReference",

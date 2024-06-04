@@ -26,7 +26,7 @@ namespace Infra.MarcoLista.Output.Repository
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             var sql = $"SELECT TXT_NRODOC AS Nrodoc,TXT_NOMBRES As Nombres, TXT_APELLIDOPATERNO AS Paterno,TXT_APELLIDOMATERNO AS Materno,TXT_DIRECCION As Direccion,TXT_CELULAR As Celular FROM SPA_TG_PERSONA WHERE TXT_NRODOC = '{nrodoc}'";
-            var entity = await conn.QueryAsync<ProductorAgrarioEntity>(sql);
+            var entity = await conn.execQueryAsync<ProductorAgrarioEntity>(sql);
             conn.Close();
             if (entity.Count() != 0)
                 return entity.ToList()[0];
