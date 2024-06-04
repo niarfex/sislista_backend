@@ -1,14 +1,14 @@
 ﻿using Application.Input;
 using AutoMapper;
 using Domain.Exceptions;
-using Infra.ProductorAgrario.Input.Dto;
+using Infra.MarcoLista.Input.Dto;
 
 
 //using Infra.ProductorAgrario.Mapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
 
-namespace infraestructure.Input.Controllers
+namespace Infra.MarcoLista.Input.Controllers
 {
     [Route("/v1/productores-agrarios")]
     [ApiController]

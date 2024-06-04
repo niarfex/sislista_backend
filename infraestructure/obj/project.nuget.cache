@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uagrXR9wq6w=",
+  "dgSpecHash": "yv5Aqm0GzoA=",
   "success": true,
-  "projectFilePath": "C:\\REPO\\SISLISTA\\backend\\infraestructure\\infraestructure.csproj",
+  "projectFilePath": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\infraestructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\efrai\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\efrai\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 #nullable disable
-namespace Infra.ProductorAgrario.Input.Dto
+namespace Infra.MarcoLista.Input.Dto
 {
     public class ProductorAgrarioDto
     {

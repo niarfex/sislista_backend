@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Infra.ProductorAgrario.Input.Dto;
-using Infra.ProductorAgrario.Output.Entity;
+using Infra.MarcoLista.Input.Dto;
+using Infra.MarcoLista.Output.Entity;
 using Domain.Model;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-namespace Infra.ProductorAgrario.Mapper
+namespace Infra.MarcoLista.Mapper
 {
     public class ProductorAgrarioProfile : Profile
     {

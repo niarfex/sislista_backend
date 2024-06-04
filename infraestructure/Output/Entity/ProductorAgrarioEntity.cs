@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 #nullable disable
-namespace Infra.ProductorAgrario.Output.Entity
+namespace Infra.MarcoLista.Output.Entity
 {
     public class ProductorAgrarioEntity
     {

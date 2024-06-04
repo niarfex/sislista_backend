@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p9XZx6+Mehc=",
+  "dgSpecHash": "OL/L4PqNp88=",
   "success": true,
-  "projectFilePath": "C:\\REPO\\SISLISTA\\backend\\domain\\domain.csproj",
+  "projectFilePath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

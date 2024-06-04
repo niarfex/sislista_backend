@@ -1,11 +1,11 @@
 ﻿using Application.Output;
-using Infra.ProductorAgrario.Output.Repository;
+using Infra.MarcoLista.Output.Repository;
 using Domain.Model;
 using AutoMapper;
-using Infra.ProductorAgrario.Input.Dto;
+using Infra.MarcoLista.Input.Dto;
 //using Infra.ProductorAgrario.Mapper;
 #nullable disable
-namespace Infra.ProductorAgrario.Output.Adapter
+namespace Infra.MarcoLista.Output.Adapter
 {
     public class ProductorAgrarioAdapter : IProductorAgrarioPort
     {

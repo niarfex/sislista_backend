@@ -1,6 +1,6 @@
-﻿using Infra.ProductorAgrario.Output.Entity;
+﻿using Infra.MarcoLista.Output.Entity;
 
-namespace Infra.ProductorAgrario.Output.Repository
+namespace Infra.MarcoLista.Output.Repository
 {
     public interface IProductorAgrarioRepository
     {

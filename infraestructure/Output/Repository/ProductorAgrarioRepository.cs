@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using Dapper;
-using Infra.ProductorAgrario.Input.Dto;
-using Infra.ProductorAgrario.Output.Entity;
-using Infra.ProductorAgrario.Output.Repository;
+using Infra.MarcoLista.Input.Dto;
+using Infra.MarcoLista.Output.Entity;
+using Infra.MarcoLista.Output.Repository;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Xml.Linq;
 using static Dapper.SqlMapper;
 
-namespace Infra.ProductorAgrario.Output.Repository
+namespace Infra.MarcoLista.Output.Repository
 {
     public class ProductorAgrarioRepository : IProductorAgrarioRepository
     {
