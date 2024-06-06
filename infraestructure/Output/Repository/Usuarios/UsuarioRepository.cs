@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Dapper;
-using domain.Model;
+using Domain.Model;
 using GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
@@ -27,10 +27,6 @@ namespace Infra.MarcoLista.Output.Repository
         {
             string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
             var conn = new OracleConnection(strCon);
-
-
-
-
             List<UsuarioEntity> listUsuarios = new List<UsuarioEntity>();
             try
             {
@@ -40,13 +36,13 @@ namespace Infra.MarcoLista.Output.Repository
                     {
                         if (dr.HasRows)
                         {
-                  
+
                             UsuarioEntity oCampos;
                             while (dr.Read())
                             {
                                 oCampos = new UsuarioEntity();
-                                oCampos.TokenReseteoClave = dr["TXT_TOKEN_RESETEO_CLAVE"]==null?null: int.Parse(dr["TXT_TOKEN_RESETEO_CLAVE"].ToString());
-                             
+                                oCampos.TokenReseteoClave = dr["TXT_TOKEN_RESETEO_CLAVE"] == null ? null : int.Parse(dr["TXT_TOKEN_RESETEO_CLAVE"].ToString());
+
                                 listUsuarios.Add(oCampos);
                             }
                         }
@@ -58,11 +54,23 @@ namespace Infra.MarcoLista.Output.Repository
             {
                 throw ex;
             }
+        }
 
-
-
-
-
+        public async Task<UsuarioEntity> getUsuarioxUUID()
+        {
+            return null;
+        }
+        public async Task<UsuarioEntity> createUsuario()
+        {
+            return null;
+        }
+        public async Task<UsuarioEntity> updateUsuario()
+        {
+            return null;
+        }
+        public async Task<UsuarioEntity> deleteUsuario()
+        {
+            return null;
         }
     }
 }

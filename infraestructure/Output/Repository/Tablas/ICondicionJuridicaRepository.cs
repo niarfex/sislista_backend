@@ -2,7 +2,7 @@
 
 namespace Infra.MarcoLista.Output.Repository
 {
-    public interface IOrganizacionRepository:IOrganizacionRepository
+    public interface ICondicionJuridicaRepository
     {
     }
 }

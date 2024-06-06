@@ -2,7 +2,7 @@
 
 namespace Infra.MarcoLista.Output.Repository
 {
-    public interface IMarcoListaRepository: IMarcoListaRepository
+    public interface ITipoExplotacionRepository
     {
     }
 }

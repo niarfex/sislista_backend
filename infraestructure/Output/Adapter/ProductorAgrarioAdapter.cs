@@ -19,21 +19,21 @@ namespace Infra.MarcoLista.Output.Adapter
 
         public async Task<Domain.Model.ProductorAgrario> getByNrodoc(string nrodoc)
         {
-            var productorAgrarioEntity = await _productorAgrarioRepository.getByNrodoc(nrodoc);
+            /*var productorAgrarioEntity = await _productorAgrarioRepository.getByNrodoc(nrodoc);
 
             if (productorAgrarioEntity != null)
             {
                 return _mapper.Map<Domain.Model.ProductorAgrario>(productorAgrarioEntity);
             }
             else
-            {
+            {*/
                 return null;
-            }
+            /*}*/
         }
 
-        public async Task<List<Domain.Model.ProductorAgrario>> getAll()
+        /*public async Task<List<Domain.Model.ProductorAgrario>> getAll()
         {
             throw new System.NotImplementedException("Unimplemented method 'GetAll'");
-        }
+        }*/
     }
 }

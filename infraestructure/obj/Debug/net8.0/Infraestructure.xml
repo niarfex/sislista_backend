@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infraestructure</name>
+    </assembly>
+    <members>
+        <member name="M:GeneralSQL.DBOracle.ManExecuteOutputV1(Oracle.ManagedDataAccess.Client.OracleConnection,Oracle.ManagedDataAccess.Client.OracleTransaction,System.String)">
+            <summary>
+            Para agregar los parametros uno por uno
+            </summary>
+            <param name="con"></param>
+            <param name="trx"></param>
+            <param name="SProcedure"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

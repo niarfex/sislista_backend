@@ -4,6 +4,6 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface IProductorAgrarioRepository
     {
-        Task<ProductorAgrarioEntity> getByNrodoc(string nrodoc);
+        //Task<ProductorAgrarioEntity> getByNrodoc(string nrodoc);
     }
 }

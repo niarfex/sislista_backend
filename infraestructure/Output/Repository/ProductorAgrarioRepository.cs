@@ -20,7 +20,7 @@ namespace Infra.MarcoLista.Output.Repository
             _mapper = mapper;
         }
 
-        public async Task<ProductorAgrarioEntity> getByNrodoc(string nrodoc)
+        /*public async Task<ProductorAgrarioEntity> getByNrodoc(string nrodoc)
         {
             string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
             var conn = new OracleConnection(strCon);
@@ -31,6 +31,6 @@ namespace Infra.MarcoLista.Output.Repository
             if (entity.Count() != 0)
                 return entity.ToList()[0];
             else return null;
-        }
+        }*/
     }
 }
