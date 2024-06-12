@@ -4,7 +4,7 @@
         <name>Infraestructure</name>
     </assembly>
     <members>
-        <member name="M:GeneralSQL.DBOracle.ManExecuteOutputV1(Oracle.ManagedDataAccess.Client.OracleConnection,Oracle.ManagedDataAccess.Client.OracleTransaction,System.String)">
+        <member name="M:Infra.MarcoLista.GeneralSQL.DBOracle.ManExecuteOutputV1(Oracle.ManagedDataAccess.Client.OracleConnection,Oracle.ManagedDataAccess.Client.OracleTransaction,System.String)">
             <summary>
             Para agregar los parametros uno por uno
             </summary>

@@ -4,6 +4,7 @@ using Application.Service;
 using AutoMapper;
 using Infra.MarcoLista.Mapper;
 using Infra.MarcoLista.Output.Adapter;
+using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
 
 
@@ -16,6 +17,7 @@ using System.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(ProductorAgrarioProfile));
+builder.Services.AddAutoMapper(typeof(UbigeoProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -34,13 +36,16 @@ builder.Services.AddCors(options =>
 var mapperConfig = new MapperConfiguration(m =>
 {
     m.AddProfile(new ProductorAgrarioProfile());
+    m.AddProfile(new UbigeoProfile());
 });
 IMapper mapper = mapperConfig.CreateMapper();
 // Registrar las interfaces y sus implementaciones
 builder.Services.AddScoped<IProductorAgrarioService, ProductorAgrarioService>();
 builder.Services.AddScoped<IProductorAgrarioPort, ProductorAgrarioAdapter>();
 builder.Services.AddScoped<IProductorAgrarioRepository, ProductorAgrarioRepository>();
-
+builder.Services.AddScoped<IUbigeoService, UbigeoService>();
+builder.Services.AddScoped<IUbigeoPort, UbigeoAdapter>();
+builder.Services.AddScoped<IUbigeoRepository, UbigeoRepository>();
 
 
 

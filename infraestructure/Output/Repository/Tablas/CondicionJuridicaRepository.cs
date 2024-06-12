@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Dapper;
 using Domain.Model;
-using GeneralSQL;
+using Infra.MarcoLista.Contextos;
+using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -15,42 +16,34 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class CondicionJuridicaRepository: ICondicionJuridicaRepository
     {
+        private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        private DBOracle dBOracle = new DBOracle();
+        //private DBOracle dBOracle = new DBOracle();
         public CondicionJuridicaRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<CondicionJuridicaEntity>> getCondicionjuridica(ParamBusqueda parametros)
+        public async Task<List<CondicionJuridicaEntity>> GetAll(ParamBusqueda param)
         {
-            List<CondicionJuridicaEntity> listCondicionjuridica = new List<CondicionJuridicaEntity>();
-            try
-            {
-                return listCondicionjuridica;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return _db.CondicionJuridica.ToList();
         }
-        public async Task<CondicionJuridicaEntity> getCondicionjuridicaxUUID()
+        public async Task<CondicionJuridicaEntity> getCondicionJuridica()
         {
             return null;
         }
-        public async Task<CondicionJuridicaEntity> createCondicionjuridica()
+        public async Task<CondicionJuridicaEntity> createCondicionJuridica()
         {
             return null;
         }
-        public async Task<CondicionJuridicaEntity> updateCondicionjuridica()
+        public async Task<CondicionJuridicaEntity> updateCondicionJuridica()
         {
             return null;
         }
-        public async Task<CondicionJuridicaEntity> deleteCondicionjuridica()
+        public async Task<bool> deleteCondicionJuridica()
         {
-            return null;
+            return false;
         }
     }
 }

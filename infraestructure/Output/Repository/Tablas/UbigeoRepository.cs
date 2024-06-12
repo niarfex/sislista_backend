@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Dapper;
 using Domain.Model;
-using GeneralSQL;
+using Infra.MarcoLista.Contextos;
+using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -16,28 +17,20 @@ namespace Infra.MarcoLista.Output.Repository
 
     public class UbigeoRepository: IUbigeoRepository
     {
+        private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        private DBOracle dBOracle = new DBOracle();
+
         public UbigeoRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<UbigeoEntity>> getListUbigeos(ParamBusqueda parametros)
+        public async Task<List<UbigeoEntity>> GetAll(string param)
         {
-            List<UbigeoEntity> listUbigeos = new List<UbigeoEntity>();
-            try
-            {
-                return listUbigeos;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-        public async Task<UbigeoEntity> getUbigeoxUUID()
+            return _db.Ubigeo.ToList();
+        }      
+        public async Task<UbigeoEntity> getUbigeo()
         {
             return null;
         }
@@ -49,9 +42,10 @@ namespace Infra.MarcoLista.Output.Repository
         {
             return null;
         }
-        public async Task<UbigeoEntity> deleteUbigeo()
+        public async Task<bool> deleteUbigeo()
         {
-            return null;
+            return false;
         }
+
     }
 }

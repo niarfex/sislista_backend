@@ -7,33 +7,36 @@ namespace Infra.MarcoLista.Output.Entity
     public class UsuarioEntity
     {
         [Key]
-        [Description("IDE_USUARIO")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("IDE_USUARIO")]
         public long Id { get; set; } 
         
-        [Description("IDE_PERSONA")]
+        [Column("IDE_PERSONA")]
         public long IdPersona { get; set; }
      
-        [Description("TXT_USUARIO")]
-        public string Usuario { get; set; }     
-        [Description("TXT_TOKEN_RESETEO_CLAVE")]
+        [Column("TXT_USUARIO")]
+        public string Usuario { get; set; }
+        [Column("TXT_CLAVE")]
+        public string Clave { get; set; }
+        [Column("TXT_TOKEN_RESETEO_CLAVE")]
         public long? TokenReseteoClave { get; set; }
 
-        [Description("FEC_TOKEN_RESETEO_EXPIRACION")]
+        [Column("FEC_TOKEN_RESETEO_EXPIRACION")]
         public DateTime? FechaTokenReseteoExpiracion { get; set; }
-        [Required]
-        [Description("FLG_ESTADO")]
+
+        [Column("FLG_ESTADO")]
         public int Estado { get; set; }
     
-        [Description("FEC_CREACION")]
+        [Column("FEC_CREACION")]
         public DateTime? FechaRegistro { get; set; }
   
-        [Description("TXT_USUARIO_CREACION")]
+        [Column("TXT_USUARIO_CREACION")]
         public string? UsuarioCreacion { get; set; }
     
-        [Description("FEC_ACTUALIZACION")]
+        [Column("FEC_ACTUALIZACION")]
         public DateTime? FechaActualizacion { get; set; }
 
-        [Description("TXT_USUARIO_ACTUALIZACION")]
+        [Column("TXT_USUARIO_ACTUALIZACION")]
         public string? UsuarioActualizacion { get; set; }
     }
 }

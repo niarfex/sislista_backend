@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Dapper;
 using Domain.Model;
-using GeneralSQL;
+using Infra.MarcoLista.Contextos;
+using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -16,28 +17,20 @@ namespace Infra.MarcoLista.Output.Repository
 
     public class CultivoRepository: ICultivoRepository
     {
+        private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        private DBOracle dBOracle = new DBOracle();
+        //private DBOracle dBOracle = new DBOracle();
         public CultivoRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<CultivoEntity>> getCultivo(ParamBusqueda parametros)
+        public async Task<List<CultivoEntity>> GetAll(ParamBusqueda param)
         {
-            List<CultivoEntity> listCultivo = new List<CultivoEntity>();
-            try
-            {
-                return listCultivo;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return _db.Cultivo.ToList();
         }
-        public async Task<CultivoEntity> getCultivoxUUID()
+        public async Task<CultivoEntity> getCultivo()
         {
             return null;
         }
@@ -49,9 +42,9 @@ namespace Infra.MarcoLista.Output.Repository
         {
             return null;
         }
-        public async Task<CultivoEntity> deleteCultivo()
+        public async Task<bool> deleteCultivo()
         {
-            return null;
+            return false;
         }
     }
 }

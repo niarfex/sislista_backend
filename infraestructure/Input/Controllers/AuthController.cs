@@ -24,7 +24,7 @@ namespace Infra.MarcoLista.Input.Controllers
 
         [HttpPost]
         [Route("login")]
-        public JsonResult Login(Login param)
+        public async Task<JsonResult> Login(Login param)
         {
             // Aquí deberías validar las credenciales del usuario
             // Si las credenciales son válidas, genera y retorna un token JWT
@@ -42,7 +42,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 issuer:"usuario",//_config["Jwt:Issuer"],
                 audience:"usuario",//_config["Jwt:Issuer"],
                 claims:null,
-                expires: DateTime.Now.AddMinutes(10),
+                expires: DateTime.Now.AddMinutes(1),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

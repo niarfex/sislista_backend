@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Dapper;
 using Domain.Model;
-using GeneralSQL;
+using Infra.MarcoLista.Contextos;
+using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -16,42 +17,34 @@ namespace Infra.MarcoLista.Output.Repository
 
     public class TipoExplotacionRepository: ITipoExplotacionRepository
     {
+        private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        private DBOracle dBOracle = new DBOracle();
+        //private DBOracle dBOracle = new DBOracle();
         public TipoExplotacionRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<TipoExplotacionEntity>> getListTipoexplotacion(ParamBusqueda parametros)
+        public async Task<List<TipoExplotacionEntity>> GetAll(ParamBusqueda param)
         {
-            List<TipoExplotacionEntity> listTipoexplotacion = new List<TipoExplotacionEntity>();
-            try
-            {
-                return listTipoexplotacion;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return _db.TipoExplotacion.ToList();
         }
-        public async Task<TipoExplotacionEntity> getTipoexplotacionxUUID()
+        public async Task<TipoExplotacionEntity> getTipoExplotacion()
         {
             return null;
         }
-        public async Task<TipoExplotacionEntity> createTipoexplotacion()
+        public async Task<TipoExplotacionEntity> createTipoExplotacion()
         {
             return null;
         }
-        public async Task<TipoExplotacionEntity> updateTipoexplotacion()
+        public async Task<TipoExplotacionEntity> updateTipoExplotacion()
         {
             return null;
         }
-        public async Task<TipoExplotacionEntity> deleteTipoexplotacion()
+        public async Task<bool> deleteTipoExplotacion()
         {
-            return null;
+            return false;
         }
     }
 }

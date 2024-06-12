@@ -5,5 +5,39 @@ namespace Infra.MarcoLista.Output.Entity
 {
     public class PanelRegistroEntity
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("IDE_PROGRAMACION_REGISTRO")]
+        public long Id { get; set; }
+        [Column("IDE_PLANTILLA")]
+        public long? IdPlantilla { get; set; }
+        [Column("IDE_USUARIO")]
+        public long? IdUsuario { get; set; }
+        [Column("IDE_ANIO")]
+        public long? IdAnio { get; set; }
+        [Column("TXT_PROGRAMACION_REGISTRO")]
+        public string? ProgramacionRegistro { get; set; }
+        [Column("FEC_INICIO")]
+        public DateTime? FechaInicio { get; set; }
+        [Column("FEC_FIN")]
+        public DateTime? FechaFin { get; set; }
+        [Column("TXT_DECRETO_NORMA")]
+        public string? DecretoNorma { get; set; }
+        [Column("TXT_ARCHIVO_DECRETO_NORMA")]
+        public string? ArchivoDecretoNorma { get; set; }
+        [Column("TXT_OBJETIVO")]
+        public string? Objetivo { get; set; }
+        [Column("TXT_ENTE_RECTOR")]
+        public string? EnteRector { get; set; }
+        [Column("FLG_ESTADO")]
+        public int Estado { get; set; }
+        [Column("FEC_CREACION")]
+        public DateTime? FechaRegistro { get; set; }
+        [Column("TXT_USUARIO_CREACION")]
+        public string? UsuarioCreacion { get; set; }
+        [Column("FEC_ACTUALIZACION")]
+        public DateTime? FechaActualizacion { get; set; }
+        [Column("TXT_USUARIO_ACTUALIZACION")]
+        public string? UsuarioActualizacion { get; set; }
     }
 }

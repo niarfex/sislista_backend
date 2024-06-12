@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Dapper;
 using Domain.Model;
-using GeneralSQL;
+using Infra.MarcoLista.Contextos;
+using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -16,28 +17,20 @@ namespace Infra.MarcoLista.Output.Repository
 
     public class EspecieRepository: IEspecieRepository
     {
+        private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        private DBOracle dBOracle = new DBOracle();
+        //private DBOracle dBOracle = new DBOracle();
         public EspecieRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<EspecieEntity>> getEspecie(ParamBusqueda parametros)
+        public async Task<List<EspecieEntity>> GetAll(ParamBusqueda param)
         {
-            List<EspecieEntity> listEspecie = new List<EspecieEntity>();
-            try
-            {
-                return listEspecie;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return _db.Especie.ToList();
         }
-        public async Task<EspecieEntity> getEspeciexUUID()
+        public async Task<EspecieEntity> getEspecie()
         {
             return null;
         }
@@ -49,9 +42,9 @@ namespace Infra.MarcoLista.Output.Repository
         {
             return null;
         }
-        public async Task<EspecieEntity> deleteEspecie()
+        public async Task<bool> deleteEspecie()
         {
-            return null;
+            return false;
         }
     }
 }

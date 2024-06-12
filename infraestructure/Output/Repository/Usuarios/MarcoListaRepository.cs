@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Dapper;
 using Domain.Model;
-using GeneralSQL;
+using Infra.MarcoLista.Contextos;
+using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
@@ -14,42 +15,34 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class MarcoListaRepository: IMarcoListaRepository
     {
+        private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        private DBOracle dBOracle = new DBOracle();
+        //private DBOracle dBOracle = new DBOracle();
         public MarcoListaRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<MarcoListaEntity>> getListMarcoLista(ParamBusqueda parametros)
+        public async Task<List<MarcoListaEntity>> GetAll(ParamBusqueda param)
         {
-            List<MarcoListaEntity> listMarcoLista = new List<MarcoListaEntity>();
-            try
-            {
-                return listMarcoLista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return _db.MarcoLista.ToList();
         }
-        public async Task<MarcoListaEntity> getOrganizacionxUUID()
+        public async Task<MarcoListaEntity> getMarcoListaxUUID()
         {
             return null;
         }
-        public async Task<MarcoListaEntity> createOrganizacion()
+        public async Task<MarcoListaEntity> createMarcoListaxUUID()
         {
             return null;
         }
-        public async Task<MarcoListaEntity> updateOrganizacion()
+        public async Task<MarcoListaEntity> updateMarcoListaxUUID()
         {
             return null;
         }
-        public async Task<MarcoListaEntity> deleteOrganizacion()
+        public async Task<bool> deleteMarcoListaxUUID()
         {
-            return null;
+            return false;
         }
     }
 }
