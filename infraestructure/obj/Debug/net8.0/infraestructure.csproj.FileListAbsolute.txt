@@ -107,3 +107,4 @@ C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Debug\net8.0\Infraestructu
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Debug\net8.0\Infraestructure.pdb
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Debug\net8.0\Infraestructure.genruntimeconfig.cache
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Debug\net8.0\ref\Infraestructure.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Debug\net8.0\Infraestructure.MvcApplicationPartsAssemblyInfo.cs

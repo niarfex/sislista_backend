@@ -19,9 +19,10 @@ namespace Infra.MarcoLista.Contextos
         public DbSet<EspecieEntity> Especie { get; set; }
         public DbSet<LineaProduccionEntity> LineaProduccion { get; set; }
         public DbSet<TipoExplotacionEntity> TipoExplotacion { get; set; }
-        public DbSet<UbigeoEntity> Ubigeo { get; set; }
+        //public DbSet<UbigeoEntity> Ubigeo { get; set; }
         public DbSet<MarcoListaEntity> MarcoLista { get; set; }
         public DbSet<OrganizacionEntity> Organizacion { get; set; }
+        public DbSet<TipoOrganizacionEntity> TipoOrganizacion { get; set; }
         public DbSet<UsuarioEntity> Usuario { get; set; }
         //private readonly IConfiguration _configuracion;
         //public MarcoListaContexto(IConfiguration configuracion)
@@ -38,7 +39,8 @@ namespace Infra.MarcoLista.Contextos
         {
             base.OnModelCreating(builder);
 
-            builder.ApplyConfiguration(new UbigeoConfig());
+            builder.ApplyConfiguration(new OrganizacionConfig());
+            builder.ApplyConfiguration(new TipoOrganizacionConfig());
         }
     }
 }

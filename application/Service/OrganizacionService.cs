@@ -8,21 +8,59 @@ namespace Application.Service
     public class OrganizacionService : IOrganizacionService
     {
         private readonly IOrganizacionPort _organizacionPort;
+        private readonly IGeneralPort _generalPort;
 
-        public OrganizacionService(IOrganizacionPort organizacionPort)
+        public OrganizacionService(IOrganizacionPort organizacionPort,IGeneralPort generalPort)
         {
             _organizacionPort = organizacionPort ?? throw new ArgumentNullException(nameof(organizacionPort));
+            _generalPort = generalPort ?? throw new ArgumentNullException(nameof(generalPort));
         }
-        public async Task<List<OrganizacionModel>> GetAll(ParamBusqueda param)
+        public async Task<List<OrganizacionModel>> GetAll(string param)
         {
             var organizacions = await _organizacionPort.GetAll(param);
+            var tipoOrganizacion = await _generalPort.GetTipoOrganizacion();
+            var departamentos = await _generalPort.GetDepartamentos(1, "");
             if (organizacions == null)
             {
                 throw new NotDataFoundException("No se encontraron datos registrados");
 
             }
+            var query = from o in organizacions
+                        join t in tipoOrganizacion on o.IdTipoOrganizacion equals t.Id
+                        join d in departamentos on o.IdDepartamento equals d.Id
+                        where o.Estado == 0 || o.Estado == 1
+                        select new OrganizacionModel
+                        {
+                            Id = o.Id,
+                            TipoOrganizacion = t.TipOrganizacion,
+                            NumeroDocumento = o.NumeroDocumento,
+                            Organizacion = o.Organizacion,
+                            Departamento = d.Departamento,
+                            Usuarios = 0,
+                            Estado = o.Estado
+                        };
+            return query.ToList();
+        }
+        public async Task<OrganizacionModel> GetOrganizacionxId(long id)
+        {
+            var organizacion = await _organizacionPort.GetOrganizacionxId(id);
 
-            return organizacions;
+            if (organizacion == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }           
+            return organizacion;
+        }
+        public async Task<long> CreateOrganizacion(OrganizacionModel model)
+        {
+            var id = await _organizacionPort.CreateOrganizacion(model);
+            if (id == null)
+            {
+                throw new NotDataFoundException("No se registraron los datos");
+
+            }
+            return id;
         }
     }
 }

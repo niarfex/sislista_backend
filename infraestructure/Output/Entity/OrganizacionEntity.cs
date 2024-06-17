@@ -11,8 +11,10 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("IDE_TIPO_ORGANIZACION")]
         public long? IdTipoOrganizacion { get; set; }
+        [ForeignKey("IdTipoOrganizacion")]
+        public TipoOrganizacionEntity DetalleTipoOrganizacion { get; set; }
         [Column("IDE_DEPARTAMENTO")]
-        public long? IdDepartamento { get; set; }
+        public string? IdDepartamento { get; set; }
         [Column("TXT_NUMERO_DOCUMENTO")]
         public string? NumeroDocumento { get; set; }
         [Column("TXT_ORGANIZACION")]

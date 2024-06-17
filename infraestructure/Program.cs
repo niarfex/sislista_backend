@@ -6,6 +6,8 @@ using Infra.MarcoLista.Mapper;
 using Infra.MarcoLista.Output.Adapter;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
+using infraestructure.Output.Adapter;
+
 
 
 
@@ -16,8 +18,9 @@ using System.Data.SqlClient;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddAutoMapper(typeof(ProductorAgrarioProfile));
-builder.Services.AddAutoMapper(typeof(UbigeoProfile));
+//builder.Services.AddAutoMapper(typeof(ProductorAgrarioProfile));
+//builder.Services.AddAutoMapper(typeof(UbigeoProfile));
+builder.Services.AddAutoMapper(typeof(OrganizacionProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -35,20 +38,20 @@ builder.Services.AddCors(options =>
 
 var mapperConfig = new MapperConfiguration(m =>
 {
-    m.AddProfile(new ProductorAgrarioProfile());
-    m.AddProfile(new UbigeoProfile());
+    //m.AddProfile(new ProductorAgrarioProfile());
+    m.AddProfile(new OrganizacionProfile());
 });
 IMapper mapper = mapperConfig.CreateMapper();
 // Registrar las interfaces y sus implementaciones
-builder.Services.AddScoped<IProductorAgrarioService, ProductorAgrarioService>();
-builder.Services.AddScoped<IProductorAgrarioPort, ProductorAgrarioAdapter>();
-builder.Services.AddScoped<IProductorAgrarioRepository, ProductorAgrarioRepository>();
-builder.Services.AddScoped<IUbigeoService, UbigeoService>();
-builder.Services.AddScoped<IUbigeoPort, UbigeoAdapter>();
-builder.Services.AddScoped<IUbigeoRepository, UbigeoRepository>();
-
-
-
+//builder.Services.AddScoped<IProductorAgrarioService, ProductorAgrarioService>();
+//builder.Services.AddScoped<IProductorAgrarioPort, ProductorAgrarioAdapter>();
+//builder.Services.AddScoped<IProductorAgrarioRepository, ProductorAgrarioRepository>();
+builder.Services.AddScoped<IOrganizacionService, OrganizacionService>();
+builder.Services.AddScoped<IOrganizacionPort, OrganizacionAdapter>();
+builder.Services.AddScoped<IOrganizacionRepository, OrganizacionRepository>();
+builder.Services.AddScoped<IGeneralService, GeneralService>();
+builder.Services.AddScoped<IGeneralPort, GeneralAdapter>();
+builder.Services.AddScoped<IGeneralRepository, GeneralRepository>();
 
 var app = builder.Build();
 

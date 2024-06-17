@@ -1,0 +1,12 @@
+C:\REPO\SISLISTA\sislista_backend\domain\bin\Release\net8.0\Domain.deps.json
+C:\REPO\SISLISTA\sislista_backend\domain\bin\Release\net8.0\Domain.dll
+C:\REPO\SISLISTA\sislista_backend\domain\bin\Release\net8.0\Domain.pdb
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.AssemblyInfoInputs.cache
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.AssemblyInfo.cs
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.sourcelink.json
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.dll
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\refint\Domain.dll
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\Domain.pdb
+C:\REPO\SISLISTA\sislista_backend\domain\obj\Release\net8.0\ref\Domain.dll
