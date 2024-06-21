@@ -25,57 +25,157 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        /*public async Task<List<UsuarioEntity>> GetAll(ParamBusqueda parametros)
+        public async Task<List<UsuarioModel>> GetAll(string param)
         {
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
-            var conn = new OracleConnection(strCon);
-            List<UsuarioEntity> listUsuarios = new List<UsuarioEntity>();
-            try
-            {
-                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "Esquema.Aqui_va_el_SP", parametros))
-                {
-                    if (dr != null)
-                    {
-                        if (dr.HasRows)
+            var query = from u in _db.Usuario
+                        join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                        join pf in _db.Perfil on up.IdPerfil equals pf.Id
+                        join pe in _db.Persona on u.IdPersona equals pe.Id
+                        where (u.Estado == 0 || u.Estado == 1) && (up.Estado == 0 || up.Estado == 1) 
+                        && (pe.Estado == 0 || pe.Estado == 1) && (pf.Estado == 0 || pf.Estado == 1)
+                        select new UsuarioModel
                         {
-
-                            UsuarioEntity oCampos;
-                            while (dr.Read())
-                            {
-                                oCampos = new UsuarioEntity();
-                                oCampos.TokenReseteoClave = dr["TXT_TOKEN_RESETEO_CLAVE"] == null ? null : int.Parse(dr["TXT_TOKEN_RESETEO_CLAVE"].ToString());
-
-                                listUsuarios.Add(oCampos);
-                            }
-                        }
-                    }
-                }
-                return listUsuarios;
+                           CodigoUUIDUsuario=u.CodigoUUID.ToString(),
+                           Perfil=pf.Perfil,
+                           NumeroDocumento=pe.NumeroDocumento,
+                           //NombreCompleto=(pe.Nombre+" "+pe.ApellidoPaterno + " "+pe.ApellidoMaterno).ToString(),
+                           CorreoElectronico=pe.CorreoElectronico,
+                           Estado=u.Estado
+                        };
+            return query.ToList();
+        }
+        public async Task<UsuarioEntity> GetUsuarioxUUID(string uuid)
+        {
+            return _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+        }
+        public async Task<string> CreateUsuario(UsuarioModel model)
+        {
+            //Registramos o actualizamos los datos de la persona
+            long personaId;
+            var persona = _db.Persona.Where(x => (x.CodigoUUID.ToString() == model.CodigoUUIDPersona && model.CodigoUUIDPersona.Trim() != "")
+            || (x.NumeroDocumento == model.NumeroDocumento && x.IdTipoDocumento == model.IdTipoDocumento && model.NumeroDocumento.Trim() != "")).FirstOrDefault();
+            if (persona == null)
+            {//Si la persona no existe                 
+                var objPersona = new PersonaEntity()
+                {
+                    IdTipoDocumento = model.IdTipoDocumento,
+                    NumeroDocumento = model.NumeroDocumento, 
+                    Nombre = model.Nombre,
+                    ApellidoPaterno = model.ApellidoPaterno,
+                    ApellidoMaterno = model.ApellidoMaterno,        
+                    Celular = model.Celular,
+                    CorreoElectronico = model.CorreoElectronico,   
+                    IdOrganizacion = model.IdOrganizacion,
+                    OficinaArea = model.OficinaArea,
+                    Cargo = model.Cargo,                    
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.Persona.Add(objPersona);
+                _db.SaveChanges();
+                personaId = objPersona.Id;
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
+            
+                persona.IdTipoDocumento = model.IdTipoDocumento;
+                persona.NumeroDocumento = model.NumeroDocumento;
+                persona.Nombre = model.Nombre;
+                persona.ApellidoPaterno = model.ApellidoPaterno;
+                persona.ApellidoMaterno = model.ApellidoMaterno;
+                persona.Celular = model.Celular;
+                persona.CorreoElectronico = model.CorreoElectronico;
+                persona.IdOrganizacion = model.IdOrganizacion;
+                persona.OficinaArea = model.OficinaArea;
+                persona.Cargo = model.Cargo;
+                persona.FechaActualizacion = DateTime.Now;
+                persona.UsuarioActualizacion = "";
+                _db.Persona.Update(persona);
+                _db.SaveChanges();
+                personaId = persona.Id;
             }
-        }*/
-        public async Task<List<UsuarioEntity>> GetAll(ParamBusqueda param)
-        {
-            return _db.Usuario.ToList();
+
+
+            if (model.CodigoUUIDUsuario != null)
+            {
+                var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == model.CodigoUUIDUsuario).FirstOrDefault();
+                objUsuario.IdPersona = personaId;     
+                
+                objUsuario.FechaActualizacion = DateTime.Now;
+                objUsuario.UsuarioActualizacion = "";
+                _db.Usuario.Update(objUsuario);
+                _db.SaveChanges();
+
+                var objUsuarioPerfil = _db.UsuarioPerfil.Where(x => x.IdUsuario == objUsuario.Id).FirstOrDefault();
+                objUsuarioPerfil.IdPerfil = model.IdPerfil;
+                objUsuarioPerfil.FechaActualizacion = DateTime.Now;
+                objUsuarioPerfil.UsuarioActualizacion = "";
+                _db.UsuarioPerfil.Update(objUsuarioPerfil);
+                _db.SaveChanges();
+
+                return objUsuario.CodigoUUID.ToString();
+            }
+            else
+            {
+                var objUsuario = new UsuarioEntity()
+                {
+                    IdPersona = personaId,
+
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.Usuario.Add(objUsuario);
+                _db.SaveChanges();
+
+                var objUsuarioPerfil = new UsuarioPerfilEntity()
+                {
+                    IdUsuario = objUsuario.Id,
+                    IdPerfil = model.IdPerfil,
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.UsuarioPerfil.Add(objUsuarioPerfil);
+                _db.SaveChanges();
+
+                return objUsuario.CodigoUUID.ToString();
+            }
+
+
         }
-        public async Task<UsuarioEntity> getUsuarioxUUID()
+        public async Task<string> DeleteUsuarioxUUID(string uuid)
         {
-            return null;
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+            objUsuario.Estado = 2;
+            objUsuario.FechaActualizacion = DateTime.Now;
+            objUsuario.UsuarioActualizacion = "";
+            _db.Usuario.Update(objUsuario);
+            _db.SaveChanges();
+            return objUsuario.CodigoUUID.ToString();
         }
-        public async Task<UsuarioEntity> createUsuario()
+
+        public async Task<string> ActivarUsuarioxUUID(string uuid)
         {
-            return null;
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+            objUsuario.Estado = 1;
+            objUsuario.FechaActualizacion = DateTime.Now;
+            objUsuario.UsuarioActualizacion = "";
+            _db.Usuario.Update(objUsuario);
+            _db.SaveChanges();
+            return objUsuario.CodigoUUID.ToString();
         }
-        public async Task<UsuarioEntity> updateUsuarioxUUID()
+
+        public async Task<string> DesactivarUsuarioxUUID(string uuid)
         {
-            return null;
-        }
-        public async Task<bool> deleteUsuarioxUUID()
-        {
-            return false;
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+            objUsuario.Estado = 0;
+            objUsuario.FechaActualizacion = DateTime.Now;
+            objUsuario.UsuarioActualizacion = "";
+            _db.Usuario.Update(objUsuario);
+            _db.SaveChanges();
+            return objUsuario.CodigoUUID.ToString();
         }
     }
 }

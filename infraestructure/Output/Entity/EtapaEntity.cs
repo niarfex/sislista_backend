@@ -3,18 +3,14 @@ using System.ComponentModel.DataAnnotations;
 #nullable disable
 namespace Infra.MarcoLista.Output.Entity
 {
-    public class EspecieEntity
+    public class EtapaEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("IDE_ESPECIE")]
+        [Column("IDE_ETAPA")]
         public long Id { get; set; }
-        [Column("TXT_CODIGO_ESPECIE")]
-        public string? CodigoEspecie { get; set; }
-        [Column("TXT_ESPECIE")]
-        public string? Especie { get; set; }
-        [Column("TXT_DESCRIPCION_ESPECIE")]
-        public string? DescripcionEspecie { get; set; }
+        [Column("TXT_ETAPA")]
+        public string? Etapa { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

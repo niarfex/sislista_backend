@@ -26,25 +26,77 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<TipoExplotacionEntity>> GetAll(ParamBusqueda param)
+        public async Task<List<TipoExplotacionEntity>> GetAll(string param)
         {
             return _db.TipoExplotacion.ToList();
         }
-        public async Task<TipoExplotacionEntity> getTipoExplotacion()
+        public async Task<TipoExplotacionEntity> GetTipoExplotacionxId(long id)
         {
-            return null;
+            return _db.TipoExplotacion.Where(x => x.Id == id).FirstOrDefault();
         }
-        public async Task<TipoExplotacionEntity> createTipoExplotacion()
+        public async Task<long> CreateTipoExplotacion(TipoExplotacionModel model)
         {
-            return null;
+            if (model.Id > 0)
+            {
+                var objTipoExplotacion = _db.TipoExplotacion.Where(x => x.Id == model.Id).FirstOrDefault();
+                objTipoExplotacion.CodigoTipoExplotacion = model.CodigoTipoExplotacion;
+                objTipoExplotacion.TipoExplotacion = model.TipoExplotacion;
+                objTipoExplotacion.DescripcionTipoExplotacion = model.DescripcionTipoExplotacion;               
+                objTipoExplotacion.FechaActualizacion = DateTime.Now;
+                objTipoExplotacion.UsuarioActualizacion = "";
+                _db.TipoExplotacion.Update(objTipoExplotacion);
+                _db.SaveChanges();
+                return objTipoExplotacion.Id;
+            }
+            else
+            {
+                var objTipoExplotacion = new TipoExplotacionEntity()
+                {
+                    CodigoTipoExplotacion = model.CodigoTipoExplotacion,
+                    TipoExplotacion = model.TipoExplotacion,
+                    DescripcionTipoExplotacion = model.DescripcionTipoExplotacion,      
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.TipoExplotacion.Add(objTipoExplotacion);
+                _db.SaveChanges();
+                return objTipoExplotacion.Id;
+            }
+
+
         }
-        public async Task<TipoExplotacionEntity> updateTipoExplotacion()
+        public async Task<long> DeleteTipoExplotacionxId(long id)
         {
-            return null;
+            var objTipoExplotacion = _db.TipoExplotacion.Where(x => x.Id == id).FirstOrDefault();
+            objTipoExplotacion.Estado = 2;
+            objTipoExplotacion.FechaActualizacion = DateTime.Now;
+            objTipoExplotacion.UsuarioActualizacion = "";
+            _db.TipoExplotacion.Update(objTipoExplotacion);
+            _db.SaveChanges();
+            return objTipoExplotacion.Id;
         }
-        public async Task<bool> deleteTipoExplotacion()
+
+        public async Task<long> ActivarTipoExplotacionxId(long id)
         {
-            return false;
+            var objTipoExplotacion = _db.TipoExplotacion.Where(x => x.Id == id).FirstOrDefault();
+            objTipoExplotacion.Estado = 1;
+            objTipoExplotacion.FechaActualizacion = DateTime.Now;
+            objTipoExplotacion.UsuarioActualizacion = "";
+            _db.TipoExplotacion.Update(objTipoExplotacion);
+            _db.SaveChanges();
+            return objTipoExplotacion.Id;
+        }
+
+        public async Task<long> DesactivarTipoExplotacionxId(long id)
+        {
+            var objTipoExplotacion = _db.TipoExplotacion.Where(x => x.Id == id).FirstOrDefault();
+            objTipoExplotacion.Estado = 0;
+            objTipoExplotacion.FechaActualizacion = DateTime.Now;
+            objTipoExplotacion.UsuarioActualizacion = "";
+            _db.TipoExplotacion.Update(objTipoExplotacion);
+            _db.SaveChanges();
+            return objTipoExplotacion.Id;
         }
     }
 }

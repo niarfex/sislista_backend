@@ -74,14 +74,38 @@ namespace Infra.MarcoLista.Output.Repository
             }
             
             
-        }
-        public async Task<OrganizacionEntity> updateOrganizacion()
+        }       
+        public async Task<long> DeleteOrganizacionxId(long id)
         {
-            return null;
+            var objOrganizacion = _db.Organizacion.Where(x => x.Id == id).FirstOrDefault();
+            objOrganizacion.Estado = 2;      
+            objOrganizacion.FechaActualizacion = DateTime.Now;
+            objOrganizacion.UsuarioActualizacion = "";
+            _db.Organizacion.Update(objOrganizacion);
+            _db.SaveChanges();
+            return objOrganizacion.Id;
         }
-        public async Task<bool> deleteOrganizacion()
+
+        public async Task<long> ActivarOrganizacionxId(long id)
         {
-            return false;
+            var objOrganizacion = _db.Organizacion.Where(x => x.Id == id).FirstOrDefault();
+            objOrganizacion.Estado = 1;
+            objOrganizacion.FechaActualizacion = DateTime.Now;
+            objOrganizacion.UsuarioActualizacion = "";
+            _db.Organizacion.Update(objOrganizacion);
+            _db.SaveChanges();
+            return objOrganizacion.Id;
+        }
+
+        public async Task<long> DesactivarOrganizacionxId(long id)
+        {
+            var objOrganizacion = _db.Organizacion.Where(x => x.Id == id).FirstOrDefault();
+            objOrganizacion.Estado = 0;
+            objOrganizacion.FechaActualizacion = DateTime.Now;
+            objOrganizacion.UsuarioActualizacion = "";
+            _db.Organizacion.Update(objOrganizacion);
+            _db.SaveChanges();
+            return objOrganizacion.Id;
         }
     }
 }

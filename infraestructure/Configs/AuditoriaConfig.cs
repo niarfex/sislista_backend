@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infra.MarcoLista.Configs
 {
-    public class CultivoConfig : IEntityTypeConfiguration<CultivoEntity>
+    public class AuditoriaConfig : IEntityTypeConfiguration<AuditoriaEntity>
     {
-        public void Configure(EntityTypeBuilder<CultivoEntity> builder)
+        public void Configure(EntityTypeBuilder<AuditoriaEntity> builder)
         {
-            builder.ToTable("TG_CULTIVO");
+            builder.ToTable("TC_AUDITORIA");
             builder.HasKey(c => c.Id);
 
         }

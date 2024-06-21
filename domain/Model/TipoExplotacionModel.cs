@@ -10,5 +10,10 @@ namespace Domain.Model
 {
     public class TipoExplotacionModel
     {
+        public long Id { get; set; }
+        public string? CodigoTipoExplotacion { get; set; }
+        public string? TipoExplotacion { get; set; }
+        public string? DescripcionTipoExplotacion { get; set; }
+        public int Estado { get; set; }
     }
 }

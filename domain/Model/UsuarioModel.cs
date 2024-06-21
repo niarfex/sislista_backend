@@ -10,5 +10,28 @@ namespace Domain.Model
 {
     public class UsuarioModel
     {
+        public long IdPersona { get; set; }
+        public string CodigoUUIDUsuario { get; set; }
+        public string Usuario { get; set; }
+        public string Clave { get; set; }
+        public long? TokenReseteoClave { get; set; }
+        public DateTime? FechaTokenReseteoExpiracion { get; set; }
+        public int Estado { get; set; }
+        //Perfil y persona
+        public long IdPerfil { get; set; }
+        public long? IdTipoDocumento { get; set; }
+        public string CodigoUUIDPersona { get; set; }
+        public string? NumeroDocumento { get; set; }
+        public string? Nombre { get; set; }
+        public string? ApellidoPaterno { get; set; }
+        public string? ApellidoMaterno { get; set; }
+        public string? Celular { get; set; }
+        public string? CorreoElectronico { get; set; }
+        public long? IdOrganizacion { get; set; }
+        public string? Cargo { get; set; }
+        public string? OficinaArea { get; set; }
+        //Lista
+        public string? Perfil{ get; set; }
+        public string? NombreCompleto { get; set; }
     }
 }

@@ -26,25 +26,77 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<LineaProduccionEntity>> GetAll(ParamBusqueda param)
+        public async Task<List<LineaProduccionEntity>> GetAll(string param)
         {
             return _db.LineaProduccion.ToList();
         }
-        public async Task<LineaProduccionEntity> getLineaProduccion()
+        public async Task<LineaProduccionEntity> GetLineaProduccionxId(long id)
         {
-            return null;
+            return _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
         }
-        public async Task<LineaProduccionEntity> createLineaProduccion()
+        public async Task<long> CreateLineaProduccion(LineaProduccionModel model)
         {
-            return null;
+            if (model.Id > 0)
+            {
+                var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == model.Id).FirstOrDefault();
+                objLineaProduccion.CodigoLineaProduccion = model.CodigoLineaProduccion;
+                objLineaProduccion.LineaProduccion = model.LineaProduccion;
+                objLineaProduccion.DescripcionLineaProduccion = model.DescripcionLineaProduccion;               
+                objLineaProduccion.FechaActualizacion = DateTime.Now;
+                objLineaProduccion.UsuarioActualizacion = "";
+                _db.LineaProduccion.Update(objLineaProduccion);
+                _db.SaveChanges();
+                return objLineaProduccion.Id;
+            }
+            else
+            {
+                var objLineaProduccion = new LineaProduccionEntity()
+                {
+                    CodigoLineaProduccion = model.CodigoLineaProduccion,
+                    LineaProduccion = model.LineaProduccion,
+                    DescripcionLineaProduccion = model.DescripcionLineaProduccion,                 
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.LineaProduccion.Add(objLineaProduccion);
+                _db.SaveChanges();
+                return objLineaProduccion.Id;
+            }
+
+
         }
-        public async Task<LineaProduccionEntity> updateLineaProduccion()
+        public async Task<long> DeleteLineaProduccionxId(long id)
         {
-            return null;
+            var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
+            objLineaProduccion.Estado = 2;
+            objLineaProduccion.FechaActualizacion = DateTime.Now;
+            objLineaProduccion.UsuarioActualizacion = "";
+            _db.LineaProduccion.Update(objLineaProduccion);
+            _db.SaveChanges();
+            return objLineaProduccion.Id;
         }
-        public async Task<bool> deleteLineaProduccion()
+
+        public async Task<long> ActivarLineaProduccionxId(long id)
         {
-            return false;
+            var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
+            objLineaProduccion.Estado = 1;
+            objLineaProduccion.FechaActualizacion = DateTime.Now;
+            objLineaProduccion.UsuarioActualizacion = "";
+            _db.LineaProduccion.Update(objLineaProduccion);
+            _db.SaveChanges();
+            return objLineaProduccion.Id;
+        }
+
+        public async Task<long> DesactivarLineaProduccionxId(long id)
+        {
+            var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
+            objLineaProduccion.Estado = 0;
+            objLineaProduccion.FechaActualizacion = DateTime.Now;
+            objLineaProduccion.UsuarioActualizacion = "";
+            _db.LineaProduccion.Update(objLineaProduccion);
+            _db.SaveChanges();
+            return objLineaProduccion.Id;
         }
     }
 }

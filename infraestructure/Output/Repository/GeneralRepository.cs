@@ -69,5 +69,18 @@ namespace Infra.MarcoLista.Output.Repository
         {
             return _db.TipoOrganizacion.ToList();
         }
+
+        public async Task<List<TipoDocumentoEntity>> GetTipoDocumento()
+        {
+            return _db.TipoDocumento.ToList();
+        }
+        public async Task<PersonaEntity> GetPersonaxId(long id)
+        {
+            return _db.Persona.Where(x=> x.Id==id && (x.Estado==0 || x.Estado == 1)).FirstOrDefault() ;
+        }
+        public async Task<List<PerfilEntity>> GetPerfiles()
+        {
+            return _db.Perfil.Where(x => x.Estado==0 || x.Estado==1).ToList();
+        }
     }
 }

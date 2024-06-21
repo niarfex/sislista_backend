@@ -11,6 +11,8 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("TXT_PERFIL")]
         public string? Perfil { get; set; }
+        [Column("TXT_CODIGO_PERFIL")]
+        public string? CodigoPerfil { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

@@ -11,6 +11,8 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("IDE_USUARIO")]
         public long IdUsuario { get; set; }
+        [ForeignKey("IdUsuario")]
+        public PerfilEntity DetalleUsuario { get; set; }
         [Column("HORA_INICIO_SESION")]
         public DateTime? HoraInicioSesion { get; set; }
         [Column("HORA_FIN_SESION")]

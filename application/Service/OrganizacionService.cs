@@ -62,5 +62,38 @@ namespace Application.Service
             }
             return id;
         }
+        public async Task<long> DeleteOrganizacionxId(long id)
+        {
+            var organizacion = await _organizacionPort.DeleteOrganizacionxId(id);
+
+            if (organizacion == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return organizacion;
+        }
+        public async Task<long> ActivarOrganizacionxId(long id)
+        {
+            var organizacion = await _organizacionPort.ActivarOrganizacionxId(id);
+
+            if (organizacion == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return organizacion;
+        }
+        public async Task<long> DesactivarOrganizacionxId(long id)
+        {
+            var organizacion = await _organizacionPort.DesactivarOrganizacionxId(id);
+
+            if (organizacion == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return organizacion;
+        }
     }
 }

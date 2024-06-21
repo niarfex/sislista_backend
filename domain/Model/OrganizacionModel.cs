@@ -19,12 +19,13 @@ namespace Domain.Model
         public string? DireccionFiscal { get; set; }
         public string? Telefono { get; set; }
         public string? PaginaWeb { get; set; }
-        public string? CorreoElectronico { get; set; }
+        public string? CorreoElectronico { get; set; }        
         //Para el listado
         public string? TipoOrganizacion { get; set; }
         public string? Departamento { get; set; }
         public int Usuarios { get; set; }
         public int Estado { get; set; }
+
 
 
     }

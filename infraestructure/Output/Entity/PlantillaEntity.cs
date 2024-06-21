@@ -11,6 +11,10 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("TXT_PLANTILLA")]
         public string? Plantilla { get; set; }
+        [Column("TXT_DESCRIPCION")]
+        public string? Descripcion { get; set; }
+        [Column("NUM_CUESTIONARIO")]
+        public long NumCuestionario { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

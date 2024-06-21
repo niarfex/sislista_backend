@@ -11,12 +11,18 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("IDE_PLANTILLA")]
         public long? IdPlantilla { get; set; }
+        [ForeignKey("IdPlantilla")]
+        public PlantillaEntity DetallePlantilla { get; set; }
         [Column("IDE_USUARIO")]
-        public long? IdUsuario { get; set; }
+        public long? IdUsuarioa { get; set; }
+        [ForeignKey("IdUsuarioa")]
+        public UsuarioEntity DetalleUsuario { get; set; }
         [Column("IDE_ANIO")]
         public long? IdAnio { get; set; }
+        [ForeignKey("IdAnio")]
+        public UsuarioEntity DetalleAnio { get; set; }
         [Column("TXT_PROGRAMACION_REGISTRO")]
-        public string? ProgramacionRegistro { get; set; }
+        public string? ProgrmacionRegistro { get; set; }
         [Column("FEC_INICIO")]
         public DateTime? FechaInicio { get; set; }
         [Column("FEC_FIN")]

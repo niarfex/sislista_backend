@@ -25,25 +25,79 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<CondicionJuridicaEntity>> GetAll(ParamBusqueda param)
+        public async Task<List<CondicionJuridicaEntity>> GetAll(string param)
         {
             return _db.CondicionJuridica.ToList();
         }
-        public async Task<CondicionJuridicaEntity> getCondicionJuridica()
+        public async Task<CondicionJuridicaEntity> GetCondicionJuridicaxId(long id)
         {
-            return null;
+            return _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
         }
-        public async Task<CondicionJuridicaEntity> createCondicionJuridica()
+        public async Task<long> CreateCondicionJuridica(CondicionJuridicaModel model)
         {
-            return null;
+            if (model.Id > 0)
+            {
+                var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == model.Id).FirstOrDefault();
+                objCondicionJuridica.CodigoCondicionJuridica = model.CodigoCondicionJuridica;
+                objCondicionJuridica.CondicionJuridica = model.CondicionJuridica;
+                objCondicionJuridica.DescripcionCondicionJuridica = model.DescripcionCondicionJuridica;
+                objCondicionJuridica.Otros = model.Otros;
+                objCondicionJuridica.FechaActualizacion = DateTime.Now;
+                objCondicionJuridica.UsuarioActualizacion = "";
+                _db.CondicionJuridica.Update(objCondicionJuridica);
+                _db.SaveChanges();
+                return objCondicionJuridica.Id;
+            }
+            else
+            {
+                var objCondicionJuridica = new CondicionJuridicaEntity()
+                {
+                    CodigoCondicionJuridica = model.CodigoCondicionJuridica,
+                    CondicionJuridica = model.CondicionJuridica,
+                    DescripcionCondicionJuridica = model.DescripcionCondicionJuridica,
+                    Otros = model.Otros,
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.CondicionJuridica.Add(objCondicionJuridica);
+                _db.SaveChanges();
+                return objCondicionJuridica.Id;
+            }
+
+
         }
-        public async Task<CondicionJuridicaEntity> updateCondicionJuridica()
+        public async Task<long> DeleteCondicionJuridicaxId(long id)
         {
-            return null;
+            var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
+            objCondicionJuridica.Estado = 2;
+            objCondicionJuridica.FechaActualizacion = DateTime.Now;
+            objCondicionJuridica.UsuarioActualizacion = "";
+            _db.CondicionJuridica.Update(objCondicionJuridica);
+            _db.SaveChanges();
+            return objCondicionJuridica.Id;
         }
-        public async Task<bool> deleteCondicionJuridica()
+
+        public async Task<long> ActivarCondicionJuridicaxId(long id)
         {
-            return false;
+            var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
+            objCondicionJuridica.Estado = 1;
+            objCondicionJuridica.FechaActualizacion = DateTime.Now;
+            objCondicionJuridica.UsuarioActualizacion = "";
+            _db.CondicionJuridica.Update(objCondicionJuridica);
+            _db.SaveChanges();
+            return objCondicionJuridica.Id;
+        }
+
+        public async Task<long> DesactivarCondicionJuridicaxId(long id)
+        {
+            var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
+            objCondicionJuridica.Estado = 0;
+            objCondicionJuridica.FechaActualizacion = DateTime.Now;
+            objCondicionJuridica.UsuarioActualizacion = "";
+            _db.CondicionJuridica.Update(objCondicionJuridica);
+            _db.SaveChanges();
+            return objCondicionJuridica.Id;
         }
     }
 }

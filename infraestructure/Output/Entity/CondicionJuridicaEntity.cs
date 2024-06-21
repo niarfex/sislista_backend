@@ -15,6 +15,8 @@ namespace Infra.MarcoLista.Output.Entity
         public string? CondicionJuridica { get; set; }
         [Column("TXT_DESCRIPCION_CONDICION_JURIDICA")]
         public string? DescripcionCondicionJuridica { get; set; }
+        [Column("FLG_OTROS")]
+        public int Otros { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

@@ -28,9 +28,16 @@ namespace Infra.MarcoLista.Input.Controllers
         {
             // Aquí deberías validar las credenciales del usuario
             // Si las credenciales son válidas, genera y retorna un token JWT
+            if (param.username == "45372155" && param.password == "123456") {
+                var tokenString = GenerateJWTToken();
+                return new JsonResult((new { success=true,usuario = new { accessToken = tokenString, numeroDocumento = "45372155", username = param.username } }));
+            }
+            else {
+                return new JsonResult((new { success = false, usuario = param.username }));
+            }
 
-            var tokenString = GenerateJWTToken();
-            return new JsonResult((new { usuario = new { accessToken = tokenString, numeroDocumento = "45372155", username = "45372155"} } ));
+
+            
         }
 
         private string GenerateJWTToken()

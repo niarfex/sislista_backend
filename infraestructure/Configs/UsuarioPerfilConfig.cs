@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infra.MarcoLista.Configs
 {
-    public class EspecieConfig : IEntityTypeConfiguration<EspecieEntity>
+    public class UsuarioPerfilConfig : IEntityTypeConfiguration<UsuarioPerfilEntity>
     {
-        public void Configure(EntityTypeBuilder<EspecieEntity> builder)
+        public void Configure(EntityTypeBuilder<UsuarioPerfilEntity> builder)
         {
-            builder.ToTable("TG_ESPECIE");
+            builder.ToTable("TC_USUARIO_TC_PERFIL");
             builder.HasKey(c => c.Id);
 
         }

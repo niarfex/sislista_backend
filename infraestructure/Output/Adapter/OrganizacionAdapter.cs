@@ -54,5 +54,44 @@ namespace infraestructure.Output.Adapter
                 return 0;
             }
         }
+        public async Task<long> DeleteOrganizacionxId(long id)
+        {
+            var organizacionEntity = await _organizacionRepository.DeleteOrganizacionxId(id);
+
+            if (organizacionEntity != null)
+            {
+                return organizacionEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public async Task<long> ActivarOrganizacionxId(long id)
+        {
+            var organizacionEntity = await _organizacionRepository.ActivarOrganizacionxId(id);
+
+            if (organizacionEntity != null)
+            {
+                return organizacionEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public async Task<long> DesactivarOrganizacionxId(long id)
+        {
+            var organizacionEntity = await _organizacionRepository.DesactivarOrganizacionxId(id);
+
+            if (organizacionEntity != null)
+            {
+                return organizacionEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

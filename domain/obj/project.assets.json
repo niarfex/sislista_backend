@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
-      "projectName": "domain",
-      "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\domain.csproj",
+      "projectUniqueName": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj",
+      "projectName": "Domain",
+      "projectPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\efrai\\.nuget\\packages\\",
       "outputPath": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\obj\\",
       "projectStyle": "PackageReference",
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

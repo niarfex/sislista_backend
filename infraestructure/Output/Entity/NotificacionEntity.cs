@@ -11,14 +11,22 @@ namespace Infra.MarcoLista.Output.Entity
         public string? Asunto { get; set; }
         [Column("IDE_FRECUENCIA")]
         public long? IdFrecuencia { get; set; }
+        [ForeignKey("IdFrecuencia")]
+        public FrecuenciaEntity DetalleFrecuencia { get; set; }
         [Column("IDE_PROGRAMACION_REGISTRO")]
         public long? IdProgrmacionRegistro { get; set; }
+        [ForeignKey("IdProgrmacionRegistro")]
+        public PanelRegistroEntity DetalleProgramacionRegistro { get; set; }
         [Column("IDE_ETAPA")]
         public long? IdEtapa { get; set; }
+        [ForeignKey("IdEtapa")]
+        public EtapaEntity DetalleEtapa { get; set; }
         [Column("TXT_DESCRIPCION")]
         public string? Descripcion { get; set; }
         [Column("IDE_PERFIL")]
         public long? IdPerfil { get; set; }
+        [ForeignKey("IdPerfil")]
+        public EtapaEntity DetallePerfil { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

@@ -43,5 +43,44 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<TipoDocumentoModel>> GetTipoDocumento()
+        {
+            var tipodocumentoEntity = await _generalRepository.GetTipoDocumento();
+
+            if (tipodocumentoEntity != null)
+            {
+                return _mapper.Map<List<TipoDocumentoModel>>(tipodocumentoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<PersonaModel> GetPersonaxId(long id)
+        {
+            var personaEntity = await _generalRepository.GetPersonaxId(id);
+
+            if (personaEntity != null)
+            {
+                return _mapper.Map<PersonaModel>(personaEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<PerfilModel>> GetPerfiles()
+        {
+            var perfilEntity = await _generalRepository.GetPerfiles();
+
+            if (perfilEntity != null)
+            {
+                return _mapper.Map<List<PerfilModel>>(perfilEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

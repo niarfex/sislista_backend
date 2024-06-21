@@ -5,10 +5,11 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface IMarcoListaRepository
     {
-        Task<List<MarcoListaEntity>> GetAll(ParamBusqueda param);
-        Task<MarcoListaEntity> getMarcoListaxUUID();
-        Task<MarcoListaEntity> createMarcoListaxUUID();
-        Task<MarcoListaEntity> updateMarcoListaxUUID();
-        Task<bool> deleteMarcoListaxUUID();
+        Task<List<MarcoListaModel>> GetAll(string param);
+        Task<MarcoListaModel> GetMarcoListaxId(long id);
+        Task<long> CreateMarcoLista(MarcoListaModel model);
+        Task<long> DeleteMarcoListaxId(long id);
+        Task<long> ActivarMarcoListaxId(long id);
+        Task<long> DesactivarMarcoListaxId(long id);
     }
 }

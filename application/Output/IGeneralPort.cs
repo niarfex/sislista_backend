@@ -6,5 +6,8 @@ namespace Application.Output
     {
         Task<List<UbigeoModel>> GetDepartamentos(int idTipo, string idUbigeo);
         Task<List<TipoOrganizacionModel>> GetTipoOrganizacion();
+        Task<List<TipoDocumentoModel>> GetTipoDocumento();
+        Task<PersonaModel> GetPersonaxId(long id);
+        Task<List<PerfilModel>> GetPerfiles();
     }
 }

@@ -5,10 +5,11 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface IUsuarioRepository
     {
-        Task<List<UsuarioEntity>> GetAll(ParamBusqueda param);
-        Task<UsuarioEntity> getUsuarioxUUID();
-        Task<UsuarioEntity> createUsuario();
-        Task<UsuarioEntity> updateUsuarioxUUID();
-        Task<bool> deleteUsuarioxUUID();
+        Task<List<UsuarioModel>> GetAll(string param);
+        Task<UsuarioEntity> GetUsuarioxUUID(string uuid);
+        Task<string> CreateUsuario(UsuarioModel model);
+        Task<string> DeleteUsuarioxUUID(string uuid);
+        Task<string> ActivarUsuarioxUUID(string uuid);
+        Task<string> DesactivarUsuarioxUUID(string uuid);
     }
 }

@@ -13,7 +13,9 @@ namespace Infra.MarcoLista.Output.Entity
         
         [Column("IDE_PERSONA")]
         public long IdPersona { get; set; }
-     
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("TXT_CODIGO_UUID")]
+        public string CodigoUUID { get; set; }
         [Column("TXT_USUARIO")]
         public string Usuario { get; set; }
         [Column("TXT_CLAVE")]

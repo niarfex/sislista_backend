@@ -33,7 +33,7 @@ C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\runtimes\win\lib\net8.0\System.DirectoryServices.Protocols.dll
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\Application.dll
-C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\domain.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\Domain.dll
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\Application.pdb
-C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\domain.pdb
+C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\Domain.pdb
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\PubTmp\Out\Infraestructure.xml

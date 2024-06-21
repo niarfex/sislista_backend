@@ -102,5 +102,65 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
             }
         }
+        [HttpGet]
+        [Route("DeleteOrganizacionxId")]
+        public async Task<ResponseModel> DeleteOrganizacionxId(long id)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {    
+                respuesta.success = true;
+                respuesta.message = "Se eliminó el registro correctamente";
+                respuesta.data = await _organizacionService.DeleteOrganizacionxId(id);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al borrar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("ActivarOrganizacionxId")]
+        public async Task<ResponseModel> ActivarOrganizacionxId(long id)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se habilitó el registro correctamente";
+                respuesta.data = await _organizacionService.ActivarOrganizacionxId(id);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al habilitar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("DesactivarOrganizacionxId")]
+        public async Task<ResponseModel> DesactivarOrganizacionxId(long id)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se deshabilitó el registro correctamente";
+                respuesta.data = await _organizacionService.DesactivarOrganizacionxId(id);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al deshabilitar el registro";
+                return respuesta;
+            }
+        }
     }
 }

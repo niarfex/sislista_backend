@@ -10,5 +10,11 @@ namespace Domain.Model
 {
     public class CondicionJuridicaModel
     {
+        public long Id { get; set; }
+        public string? CodigoCondicionJuridica { get; set; }
+        public string? CondicionJuridica { get; set; }
+        public string? DescripcionCondicionJuridica { get; set; }
+        public int Otros { get; set; }
+        public int Estado { get; set; }
     }
 }

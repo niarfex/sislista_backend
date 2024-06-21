@@ -10,5 +10,10 @@ namespace Domain.Model
 {
     public class LineaProduccionModel
     {
+        public long Id { get; set; }
+        public string? CodigoLineaProduccion { get; set; }
+        public string? LineaProduccion { get; set; }
+        public string? DescripcionLineaProduccion { get; set; }
+        public int Estado { get; set; }
     }
 }

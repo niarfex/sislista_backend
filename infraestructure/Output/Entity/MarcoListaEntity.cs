@@ -11,12 +11,16 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("IDE_PERSONA")]
         public long? IdPersona { get; set; }
+        [ForeignKey("IdPersona")]
+        public PersonaEntity DetallePersona { get; set; }
         [Column("IDE_TIPO_EXPLOTACION")]
         public long? IdTipoExplotacion { get; set; }
+        [ForeignKey("IdTipoExplotacion")]
+        public TipoExplotacionEntity DetalleTipoExplotacion { get; set; }
         [Column("TXT_DIRECCION")]
         public string? Direccion { get; set; }
         [Column("IDE_DEPARTAMENTO")]
-        public long? IdDepartamento { get; set; }
+        public string? IdDepartamento { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

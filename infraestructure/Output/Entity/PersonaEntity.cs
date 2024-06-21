@@ -17,8 +17,12 @@ namespace Infra.MarcoLista.Output.Entity
         public long? IdTipoDocumento { get; set; }
         [Column("IDE_CONDICION_JURIDICA")]
         public long? IdCondicionJuridica { get; set; }
+        [Column("IDE_CONDICION_JURIDICA_OTROS")]
+        public long? IdCondicionJuridicaOtros { get; set; }
         [Column("IDE_UBIGEO")]
-        public long? IdUbigeo { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public string? IdUbigeo { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("TXT_CODIGO_UUID")]
         public string? CodigoUUID { get; set; }
         [Column("TXT_NUMERO_DOCUMENTO")]
@@ -51,8 +55,8 @@ namespace Infra.MarcoLista.Output.Entity
         public string? CorreoRepLegal { get; set; }
         [Column("TXT_CELULAR_REPRESENTATE_LEGAL")]
         public string? CelularRepLegal { get; set; }
-        [Column("FLG_TIENE_RUC")]
-        public long? TieneRuc { get; set; }
+        [Column("TXT_TIENE_RUC")]
+        public string? TieneRuc { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

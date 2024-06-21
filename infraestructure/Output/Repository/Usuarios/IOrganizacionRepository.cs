@@ -8,7 +8,8 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<OrganizacionEntity>> GetAll(string param);
         Task<OrganizacionEntity> GetOrganizacionxId(long id);
         Task<long> CreateOrganizacion(OrganizacionModel model);
-        Task<OrganizacionEntity> updateOrganizacion();
-        Task<bool> deleteOrganizacion();
+        Task<long> DeleteOrganizacionxId(long id);
+        Task<long> ActivarOrganizacionxId(long id);
+        Task<long> DesactivarOrganizacionxId(long id);
     }
 }
