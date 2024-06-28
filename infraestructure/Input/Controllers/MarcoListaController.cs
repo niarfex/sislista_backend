@@ -70,6 +70,9 @@ namespace Infra.MarcoLista.Input.Controllers
                 if (id > 0)
                 {
                     objMarcoLista = _mapper.Map<MarcoListaGetDto>(await _marcolistaService.GetMarcoListaxId(id));
+                    objMarcoLista.ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias(objMarcoLista.IdUbigeo.Substring(0,2)));
+                    objMarcoLista.ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos(objMarcoLista.IdUbigeo.Substring(0, 4)));
+                
                 }
                 objMarcoLista.ListCondicionJuridica = listCondicionJuridica;
                 objMarcoLista.ListCondicionJuridicaOtros = listCondicionJuridicaOtros;
@@ -106,7 +109,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al consultar el listado";
+                respuesta.message = "Ocurrió un error al registrar los datos";
                 return respuesta;
             }
         }

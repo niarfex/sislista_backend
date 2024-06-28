@@ -5,10 +5,11 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface IPlantillaRepository
     {
-        Task<List<PlantillaEntity>> GetAll(ParamBusqueda param);
-        Task<PlantillaEntity> getPlantilla();
-        Task<PlantillaEntity> createPlantilla();
-        Task<PlantillaEntity> updatePlantilla();
-        Task<bool> deletePlantilla();
+        Task<List<PlantillaEntity>> GetAll(string param);
+        Task<PlantillaEntity> GetPlantillaxId(long id);
+        Task<long> CreatePlantilla(PlantillaModel model);
+        Task<long> DeletePlantillaxId(long id);
+        Task<long> ActivarPlantillaxId(long id);
+        Task<long> DesactivarPlantillaxId(long id);
     }
 }

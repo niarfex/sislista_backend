@@ -5,14 +5,9 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface INotificacionRepository
     {
-        Task<List<NotificacionEntity>> GetAll(ParamBusqueda param);
-
-        Task<NotificacionEntity> getNotificacion();
-
-        Task<NotificacionEntity> createNotificacion();
-
-        Task<NotificacionEntity> updateNotificacion();
-
-        Task<bool> deleteNotificacion();
+        Task<List<NotificacionEntity>> GetAll(string param);
+        Task<NotificacionEntity> GetNotificacionxId(long id);
+        Task<long> CreateNotificacion(NotificacionModel model);
+        Task<long> DeleteNotificacionxId(long id);
     }
 }

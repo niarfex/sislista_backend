@@ -7,6 +7,8 @@ using Infra.MarcoLista.Output.Adapter;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
 using infraestructure.Output.Adapter;
+using Microsoft.AspNetCore.Identity;
+
 
 
 
@@ -18,8 +20,12 @@ using System.Data.SqlClient;
 
 
 var builder = WebApplication.CreateBuilder(args);
-//builder.Services.AddAutoMapper(typeof(ProductorAgrarioProfile));
-//builder.Services.AddAutoMapper(typeof(UbigeoProfile));
+
+builder.Services
+    .AddAuthorization()
+    .AddAuthentication()
+    .AddBearerToken(IdentityConstants.BearerScheme);
+
 builder.Services.AddAutoMapper(typeof(OrganizacionProfile));
 
 builder.Services.AddControllers();
@@ -42,8 +48,11 @@ var mapperConfig = new MapperConfiguration(m =>
     m.AddProfile(new CondicionJuridicaProfile());
     m.AddProfile(new LineaProduccionProfile());
     m.AddProfile(new MarcoListaProfile());
+    m.AddProfile(new NotificacionProfile());
     m.AddProfile(new OrganizacionProfile());
+    m.AddProfile(new PanelRegistroProfile());
     m.AddProfile(new PersonaProfile());
+    m.AddProfile(new PlantillaProfile());
     m.AddProfile(new TipoExplotacionProfile());
     m.AddProfile(new UsuarioProfile());
 });
@@ -73,6 +82,15 @@ builder.Services.AddScoped<ITipoExplotacionRepository, TipoExplotacionRepository
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IUsuarioPort, UsuarioAdapter>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<INotificacionService, NotificacionService>();
+builder.Services.AddScoped<INotificacionPort, NotificacionAdapter>();
+builder.Services.AddScoped<INotificacionRepository, NotificacionRepository>();
+builder.Services.AddScoped<IPanelRegistroService, PanelRegistroService>();
+builder.Services.AddScoped<IPanelRegistroPort, PanelRegistroAdapter>();
+builder.Services.AddScoped<IPanelRegistroRepository, PanelRegistroRepository>();
+builder.Services.AddScoped<IPlantillaService, PlantillaService>();
+builder.Services.AddScoped<IPlantillaPort, PlantillaAdapter>();
+builder.Services.AddScoped<IPlantillaRepository, PlantillaRepository>();
 
 var app = builder.Build();
 
@@ -86,8 +104,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors();
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

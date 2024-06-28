@@ -25,25 +25,77 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _mapper = mapper;
         }
-        public async Task<List<PlantillaEntity>> GetAll(ParamBusqueda param)
+        public async Task<List<PlantillaEntity>> GetAll(string param)
         {
             return _db.Plantilla.ToList();
         }
-        public async Task<PlantillaEntity> getPlantilla()
+        public async Task<PlantillaEntity> GetPlantillaxId(long id)
         {
-            return null;
+            return _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
         }
-        public async Task<PlantillaEntity> createPlantilla()
+        public async Task<long> CreatePlantilla(PlantillaModel model)
         {
-            return null;
+            if (model.Id > 0)
+            {
+                var objPlantilla = _db.Plantilla.Where(x => x.Id == model.Id).FirstOrDefault();
+                objPlantilla.Plantilla = model.Plantilla;
+                objPlantilla.Descripcion = model.Descripcion;
+                objPlantilla.NumCuestionario = model.NumCuestionario;
+                objPlantilla.FechaActualizacion = DateTime.Now;
+                objPlantilla.UsuarioActualizacion = "";
+                _db.Plantilla.Update(objPlantilla);
+                _db.SaveChanges();
+                return objPlantilla.Id;
+            }
+            else
+            {
+                var objPlantilla = new PlantillaEntity()
+                {
+                    Plantilla = model.Plantilla,
+                    Descripcion = model.Descripcion,
+                    NumCuestionario = model.NumCuestionario,
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = ""
+                };
+                _db.Plantilla.Add(objPlantilla);
+                _db.SaveChanges();
+                return objPlantilla.Id;
+            }
+
+
         }
-        public async Task<PlantillaEntity> updatePlantilla()
+        public async Task<long> DeletePlantillaxId(long id)
         {
-            return null;
+            var objPlantilla = _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
+            objPlantilla.Estado = 2;
+            objPlantilla.FechaActualizacion = DateTime.Now;
+            objPlantilla.UsuarioActualizacion = "";
+            _db.Plantilla.Update(objPlantilla);
+            _db.SaveChanges();
+            return objPlantilla.Id;
         }
-        public async Task<bool> deletePlantilla()
+
+        public async Task<long> ActivarPlantillaxId(long id)
         {
-            return false;
+            var objPlantilla = _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
+            objPlantilla.Estado = 1;
+            objPlantilla.FechaActualizacion = DateTime.Now;
+            objPlantilla.UsuarioActualizacion = "";
+            _db.Plantilla.Update(objPlantilla);
+            _db.SaveChanges();
+            return objPlantilla.Id;
+        }
+
+        public async Task<long> DesactivarPlantillaxId(long id)
+        {
+            var objPlantilla = _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
+            objPlantilla.Estado = 0;
+            objPlantilla.FechaActualizacion = DateTime.Now;
+            objPlantilla.UsuarioActualizacion = "";
+            _db.Plantilla.Update(objPlantilla);
+            _db.SaveChanges();
+            return objPlantilla.Id;
         }
     }
 }

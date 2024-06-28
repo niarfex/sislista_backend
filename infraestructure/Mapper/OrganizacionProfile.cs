@@ -15,6 +15,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<TipoOrganizacionEntity, TipoOrganizacionModel>();
             CreateMap<OrganizacionCreateUpdateDto, OrganizacionModel>();
             CreateMap<SelectTipoModel, SelectTipoDto>();
+            CreateMap<UbigeoModel, UbigeoListDto>();
         }
     }
 }

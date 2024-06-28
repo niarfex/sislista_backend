@@ -10,5 +10,7 @@ namespace Application.Output
         Task<string> DeleteUsuarioxUUID(string uuid);
         Task<string> ActivarUsuarioxUUID(string uuid);
         Task<string> DesactivarUsuarioxUUID(string uuid);
+        Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid);
+        Task<LoginModel> datosInicioSesion(AuthModel auth);
     }
 }

@@ -4,6 +4,7 @@ using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Input.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -18,12 +19,15 @@ namespace Infra.MarcoLista.Input.Controllers
         private readonly IGeneralService _generalService;
         private readonly IMapper _mapper;
 
-        public OrganizacionController(IOrganizacionService organizacionService, IGeneralService generalService, IMapper mapper)
+        public OrganizacionController(IOrganizacionService organizacionService, 
+            IGeneralService generalService, 
+            IMapper mapper)
         {
             _organizacionService = organizacionService;
             _generalService = generalService;
             _mapper = mapper;
         }
+        
         [HttpGet]
         [Route("GetAll")]
         public async Task<ResponseModel> GetAll(string param = "")

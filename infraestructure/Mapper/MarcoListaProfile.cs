@@ -14,7 +14,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<MarcoListaModel, MarcoListaListDto>();
             CreateMap<MarcoListaModel, MarcoListaGetDto>();
             CreateMap<MarcoListaCreateUpdateDto, MarcoListaModel>();
-
+            CreateMap<MarcoListaListDto, MarcoListaModel>();
         }
     }
 }

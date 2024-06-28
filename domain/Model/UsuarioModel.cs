@@ -10,10 +10,12 @@ namespace Domain.Model
 {
     public class UsuarioModel
     {
+        public long Id { get; set; }
         public long IdPersona { get; set; }
         public string CodigoUUIDUsuario { get; set; }
-        public string Usuario { get; set; }
-        public string Clave { get; set; }
+        public string? Usuario { get; set; }
+        public string? Clave { get; set; }
+        public byte[] ClaveAlmacenada { get; set; }
         public long? TokenReseteoClave { get; set; }
         public DateTime? FechaTokenReseteoExpiracion { get; set; }
         public int Estado { get; set; }
@@ -32,6 +34,7 @@ namespace Domain.Model
         public string? OficinaArea { get; set; }
         //Lista
         public string? Perfil{ get; set; }
-        public string? NombreCompleto { get; set; }
+        public string NombreCompleto { get; set; }
+        public List<MarcoListaModel> ListMarcoListaAsignados { get; set; }
     }
 }

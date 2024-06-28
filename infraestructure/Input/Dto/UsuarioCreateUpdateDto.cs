@@ -32,6 +32,8 @@ namespace Infra.MarcoLista.Input.Dto
         public string? Cargo { get; set; }
         [JsonPropertyName("OficinaArea")]
         public string? OficinaArea { get; set; }
+        [JsonPropertyName("ListMarcoListaAsignados")]
+        public List<MarcoListaListDto> ListMarcoListaAsignados { get; set; }
 
     }
 }

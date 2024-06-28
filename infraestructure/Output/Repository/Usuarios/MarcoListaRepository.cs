@@ -7,6 +7,8 @@ using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.IdentityModel.Tokens;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Xml.Linq;
@@ -31,13 +33,19 @@ namespace Infra.MarcoLista.Output.Repository
                         join p in _db.Persona on m.IdPersona equals p.Id
                         join c in _db.CondicionJuridica on p.IdCondicionJuridica equals c.Id
                         where (m.Estado == 0 || m.Estado == 1) && (p.Estado == 0 || p.Estado == 1)
+                        && (p.RazonSocial.ToUpper().Contains(param.ToUpper()) ||
+                        p.Nombre.ToUpper().Contains(param.ToUpper()) ||
+                        p.ApellidoPaterno.ToUpper().Contains(param.ToUpper()) ||
+                        p.ApellidoMaterno.ToUpper().Contains(param.ToUpper())
+                        )
                         select new MarcoListaModel
                         { 
                             Id=m.Id,
                             NumeroDocumento=p.NumeroDocumento,
-                            NombreCompleto= p.RazonSocial==""?(p.Nombre+" "+p.ApellidoPaterno+" "+p.ApellidoMaterno):p.RazonSocial,
+                            NombreCompleto= p.RazonSocial.IsNullOrEmpty()?(p.Nombre+" "+p.ApellidoPaterno+" "+p.ApellidoMaterno):p.RazonSocial,
                             CondicionJuridica=c.CondicionJuridica,
-                            NombreRepLegal=p.NombreRepLegal,   
+                            NombreRepLegal=p.NombreRepLegal,  
+                            IdDepartamento=m.IdDepartamento,                            
                             Estado=m.Estado
                         };
             return query.ToList();
@@ -47,7 +55,7 @@ namespace Infra.MarcoLista.Output.Repository
 
             var query = from m in _db.MarcoLista
                         join p in _db.Persona on m.IdPersona equals p.Id 
-                        where (m.Estado == 0 || m.Estado == 1) && (p.Estado == 0 || p.Estado == 1)
+                        where (m.Estado == 0 || m.Estado == 1) && (p.Estado == 0 || p.Estado == 1) && m.Id == id
                         select new MarcoListaModel
                         {
                             Id = m.Id,
@@ -87,6 +95,7 @@ namespace Infra.MarcoLista.Output.Repository
         {
             //Registramos o actualizamos los datos de la persona
             long personaId;
+            if (model.CodigoUUIDPersona == null) { model.CodigoUUIDPersona = ""; }
             var persona = _db.Persona.Where(x => (x.CodigoUUID.ToString() == model.CodigoUUIDPersona && model.CodigoUUIDPersona.Trim() != "") 
             || (x.NumeroDocumento==model.NumeroDocumento && x.IdTipoDocumento==model.IdTipoDocumento && model.NumeroDocumento.Trim() != "")).FirstOrDefault();
             if (persona == null) {//Si la persona no existe                 
@@ -106,6 +115,10 @@ namespace Infra.MarcoLista.Output.Repository
                     Celular = model.Celular,
                     CorreoElectronico = model.CorreoElectronico,
                     PaginaWeb = model.PaginaWeb,
+                    RazonSocial = model.RazonSocial,
+                    NombreRepLegal = model.NombreRepLegal,
+                    CelularRepLegal = model.CelularRepLegal,
+                    CorreoRepLegal = model.CorreoRepLegal,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
                     UsuarioCreacion = ""
@@ -129,6 +142,10 @@ namespace Infra.MarcoLista.Output.Repository
                 persona.Celular = model.Celular;   
                 persona.CorreoElectronico = model.CorreoElectronico;
                 persona.PaginaWeb = model.PaginaWeb;
+                persona.RazonSocial = model.RazonSocial;
+                persona.NombreRepLegal = model.NombreRepLegal;
+                persona.CelularRepLegal = model.CelularRepLegal;
+                persona.CorreoRepLegal = model.CorreoRepLegal;
                 persona.FechaActualizacion = DateTime.Now;
                 persona.UsuarioActualizacion = "";
                 _db.Persona.Update(persona);
@@ -166,6 +183,7 @@ namespace Infra.MarcoLista.Output.Repository
                 return objMarcoLista.Id;
             }
         }
+        
         public async Task<long> DeleteMarcoListaxId(long id)
         {
             var objMarcoLista = _db.MarcoLista.Where(x => x.Id == id).FirstOrDefault();

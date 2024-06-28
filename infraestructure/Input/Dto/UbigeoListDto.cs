@@ -13,8 +13,6 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("Provincia")]
         public string Provincia { get; set; }
         [JsonPropertyName("Distrito")]
-        public string Distrito { get; set; }
-        [JsonPropertyName("Estado")]
-        public int Estado { get; set; }       
+        public string Distrito { get; set; }             
     }
 }

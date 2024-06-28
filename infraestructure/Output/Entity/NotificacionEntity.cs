@@ -14,8 +14,8 @@ namespace Infra.MarcoLista.Output.Entity
         [ForeignKey("IdFrecuencia")]
         public FrecuenciaEntity DetalleFrecuencia { get; set; }
         [Column("IDE_PROGRAMACION_REGISTRO")]
-        public long? IdProgrmacionRegistro { get; set; }
-        [ForeignKey("IdProgrmacionRegistro")]
+        public long? IdProgramacionRegistro { get; set; }
+        [ForeignKey("IdProgramacionRegistro")]
         public PanelRegistroEntity DetalleProgramacionRegistro { get; set; }
         [Column("IDE_ETAPA")]
         public long? IdEtapa { get; set; }
@@ -27,6 +27,10 @@ namespace Infra.MarcoLista.Output.Entity
         public long? IdPerfil { get; set; }
         [ForeignKey("IdPerfil")]
         public EtapaEntity DetallePerfil { get; set; }
+        [Column("ESTADO_NOTIFICACION")]
+        public int EstadoNotificacion { get; set; }
+        [Column("FEC_NOTIFICACION")]
+        public DateTime? FechaNotificacion { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

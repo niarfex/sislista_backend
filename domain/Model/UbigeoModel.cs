@@ -15,14 +15,13 @@ namespace Domain.Model
         public string Departamento { get; set; }
         public string Provincia { get; set; }
         public string Distrito { get; set; }
-        public int Estado { get; set; }
 
-        public UbigeoModel(string id, string departamento, string provincia, string distrito, int estado) {
+
+        public UbigeoModel(string id, string departamento, string provincia, string distrito) {
             Id = id;
             Departamento = departamento;
             Provincia = provincia;
             Distrito = distrito;
-            Estado = estado;
         }
         public UbigeoModel()
         {
@@ -30,7 +29,6 @@ namespace Domain.Model
             Departamento = "";
             Provincia = "";
             Distrito = "";
-            Estado = 0;
         }
     }
 }

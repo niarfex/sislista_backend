@@ -14,15 +14,15 @@ namespace Infra.MarcoLista.Output.Entity
         [ForeignKey("IdPlantilla")]
         public PlantillaEntity DetallePlantilla { get; set; }
         [Column("IDE_USUARIO")]
-        public long? IdUsuarioa { get; set; }
-        [ForeignKey("IdUsuarioa")]
+        public long? IdUsuario { get; set; }
+        [ForeignKey("IdUsuario")]
         public UsuarioEntity DetalleUsuario { get; set; }
         [Column("IDE_ANIO")]
         public long? IdAnio { get; set; }
         [ForeignKey("IdAnio")]
         public UsuarioEntity DetalleAnio { get; set; }
         [Column("TXT_PROGRAMACION_REGISTRO")]
-        public string? ProgrmacionRegistro { get; set; }
+        public string? ProgramacionRegistro { get; set; }
         [Column("FEC_INICIO")]
         public DateTime? FechaInicio { get; set; }
         [Column("FEC_FIN")]
@@ -35,6 +35,8 @@ namespace Infra.MarcoLista.Output.Entity
         public string? Objetivo { get; set; }
         [Column("TXT_ENTE_RECTOR")]
         public string? EnteRector { get; set; }
+        [Column("ESTADO_PROGRAMACION")]
+        public int EstadoProgramacion { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

@@ -34,7 +34,7 @@ namespace infraestructure.Output.Adapter
 
             if (usuarioEntity != null)
             {
-                return _mapper.Map<UsuarioModel>(usuarioEntity);
+                return usuarioEntity;
             }
             else
             {
@@ -91,6 +91,32 @@ namespace infraestructure.Output.Adapter
             else
             {
                 return "";
+            }
+        }
+        public async Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid)
+        {
+            var marcolistaEntity = await _usuarioRepository.GetUsuarioMarcoLista(uuid);
+
+            if (marcolistaEntity != null)
+            {
+                return marcolistaEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<LoginModel> datosInicioSesion(AuthModel auth)
+        {
+            var marcolistaEntity = await _usuarioRepository.datosInicioSesion(auth);
+
+            if (marcolistaEntity != null)
+            {
+                return marcolistaEntity;
+            }
+            else
+            {
+                return null;
             }
         }
     }

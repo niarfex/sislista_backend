@@ -3,6 +3,7 @@ using Infra.MarcoLista.Output.Repository;
 using Domain.Model;
 using AutoMapper;
 using Infra.MarcoLista.Input.Dto;
+using Infra.MarcoLista.Output.Entity;
 //using Infra.ProductorAgrario.Mapper;
 #nullable disable
 namespace Infra.MarcoLista.Output.Adapter
@@ -16,10 +17,48 @@ namespace Infra.MarcoLista.Output.Adapter
             _generalRepository = generalRepository;
             _mapper = mapper;
         }
+        public async Task<List<UbigeoModel>> GetAllUbigeo(int idTipo, string idUbigeo)
+        {
+            var ubigeoEntity = await _generalRepository.GetAllUbigeo(idTipo, idUbigeo);
 
+            if (ubigeoEntity != null)
+            {
+                return ubigeoEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<List<UbigeoModel>> GetDepartamentos(int idTipo, string idUbigeo)
         {
             var ubigeoEntity = await _generalRepository.GetDepartamentos(idTipo, idUbigeo);
+
+            if (ubigeoEntity != null)
+            {
+                return ubigeoEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }       
+        public async Task<List<UbigeoModel>> GetProvincias(int idTipo, string idUbigeo)
+        {
+            var ubigeoEntity = await _generalRepository.GetProvincias(idTipo, idUbigeo);
+
+            if (ubigeoEntity != null)
+            {
+                return ubigeoEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<UbigeoModel>> GetDistritos(int idTipo, string idUbigeo)
+        {
+            var ubigeoEntity = await _generalRepository.GetDistritos(idTipo, idUbigeo);
 
             if (ubigeoEntity != null)
             {
@@ -76,6 +115,84 @@ namespace Infra.MarcoLista.Output.Adapter
             if (perfilEntity != null)
             {
                 return _mapper.Map<List<PerfilModel>>(perfilEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<PerfilModel>> GetPerfilesTodos()
+        {
+            var perfilEntity = await _generalRepository.GetPerfilesTodos();
+
+            if (perfilEntity != null)
+            {
+                return _mapper.Map<List<PerfilModel>>(perfilEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<AnioModel>> GetPeriodos()
+        {
+            var objetoEntity = await _generalRepository.GetPeriodos();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<AnioModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<PlantillaModel>> GetPlantillasActivas()
+        {
+            var objetoEntity = await _generalRepository.GetPlantillasActivas();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<PlantillaModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<AnioModel>> GetFrecuencias()
+        {
+            var objetoEntity = await _generalRepository.GetFrecuencias();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<AnioModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<PanelRegistroModel>> GetProgramacionesVigentes()
+        {
+            var objetoEntity = await _generalRepository.GetProgramacionesVigentes();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<PanelRegistroModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<EtapaModel>> GetEtapas()
+        {
+            var objetoEntity = await _generalRepository.GetEtapas();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<EtapaModel>>(objetoEntity);
             }
             else
             {

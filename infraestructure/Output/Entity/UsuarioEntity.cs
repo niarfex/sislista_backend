@@ -17,9 +17,9 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("TXT_CODIGO_UUID")]
         public string CodigoUUID { get; set; }
         [Column("TXT_USUARIO")]
-        public string Usuario { get; set; }
+        public string? Usuario { get; set; }
         [Column("TXT_CLAVE")]
-        public string Clave { get; set; }
+        public byte[] Clave { get; set; }
         [Column("TXT_TOKEN_RESETEO_CLAVE")]
         public long? TokenReseteoClave { get; set; }
 

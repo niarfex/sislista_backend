@@ -40,5 +40,7 @@ namespace Infra.MarcoLista.Input.Dto
         public List<SelectTipoDto> ListOrganizacion { get; set; }
         [JsonPropertyName("ListDepartamento")]
         public List<SelectTipoDto> ListDepartamento { get; set; }
+        [JsonPropertyName("ListMarcoListaAsignados")]
+        public List<MarcoListaListDto> ListMarcoListaAsignados { get; set; }
     }
 }

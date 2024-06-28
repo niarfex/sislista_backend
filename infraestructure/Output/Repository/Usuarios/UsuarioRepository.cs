@@ -6,9 +6,12 @@ using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Reflection.Metadata;
+using System.Text;
 using System.Xml.Linq;
 using static Dapper.SqlMapper;
 
@@ -19,7 +22,7 @@ namespace Infra.MarcoLista.Output.Repository
         private MarcoListaContexto _db = new MarcoListaContexto();
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
-        //private DBOracle dBOracle = new DBOracle();
+        private DBOracle dBOracle = new DBOracle();
         public UsuarioRepository(IConfiguration configuracion, IMapper mapper)
         {
             _configuracion = configuracion;
@@ -38,15 +41,42 @@ namespace Infra.MarcoLista.Output.Repository
                            CodigoUUIDUsuario=u.CodigoUUID.ToString(),
                            Perfil=pf.Perfil,
                            NumeroDocumento=pe.NumeroDocumento,
-                           //NombreCompleto=(pe.Nombre+" "+pe.ApellidoPaterno + " "+pe.ApellidoMaterno).ToString(),
+                           NombreCompleto=pe.Nombre+" "+pe.ApellidoPaterno+" "+pe.ApellidoMaterno,
                            CorreoElectronico=pe.CorreoElectronico,
                            Estado=u.Estado
                         };
             return query.ToList();
         }
-        public async Task<UsuarioEntity> GetUsuarioxUUID(string uuid)
+        public async Task<UsuarioModel> GetUsuarioxUUID(string uuid)
         {
-            return _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+            var query = from u in _db.Usuario
+                        join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                        join pe in _db.Persona on u.IdPersona equals pe.Id
+                        where (u.Estado == 0 || u.Estado == 1) && (up.Estado == 0 || up.Estado == 1)
+                        && (pe.Estado == 0 || pe.Estado == 1) && u.CodigoUUID == uuid
+                        select new UsuarioModel
+                        {
+                            Id = u.Id,
+                            CodigoUUIDUsuario = u.CodigoUUID.ToString(),
+                            Usuario = u.Usuario,
+                            //ClaveAlmacenada= u.Clave, //GetClaveDesencriptada(u.Clave).ToString(),
+                            IdPerfil = up.IdPerfil,
+                            IdTipoDocumento = pe.IdTipoDocumento,
+                            NumeroDocumento = pe.NumeroDocumento,
+                            Nombre = pe.Nombre,
+                            ApellidoPaterno = pe.ApellidoPaterno,
+                            ApellidoMaterno = pe.ApellidoMaterno,
+                            IdOrganizacion = pe.IdOrganizacion,
+                            OficinaArea = pe.OficinaArea,
+                            Cargo = pe.Cargo,
+                            Celular = pe.Celular,
+                            CorreoElectronico = pe.CorreoElectronico,
+                            Estado=u.Estado
+                        };
+
+            var objUsuario= query.FirstOrDefault();
+            objUsuario.Clave = await GetClaveUsuario(objUsuario.Id);         
+            return objUsuario;
         }
         public async Task<string> CreateUsuario(UsuarioModel model)
         {
@@ -113,15 +143,19 @@ namespace Infra.MarcoLista.Output.Repository
                 objUsuarioPerfil.UsuarioActualizacion = "";
                 _db.UsuarioPerfil.Update(objUsuarioPerfil);
                 _db.SaveChanges();
-
+                registrarMarcoListaAsignado(objUsuario,model);
                 return objUsuario.CodigoUUID.ToString();
             }
             else
             {
+                var clave = GetRandomPassword(12);
+                var claveCifrada = await GetClaveEncriptada(clave);
+
                 var objUsuario = new UsuarioEntity()
                 {
                     IdPersona = personaId,
-
+                    Usuario = model.NumeroDocumento,
+                    Clave = claveCifrada,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
                     UsuarioCreacion = ""
@@ -139,11 +173,45 @@ namespace Infra.MarcoLista.Output.Repository
                 };
                 _db.UsuarioPerfil.Add(objUsuarioPerfil);
                 _db.SaveChanges();
-
+                registrarMarcoListaAsignado(objUsuario,model);
                 return objUsuario.CodigoUUID.ToString();
             }
+        }
+        private void registrarMarcoListaAsignado(UsuarioEntity objUsuario,UsuarioModel model)
+        {
+            var filas = from mu in _db.UsuarioMarcoLista
+                        where mu.IdUsuario == objUsuario.Id
+                        select mu;
 
+            _db.UsuarioMarcoLista.RemoveRange(filas);
+            _db.SaveChanges();
+            foreach (var marco in model.ListMarcoListaAsignados) {
+                var objMarcoUsuario = new UsuarioMarcoListaEntity()
+                {
+                    IdUsuario = objUsuario.Id,
+                    IdMarcoLista = marco.Id,
+                    Estado=1,
+                    FechaRegistro=DateTime.Now,
+                    UsuarioCreacion=""
+                };
+                _db.UsuarioMarcoLista.Add(objMarcoUsuario);
+                _db.SaveChanges();
+            }
+        }       
+        private static string GetRandomPassword(int length)
+        {
+            const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!¡#$%&()=¿?";
 
+            StringBuilder sb = new StringBuilder();
+            Random rnd = new Random();
+
+            for (int i = 0; i < length; i++)
+            {
+                int index = rnd.Next(chars.Length);
+                sb.Append(chars[index]);
+            }
+
+            return sb.ToString();
         }
         public async Task<string> DeleteUsuarioxUUID(string uuid)
         {
@@ -176,6 +244,150 @@ namespace Infra.MarcoLista.Output.Repository
             _db.Usuario.Update(objUsuario);
             _db.SaveChanges();
             return objUsuario.CodigoUUID.ToString();
+        }
+        public async Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid)
+        {
+            var query = from u in _db.Usuario 
+                        join um in _db.UsuarioMarcoLista on u.Id equals um.IdUsuario
+                        join m in _db.MarcoLista on um.IdMarcoLista equals m.Id
+                        join p in _db.Persona on m.IdPersona equals p.Id
+                        join c in _db.CondicionJuridica on p.IdCondicionJuridica equals c.Id
+                        where (m.Estado == 0 || m.Estado == 1) && (p.Estado == 0 || p.Estado == 1)
+                        && u.CodigoUUID==uuid                        
+                        select new MarcoListaModel
+                        {
+                            Id = m.Id,
+                            NumeroDocumento = p.NumeroDocumento,
+                            NombreCompleto = p.RazonSocial.IsNullOrEmpty() ? (p.Nombre + " " + p.ApellidoPaterno + " " + p.ApellidoMaterno) : p.RazonSocial,
+                            CondicionJuridica = c.CondicionJuridica,
+                            NombreRepLegal = p.NombreRepLegal,
+                            IdDepartamento = m.IdDepartamento,
+                            Estado = m.Estado
+                        };
+            return query.ToList();
+        }
+        public async Task<byte[]> GetClaveEncriptada(string clave)
+        {
+            OracleTransaction tr = null; 
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            byte[] claveEncriptada;
+            var conn = new OracleConnection(strCon);
+            await conn.OpenAsync();
+            
+            CifradoClave objClave = new CifradoClave();
+            try
+            {
+                objClave.Clave = clave;        
+                using (OracleCommand cmd = dBOracle.ManExecuteOutput(conn, null, "PKG_SEGURIDAD.SP_R_ENCRIPTAR", objClave))
+                {
+                    cmd.ExecuteNonQuery();
+                    //claveEncriptada = System.Text.Encoding.UTF32.GetString((byte[])cmd.Parameters["P_TXT_CLAVE_ENCRIPTADA"].Value);
+                    claveEncriptada = (byte[])cmd.Parameters["P_TXT_CLAVE_ENCRIPTADA"].Value;
+                }            
+                conn.Close();
+                return claveEncriptada;               
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<string> GetClaveDesencriptada(string claveEncriptada)
+        {
+            //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            var conn = new OracleConnection(strCon);
+            await conn.OpenAsync();
+            CifradoClave objClave = new CifradoClave();
+            try
+            {
+                //objClave.ClaveEncriptada = Encoding.UTF32.GetBytes(claveEncriptada);
+                objClave.ClaveEncriptada = claveEncriptada;
+                using (OracleCommand cmd = dBOracle.ManExecuteOutput(conn, null, "PKG_SEGURIDAD.SP_R_DESENCRIPTAR_CLAVE", objClave))
+                {
+                    cmd.ExecuteNonQuery();
+                    objClave.Clave = (String)cmd.Parameters["P_TXT_CLAVE"].Value;
+                }
+                conn.Close();
+                return objClave.Clave;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<string> GetClaveUsuario(long idUsuario)
+        {
+            //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            var conn = new OracleConnection(strCon);
+            await conn.OpenAsync();
+            try
+            {
+                GetClave param = new GetClave();
+                param.IdUsuario = idUsuario;
+                string clave = "";
+                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "PKG_SEGURIDAD.SP_R_CLAVE_USUARIO", param))
+                {
+                    if (dr != null)
+                    {
+                        if (dr.HasRows)
+                        {                
+                            while (dr.Read())
+                            {                     
+                                clave= dr["TXT_CLAVE"].ToString();                       
+                            }
+                        }
+                    }
+                }
+                conn.Close();
+                return clave;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<LoginModel> datosInicioSesion(AuthModel auth)
+        {
+            //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            var conn = new OracleConnection(strCon);
+            await conn.OpenAsync();
+            try
+            {
+                LoginModel login = new LoginModel();
+                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "PKG_SEGURIDAD.SP_R_INICIAR_SESION", auth))
+                {
+                    if (dr != null)
+                    {
+                        login = new LoginModel();
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                login.CodigoUUID = dr["TXT_CODIGO_UUID"].ToString();
+                                login.Usuario = dr["TXT_USUARIO"].ToString();
+                                login.NumeroDocumento = dr["TXT_NUMERO_DOCUMENTO"].ToString();
+                                login.Nombre = dr["TXT_NOMBRE"].ToString();            
+                                login.ApellidoPaterno = dr["TXT_APELLIDO_PATERNO"].ToString();
+                                login.ApellidoMaterno = dr["TXT_APELLIDO_MATERNO"].ToString();
+                                login.IdPerfil = long.Parse(dr["IDE_PERFIL"].ToString());
+                                login.CodigoPerfil = dr["TXT_CODIGO_PERFIL"].ToString();
+                                login.Perfil = dr["TXT_PERFIL"].ToString();
+                            }
+                        }
+                    }
+                }
+                conn.Close();
+                return login;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

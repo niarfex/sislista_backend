@@ -8,21 +8,40 @@ namespace Application.Service
     public class MarcoListaService : IMarcoListaService
     {
         private readonly IMarcoListaPort _marcolistaPort;
+        private readonly ICondicionJuridicaPort _condicionjuridicaPort;
+        private readonly IGeneralPort _generalPort;
         public MarcoListaService(IMarcoListaPort marcolistaPort
             , ICondicionJuridicaPort condicionjuridicaPort
             , IGeneralPort generalPort)
         {
             _marcolistaPort = marcolistaPort ?? throw new ArgumentNullException(nameof(marcolistaPort));
+            _condicionjuridicaPort = condicionjuridicaPort ?? throw new ArgumentNullException(nameof(condicionjuridicaPort));
+            _generalPort = generalPort ?? throw new ArgumentNullException(nameof(generalPort));
         }
         public async Task<List<MarcoListaModel>> GetAll(string param)
         {
             var marcolistas = await _marcolistaPort.GetAll(param);
+            var departamentos = await _generalPort.GetDepartamentos(1,"");
             if (marcolistas == null)
             {
                 throw new NotDataFoundException("No se encontraron datos registrados");
 
-            }        
-            return marcolistas;
+            }
+            var query = from m in marcolistas
+                        join d in departamentos on m.IdDepartamento equals d.Id
+                        select new MarcoListaModel
+                        {
+                            Id = m.Id,
+                            NumeroDocumento = m.NumeroDocumento,
+                            NombreCompleto = m.NombreCompleto,
+                            CondicionJuridica = m.CondicionJuridica,
+                            NombreRepLegal = m.NombreRepLegal,
+                            IdDepartamento = m.IdDepartamento,
+                            Departamento = d.Departamento,
+                            Estado = m.Estado
+                        };
+
+            return query.ToList();
         }
         public async Task<MarcoListaModel> GetMarcoListaxId(long id)
         {

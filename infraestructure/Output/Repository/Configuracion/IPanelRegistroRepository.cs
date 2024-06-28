@@ -5,10 +5,9 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface IPanelRegistroRepository
     {
-        Task<List<PanelRegistroEntity>> GetAll(ParamBusqueda param);
-        Task<PanelRegistroEntity> getPanelRegistro();
-        Task<PanelRegistroEntity> createPanelRegistro();
-        Task<PanelRegistroEntity> updatePanelRegistro();
-        Task<bool> deletePanelRegistro();
+        Task<List<PanelRegistroEntity>> GetAll(string param);
+        Task<PanelRegistroEntity> GetPanelRegistroxId(long id);
+        Task<long> CreatePanelRegistro(PanelRegistroModel model);
+        Task<long> DeletePanelRegistroxId(long id);
     }
 }

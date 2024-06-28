@@ -15,7 +15,7 @@ namespace Infra.MarcoLista.Configs
         {
             builder.ToTable("TC_USUARIO");
             builder.HasKey(c => c.Id);
-
+            builder.Property(c => c.Clave).HasColumnType("RAW");
         }
     }
 }

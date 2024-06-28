@@ -39,5 +39,6 @@ namespace Domain.Model
         //Lista
         public string? CondicionJuridica { get; set; }
         public string? NombreCompleto { get; set; }
+        public string? Departamento { get; set; }
     }
 }

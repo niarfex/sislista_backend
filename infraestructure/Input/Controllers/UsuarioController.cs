@@ -64,10 +64,11 @@ namespace Infra.MarcoLista.Input.Controllers
                 var listTipoDocumento = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTipoDocumentoPN());
                 var listPerfil = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetPerfiles());
                 var listOrganizacion = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetOrganizaciones());
-                var listDepartamentos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDepartamentos());
+                var listDepartamentos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDepartamentosMarcoLista());
                 if (uuid!="")
                 {
                     objUsuario = _mapper.Map<UsuarioGetDto>(await _usuarioService.GetUsuarioxUUID(uuid));
+                    objUsuario.ListMarcoListaAsignados = _mapper.Map< List<MarcoListaListDto>>(await _usuarioService.GetUsuarioMarcoLista(uuid));
                 }
                 objUsuario.ListTipoDocumento=listTipoDocumento;
                 objUsuario.ListPerfil = listPerfil;
@@ -164,6 +165,55 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al deshabilitar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("EnviarCredencialesxUUID")]
+        public async Task<ResponseModel> EnviarCredencialesxUUID(string uuid)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = await _usuarioService.SendCredenciales(uuid);
+                if (respuesta.success) { respuesta.message = "Se enviaron las credenciales correctamente"; }
+                else { respuesta.message = "Ocurrió un problema al enviar el mensaje"; }                
+                respuesta.data = null;
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al enviar las credenciales";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetDatosRENIEC")]
+        public async Task<ResponseModel> GetDatosREINEC(string dni)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var datos = await _generalService.GetDatosRENIEC(dni);
+                if (datos == null){
+                    respuesta.success = false;
+                    respuesta.message = "El DNI no retorno ningún resultado";
+                    respuesta.data = datos;
+                }
+                else {
+                    respuesta.success = true;
+                    respuesta.message = "Se obtuvieron los datos correctamente";
+                    respuesta.data = datos;
+                }       
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al consultar los datos";
                 return respuesta;
             }
         }

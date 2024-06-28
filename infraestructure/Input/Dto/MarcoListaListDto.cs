@@ -16,6 +16,10 @@ namespace Infra.MarcoLista.Input.Dto
         public string? CondicionJuridica { get; set; }
         [JsonPropertyName("RepresentanteLegal")]
         public string? RepresentanteLegal { get; set; }
+        [JsonPropertyName("IdDepartamento")]
+        public string? IdDepartamento { get; set; }
+        [JsonPropertyName("Departamento")]
+        public string? Departamento { get; set; }
         [JsonPropertyName("Estado")]
         public int Estado { get; set; }
     }
