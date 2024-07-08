@@ -10,5 +10,7 @@ namespace Domain.Model
 {
     public class CultivoModel
     {
+        public string Id { get; set; }
+        public string Cultivo { get; set; }
     }
 }

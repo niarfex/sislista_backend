@@ -66,6 +66,19 @@ namespace infraestructure.Output.Adapter
             {
                 return 0;
             }
-        }       
+        }
+        public async Task<long> NotificarNotificacionxId(long id)
+        {
+            var notificacionEntity = await _notificacionRepository.NotificarNotificacionxId(id);
+
+            if (notificacionEntity != null)
+            {
+                return notificacionEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

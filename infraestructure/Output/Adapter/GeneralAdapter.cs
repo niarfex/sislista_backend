@@ -17,6 +17,19 @@ namespace Infra.MarcoLista.Output.Adapter
             _generalRepository = generalRepository;
             _mapper = mapper;
         }
+        public async Task<List<CultivoModel>> GetAllCultivos()
+        {
+            var cultivoEntity = await _generalRepository.GetAllCultivos();
+
+            if (cultivoEntity != null)
+            {
+                return cultivoEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<List<UbigeoModel>> GetAllUbigeo(int idTipo, string idUbigeo)
         {
             var ubigeoEntity = await _generalRepository.GetAllUbigeo(idTipo, idUbigeo);
@@ -160,13 +173,13 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
-        public async Task<List<AnioModel>> GetFrecuencias()
+        public async Task<List<FrecuenciaModel>> GetFrecuencias()
         {
             var objetoEntity = await _generalRepository.GetFrecuencias();
 
             if (objetoEntity != null)
             {
-                return _mapper.Map<List<AnioModel>>(objetoEntity);
+                return _mapper.Map<List<FrecuenciaModel>>(objetoEntity);
             }
             else
             {
@@ -193,6 +206,58 @@ namespace Infra.MarcoLista.Output.Adapter
             if (objetoEntity != null)
             {
                 return _mapper.Map<List<EtapaModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<TenenciaModel>> GetTenencias()
+        {
+            var objetoEntity = await _generalRepository.GetTenencias();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<TenenciaModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<UsoTierraModel>> GetUsoTierras()
+        {
+            var objetoEntity = await _generalRepository.GetUsoTierras();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<UsoTierraModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<CultivoModel>> GetCultivos()
+        {
+            var objetoEntity = await _generalRepository.GetAllCultivos();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<CultivoModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<UsoNoAgricolaModel>> GetUsoNoAgricolas()
+        {
+            var objetoEntity = await _generalRepository.GetUsoNoAgricolas();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<UsoNoAgricolaModel>>(objetoEntity);
             }
             else
             {

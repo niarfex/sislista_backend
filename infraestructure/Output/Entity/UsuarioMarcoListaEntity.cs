@@ -8,7 +8,6 @@ namespace Infra.MarcoLista.Output.Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
         [Column("IDE_USUARIO_MARCO_LISTA")]
         public long Id { get; set; }
         [Column("IDE_USUARIO")]

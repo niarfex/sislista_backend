@@ -21,6 +21,10 @@ namespace Infra.MarcoLista.Output.Entity
         public string? Direccion { get; set; }
         [Column("IDE_DEPARTAMENTO")]
         public string? IdDepartamento { get; set; }
+        [Column("IDE_ANIO")]
+        public long? IdAnio { get; set; }
+        [ForeignKey("IdAnio")]
+        public AnioEntity DetalleAnio { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

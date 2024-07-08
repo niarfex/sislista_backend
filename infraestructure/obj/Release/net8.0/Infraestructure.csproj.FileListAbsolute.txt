@@ -60,3 +60,15 @@ C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\Infraestruc
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\Infraestructure.pdb
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\Infraestructure.genruntimeconfig.cache
 C:\REPO\SISLISTA\sislista_backend\infraestructure\obj\Release\net8.0\ref\Infraestructure.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\BouncyCastle.Cryptography.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\Enums.NET.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\ExtendedNumerics.BigDecimal.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\MathNet.Numerics.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\NPOI.Core.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\NPOI.OOXML.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\NPOI.OpenXml4Net.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\NPOI.OpenXmlFormats.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\ICSharpCode.SharpZipLib.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\SixLabors.Fonts.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Release\net8.0\SixLabors.ImageSharp.dll

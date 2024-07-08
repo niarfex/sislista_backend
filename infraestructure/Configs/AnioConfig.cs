@@ -13,7 +13,7 @@ namespace Infra.MarcoLista.Configs
     {
         public void Configure(EntityTypeBuilder<AnioEntity> builder)
         {
-            builder.ToTable("TC_ANIO");
+            builder.ToTable("TG_ANIO");
             builder.HasKey(c => c.Id);
 
         }

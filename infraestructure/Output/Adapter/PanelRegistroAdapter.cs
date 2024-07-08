@@ -67,5 +67,44 @@ namespace infraestructure.Output.Adapter
                 return 0;
             }
         }
+        public async Task<long> PublicarPanelRegistroxId(long id)
+        {
+            var panelregistroEntity = await _panelregistroRepository.PublicarPanelRegistroxId(id);
+
+            if (panelregistroEntity != null)
+            {
+                return panelregistroEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public async Task<long> PausarPanelRegistroxId(long id)
+        {
+            var panelregistroEntity = await _panelregistroRepository.PausarPanelRegistroxId(id);
+
+            if (panelregistroEntity != null)
+            {
+                return panelregistroEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public async Task<long> ReiniciarPanelRegistroxId(long id)
+        {
+            var panelregistroEntity = await _panelregistroRepository.ReiniciarPanelRegistroxId(id);
+
+            if (panelregistroEntity != null)
+            {
+                return panelregistroEntity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<PanelRegistroEntity>> GetAll(string param)
         {
-            return _db.PanelRegistro.ToList();
+            return _db.PanelRegistro.Where(x => x.Estado==0 || x.Estado==1 || x.Estado==2).ToList();
         }
         public async Task<PanelRegistroEntity> GetPanelRegistroxId(long id)
         {
@@ -64,6 +64,7 @@ namespace Infra.MarcoLista.Output.Repository
                     DecretoNorma = model.DecretoNorma,
                     Objetivo = model.Objetivo,
                     EnteRector = model.EnteRector,
+                    EstadoProgramacion=1,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
                     UsuarioCreacion = ""
@@ -79,13 +80,42 @@ namespace Infra.MarcoLista.Output.Repository
         {
             var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
             objPanelRegistro.Estado = 2;
+            objPanelRegistro.EstadoProgramacion = 5;
             objPanelRegistro.FechaActualizacion = DateTime.Now;
             objPanelRegistro.UsuarioActualizacion = "";
             _db.PanelRegistro.Update(objPanelRegistro);
             _db.SaveChanges();
             return objPanelRegistro.Id;
         }
-
-      
+        public async Task<long> PublicarPanelRegistroxId(long id)
+        {
+            var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
+            objPanelRegistro.EstadoProgramacion = 2;
+            objPanelRegistro.FechaActualizacion = DateTime.Now;
+            objPanelRegistro.UsuarioActualizacion = "";
+            _db.PanelRegistro.Update(objPanelRegistro);
+            _db.SaveChanges();
+            return objPanelRegistro.Id;
+        }
+        public async Task<long> PausarPanelRegistroxId(long id)
+        {
+            var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
+            objPanelRegistro.EstadoProgramacion=4;
+            objPanelRegistro.FechaActualizacion = DateTime.Now;
+            objPanelRegistro.UsuarioActualizacion = "";
+            _db.PanelRegistro.Update(objPanelRegistro);
+            _db.SaveChanges();
+            return objPanelRegistro.Id;
+        }
+        public async Task<long> ReiniciarPanelRegistroxId(long id)
+        {
+            var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
+            objPanelRegistro.EstadoProgramacion = 2;
+            objPanelRegistro.FechaActualizacion = DateTime.Now;
+            objPanelRegistro.UsuarioActualizacion = "";
+            _db.PanelRegistro.Update(objPanelRegistro);
+            _db.SaveChanges();
+            return objPanelRegistro.Id;
+        }
     }
 }

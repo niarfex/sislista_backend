@@ -27,7 +27,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<NotificacionEntity>> GetAll(string param)
         {
-            return _db.Notificacion.ToList();
+            return _db.Notificacion.Where(x => x.Estado==0 || x.Estado==1 || x.Estado==2).ToList();
         }
         public async Task<NotificacionEntity> GetNotificacionxId(long id)
         {
@@ -60,6 +60,7 @@ namespace Infra.MarcoLista.Output.Repository
                     IdEtapa = model.IdEtapa,
                     Descripcion = model.Descripcion,
                     IdPerfil = model.IdPerfil,
+                    EstadoNotificacion = 1,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
                     UsuarioCreacion = ""
@@ -75,6 +76,17 @@ namespace Infra.MarcoLista.Output.Repository
         {
             var objNotificacion = _db.Notificacion.Where(x => x.Id == id).FirstOrDefault();
             objNotificacion.Estado = 2;
+            objNotificacion.EstadoNotificacion = 3;
+            objNotificacion.FechaActualizacion = DateTime.Now;
+            objNotificacion.UsuarioActualizacion = "";
+            _db.Notificacion.Update(objNotificacion);
+            _db.SaveChanges();
+            return objNotificacion.Id;
+        }
+        public async Task<long> NotificarNotificacionxId(long id)
+        {
+            var objNotificacion = _db.Notificacion.Where(x => x.Id == id).FirstOrDefault();      
+            objNotificacion.EstadoNotificacion = 2;
             objNotificacion.FechaActualizacion = DateTime.Now;
             objNotificacion.UsuarioActualizacion = "";
             _db.Notificacion.Update(objNotificacion);
@@ -82,6 +94,5 @@ namespace Infra.MarcoLista.Output.Repository
             return objNotificacion.Id;
         }
 
-       
     }
 }

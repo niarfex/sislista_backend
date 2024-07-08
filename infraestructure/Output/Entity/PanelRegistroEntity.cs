@@ -35,7 +35,7 @@ namespace Infra.MarcoLista.Output.Entity
         public string? Objetivo { get; set; }
         [Column("TXT_ENTE_RECTOR")]
         public string? EnteRector { get; set; }
-        [Column("ESTADO_PROGRAMACION")]
+        [Column("INT_ESTADO_PROGRAMACION")]
         public int EstadoProgramacion { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }

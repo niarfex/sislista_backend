@@ -8,5 +8,6 @@ namespace Application.Input
         Task<NotificacionModel> GetNotificacionxId(long id);
         Task<long> CreateNotificacion(NotificacionModel model);
         Task<long> DeleteNotificacionxId(long id);
+        Task<long> NotificarNotificacionxId(long id);
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -15,14 +17,17 @@ namespace Infra.MarcoLista.Input.Controllers
     {
         private readonly IUsuarioService _usuarioService;
         private readonly IGeneralService _generalService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
         public UsuarioController(IUsuarioService usuarioService,
             IGeneralService generalService,
+            IExcelExporterService excelexporterService,
             IMapper mapper)
         {
             _usuarioService = usuarioService;
             _generalService = generalService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
         }
         [HttpGet]
@@ -51,6 +56,28 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {
+            try
+            {
+                var output = _mapper.Map<List<UsuarioListDto>>(await _usuarioService.GetAll(param));
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<UsuarioExcel>>(output));
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "usuarios.xlsx");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
         [HttpGet]
@@ -96,7 +123,7 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 var id = await _usuarioService.CreateUsuario(_mapper.Map<UsuarioModel>(dto));
                 respuesta.success = true;
-                respuesta.message = "Se creo el registro correctamente";
+                respuesta.message = "Se registraron los datos correctamente";
                 respuesta.data = id;
                 return respuesta;
 
@@ -104,7 +131,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al guardar el registro";
+                respuesta.message = "Ocurrió un error al registrar los datos";
                 return respuesta;
             }
         }
@@ -207,6 +234,36 @@ namespace Infra.MarcoLista.Input.Controllers
                     respuesta.message = "Se obtuvieron los datos correctamente";
                     respuesta.data = datos;
                 }       
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al consultar los datos";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetDatosSUNAT")]
+        public async Task<ResponseModel> GetDatosSUNAT(string ruc)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var datos = await _generalService.GetDatosSUNAT(ruc);
+                if (datos == null)
+                {
+                    respuesta.success = false;
+                    respuesta.message = "El RUC no retorno ningún resultado";
+                    respuesta.data = datos;
+                }
+                else
+                {
+                    respuesta.success = true;
+                    respuesta.message = "Se obtuvieron los datos correctamente";
+                    respuesta.data = datos;
+                }
                 return respuesta;
 
             }

@@ -27,7 +27,10 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<OrganizacionEntity>> GetAll(string param)
         {
-            return _db.Organizacion.ToList();
+            //var query = from o in _db.Organizacion select o;
+            //return query.ToList();
+            return _db.Organizacion.Where(x => x.Organizacion.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
+            x.NumeroDocumento.Trim().Contains(param.Trim())).ToList();
         }
         public async Task<OrganizacionEntity> GetOrganizacionxId(long id)
         {

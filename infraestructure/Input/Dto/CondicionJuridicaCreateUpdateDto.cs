@@ -16,7 +16,6 @@ namespace Infra.MarcoLista.Input.Dto
         public string? DescripcionCondicionJuridica { get; set; }
         [JsonPropertyName("Otros")]
         public int Otros { get; set; }
-        [JsonPropertyName("Estado")]
-        public int Estado { get; set; }
+
     }
 }

@@ -15,6 +15,11 @@ namespace Infra.MarcoLista.Configs
         {
             builder.ToTable("TMC_CUESTIONARIO");
             builder.HasKey(c => c.Id);
+            builder.Property(c => c.Nombre).HasColumnType("VARCHAR2");
+            builder.Property(c => c.ApellidoPaterno).HasColumnType("VARCHAR2");
+            builder.Property(c => c.ApellidoMaterno).HasColumnType("VARCHAR2");
+            builder.Property(c => c.RazonSocial).HasColumnType("VARCHAR2");
+            builder.Property(c => c.NombreRepLegal).HasColumnType("VARCHAR2");
 
         }
     }

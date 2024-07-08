@@ -1,0 +1,20 @@
+﻿using AutoMapper;
+using Infra.MarcoLista.Input.Dto;
+using Infra.MarcoLista.Output.Entity;
+using Domain.Model;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+namespace Infra.MarcoLista.Mapper
+{
+    public class GestionRegistroProfile : Profile
+    {
+        public GestionRegistroProfile()
+        {
+            CreateMap<TenenciaEntity, TenenciaModel>();
+            CreateMap<UsoTierraEntity, UsoTierraModel>();
+            CreateMap<UsoNoAgricolaEntity, UsoNoAgricolaModel>();
+            CreateMap<CultivoModel, CultivoListDto>();
+            CreateMap<GestionRegistroModel, GestionRegistroListDto>();
+            CreateMap<GestionRegistroModel, GestionRegistroGetDto>();
+        }
+    }
+}

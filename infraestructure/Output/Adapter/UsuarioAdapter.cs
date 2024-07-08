@@ -41,6 +41,19 @@ namespace infraestructure.Output.Adapter
                 return null;
             }
         }
+        public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
+        {
+            var usuarioEntity = await _usuarioRepository.GetUsuarioLoginxUUID(uuid);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<string> CreateUsuario(UsuarioModel model)
         {
             var usuarioEntity = await _usuarioRepository.CreateUsuario(model);
@@ -91,6 +104,32 @@ namespace infraestructure.Output.Adapter
             else
             {
                 return "";
+            }
+        }
+        public async Task<List<UsuarioModel>> GetCorreosUsuariosxPerfil(long idPerfil)
+        {
+            var usuarioEntity = await _usuarioRepository.GetCorreosUsuariosxPerfil(idPerfil);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<bool> ActualizarRefreshToken(string uuid, DateTime expiracion, string refreshToken)
+        {
+            var usuarioEntity = await _usuarioRepository.ActualizarRefreshToken(uuid,expiracion,refreshToken);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return false;
             }
         }
         public async Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid)

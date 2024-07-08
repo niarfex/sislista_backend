@@ -5,7 +5,45 @@ using Domain.Model;
 
 namespace Application.Service
 { 
-    public class GestionRegistroService
+    public class GestionRegistroService:IGestionRegistroService
     {
+        private readonly IGestionRegistroPort _gestionregistroPort;
+
+        public GestionRegistroService(IGestionRegistroPort gestionregistroPort)
+        {
+            _gestionregistroPort = gestionregistroPort ?? throw new ArgumentNullException(nameof(gestionregistroPort));
+        }
+        public async Task<List<GestionRegistroModel>> GetAll(string param, string uuid)
+        {
+            var gestionregistros = await _gestionregistroPort.GetAll(param,uuid);
+            if (gestionregistros == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return gestionregistros;
+        }
+        public async Task<GestionRegistroModel> GetGestionRegistroxUUID(string uuid)
+        {
+            var gestionregistro = await _gestionregistroPort.GetGestionRegistroxUUID(uuid);
+
+            if (gestionregistro == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return gestionregistro;
+        }
+        public async Task<GestionRegistroModel> GetUUIDCuestionario(string numDoc,long  idPeriodo)
+        {
+            var gestionregistro = await _gestionregistroPort.GetUUIDCuestionario(numDoc,idPeriodo);
+
+            if (gestionregistro == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return gestionregistro;
+        }
     }
 }

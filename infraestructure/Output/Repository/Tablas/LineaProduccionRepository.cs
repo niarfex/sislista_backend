@@ -28,7 +28,9 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<LineaProduccionEntity>> GetAll(string param)
         {
-            return _db.LineaProduccion.ToList();
+            return _db.LineaProduccion.Where(x => x.LineaProduccion.ToUpper().Contains(param.Trim().ToUpper())
+            || x.CodigoLineaProduccion.ToUpper().Contains(param.Trim().ToUpper())
+            || x.DescripcionLineaProduccion.ToUpper().Contains(param.Trim().ToUpper())).ToList();
         }
         public async Task<LineaProduccionEntity> GetLineaProduccionxId(long id)
         {

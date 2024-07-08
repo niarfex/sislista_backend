@@ -4,6 +4,7 @@ namespace Application.Output
 {
     public interface IGeneralPort
     {
+        Task<List<CultivoModel>> GetAllCultivos();
         Task<List<UbigeoModel>> GetAllUbigeo(int idTipo, string idUbigeo);
         Task<List<UbigeoModel>> GetDepartamentos(int idTipo, string idUbigeo);
         Task<List<UbigeoModel>> GetProvincias(int idTipo, string idUbigeo);
@@ -15,8 +16,12 @@ namespace Application.Output
         Task<List<PerfilModel>> GetPerfilesTodos();
         Task<List<AnioModel>> GetPeriodos();
         Task<List<PlantillaModel>> GetPlantillasActivas();
-        Task<List<AnioModel>> GetFrecuencias();
+        Task<List<FrecuenciaModel>> GetFrecuencias();
         Task<List<PanelRegistroModel>> GetProgramacionesVigentes();
         Task<List<EtapaModel>> GetEtapas();
+        Task<List<TenenciaModel>> GetTenencias();
+        Task<List<UsoTierraModel>> GetUsoTierras();
+        Task<List<CultivoModel>> GetCultivos();
+        Task<List<UsoNoAgricolaModel>> GetUsoNoAgricolas();
     }
 }

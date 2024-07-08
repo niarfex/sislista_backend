@@ -21,6 +21,8 @@ namespace Infra.MarcoLista.Input.Dto
         public long? IdCondicionJuridica { get; set; }
         [JsonPropertyName("IdCondicionJuridicaOtros")]
         public long? IdCondicionJuridicaOtros { get; set; }
+        [JsonPropertyName("IdAnio")]
+        public long? IdAnio { get; set; }
         [JsonPropertyName("IdUbigeo")]
         public string? IdUbigeo { get; set; }
         [JsonPropertyName("CodigoUUIDPersona")]
@@ -68,5 +70,7 @@ namespace Infra.MarcoLista.Input.Dto
         public List<SelectTipoDto> ListDistrito { get; set; }
         [JsonPropertyName("ListTipoExplotacion")]
         public List<SelectTipoDto> ListTipoExplotacion { get; set; }
+        [JsonPropertyName("ListPeriodos")]
+        public List<SelectTipoDto> ListPeriodos { get; set; }
     }
 }

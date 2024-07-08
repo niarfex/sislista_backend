@@ -5,6 +5,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public interface IGeneralRepository
     {
+        Task<List<CultivoModel>> GetAllCultivos();
         Task<List<UbigeoModel>> GetAllUbigeo(int idTipo, string idUbigeo);
         Task<List<UbigeoModel>> GetDepartamentos(int idTipo, string idUbigeo);
         Task<List<UbigeoModel>> GetProvincias(int idTipo, string idUbigeo);
@@ -16,8 +17,11 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<PerfilEntity>> GetPerfilesTodos();
         Task<List<AnioEntity>> GetPeriodos();
         Task<List<PlantillaEntity>> GetPlantillasActivas();
-        Task<List<AnioEntity>> GetFrecuencias();
+        Task<List<FrecuenciaEntity>> GetFrecuencias();
         Task<List<PanelRegistroEntity>> GetProgramacionesVigentes();
         Task<List<EtapaEntity>> GetEtapas();
+        Task<List<TenenciaEntity>> GetTenencias();
+        Task<List<UsoTierraEntity>> GetUsoTierras();
+        Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas();
     }
 }

@@ -27,7 +27,7 @@ namespace Infra.MarcoLista.Output.Entity
         public long? IdPerfil { get; set; }
         [ForeignKey("IdPerfil")]
         public EtapaEntity DetallePerfil { get; set; }
-        [Column("ESTADO_NOTIFICACION")]
+        [Column("INT_ESTADO_NOTIFICACION")]
         public int EstadoNotificacion { get; set; }
         [Column("FEC_NOTIFICACION")]
         public DateTime? FechaNotificacion { get; set; }

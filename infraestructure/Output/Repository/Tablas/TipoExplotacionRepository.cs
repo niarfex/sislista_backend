@@ -28,7 +28,9 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<TipoExplotacionEntity>> GetAll(string param)
         {
-            return _db.TipoExplotacion.ToList();
+            return _db.TipoExplotacion.Where(x => x.TipoExplotacion.ToUpper().Contains(param.Trim().ToUpper())
+             || x.CodigoTipoExplotacion.ToUpper().Contains(param.Trim().ToUpper())
+             || x.DescripcionTipoExplotacion.ToUpper().Contains(param.Trim().ToUpper())).ToList();
         }
         public async Task<TipoExplotacionEntity> GetTipoExplotacionxId(long id)
         {

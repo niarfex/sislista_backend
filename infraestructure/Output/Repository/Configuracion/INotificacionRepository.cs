@@ -9,5 +9,6 @@ namespace Infra.MarcoLista.Output.Repository
         Task<NotificacionEntity> GetNotificacionxId(long id);
         Task<long> CreateNotificacion(NotificacionModel model);
         Task<long> DeleteNotificacionxId(long id);
+        Task<long> NotificarNotificacionxId(long id);
     }
 }

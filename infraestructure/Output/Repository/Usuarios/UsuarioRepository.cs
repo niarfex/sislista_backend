@@ -6,6 +6,7 @@ using Infra.MarcoLista.GeneralSQL;
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Oracle.ManagedDataAccess.Client;
@@ -34,16 +35,21 @@ namespace Infra.MarcoLista.Output.Repository
                         join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
                         join pf in _db.Perfil on up.IdPerfil equals pf.Id
                         join pe in _db.Persona on u.IdPersona equals pe.Id
-                        where (u.Estado == 0 || u.Estado == 1) && (up.Estado == 0 || up.Estado == 1) 
+                        where (u.Estado == 0 || u.Estado == 1) && (up.Estado == 0 || up.Estado == 1)
                         && (pe.Estado == 0 || pe.Estado == 1) && (pf.Estado == 0 || pf.Estado == 1)
+                        where (u.Usuario.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pf.Perfil.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
+                        pe.Nombre.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.ApellidoMaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
+                        pe.ApellidoPaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()))
                         select new UsuarioModel
                         {
-                           CodigoUUIDUsuario=u.CodigoUUID.ToString(),
-                           Perfil=pf.Perfil,
-                           NumeroDocumento=pe.NumeroDocumento,
-                           NombreCompleto=pe.Nombre+" "+pe.ApellidoPaterno+" "+pe.ApellidoMaterno,
-                           CorreoElectronico=pe.CorreoElectronico,
-                           Estado=u.Estado
+                            Id = u.Id,
+                            CodigoUUIDUsuario = u.CodigoUUID.ToString(),
+                            Perfil = pf.Perfil,
+                            NumeroDocumento = pe.NumeroDocumento,
+                            NombreCompleto = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
+                            CorreoElectronico = pe.CorreoElectronico,
+                            IdOrganizacion = pe.IdOrganizacion,
+                            Estado = u.Estado
                         };
             return query.ToList();
         }
@@ -77,6 +83,29 @@ namespace Infra.MarcoLista.Output.Repository
             var objUsuario= query.FirstOrDefault();
             objUsuario.Clave = await GetClaveUsuario(objUsuario.Id);         
             return objUsuario;
+        }
+        public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
+        {
+            var query = from u in _db.Usuario
+                        join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                        join p in _db.Perfil on up.IdPerfil equals p.Id
+                        join pe in _db.Persona on u.IdPersona equals pe.Id
+                        where (u.Estado == 0 || u.Estado == 1) && (up.Estado == 0 || up.Estado == 1)
+                        && (pe.Estado == 0 || pe.Estado == 1) && u.CodigoUUID == uuid
+                        select new LoginModel
+                        {                          
+                            CodigoUUID = u.CodigoUUID.ToString(),
+                            Usuario = u.Usuario,
+                            IdPerfil = up.IdPerfil,   
+                            CodigoPerfil = p.CodigoPerfil,
+                            Perfil = p.Perfil,
+                            NumeroDocumento = pe.NumeroDocumento,
+                            Nombre = pe.Nombre,
+                            ApellidoPaterno = pe.ApellidoPaterno,
+                            ApellidoMaterno = pe.ApellidoMaterno                            
+                        };
+      
+            return query.FirstOrDefault();
         }
         public async Task<string> CreateUsuario(UsuarioModel model)
         {
@@ -244,6 +273,49 @@ namespace Infra.MarcoLista.Output.Repository
             _db.Usuario.Update(objUsuario);
             _db.SaveChanges();
             return objUsuario.CodigoUUID.ToString();
+        }
+        public async Task<List<UsuarioModel>> GetCorreosUsuariosxPerfil(long idPerfil) {
+            if (idPerfil == 0) {
+                var usuarios = from u in _db.Usuario
+                               join p in _db.Persona on u.IdPersona equals p.Id
+                               join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                               where u.Estado == 1
+                               select new UsuarioModel
+                               {
+                                   CodigoUUIDPersona = p.CodigoUUID,
+                                   Nombre = p.Nombre,
+                                   ApellidoPaterno = p.ApellidoPaterno,
+                                   ApellidoMaterno = p.ApellidoMaterno,
+                                   CorreoElectronico = p.CorreoElectronico
+                               };
+                return usuarios.ToList();
+            }
+            else {
+                var usuarios = from u in _db.Usuario
+                               join p in _db.Persona on u.IdPersona equals p.Id
+                               join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                               where up.IdPerfil == idPerfil
+                               where u.Estado == 1
+                               select new UsuarioModel
+                               {
+                                   CodigoUUIDPersona = p.CodigoUUID,
+                                   Nombre = p.Nombre,
+                                   ApellidoPaterno = p.ApellidoPaterno,
+                                   ApellidoMaterno = p.ApellidoMaterno,
+                                   CorreoElectronico = p.CorreoElectronico
+                               };
+                return usuarios.ToList();
+            }
+            
+        }
+        public async Task<bool> ActualizarRefreshToken(string uuid, DateTime expiracion, string refreshToken) {
+
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+            objUsuario.refreshToken=refreshToken;
+            objUsuario.FechaRefreshTokenExpiracion = expiracion;
+            _db.Usuario.Update(objUsuario);
+            _db.SaveChanges();
+            return true;
         }
         public async Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid)
         {

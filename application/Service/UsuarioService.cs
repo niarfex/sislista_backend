@@ -8,6 +8,7 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using Domain;
 
 namespace Application.Service
 {
@@ -16,7 +17,6 @@ namespace Application.Service
         private readonly IUsuarioPort _usuarioPort;
         private readonly IGeneralPort _generalPort;
         private readonly IConfiguration _appConfiguration;
-
         public UsuarioService(IUsuarioPort usuarioPort
             , IGeneralPort generalPort
             , IConfiguration appConfiguration )
@@ -38,6 +38,17 @@ namespace Application.Service
         public async Task<UsuarioModel> GetUsuarioxUUID(string uuid)
         {
             var usuario = await _usuarioPort.GetUsuarioxUUID(uuid);
+
+            if (usuario == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return usuario;
+        }
+        public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
+        {
+            var usuario = await _usuarioPort.GetUsuarioLoginxUUID(uuid);
 
             if (usuario == null)
             {
@@ -185,7 +196,9 @@ namespace Application.Service
             }
             if (usuario.CodigoUUID!=null)
             {
-                usuario.AccessToken = GenerateJWTToken(usuario);                
+                var tokens = await GenerateJWTToken(usuario);
+                usuario.AccessToken = tokens.AccessToken;
+                usuario.RefreshToken = tokens.RefreshToken;
                 return usuario;
             }
             else
@@ -193,16 +206,17 @@ namespace Application.Service
                 return null;
             }            
         }
-        private string GenerateJWTToken(LoginModel usuario)
+        private async Task<TokenModel> GenerateJWTToken(LoginModel usuario)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appConfiguration[$"Authentication:JwtBearer:SecurityKey"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            TokenModel tokens = new TokenModel();
 
             var claims = new[] {
                 new Claim("Usuario", usuario.Usuario),
-                new Claim(JwtRegisteredClaimNames.Name, usuario.Nombre),
+                new Claim("Nombre", usuario.Nombre),
                 new Claim(JwtRegisteredClaimNames.Aud, _appConfiguration[$"Authentication:JwtBearer:Audience"]),                
-                new Claim(JwtRegisteredClaimNames.Jti, usuario.CodigoUUID),
+                new Claim("CodigoUUID", usuario.CodigoUUID),
                 new Claim("CodigoPerfil", usuario.CodigoPerfil),
                 new Claim("Perfil", usuario.Perfil)
             };
@@ -214,7 +228,17 @@ namespace Application.Service
                 expires: DateTime.Now.AddMinutes(double.Parse(_appConfiguration[$"Authentication:JwtBearer:Duracion"].ToString())),
                 signingCredentials: credentials);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var AccesToken= new JwtSecurityTokenHandler().WriteToken(token);
+
+            var expiracion = DateTime.UtcNow.AddDays(7);
+            var refreshToken = Guid.NewGuid().ToString("N");
+
+            var actualizado = await _usuarioPort.ActualizarRefreshToken(usuario.CodigoUUID, expiracion, refreshToken);
+            tokens.AccessToken = AccesToken;
+            tokens.RefreshToken = refreshToken;
+
+            return tokens;
+
         }
     }
 }

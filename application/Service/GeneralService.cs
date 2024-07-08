@@ -30,6 +30,16 @@ namespace Application.Service
             _marcolistaPort = marcolistaPort ?? throw new ArgumentNullException(nameof(marcolistaPort));
             _appConfiguration = appConfiguration;
         }
+        public async Task<List<CultivoModel>> GetAllCultivos(string param)
+        {
+            var cultivos = (await _generalPort.GetAllCultivos()).Where(x => x.Cultivo.ToUpper().Contains(param.ToUpper())).ToList();
+            if (cultivos == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return cultivos;
+        }
         public async Task<List<UbigeoModel>> GetAllUbigeo(string param)
         {            
             var ubigeos = await _generalPort.GetAllUbigeo(4, param);
@@ -383,8 +393,8 @@ namespace Application.Service
             {
                 list = new SelectTipoModel();
                 list.value = dep.Id.ToString();
-                list.label = dep.Anio;
-                list.codigo = dep.Anio;
+                list.label = dep.Frecuencia;
+                list.codigo = dep.Frecuencia;
                 listaTipos.Add(list);
             }
             return listaTipos;
@@ -427,6 +437,90 @@ namespace Application.Service
                 list.value = dep.Id.ToString();
                 list.label = dep.Etapa;
                 list.codigo = dep.Etapa;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetTenencias()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetTenencias();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.Tenencia;
+                list.codigo = dep.Tenencia;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetUsoTierras()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetUsoTierras();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.UsoTierra;
+                list.codigo = dep.UsoTierra;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetCultivos()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetCultivos();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.Cultivo;
+                list.codigo = dep.Cultivo;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetUsoNoAgricolas()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetUsoNoAgricolas();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.UsoNoAgricola;
+                list.codigo = dep.UsoNoAgricola;
                 listaTipos.Add(list);
             }
             return listaTipos;

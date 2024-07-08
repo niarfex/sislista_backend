@@ -4,6 +4,11 @@ namespace Application.Output
 {
     public interface IEspeciePort
     {
-        Task<List<EspecieModel>> GetAll(ParamBusqueda param);
+        Task<List<EspecieModel>> GetAll(string param);
+        Task<EspecieModel> GetEspeciexId(long id);
+        Task<long> CreateEspecie(EspecieModel model);
+        Task<long> DeleteEspeciexId(long id);
+        Task<long> ActivarEspeciexId(long id);
+        Task<long> DesactivarEspeciexId(long id);
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -14,14 +16,17 @@ namespace Infra.MarcoLista.Input.Controllers
     public class MarcoListaController : ControllerBase
     {
         private readonly IMarcoListaService _marcolistaService;
-        private readonly IGeneralService _generalService;        
+        private readonly IGeneralService _generalService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
         public MarcoListaController(IMarcoListaService marcolistaService, 
-            IGeneralService generalService,             
+            IGeneralService generalService,
+            IExcelExporterService excelexporterService,
             IMapper mapper)        {
             _marcolistaService = marcolistaService;
-            _generalService = generalService; 
+            _generalService = generalService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
         }
 
@@ -55,6 +60,28 @@ namespace Infra.MarcoLista.Input.Controllers
             }
         }
         [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {
+            try
+            {
+                var output = _mapper.Map<List<MarcoListaListDto>>(await _marcolistaService.GetAll(param));
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<MarcoListaExcel>>(output));
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "marcolista.xlsx");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        [HttpGet]
         [Route("GetMarcoListaxId")]
         public async Task<ResponseModel> GetMarcoListaxId(long id)
         {
@@ -67,6 +94,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 var listCondicionJuridicaOtros = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetCondicionJuridicaOtros());
                 var listTipoDocumento = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTipoDocumento());
                 var listTipoExplotacion = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTipoExplotacion());
+                var listPeriodos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetPeriodos());
                 if (id > 0)
                 {
                     objMarcoLista = _mapper.Map<MarcoListaGetDto>(await _marcolistaService.GetMarcoListaxId(id));
@@ -78,6 +106,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 objMarcoLista.ListCondicionJuridicaOtros = listCondicionJuridicaOtros;
                 objMarcoLista.ListTipoDocumento = listTipoDocumento;
                 objMarcoLista.ListTipoExplotacion = listTipoExplotacion;
+                objMarcoLista.ListPeriodos = listPeriodos;
                 objMarcoLista.ListDepartamento = listDepartamentos;
                 respuesta.success = true;
                 respuesta.message = "Se listan los datos correctamente";
@@ -101,7 +130,7 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 var id = await _marcolistaService.CreateMarcoLista(_mapper.Map<MarcoListaModel>(dto));
                 respuesta.success = true;
-                respuesta.message = "Se creo el registro correctamente";
+                respuesta.message = "Se registraron los datos correctamente";
                 respuesta.data = id;
                 return respuesta;
 

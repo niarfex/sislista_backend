@@ -10,5 +10,10 @@ namespace Domain.Model
 {
     public class EspecieModel
     {
+        public long Id { get; set; }
+        public string? CodigoEspecie { get; set; }
+        public string? Especie { get; set; }
+        public string? DescripcionEspecie { get; set; }
+        public int Estado { get; set; }
     }
 }

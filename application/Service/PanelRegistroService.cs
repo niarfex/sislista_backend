@@ -28,7 +28,7 @@ namespace Application.Service
             }
             var query = from o in panelregistros
                         join p in periodos on o.IdAnio equals p.Id           
-                        where o.Estado == 0 || o.Estado == 1
+                        where o.Estado == 0 || o.Estado == 1 || o.Estado == 2
                         select new PanelRegistroModel
                         {
                             Id = o.Id,
@@ -71,6 +71,39 @@ namespace Application.Service
 
             }
             return panelregistro;
-        }       
+        }
+        public async Task<long> PublicarPanelRegistroxId(long id)
+        {
+            var panelregistro = await _panelregistroPort.PublicarPanelRegistroxId(id);
+
+            if (panelregistro == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return panelregistro;
+        }
+        public async Task<long> PausarPanelRegistroxId(long id)
+        {
+            var panelregistro = await _panelregistroPort.PausarPanelRegistroxId(id);
+
+            if (panelregistro == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return panelregistro;
+        }
+        public async Task<long> ReiniciarPanelRegistroxId(long id)
+        {
+            var panelregistro = await _panelregistroPort.ReiniciarPanelRegistroxId(id);
+
+            if (panelregistro == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return panelregistro;
+        }
     }
 }

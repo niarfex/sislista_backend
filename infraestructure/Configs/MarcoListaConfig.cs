@@ -15,7 +15,7 @@ namespace Infra.MarcoLista.Configs
         {
             builder.ToTable("TMC_MARCO_LISTA");
             builder.HasKey(c => c.Id);
-
+            builder.Property(c => c.IdAnio).HasColumnType("NUMBER");
         }
     }
 }

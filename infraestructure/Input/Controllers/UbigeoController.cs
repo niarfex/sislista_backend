@@ -1,8 +1,10 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -13,11 +15,15 @@ namespace Infra.MarcoLista.Input.Controllers
     public class UbigeoController : ControllerBase
     {
         private readonly IGeneralService _generalService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
-        public UbigeoController(IGeneralService generalService, IMapper mapper)
+        public UbigeoController(IGeneralService generalService,
+            IExcelExporterService excelexporterService,
+            IMapper mapper)
         {
             _generalService = generalService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
         }
         [HttpGet]
@@ -46,6 +52,28 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {
+            try
+            {
+                var output = _mapper.Map<List<UbigeoListDto>>(await _generalService.GetAllUbigeo(param));
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<UbigeoExcel>>(output));
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ubigeo.xlsx");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
         [HttpGet]

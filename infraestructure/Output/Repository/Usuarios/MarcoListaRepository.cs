@@ -33,10 +33,11 @@ namespace Infra.MarcoLista.Output.Repository
                         join p in _db.Persona on m.IdPersona equals p.Id
                         join c in _db.CondicionJuridica on p.IdCondicionJuridica equals c.Id
                         where (m.Estado == 0 || m.Estado == 1) && (p.Estado == 0 || p.Estado == 1)
-                        && (p.RazonSocial.ToUpper().Contains(param.ToUpper()) ||
-                        p.Nombre.ToUpper().Contains(param.ToUpper()) ||
-                        p.ApellidoPaterno.ToUpper().Contains(param.ToUpper()) ||
-                        p.ApellidoMaterno.ToUpper().Contains(param.ToUpper())
+                        && (p.NumeroDocumento.Contains(param.Trim().ToUpper()) || 
+                        p.RazonSocial.ToUpper().Contains(param.Trim().ToUpper()) ||
+                        p.Nombre.ToUpper().Contains(param.Trim().ToUpper()) ||
+                        p.ApellidoPaterno.ToUpper().Contains(param.Trim().ToUpper()) ||
+                        p.ApellidoMaterno.ToUpper().Contains(param.Trim().ToUpper())
                         )
                         select new MarcoListaModel
                         { 
@@ -68,6 +69,7 @@ namespace Infra.MarcoLista.Output.Repository
                             IdCondicionJuridica = p.IdCondicionJuridica,
                             IdCondicionJuridicaOtros = p.IdCondicionJuridicaOtros,
                             IdUbigeo = p.IdUbigeo,
+                            IdAnio = m.IdAnio,
                             CodigoUUIDPersona = p.CodigoUUID.ToString(),
                             NumeroDocumento = p.NumeroDocumento,
                             Nombre = p.Nombre,
@@ -158,6 +160,7 @@ namespace Infra.MarcoLista.Output.Repository
                 var objMarcoLista = _db.MarcoLista.Where(x => x.Id == model.Id).FirstOrDefault();
                 objMarcoLista.IdTipoExplotacion = model.IdTipoExplotacion;       
                 objMarcoLista.IdDepartamento = model.IdDepartamento;
+                objMarcoLista.IdAnio = model.IdAnio;
                 objMarcoLista.IdPersona = personaId;
                 objMarcoLista.Direccion = model.Direccion;
                 objMarcoLista.FechaActualizacion = DateTime.Now;
@@ -172,6 +175,7 @@ namespace Infra.MarcoLista.Output.Repository
                 {
                     IdTipoExplotacion = model.IdTipoExplotacion,
                     IdDepartamento = model.IdDepartamento,
+                    IdAnio = model.IdAnio,
                     IdPersona = personaId,
                     Direccion = model.Direccion,               
                     Estado = 1,

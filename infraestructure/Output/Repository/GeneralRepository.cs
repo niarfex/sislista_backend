@@ -26,6 +26,42 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _mapper = mapper;
         }
+        public async Task<List<CultivoModel>> GetAllCultivos()
+        {
+            //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            var conn = new OracleConnection(strCon);
+            await conn.OpenAsync();
+            List<CultivoModel> listCultivos = new List<CultivoModel>();
+            try
+            {
+                CultivoFiltro cultivoFiltro = new CultivoFiltro();
+                
+                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "PKG_MANTENIMIENTO.SP_R_LISTAR_TG_CULTIVO", cultivoFiltro))
+                {
+                    if (dr != null)
+                    {
+                        if (dr.HasRows)
+                        {
+                            CultivoModel oCampos;
+                            while (dr.Read())
+                            {
+                                oCampos = new CultivoModel();
+                                oCampos.Id = dr["IDE_CULTIVO"].ToString();
+                                oCampos.Cultivo = dr["TXT_CULTIVO"].ToString();
+                                listCultivos.Add(oCampos);
+                            }
+                        }
+                    }
+                }
+                conn.Close();
+                return listCultivos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<List<UbigeoModel>> GetAllUbigeo(int idTipo, string idUbigeo)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
@@ -199,15 +235,15 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<AnioEntity>> GetPeriodos()
         {
-            return _db.Anio.Where(x => x.Estado == 0 || x.Estado == 1).ToList();
+            return _db.Anio.Where(x => x.Estado == 0 || x.Estado == 1).OrderByDescending(x => x.Anio).ToList();
         }
         public async Task<List<PlantillaEntity>> GetPlantillasActivas()
         {
             return _db.Plantilla.Where(x =>  x.Estado == 1).ToList();
         }
-        public async Task<List<AnioEntity>> GetFrecuencias()
+        public async Task<List<FrecuenciaEntity>> GetFrecuencias()
         {
-            return _db.Anio.Where(x => x.Estado == 0 || x.Estado == 1).ToList();
+            return _db.Frecuencia.Where(x => x.Estado == 0 || x.Estado == 1).ToList();
         }
         public async Task<List<PanelRegistroEntity>> GetProgramacionesVigentes()
         {
@@ -216,6 +252,18 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<EtapaEntity>> GetEtapas()
         {
             return _db.Etapa.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<TenenciaEntity>> GetTenencias()
+        {
+            return _db.Tenencia.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<UsoTierraEntity>> GetUsoTierras()
+        {
+            return _db.UsoTierra.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas()
+        {
+            return _db.UsoNoAgricola.Where(x => x.Estado == 1).ToList();
         }
     }
 }

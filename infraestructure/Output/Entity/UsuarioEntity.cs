@@ -21,7 +21,7 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("TXT_CLAVE")]
         public byte[] Clave { get; set; }
         [Column("TXT_TOKEN_RESETEO_CLAVE")]
-        public long? TokenReseteoClave { get; set; }
+        public string? TokenReseteoClave { get; set; }
 
         [Column("FEC_TOKEN_RESETEO_EXPIRACION")]
         public DateTime? FechaTokenReseteoExpiracion { get; set; }
@@ -40,5 +40,9 @@ namespace Infra.MarcoLista.Output.Entity
 
         [Column("TXT_USUARIO_ACTUALIZACION")]
         public string? UsuarioActualizacion { get; set; }
+        [Column("TXT_REFRESH_TOKEN")]
+        public string? refreshToken { get; set; }
+        [Column("FEC_REFRESH_TOKEN_EXPIRACION")]
+        public DateTime? FechaRefreshTokenExpiracion { get; set; }
     }
 }

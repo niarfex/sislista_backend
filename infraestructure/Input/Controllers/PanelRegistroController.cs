@@ -1,8 +1,10 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -15,14 +17,17 @@ namespace Infra.MarcoLista.Input.Controllers
     {
         private readonly IPanelRegistroService _panelregistroService;
         private readonly IGeneralService _generalService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
         public PanelRegistroController(IPanelRegistroService panelregistroService,
             IGeneralService generalService,
+            IExcelExporterService excelexporterService,
             IMapper mapper)
         {
             _panelregistroService = panelregistroService;
             _generalService = generalService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
         }
         [HttpGet]
@@ -54,6 +59,28 @@ namespace Infra.MarcoLista.Input.Controllers
             }
         }
         [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {
+            try
+            {
+                var output = _mapper.Map<List<PanelRegistroListDto>>(await _panelregistroService.GetAll(param));
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<PanelRegistroExcel>>(output));
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "panelregistro.xlsx");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        [HttpGet]
         [Route("GetPanelRegistroxId")]
         public async Task<ResponseModel> GetPanelRegistroxId(long id)
         {
@@ -78,7 +105,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al consultar el listado";
+                respuesta.message = "Ocurrió un error al obtener los datos";
                 return respuesta;
             }
         }
@@ -91,7 +118,7 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 var id = await _panelregistroService.CreatePanelRegistro(_mapper.Map<PanelRegistroModel>(dto));
                 respuesta.success = true;
-                respuesta.message = "Se creo el registro correctamente";
+                respuesta.message = "Se registraron los datos correctamente";
                 respuesta.data = id;
                 return respuesta;
 
@@ -99,7 +126,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al consultar el listado";
+                respuesta.message = "Ocurrió un error al registrar los datos";
                 return respuesta;
             }
         }
@@ -122,6 +149,66 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.message = "Ocurrió un error al borrar el registro";
                 return respuesta;
             }
-        }               
+        }
+        [HttpGet]
+        [Route("PublicarPanelRegistroxId")]
+        public async Task<ResponseModel> PublicarPanelRegistroxId(long id)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se publicó el registro correctamente";
+                respuesta.data = await _panelregistroService.PublicarPanelRegistroxId(id);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al publicar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("PausarPanelRegistroxId")]
+        public async Task<ResponseModel> PausarPanelRegistroxId(long id)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se pausó el registro correctamente";
+                respuesta.data = await _panelregistroService.PausarPanelRegistroxId(id);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al pausar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("ReiniciarPanelRegistroxId")]
+        public async Task<ResponseModel> ReiniciarPanelRegistroxId(long id)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se reinició el registro correctamente";
+                respuesta.data = await _panelregistroService.ReiniciarPanelRegistroxId(id);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al reiniciar el registro";
+                return respuesta;
+            }
+        }
     }
 }

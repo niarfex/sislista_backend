@@ -8,11 +8,15 @@ namespace Application.Service
     public class OrganizacionService : IOrganizacionService
     {
         private readonly IOrganizacionPort _organizacionPort;
+        private readonly IUsuarioPort _usuarioPort;
         private readonly IGeneralPort _generalPort;
 
-        public OrganizacionService(IOrganizacionPort organizacionPort,IGeneralPort generalPort)
+        public OrganizacionService(IOrganizacionPort organizacionPort,
+            IUsuarioPort usuarioPort,
+            IGeneralPort generalPort)
         {
             _organizacionPort = organizacionPort ?? throw new ArgumentNullException(nameof(organizacionPort));
+            _usuarioPort = usuarioPort ?? throw new ArgumentNullException(nameof(usuarioPort));
             _generalPort = generalPort ?? throw new ArgumentNullException(nameof(generalPort));
         }
         public async Task<List<OrganizacionModel>> GetAll(string param)
@@ -25,6 +29,12 @@ namespace Application.Service
                 throw new NotDataFoundException("No se encontraron datos registrados");
 
             }
+            var usuarios = await _usuarioPort.GetAll("");
+            var queryUsuarios = from o in organizacions
+                                join u in usuarios on o.Id equals u.IdOrganizacion
+                                where u.Estado == 1
+                                select o;
+
             var query = from o in organizacions
                         join t in tipoOrganizacion on o.IdTipoOrganizacion equals t.Id
                         join d in departamentos on o.IdDepartamento equals d.Id
@@ -36,7 +46,7 @@ namespace Application.Service
                             NumeroDocumento = o.NumeroDocumento,
                             Organizacion = o.Organizacion,
                             Departamento = d.Departamento,
-                            Usuarios = 0,
+                            Usuarios = (queryUsuarios.Where(x => x.Id==o.Id).Count()),
                             Estado = o.Estado
                         };
             return query.ToList();

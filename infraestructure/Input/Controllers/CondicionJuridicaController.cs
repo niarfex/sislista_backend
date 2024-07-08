@@ -1,8 +1,10 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -14,11 +16,15 @@ namespace Infra.MarcoLista.Input.Controllers
     public class CondicionJuridicaController : ControllerBase
     {
         private readonly ICondicionJuridicaService _condicionjuridicaService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
-        public CondicionJuridicaController(ICondicionJuridicaService condicionjuridicaService, IMapper mapper)
+        public CondicionJuridicaController(ICondicionJuridicaService condicionjuridicaService,
+            IExcelExporterService excelexporterService,
+            IMapper mapper)
         {
             _condicionjuridicaService = condicionjuridicaService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
         }
         [HttpGet]
@@ -47,6 +53,28 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {
+            try
+            {
+                var output = _mapper.Map<List<CondicionJuridicaListDto>>(await _condicionjuridicaService.GetAll(param));
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<CondicionJuridicaExcel>>(output));
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "condicionjuridicas.xlsx");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
         [HttpGet]
@@ -83,7 +111,7 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 var id = await _condicionjuridicaService.CreateCondicionJuridica(_mapper.Map<CondicionJuridicaModel>(dto));
                 respuesta.success = true;
-                respuesta.message = "Se creo el registro correctamente";
+                respuesta.message = "Se registraron los datos correctamente";
                 respuesta.data = id;
                 return respuesta;
 
@@ -91,7 +119,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al consultar el listado";
+                respuesta.message = "Ocurrió un error al registrar los datos";
                 return respuesta;
             }
         }

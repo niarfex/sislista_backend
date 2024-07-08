@@ -4,6 +4,7 @@ namespace Application.Input
 {
     public interface IGeneralService
     {
+        Task<List<CultivoModel>> GetAllCultivos(string param);
         Task<List<UbigeoModel>> GetAllUbigeo(string param);
         Task<List<SelectTipoModel>> GetDepartamentos();
         Task<List<SelectTipoModel>> GetDepartamentosMarcoLista();
@@ -23,6 +24,11 @@ namespace Application.Input
         Task<List<SelectTipoModel>> GetFrecuencias();
         Task<List<SelectTipoModel>> GetProgramacionesVigentes();
         Task<List<SelectTipoModel>> GetEtapas();
+        Task<List<SelectTipoModel>> GetTenencias();
+        Task<List<SelectTipoModel>> GetUsoTierras();
+        Task<List<SelectTipoModel>> GetCultivos();
+        Task<List<SelectTipoModel>> GetUsoNoAgricolas();
         Task<object> GetDatosRENIEC(string dni);
+        Task<object> GetDatosSUNAT(string ruc);
     }
 }

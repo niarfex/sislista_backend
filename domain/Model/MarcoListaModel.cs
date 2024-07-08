@@ -21,6 +21,7 @@ namespace Domain.Model
         public long? IdCondicionJuridica { get; set; }
         public long? IdCondicionJuridicaOtros { get; set; }
         public string? IdUbigeo { get; set; }
+        public long? IdAnio { get; set; }
         public string? CodigoUUIDPersona { get; set; }
         public string? NumeroDocumento { get; set; }
         public string? Nombre { get; set; }

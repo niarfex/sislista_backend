@@ -15,7 +15,7 @@ namespace Infra.MarcoLista.Configs
         {
             builder.ToTable("TC_PERFIL");
             builder.HasKey(c => c.Id);
-
+            builder.Property(c => c.Perfil).HasColumnType("VARCHAR2");
         }
     }
 }

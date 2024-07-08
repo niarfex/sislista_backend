@@ -2,7 +2,7 @@
 using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Domain.Model;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using Domain.Model.ExportExcel;
 namespace Infra.MarcoLista.Mapper
 {
     public class OrganizacionProfile : Profile
@@ -16,6 +16,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<OrganizacionCreateUpdateDto, OrganizacionModel>();
             CreateMap<SelectTipoModel, SelectTipoDto>();
             CreateMap<UbigeoModel, UbigeoListDto>();
+            CreateMap<OrganizacionListDto, OrganizacionExcel>();
         }
     }
 }

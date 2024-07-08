@@ -27,7 +27,9 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<CondicionJuridicaEntity>> GetAll(string param)
         {
-            return _db.CondicionJuridica.ToList();
+            return _db.CondicionJuridica.Where(x => x.CondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())
+            || x.CodigoCondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())
+            || x.DescripcionCondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())).ToList();
         }
         public async Task<CondicionJuridicaEntity> GetCondicionJuridicaxId(long id)
         {

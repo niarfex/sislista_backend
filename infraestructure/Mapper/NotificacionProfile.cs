@@ -15,6 +15,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<NotificacionCreateUpdateDto, NotificacionModel>();
             CreateMap<AnioEntity, AnioModel>();
             CreateMap<EtapaEntity, EtapaModel>();
+            CreateMap<FrecuenciaEntity, FrecuenciaModel>();
         }
     }
 }

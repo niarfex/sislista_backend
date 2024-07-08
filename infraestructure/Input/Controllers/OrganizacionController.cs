@@ -1,33 +1,41 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
+using AutoMapper.Internal.Mappers;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NPOI.SS.Formula.Functions;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using Infra.Helpers;
 
 namespace Infra.MarcoLista.Input.Controllers
 {
+    
     [Route("/v1/organizacion")]
     [ApiController]
+    [Authorize]
     public class OrganizacionController : ControllerBase
     {
         private readonly IOrganizacionService _organizacionService;
         private readonly IGeneralService _generalService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
         public OrganizacionController(IOrganizacionService organizacionService, 
-            IGeneralService generalService, 
+            IGeneralService generalService,
+            IExcelExporterService excelexporterService,
             IMapper mapper)
         {
             _organizacionService = organizacionService;
             _generalService = generalService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
-        }
-        
+        }        
         [HttpGet]
         [Route("GetAll")]
         public async Task<ResponseModel> GetAll(string param = "")
@@ -54,6 +62,28 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {          
+            try
+            {
+                var output = _mapper.Map<List<OrganizacionListDto>>(await _organizacionService.GetAll(param));        
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<OrganizacionExcel>>(output));             
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "organizaciones.xlsx");
+                }
+                else
+                {
+                    return null;
+                }   
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
         [HttpGet]
@@ -94,7 +124,7 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 var id = await _organizacionService.CreateOrganizacion(_mapper.Map<OrganizacionModel>(dto));             
                 respuesta.success = true;
-                respuesta.message = "Se creo el registro correctamente";
+                respuesta.message = "Se registraron los datos correctamente";
                 respuesta.data = id;
                 return respuesta;
 
@@ -102,7 +132,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al consultar el listado";
+                respuesta.message = "Ocurrió un error al registrar los datos";
                 return respuesta;
             }
         }

@@ -1,8 +1,10 @@
 ﻿using Application.Input;
 using Application.Service;
+using Application.Service.Exportar;
 using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
+using Domain.Model.ExportExcel;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -13,11 +15,15 @@ namespace Infra.MarcoLista.Input.Controllers
     public class TipoExplotacionController : ControllerBase
     {
         private readonly ITipoExplotacionService _tipoexplotacionService;
+        private readonly IExcelExporterService _excelexporterService;
         private readonly IMapper _mapper;
 
-        public TipoExplotacionController(ITipoExplotacionService tipoexplotacionService, IMapper mapper)
+        public TipoExplotacionController(ITipoExplotacionService tipoexplotacionService,
+            IExcelExporterService excelexporterService,
+            IMapper mapper)
         {
             _tipoexplotacionService = tipoexplotacionService;
+            _excelexporterService = excelexporterService;
             _mapper = mapper;
         }
         [HttpGet]
@@ -46,6 +52,28 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetAllToExcel")]
+        public async Task<FileResult> GetAllToExcel(string param = "")
+        {
+            try
+            {
+                var output = _mapper.Map<List<TipoExplotacionListDto>>(await _tipoexplotacionService.GetAll(param));
+                if (output != null)
+                {
+                    var file = await _excelexporterService.ExportToExcel(_mapper.Map<List<TipoExplotacionExcel>>(output));
+                    return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "tipoexplotacion.xlsx");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
         [HttpGet]
@@ -82,7 +110,7 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 var id = await _tipoexplotacionService.CreateTipoExplotacion(_mapper.Map<TipoExplotacionModel>(dto));
                 respuesta.success = true;
-                respuesta.message = "Se creo el registro correctamente";
+                respuesta.message = "Se registraron los datos";
                 respuesta.data = id;
                 return respuesta;
 
@@ -90,7 +118,7 @@ namespace Infra.MarcoLista.Input.Controllers
             catch (Exception e)
             {
                 respuesta.success = false;
-                respuesta.message = "Ocurrió un error al consultar el listado";
+                respuesta.message = "Ocurrió un error al registrar los datos";
                 return respuesta;
             }
         }
