@@ -105,6 +105,7 @@ namespace Infra.MarcoLista.Output.Repository
                         select new GestionRegistroModel
                         {
                             Id = c.Id,
+                            IdPeriodo = m.IdAnio,
                             CodigoUUID = c.CodigoUUID,
                             IdMarcoLista = m.Id,
                             IdTipoExplotacion = m.IdTipoExplotacion,
@@ -137,6 +138,7 @@ namespace Infra.MarcoLista.Output.Repository
                             {
                                 Id = 0,
                                 CodigoUUID = "",
+                                IdPeriodo=m.IdAnio,
                                 IdMarcoLista = m.Id,
                                 IdTipoExplotacion = m.IdTipoExplotacion,
                                 Estado = m.Estado,

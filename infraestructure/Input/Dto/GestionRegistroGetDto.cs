@@ -55,6 +55,8 @@ namespace Infra.MarcoLista.Input.Dto
         public string? CantidadFundo { get; set; }
         [JsonPropertyName("EstadoEntrevista")]
         public int? EstadoEntrevista { get; set; }
+        [JsonPropertyName("IdPeriodo")]
+        public long? IdPeriodo { get; set; }
 
         [JsonPropertyName("ListCondicionJuridica")]
         public List<SelectTipoDto> ListCondicionJuridica { get; set; }
@@ -72,6 +74,8 @@ namespace Infra.MarcoLista.Input.Dto
         public List<SelectTipoDto> ListTipoExplotacion { get; set; }
         [JsonPropertyName("ListFundos")]
         public List<FundoGetDto> ListFundos { get; set; }
+        [JsonPropertyName("ListPeriodos")]
+        public List<SelectTipoDto> ListPeriodos { get; set; }
         [JsonPropertyName("ListTenencia")]
         public List<SelectTipoDto> ListTenencia { get; set; }
         [JsonPropertyName("ListUsoTierra")]

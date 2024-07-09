@@ -154,6 +154,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 objGestionRegistro.ListUsoNoAgricola = listUsoNoAgricola;
                 objGestionRegistro.ListEstadoEntrevista = listEstadoEntrevista;
                 objGestionRegistro.ListTipoInformacion = listTipoInformacion;
+                objGestionRegistro.ListPeriodos =listPeriodos;
                 respuesta.success = true;
                 respuesta.message = "Se listan los datos correctamente";
                 respuesta.data = objGestionRegistro;
