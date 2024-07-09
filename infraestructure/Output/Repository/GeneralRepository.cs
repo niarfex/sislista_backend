@@ -17,7 +17,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class GeneralRepository:IGeneralRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         private DBOracle dBOracle = new DBOracle();
@@ -25,6 +25,7 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<CultivoModel>> GetAllCultivos()
         {
@@ -264,6 +265,14 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas()
         {
             return _db.UsoNoAgricola.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<EstadoEntity>> GetEstadoEntrevista()
+        {
+            return _db.Estado.Where(x => x.Estado == 1 && x.CodigoEstadoPadre== "ESTADOENTREVISTA").ToList();
+        }
+        public async Task<List<TipoInformacionEntity>> GetTipoInformacion()
+        {
+            return _db.TipoInformacion.Where(x => x.Estado == 1).ToList();
         }
     }
 }

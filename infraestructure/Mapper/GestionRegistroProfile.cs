@@ -12,6 +12,8 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<TenenciaEntity, TenenciaModel>();
             CreateMap<UsoTierraEntity, UsoTierraModel>();
             CreateMap<UsoNoAgricolaEntity, UsoNoAgricolaModel>();
+            CreateMap<EstadoEntity, EstadoModel>();
+            CreateMap<TipoInformacionEntity, TipoInformacionModel>();
             CreateMap<CultivoModel, CultivoListDto>();
             CreateMap<GestionRegistroModel, GestionRegistroListDto>();
             CreateMap<GestionRegistroModel, GestionRegistroGetDto>();

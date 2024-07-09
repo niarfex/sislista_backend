@@ -11,12 +11,18 @@ namespace Infra.MarcoLista.Contextos
 {
     public class MarcoListaContexto : DbContext
     {
+        private string _cadConex = "";
+        public MarcoListaContexto(string cadConex)
+        {
+            _cadConex=cadConex;
+        }     
         public DbSet<AnioEntity> Anio { get; set; }
         public DbSet<AuditoriaEntity> Auditoria { get; set; }
         public DbSet<CampoEntity> Campo { get; set; }
         public DbSet<CondicionJuridicaEntity> CondicionJuridica { get; set; }
         public DbSet<EntidadEntity> Entidad { get; set; }
         public DbSet<EspecieEntity> Especie{ get; set; }
+        public DbSet<EstadoEntity> Estado { get; set; }
         public DbSet<EtapaEntity> Etapa { get; set; }
         public DbSet<FrecuenciaEntity> Frecuencia { get; set; }
         public DbSet<FundoEntity> Fundo { get; set; }
@@ -40,6 +46,7 @@ namespace Infra.MarcoLista.Contextos
         public DbSet<TenenciaEntity> Tenencia { get; set; }
         public DbSet<TipoDocumentoEntity> TipoDocumento { get; set; }
         public DbSet<TipoExplotacionEntity> TipoExplotacion { get; set; }
+        public DbSet<TipoInformacionEntity> TipoInformacion { get; set; }
         public DbSet<TipoOrganizacionEntity> TipoOrganizacion { get; set; }
         public DbSet<UsoNoAgricolaEntity> UsoNoAgricola { get; set; }
         public DbSet<UsoTierraEntity> UsoTierra { get; set; }
@@ -47,15 +54,11 @@ namespace Infra.MarcoLista.Contextos
         public DbSet<UsuarioMarcoListaEntity> UsuarioMarcoLista { get; set; }
         public DbSet<UsuarioPerfilEntity> UsuarioPerfil { get; set; }
 
-        //private readonly IConfiguration _configuracion;
-        //public MarcoListaContexto(IConfiguration configuracion)
-        //{
-        //    _configuracion = configuracion;
-        //}
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseOracle("DATA SOURCE=srvdb-oracle-desa.domainminag.gob/DEVELOPER;USER ID=SISLISTA;PASSWORD=D3v3l0p3r$");//_configuracion.GetSection("DatabaseSettings")["ConnectionString1"]);
+            options.UseOracle(_cadConex);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -67,6 +70,7 @@ namespace Infra.MarcoLista.Contextos
             builder.ApplyConfiguration(new CondicionJuridicaConfig());
             builder.ApplyConfiguration(new EntidadConfig());
             builder.ApplyConfiguration(new EspecieConfig());
+            builder.ApplyConfiguration(new EstadoConfig());
             builder.ApplyConfiguration(new EtapaConfig());
             builder.ApplyConfiguration(new FrecuenciaConfig());
             builder.ApplyConfiguration(new FundoConfig());
@@ -90,6 +94,7 @@ namespace Infra.MarcoLista.Contextos
             builder.ApplyConfiguration(new TenenciaConfig());
             builder.ApplyConfiguration(new TipoDocumentoConfig());
             builder.ApplyConfiguration(new TipoExplotacionConfig());
+            builder.ApplyConfiguration(new TipoInformacionConfig());
             builder.ApplyConfiguration(new TipoOrganizacionConfig());
             builder.ApplyConfiguration(new UsoNoAgricolaConfig());
             builder.ApplyConfiguration(new UsoTierraConfig());

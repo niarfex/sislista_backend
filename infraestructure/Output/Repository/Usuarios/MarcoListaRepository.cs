@@ -18,7 +18,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class MarcoListaRepository: IMarcoListaRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
@@ -26,6 +26,7 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<MarcoListaModel>> GetAll(string param)
         {

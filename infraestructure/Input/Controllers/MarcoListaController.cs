@@ -18,15 +18,18 @@ namespace Infra.MarcoLista.Input.Controllers
         private readonly IMarcoListaService _marcolistaService;
         private readonly IGeneralService _generalService;
         private readonly IExcelExporterService _excelexporterService;
+        private readonly IExcelImporterService _excelimporterService;
         private readonly IMapper _mapper;
 
-        public MarcoListaController(IMarcoListaService marcolistaService, 
+        public MarcoListaController(IMarcoListaService marcolistaService,
             IGeneralService generalService,
             IExcelExporterService excelexporterService,
-            IMapper mapper)        {
+            IExcelImporterService excelimporterService,
+            IMapper mapper) {
             _marcolistaService = marcolistaService;
             _generalService = generalService;
             _excelexporterService = excelexporterService;
+            _excelimporterService = excelimporterService;
             _mapper = mapper;
         }
 
@@ -81,6 +84,41 @@ namespace Infra.MarcoLista.Input.Controllers
                 return null;
             }
         }
+        [HttpPost]
+        [Route("Importar")]
+        public async Task<string> Importar(IFormFile file)
+        {
+            try
+            {                
+                Guid obj = Guid.NewGuid();
+                string filename = "";
+                var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
+                filename = obj.ToString() + extension;
+            
+                var filepathsrc = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
+                if (!Directory.Exists(filepathsrc))
+                {
+                    Directory.CreateDirectory(filepathsrc);
+                }
+                var exactpathsrc = Path.Combine(filepathsrc, filename);
+                using (var stream = new FileStream(exactpathsrc, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+                var resultado = await _excelimporterService.ImportarMarcoLista(exactpathsrc);
+                //FileStream fileStream = new FileStream(exactpathsrc, FileMode.Open);               
+                //fileStream.Dispose();
+
+                //System.IO.File.Delete(exactpathsrc);
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         [HttpGet]
         [Route("GetMarcoListaxId")]
         public async Task<ResponseModel> GetMarcoListaxId(long id)
@@ -98,9 +136,10 @@ namespace Infra.MarcoLista.Input.Controllers
                 if (id > 0)
                 {
                     objMarcoLista = _mapper.Map<MarcoListaGetDto>(await _marcolistaService.GetMarcoListaxId(id));
-                    objMarcoLista.ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias(objMarcoLista.IdUbigeo.Substring(0,2)));
-                    objMarcoLista.ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos(objMarcoLista.IdUbigeo.Substring(0, 4)));
-                
+                    if (objMarcoLista.IdUbigeo != null) {
+                        objMarcoLista.ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias(objMarcoLista.IdUbigeo.Substring(0, 2)));
+                        objMarcoLista.ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos(objMarcoLista.IdUbigeo.Substring(0, 4)));
+                    }                
                 }
                 objMarcoLista.ListCondicionJuridica = listCondicionJuridica;
                 objMarcoLista.ListCondicionJuridicaOtros = listCondicionJuridicaOtros;

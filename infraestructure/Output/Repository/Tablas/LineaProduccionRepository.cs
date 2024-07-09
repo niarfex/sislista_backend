@@ -17,7 +17,7 @@ namespace Infra.MarcoLista.Output.Repository
 
     public class LineaProduccionRepository: ILineaProduccionRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
@@ -25,12 +25,13 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<LineaProduccionEntity>> GetAll(string param)
         {
-            return _db.LineaProduccion.Where(x => x.LineaProduccion.ToUpper().Contains(param.Trim().ToUpper())
+            return _db.LineaProduccion.Where(x => (x.Estado==0 || x.Estado==1) && (x.LineaProduccion.ToUpper().Contains(param.Trim().ToUpper())
             || x.CodigoLineaProduccion.ToUpper().Contains(param.Trim().ToUpper())
-            || x.DescripcionLineaProduccion.ToUpper().Contains(param.Trim().ToUpper())).ToList();
+            || x.DescripcionLineaProduccion.ToUpper().Contains(param.Trim().ToUpper()))).ToList();
         }
         public async Task<LineaProduccionEntity> GetLineaProduccionxId(long id)
         {

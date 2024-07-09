@@ -12,13 +12,19 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("Fundo")]
         public string? Fundo { get; set; }
         [JsonPropertyName("SuperficieTotal")]
-        public long? SuperficieTotal { get; set; }
+        public double? SuperficieTotal { get; set; }
         [JsonPropertyName("SuperficieAgricola")]
-        public long? SuperficieAgricola { get; set; }
+        public double? SuperficieAgricola { get; set; }
         [JsonPropertyName("IdUbigeo")]
         public string? IdUbigeo { get; set; }
         [JsonPropertyName("Observacion")]
         public string? Observacion { get; set; }
+        [JsonPropertyName("ListDepartamento")]
+        public List<SelectTipoDto> ListDepartamento { get; set; }
+        [JsonPropertyName("ListProvincia")]
+        public List<SelectTipoDto> ListProvincia { get; set; }
+        [JsonPropertyName("ListDistrito")]
+        public List<SelectTipoDto> ListDistrito { get; set; }
         [JsonPropertyName("ListCampos")]
         public List<CampoGetDto> ListCampos { get; set; }
 

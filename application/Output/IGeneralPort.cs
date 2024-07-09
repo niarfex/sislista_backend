@@ -23,5 +23,7 @@ namespace Application.Output
         Task<List<UsoTierraModel>> GetUsoTierras();
         Task<List<CultivoModel>> GetCultivos();
         Task<List<UsoNoAgricolaModel>> GetUsoNoAgricolas();
+        Task<List<EstadoModel>> GetEstadoEntrevista();
+        Task<List<TipoInformacionModel>> GetTipoInformacion();
     }
 }

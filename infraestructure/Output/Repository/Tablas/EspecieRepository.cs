@@ -16,7 +16,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class EspecieRepository : IEspecieRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
@@ -24,12 +24,13 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<EspecieEntity>> GetAll(string param)
         {
-            return _db.Especie.Where(x => x.Especie.ToUpper().Contains(param.Trim().ToUpper())
+            return _db.Especie.Where(x => (x.Estado==0 || x.Estado==1) && (x.Especie.ToUpper().Contains(param.Trim().ToUpper())
             || x.CodigoEspecie.ToUpper().Contains(param.Trim().ToUpper())
-            || x.DescripcionEspecie.ToUpper().Contains(param.Trim().ToUpper())).ToList();
+            || x.DescripcionEspecie.ToUpper().Contains(param.Trim().ToUpper()))).ToList();
         }
         public async Task<EspecieEntity> GetEspeciexId(long id)
         {

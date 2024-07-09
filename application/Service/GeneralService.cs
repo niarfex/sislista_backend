@@ -93,7 +93,7 @@ namespace Application.Service
             }
             SelectTipoModel list;
             //listaUbigeos.Add(new SelectTipoModel("-- Seleccionar --", null, ""));
-            foreach (var dep in query.ToList())
+            foreach (var dep in query.DistinctBy(x=> x.Id).ToList())
             {
                 list = new SelectTipoModel();
                 list.value = dep.Id;
@@ -521,6 +521,48 @@ namespace Application.Service
                 list.value = dep.Id.ToString();
                 list.label = dep.UsoNoAgricola;
                 list.codigo = dep.UsoNoAgricola;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetEstadoEntrevista()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetEstadoEntrevista();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.TipoEstado;
+                list.codigo = dep.CodigoEstado;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetTipoInformacion()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetTipoInformacion();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.TipoInformacion;
+                list.codigo = dep.CodigoTipoInformacion;
                 listaTipos.Add(list);
             }
             return listaTipos;

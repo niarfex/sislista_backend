@@ -17,6 +17,10 @@ namespace Infra.MarcoLista.Output.Entity
         public string? IdUbigeo { get; set; }
         [Column("TXT_OBSERVACION")]
         public string? Observacion { get; set; }
+        [Column("NUM_SUPERFICIE_TOTAL")]
+        public double? SuperficieTotal { get; set; }
+        [Column("NUM_SUPERFICIE_AGRICOLA")]
+        public double? SuperficieAgricola { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

@@ -16,7 +16,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class CondicionJuridicaRepository: ICondicionJuridicaRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
@@ -24,12 +24,13 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<CondicionJuridicaEntity>> GetAll(string param)
         {
-            return _db.CondicionJuridica.Where(x => x.CondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())
+            return _db.CondicionJuridica.Where(x => (x.Estado==1 || x.Estado==0) && (x.CondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())
             || x.CodigoCondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())
-            || x.DescripcionCondicionJuridica.ToUpper().Contains(param.Trim().ToUpper())).ToList();
+            || x.DescripcionCondicionJuridica.ToUpper().Contains(param.Trim().ToUpper()))).ToList();
         }
         public async Task<CondicionJuridicaEntity> GetCondicionJuridicaxId(long id)
         {

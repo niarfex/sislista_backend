@@ -17,7 +17,7 @@ namespace Domain.Model
         public long? IdCultivo { get; set; }
         public long? IdUsoNoAgricola { get; set; }
         public string? Observacion { get; set; }
-        public long? Superficie { get; set; }
-        public long? SuperficieCultivada { get; set; }
+        public double? Superficie { get; set; }
+        public double? SuperficieCultivada { get; set; }
     }
 }

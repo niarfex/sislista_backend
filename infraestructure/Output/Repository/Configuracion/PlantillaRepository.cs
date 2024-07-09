@@ -16,7 +16,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class PlantillaRepository:IPlantillaRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         private DBOracle dBOracle = new DBOracle();
@@ -24,10 +24,11 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<PlantillaEntity>> GetAll(string param)
         {
-            return _db.Plantilla.ToList();
+            return _db.Plantilla.Where(x=> (x.Estado==0 || x.Estado==1) && (x.Plantilla.ToUpper().Trim().Contains(param.ToUpper().Trim()))).ToList();
         }
         public async Task<PlantillaEntity> GetPlantillaxId(long id)
         {

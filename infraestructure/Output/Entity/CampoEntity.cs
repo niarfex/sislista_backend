@@ -23,10 +23,10 @@ namespace Infra.MarcoLista.Output.Entity
         public long? IdUsoNoAgricola { get; set; }
         [Column("TXT_OBSERVACION")]
         public string? Observacion { get; set; }
-        [Column("SUPERFICIE")]
-        public long? Superficie { get; set; }
-        [Column("SUPERFICIE_CULTIVADA")]
-        public long? SuperficieCultivada { get; set; }
+        [Column("NUM_SUPERFICIE")]
+        public double? Superficie { get; set; }
+        [Column("NUM_SUPERFICIE_CULTIVADA")]
+        public double? SuperficieCultivada { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]

@@ -23,5 +23,7 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<TenenciaEntity>> GetTenencias();
         Task<List<UsoTierraEntity>> GetUsoTierras();
         Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas();
+        Task<List<EstadoEntity>> GetEstadoEntrevista();
+        Task<List<TipoInformacionEntity>> GetTipoInformacion();
     }
 }

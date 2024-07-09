@@ -77,6 +77,7 @@ IMapper mapper = mapperConfig.CreateMapper();
 //builder.Services.AddScoped<IProductorAgrarioPort, ProductorAgrarioAdapter>();
 //builder.Services.AddScoped<IProductorAgrarioRepository, ProductorAgrarioRepository>();
 builder.Services.AddScoped<IExcelExporterService, ExcelExporterService>();
+builder.Services.AddScoped<IExcelImporterService, ExcelImporterService>();
 builder.Services.AddScoped<IGeneralService, GeneralService>();
 builder.Services.AddScoped<IGeneralPort, GeneralAdapter>();
 builder.Services.AddScoped<IGeneralRepository, GeneralRepository>();

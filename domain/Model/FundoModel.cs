@@ -12,9 +12,10 @@ namespace Domain.Model
         public long Id { get; set; }
         public long? IdCuestionario { get; set; }
         public string? Fundo { get; set; }
-        public long? SuperficieTotal { get; set; }
-        public long? SuperficieAgricola { get; set; }
+        public double? SuperficieTotal { get; set; }
+        public double? SuperficieAgricola { get; set; }
         public string? IdUbigeo { get; set; }
         public string? Observacion { get; set; }
+        
     }
 }

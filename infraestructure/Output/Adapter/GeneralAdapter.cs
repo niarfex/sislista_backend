@@ -264,5 +264,31 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<EstadoModel>> GetEstadoEntrevista()
+        {
+            var objetoEntity = await _generalRepository.GetEstadoEntrevista();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<EstadoModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<TipoInformacionModel>> GetTipoInformacion()
+        {
+            var objetoEntity = await _generalRepository.GetTipoInformacion();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<TipoInformacionModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

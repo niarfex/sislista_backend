@@ -28,7 +28,7 @@ namespace Application.Service
 
             }
             var query = from m in marcolistas
-                        join d in departamentos on m.IdDepartamento equals d.Id
+                        from d in departamentos.Where(x => x.Id == m.IdDepartamento).DefaultIfEmpty()
                         select new MarcoListaModel
                         {
                             Id = m.Id,
@@ -36,8 +36,8 @@ namespace Application.Service
                             NombreCompleto = m.NombreCompleto,
                             CondicionJuridica = m.CondicionJuridica,
                             NombreRepLegal = m.NombreRepLegal,
-                            IdDepartamento = m.IdDepartamento,
-                            Departamento = d.Departamento,
+                            IdDepartamento = d != null ? m.IdDepartamento : null,                            
+                            Departamento = d != null ? d.Departamento: null,
                             Estado = m.Estado
                         };
 

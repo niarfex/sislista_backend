@@ -8,5 +8,6 @@ namespace Application.Service.Exportar
 {
     public interface IExcelImporterService
     {
+        Task<string> ImportarMarcoLista(string filePath);
     }
 }

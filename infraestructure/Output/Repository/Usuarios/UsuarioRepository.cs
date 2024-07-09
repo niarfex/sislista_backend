@@ -20,7 +20,7 @@ namespace Infra.MarcoLista.Output.Repository
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private MarcoListaContexto _db = new MarcoListaContexto();
+        private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
         private DBOracle dBOracle = new DBOracle();
@@ -28,6 +28,7 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
         public async Task<List<UsuarioModel>> GetAll(string param)
         {
@@ -39,7 +40,7 @@ namespace Infra.MarcoLista.Output.Repository
                         && (pe.Estado == 0 || pe.Estado == 1) && (pf.Estado == 0 || pf.Estado == 1)
                         where (u.Usuario.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pf.Perfil.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
                         pe.Nombre.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.ApellidoMaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
-                        pe.ApellidoPaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()))
+                        pe.ApellidoPaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.CorreoElectronico.ToUpper().Trim().Contains(param.ToUpper().Trim()))
                         select new UsuarioModel
                         {
                             Id = u.Id,
