@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Domain;
+using Application.Common;
 
 namespace Application.Service
 {
@@ -131,43 +132,43 @@ namespace Application.Service
             string asunto = "";
             string mensaje = "";
             string concopia = "";
-            concopia = _appConfiguration[$"configCorreo:concopia"]==""?"":","+ _appConfiguration[$"configCorreo:concopia"];
-            
-            var objUsuario = await GetUsuarioxUUID(uuid);
-            if (objUsuario.Estado == 0)//Estado Inactivo
-            {
-                asunto = "Deshabilitación de Credenciales del Sistema de Marco de Lista";
-                mensaje = $"Estimado(a) {objUsuario.Nombre} mediante la presente comunicación te informamos que tus credenciales para acceso al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria han sido deshabilitadas, por lo que no podrás volver a acceder al sistema." + "<br><br>" +
-                    $"Para mayor información, comunicate con el Administrador del Sistema." + "<br><br>";
-                   
-            }
-            else if (objUsuario.Estado == 1)//Estado Activo 
-            {
-                asunto = "Credenciales de acceso para el Sistema de Marco de Lista";
-                mensaje = $"Bienvenido(a) {objUsuario.Nombre} al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria" + "<br><br>" +
-                    $"Para acceder debe ingresar al siguiente enlace de acceso al sistema: {_appConfiguration[$"enlacesSISLISTA:urlApp"]}" + "<br><br>" +
-                    $"Sus credenciales de acceso son las siguientes: " + "<br>" +
-                    $"Usuario: {objUsuario.Usuario} " + "<br>" +
-                    $"Contraseña: {objUsuario.Clave}" + "<br><br>";
-            }
-            var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
-                $"\"vto\":\"{objUsuario.CorreoElectronico+concopia}\"," +
-                $"\"vasunto\":\"{asunto}\"," +
-                $"\"vmensaje\":\"{mensaje}\"}}";             
-
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            request.Accept = "application/json";
-            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-            {
-                streamWriter.Write(json);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
+            concopia = _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
             try
             {
+                var objUsuario = await GetUsuarioxUUID(uuid);
+                if (objUsuario.Estado == 0)//Estado Inactivo
+                {
+                    asunto = "Deshabilitación de Credenciales del Sistema de Marco de Lista";
+                    mensaje = $"Estimado(a) {objUsuario.Nombre} mediante la presente comunicación te informamos que tus credenciales para acceso al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria han sido deshabilitadas, por lo que no podrás volver a acceder al sistema." + "<br><br>" +
+                        $"Para mayor información, comunicate con el Administrador del Sistema." + "<br><br>";
+
+                }
+                else if (objUsuario.Estado == 1)//Estado Activo 
+                {
+                    asunto = "Credenciales de acceso para el Sistema de Marco de Lista";
+                    mensaje = $"Bienvenido(a) {objUsuario.Nombre} al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria" + "<br><br>" +
+                        $"Para acceder debe ingresar al siguiente enlace de acceso al sistema: {_appConfiguration[$"enlacesSISLISTA:urlApp"]}" + "<br><br>" +
+                        $"Sus credenciales de acceso son las siguientes: " + "<br>" +
+                        $"Usuario: {objUsuario.Usuario} " + "<br>" +
+                        $"Contraseña: {objUsuario.Clave}" + "<br><br>";
+                }
+                var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
+                    $"\"vto\":\"{objUsuario.CorreoElectronico + concopia}\"," +
+                    $"\"vasunto\":\"{asunto}\"," +
+                    $"\"vmensaje\":\"{mensaje}\"}}";
+
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                request.Accept = "application/json";
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
                 using (WebResponse response = request.GetResponse())
                 {
                     using (Stream strReader = response.GetResponseStream())
@@ -175,7 +176,7 @@ namespace Application.Service
                         if (strReader == null) return false;
                         using (StreamReader objReader = new StreamReader(strReader))
                         {
-                            string responseBody = await objReader.ReadToEndAsync();                    
+                            string responseBody = await objReader.ReadToEndAsync();
                         }
                     }
                 }
@@ -183,6 +184,7 @@ namespace Application.Service
             }
             catch (WebException ex)
             {
+                Utils.registrarLog(ex.Message, "SendCredenciales", "ERROR");
                 throw ex;
             }
         }

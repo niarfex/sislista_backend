@@ -1,4 +1,5 @@
-﻿using Application.Input;
+﻿using Application.Common;
+using Application.Input;
 using Application.Output;
 using Domain.Exceptions;
 using Domain.Model;
@@ -87,53 +88,54 @@ namespace Application.Service
             string mensaje = "";
             string concopia = "";
             concopia = _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
-
-            var objNotificacion = await GetNotificacionxId(id);
-
-            var listaPerfiles = await _generalPort.GetPerfilesTodos();
-            var listaFrecuencias = await _generalPort.GetFrecuencias();
-            var listaRegistros = await _generalPort.GetProgramacionesVigentes();
-            var listaEtapas = await _generalPort.GetEtapas();
-            var codPerfil = listaPerfiles.Find(x => x.Id == objNotificacion.IdPerfil).CodigoPerfil;
-            var nomFrecuencia = listaFrecuencias.Find(x => x.Id == objNotificacion.IdFrecuencia).Frecuencia;
-            var nomRegistro = listaRegistros.Find(x => x.Id == objNotificacion.IdProgramacionRegistro).ProgramacionRegistro;
-            var nomEtapa = listaEtapas.Find(x => x.Id == objNotificacion.IdEtapa).Etapa;
-
-            long idPerfil = 0;
-            if (codPerfil != "PERFILTODOS") { idPerfil = (long)objNotificacion.IdPerfil; }
-            
-            var usuariosDestinatarios = await _usuarioPort.GetCorreosUsuariosxPerfil(idPerfil);
-            string correosDest = "";
-            foreach (var correo in usuariosDestinatarios) {
-                correosDest = correosDest==""? correo.CorreoElectronico: correosDest + "," + correo.CorreoElectronico;
-            }
-           
-            asunto = objNotificacion.Asunto;
-            mensaje = $"Estimados(as) usuarios, se ha registrado la programación con los siguientes datos:" + "<br><br>"+
-                $"Frecuencia: "+ nomFrecuencia + "<br>"+
-                $"Registro: "+ nomRegistro + "<br>" +
-                $"Etapa: "+ nomEtapa + "<br>" +
-                $"Descripción: " + objNotificacion.Descripcion + "<br><br>";
-
-
-            var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
-                $"\"vto\":\"{correosDest + concopia}\"," +
-                $"\"vasunto\":\"{asunto}\"," +
-                $"\"vmensaje\":\"{mensaje}\"}}";
-
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            request.Accept = "application/json";
-            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-            {
-                streamWriter.Write(json);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
             try
             {
+                var objNotificacion = await GetNotificacionxId(id);
+
+                var listaPerfiles = await _generalPort.GetPerfilesTodos();
+                var listaFrecuencias = await _generalPort.GetFrecuencias();
+                var listaRegistros = await _generalPort.GetProgramacionesVigentes();
+                var listaEtapas = await _generalPort.GetEtapas();
+                var codPerfil = listaPerfiles.Find(x => x.Id == objNotificacion.IdPerfil).CodigoPerfil;
+                var nomFrecuencia = listaFrecuencias.Find(x => x.Id == objNotificacion.IdFrecuencia).Frecuencia;
+                var nomRegistro = listaRegistros.Find(x => x.Id == objNotificacion.IdProgramacionRegistro).ProgramacionRegistro;
+                var nomEtapa = listaEtapas.Find(x => x.Id == objNotificacion.IdEtapa).Etapa;
+
+                long idPerfil = 0;
+                if (codPerfil != "PERFILTODOS") { idPerfil = (long)objNotificacion.IdPerfil; }
+
+                var usuariosDestinatarios = await _usuarioPort.GetCorreosUsuariosxPerfil(idPerfil);
+                string correosDest = "";
+                foreach (var correo in usuariosDestinatarios)
+                {
+                    correosDest = correosDest == "" ? correo.CorreoElectronico : correosDest + "," + correo.CorreoElectronico;
+                }
+
+                asunto = objNotificacion.Asunto;
+                mensaje = $"Estimados(as) usuarios, se ha registrado la programación con los siguientes datos:" + "<br><br>" +
+                    $"Frecuencia: " + nomFrecuencia + "<br>" +
+                    $"Registro: " + nomRegistro + "<br>" +
+                    $"Etapa: " + nomEtapa + "<br>" +
+                    $"Descripción: " + objNotificacion.Descripcion + "<br><br>";
+
+
+                var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
+                    $"\"vto\":\"{correosDest + concopia}\"," +
+                    $"\"vasunto\":\"{asunto}\"," +
+                    $"\"vmensaje\":\"{mensaje}\"}}";
+
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                request.Accept = "application/json";
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
                 using (WebResponse response = request.GetResponse())
                 {
                     using (Stream strReader = response.GetResponseStream())
@@ -156,8 +158,9 @@ namespace Application.Service
             }
             catch (WebException ex)
             {
+                Utils.registrarLog(ex.Message, "NotificarNotificacionxId", "ERROR");
                 throw ex;
-            }            
+            }
         }
     }
 }

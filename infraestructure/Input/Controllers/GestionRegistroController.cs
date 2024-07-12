@@ -123,7 +123,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 listFundos.Add(fundo1);
                 listFundos.Add(fundo2);
                 listFundos.Add(fundo3);
-
+                var listInformantes = new List<InformanteGetDto>();
                 var listTenencia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTenencias());
                 var listUsoTierra = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetUsoTierras());
                 var listCultivo = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetCultivos());
@@ -148,6 +148,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 objGestionRegistro.ListTipoExplotacion = listTipoExplotacion;
                 objGestionRegistro.ListDepartamento = listDepartamentos;
                 objGestionRegistro.ListFundos = listFundos;
+                objGestionRegistro.ListInformantes = listInformantes;
                 objGestionRegistro.ListTenencia = listTenencia;
                 objGestionRegistro.ListUsoTierra = listUsoTierra;
                 objGestionRegistro.ListCultivo = listCultivo;

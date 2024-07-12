@@ -126,7 +126,9 @@ namespace Infra.MarcoLista.Output.Repository
                             NombreRepLegal = p.NombreRepLegal,
                             CorreoRepLegal = p.CorreoRepLegal,
                             CelularRepLegal = p.CelularRepLegal,
-                            TieneRuc = p.TieneRuc
+                            TieneRuc = p.TieneRuc,
+                            FechaActualizacion=c.FechaActualizacion
+                            
                         };
 
             if (query.FirstOrDefault() == null)
@@ -158,7 +160,8 @@ namespace Infra.MarcoLista.Output.Repository
                                 NombreRepLegal = p.NombreRepLegal,
                                 CorreoRepLegal = p.CorreoRepLegal,
                                 CelularRepLegal = p.CelularRepLegal,
-                                TieneRuc = p.TieneRuc
+                                TieneRuc = p.TieneRuc,
+                                FechaActualizacion=null
                             };
                 return queryML.FirstOrDefault();
             }

@@ -17,7 +17,7 @@ namespace Infra.MarcoLista.Configs
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Clave).HasColumnType("varchar2");
             builder.Property(c => c.refreshToken).HasColumnType("varchar2");
-            builder.Property(c => c.Usuario).HasColumnType("VARCHAR2");
+            builder.Property(c => c.Usuario).HasColumnType("varchar2");
         }
     }
 }

@@ -15,7 +15,6 @@ namespace Domain.Model
         public string CodigoUUIDUsuario { get; set; }
         public string? Usuario { get; set; }
         public string? Clave { get; set; }
-        public byte[] ClaveAlmacenada { get; set; }
         public long? TokenReseteoClave { get; set; }
         public DateTime? FechaTokenReseteoExpiracion { get; set; }
         public int Estado { get; set; }

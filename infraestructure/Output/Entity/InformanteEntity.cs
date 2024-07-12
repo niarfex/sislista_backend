@@ -23,6 +23,8 @@ namespace Infra.MarcoLista.Output.Entity
         public string? CoordenadaEste { get; set; }
         [Column("TXT_COORDENADA_NORTE")]
         public string? CoordenadaNorte { get; set; }
+        [Column("TXT_SISTEMA_COORDENADA")]
+        public string? SistemaCoordenada { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]
@@ -33,7 +35,6 @@ namespace Infra.MarcoLista.Output.Entity
         public DateTime? FechaActualizacion { get; set; }
         [Column("TXT_USUARIO_ACTUALIZACION")]
         public string? UsuarioActualizacion { get; set; }
-        [Column("TXT_SISTEMA_COORDENADA")]
-        public string? SistemaCoordenada { get; set; }
+        
     }
 }

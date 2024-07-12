@@ -41,6 +41,7 @@ namespace Infra.MarcoLista.Output.Repository
                         where (u.Usuario.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pf.Perfil.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
                         pe.Nombre.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.ApellidoMaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
                         pe.ApellidoPaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.CorreoElectronico.ToUpper().Trim().Contains(param.ToUpper().Trim()))
+                        orderby u.Id descending
                         select new UsuarioModel
                         {
                             Id = u.Id,
@@ -66,7 +67,7 @@ namespace Infra.MarcoLista.Output.Repository
                             Id = u.Id,
                             CodigoUUIDUsuario = u.CodigoUUID.ToString(),
                             Usuario = u.Usuario,
-                            //ClaveAlmacenada= u.Clave, //GetClaveDesencriptada(u.Clave).ToString(),
+                            Clave= u.Clave,
                             IdPerfil = up.IdPerfil,
                             IdTipoDocumento = pe.IdTipoDocumento,
                             NumeroDocumento = pe.NumeroDocumento,
@@ -82,7 +83,7 @@ namespace Infra.MarcoLista.Output.Repository
                         };
 
             var objUsuario= query.FirstOrDefault();
-            objUsuario.Clave = await GetClaveUsuario(objUsuario.Id);         
+            objUsuario.Clave = await GetClaveDesencriptada(objUsuario.Clave);         
             return objUsuario;
         }
         public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
@@ -339,11 +340,11 @@ namespace Infra.MarcoLista.Output.Repository
                         };
             return query.ToList();
         }
-        public async Task<byte[]> GetClaveEncriptada(string clave)
+        public async Task<string> GetClaveEncriptada(string clave)
         {
             OracleTransaction tr = null; 
             string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
-            byte[] claveEncriptada;
+            string claveEncriptada;
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             
@@ -355,7 +356,7 @@ namespace Infra.MarcoLista.Output.Repository
                 {
                     cmd.ExecuteNonQuery();
                     //claveEncriptada = System.Text.Encoding.UTF32.GetString((byte[])cmd.Parameters["P_TXT_CLAVE_ENCRIPTADA"].Value);
-                    claveEncriptada = (byte[])cmd.Parameters["P_TXT_CLAVE_ENCRIPTADA"].Value;
+                    claveEncriptada = (String)cmd.Parameters["P_TXT_CLAVE_ENCRIPTADA"].Value;
                 }            
                 conn.Close();
                 return claveEncriptada;               
@@ -391,7 +392,7 @@ namespace Infra.MarcoLista.Output.Repository
                 throw ex;
             }
         }
-        public async Task<string> GetClaveUsuario(long idUsuario)
+        /*public async Task<string> GetClaveUsuario(long idUsuario)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
             string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
@@ -422,7 +423,7 @@ namespace Infra.MarcoLista.Output.Repository
             {
                 throw ex;
             }
-        }
+        }*/
         public async Task<LoginModel> datosInicioSesion(AuthModel auth)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));

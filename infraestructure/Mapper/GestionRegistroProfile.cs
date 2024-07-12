@@ -17,6 +17,9 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<CultivoModel, CultivoListDto>();
             CreateMap<GestionRegistroModel, GestionRegistroListDto>();
             CreateMap<GestionRegistroModel, GestionRegistroGetDto>();
+            CreateMap<FundoModel, FundoGetDto>();
+            CreateMap<CampoModel, CampoGetDto>();
+            CreateMap<InformanteModel, InformanteGetDto>();
         }
     }
 }

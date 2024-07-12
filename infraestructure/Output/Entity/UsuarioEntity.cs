@@ -19,7 +19,7 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("TXT_USUARIO")]
         public string? Usuario { get; set; }
         [Column("TXT_CLAVE")]
-        public byte[] Clave { get; set; }
+        public string? Clave { get; set; }
         [Column("TXT_TOKEN_RESETEO_CLAVE")]
         public string? TokenReseteoClave { get; set; }
 

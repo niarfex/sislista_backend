@@ -15,9 +15,9 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<UsuarioModel>> GetCorreosUsuariosxPerfil(long idPerfil);
         Task<bool> ActualizarRefreshToken(string uuid, DateTime expiracion, string refreshToken);
         Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid);
-        Task<byte[]> GetClaveEncriptada(string clave);
+        Task<string> GetClaveEncriptada(string clave);
         Task<string> GetClaveDesencriptada(string claveEncriptada);
-        Task<string> GetClaveUsuario(long idUsuario);
+        //Task<string> GetClaveUsuario(long idUsuario);
         Task<LoginModel> datosInicioSesion(AuthModel auth);
     }
 }
