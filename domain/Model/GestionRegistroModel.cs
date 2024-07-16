@@ -43,9 +43,13 @@ namespace Domain.Model
         public string? NombreCompleto { get; set; }
         public string? TipoExplotacion { get; set; }
         public string? Clasificacion { get; set; }
-        public int? EstadoEntrevista { get; set; }
-        public int? EstadoSupervision { get; set; }
-        public int? EstadoValidacion { get; set; }
-        public int? EstadoRegistro { get; set; }
+        public string? CodigoEstadoEntrevista { get; set; }
+        public string? CodigoEstadoSupervision { get; set; }
+        public string? CodigoEstadoValidacion { get; set; }
+        public string? CodigoEstadoRegistro { get; set; }
+        public string? NombreEstadoEntrevista { get; set; }
+        public string? NombreEstadoSupervision { get; set; }
+        public string? NombreEstadoValidacion { get; set; }
+        public string? NombreEstadoRegistro { get; set; }
     }
 }

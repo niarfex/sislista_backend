@@ -78,6 +78,8 @@ namespace Infra.MarcoLista.Input.Dto
         public List<FundoGetDto> ListFundos { get; set; }
         [JsonPropertyName("ListInformantes")]
         public List<InformanteGetDto> ListInformantes { get; set; }
+        [JsonPropertyName("ListArchivos")]
+        public List<ArchivoGetDto> ListArchivos { get; set; }
         [JsonPropertyName("ListPeriodos")]
         public List<SelectTipoDto> ListPeriodos { get; set; }
         [JsonPropertyName("ListTenencia")]

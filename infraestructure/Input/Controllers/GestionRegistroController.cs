@@ -78,9 +78,9 @@ namespace Infra.MarcoLista.Input.Controllers
                 var listTipoDocumento = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTipoDocumento());
                 var listTipoExplotacion = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTipoExplotacion());
                 var listPeriodos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetPeriodos());
-                var listFundos = new List<FundoGetDto>();
+                //var listFundos = new List<FundoGetDto>();
 
-                var campo1 = new CampoGetDto { Campo = "Campo 1", Superficie = 1, SuperficieCultivada = 0.1, Observacion = "Campo 1x" };
+                /*var campo1 = new CampoGetDto { Campo = "Campo 1", Superficie = 1, SuperficieCultivada = 0.1, Observacion = "Campo 1x" };
                 var campo2 = new CampoGetDto { Campo = "Campo 2", Superficie = 1, SuperficieCultivada = 0.2, Observacion = "Campo 2x" };
                 var campo3 = new CampoGetDto { Campo = "Campo 3", Superficie = 2, SuperficieCultivada = 0.3, Observacion = "Campo 3x" };
                 var campo4 = new CampoGetDto { Campo = "Campo 4", Superficie = 3, SuperficieCultivada = 0.4, Observacion = "Campo 4x" };
@@ -122,7 +122,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 };
                 listFundos.Add(fundo1);
                 listFundos.Add(fundo2);
-                listFundos.Add(fundo3);
+                listFundos.Add(fundo3);*/
                 var listInformantes = new List<InformanteGetDto>();
                 var listTenencia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTenencias());
                 var listUsoTierra = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetUsoTierras());
@@ -133,12 +133,16 @@ namespace Infra.MarcoLista.Input.Controllers
 
                 if (objGestionRegistroML.CodigoUUID.IsNullOrEmpty())
                 {
-                    objGestionRegistro = _mapper.Map < GestionRegistroGetDto> (objGestionRegistroML);                    
+                    objGestionRegistro = _mapper.Map < GestionRegistroGetDto> (objGestionRegistroML); 
+                    objGestionRegistro.ListFundos= new List<FundoGetDto>();
+                    objGestionRegistro.ListArchivos=new List<ArchivoGetDto>();
                 }
                 else
                 {
                     objGestionRegistro = _mapper.Map<GestionRegistroGetDto>(await _gestionregistroService.GetGestionRegistroxUUID(objGestionRegistroML.CodigoUUID));
-                    
+                    objGestionRegistro.ListFundos = new List<FundoGetDto>();
+                    objGestionRegistro.ListArchivos= _mapper.Map<List<ArchivoGetDto>>(await _gestionregistroService.GetArchivosCuestionario(objGestionRegistro.CodigoUUID));
+
                 }
                 objGestionRegistro.ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias(objGestionRegistro.IdUbigeo.Substring(0, 2)));
                 objGestionRegistro.ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos(objGestionRegistro.IdUbigeo.Substring(0, 4)));
@@ -146,8 +150,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 objGestionRegistro.ListCondicionJuridicaOtros = listCondicionJuridicaOtros;
                 objGestionRegistro.ListTipoDocumento = listTipoDocumento;
                 objGestionRegistro.ListTipoExplotacion = listTipoExplotacion;
-                objGestionRegistro.ListDepartamento = listDepartamentos;
-                objGestionRegistro.ListFundos = listFundos;
+                objGestionRegistro.ListDepartamento = listDepartamentos;             
                 objGestionRegistro.ListInformantes = listInformantes;
                 objGestionRegistro.ListTenencia = listTenencia;
                 objGestionRegistro.ListUsoTierra = listUsoTierra;
@@ -167,6 +170,34 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
+            }
+        }
+        [HttpPost]
+        [Route("SubirArchivo")]
+        public async Task<string> SubirArchivo(IFormFile file,[FromForm] string numdoc, [FromForm] string periodo)
+        {
+            try
+            {
+                Guid obj = Guid.NewGuid();
+                string filename = "";
+                var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
+                filename = obj.ToString() + extension;
+
+                var filepathsrc = Path.Combine(Directory.GetCurrentDirectory(), "Temp",numdoc+"-"+periodo);
+                if (!Directory.Exists(filepathsrc))
+                {
+                    Directory.CreateDirectory(filepathsrc);
+                }
+                var exactpathsrc = Path.Combine(filepathsrc, filename);
+                using (var stream = new FileStream(exactpathsrc, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+                return filename;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

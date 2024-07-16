@@ -66,5 +66,11 @@ namespace Infra.MarcoLista.Output.Entity
         public DateTime? FechaActualizacion { get; set; }
         [Column("TXT_USUARIO_ACTUALIZACION")]
         public string? UsuarioActualizacion { get; set; }
+        [Column("IDE_ESTADO_REGISTRO")]
+        public int EstadoRegistro { get; set; }
+        [Column("IDE_ESTADO_SUPERVISION")]
+        public int EstadoSupervision { get; set; }
+        [Column("IDE_ESTADO_VALIDACION")]
+        public int EstadoValidacion { get; set; }
     }
 }

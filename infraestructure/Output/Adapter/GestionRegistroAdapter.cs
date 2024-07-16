@@ -53,5 +53,18 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<ArchivoModel>> GetArchivosCuestionario(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetArchivosCuestionario(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

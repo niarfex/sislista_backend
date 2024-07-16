@@ -45,5 +45,15 @@ namespace Application.Service
             }
             return gestionregistro;
         }
+        public async Task<List<ArchivoModel>> GetArchivosCuestionario(string uuid)
+        {
+            var gestionregistros = await _gestionregistroPort.GetArchivosCuestionario(uuid);
+            if (gestionregistros == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return gestionregistros;
+        }
     }
 }

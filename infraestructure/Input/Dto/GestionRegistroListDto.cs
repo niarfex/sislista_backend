@@ -30,13 +30,21 @@ namespace Infra.MarcoLista.Input.Dto
         public string? TipoExplotacion { get; set; }
         [JsonPropertyName("Clasificacion")]
         public string? Clasificacion { get; set; }
-        [JsonPropertyName("EstadoEntrevista")]
-        public int? EstadoEntrevista { get; set; }
-        [JsonPropertyName("EstadoSupervision")]
-        public int? EstadoSupervision { get; set; }
-        [JsonPropertyName("EstadoValidacion")]
-        public int? EstadoValidacion { get; set; }
-        [JsonPropertyName("EstadoRegistro")]
-        public int? EstadoRegistro { get; set; }
+        [JsonPropertyName("CodigoEstadoEntrevista")]
+        public string? CodigoEstadoEntrevista { get; set; }
+        [JsonPropertyName("CodigoEstadoSupervision")]
+        public string? CodigoEstadoSupervision { get; set; }
+        [JsonPropertyName("CodigoEstadoValidacion")]
+        public string? CodigoEstadoValidacion { get; set; }
+        [JsonPropertyName("CodigoEstadoRegistro")]
+        public string? CodigoEstadoRegistro { get; set; }
+        [JsonPropertyName("NombreEstadoEntrevista")]
+        public string? NombreEstadoEntrevista { get; set; }
+        [JsonPropertyName("NombreEstadoSupervision")]
+        public string? NombreEstadoSupervision { get; set; }
+        [JsonPropertyName("NombreEstadoValidacion")]
+        public string? NombreEstadoValidacion { get; set; }
+        [JsonPropertyName("NombreEstadoRegistro")]
+        public string? NombreEstadoRegistro { get; set; }
     }
 }

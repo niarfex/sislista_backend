@@ -17,6 +17,7 @@ namespace Infra.MarcoLista.Contextos
             _cadConex=cadConex;
         }     
         public DbSet<AnioEntity> Anio { get; set; }
+        public DbSet<ArchivoEntity> Archivo { get; set; }
         public DbSet<AuditoriaEntity> Auditoria { get; set; }
         public DbSet<CampoEntity> Campo { get; set; }
         public DbSet<CondicionJuridicaEntity> CondicionJuridica { get; set; }
@@ -65,6 +66,7 @@ namespace Infra.MarcoLista.Contextos
         {
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new AnioConfig());
+            builder.ApplyConfiguration(new ArchivoConfig());
             builder.ApplyConfiguration(new AuditoriaConfig());
             builder.ApplyConfiguration(new CampoConfig());
             builder.ApplyConfiguration(new CondicionJuridicaConfig());

@@ -87,6 +87,7 @@ namespace Application.Service
             string asunto = "";
             string mensaje = "";
             string concopia = "";
+            String nomRegistro = "";
             concopia = _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
             try
             {
@@ -98,7 +99,12 @@ namespace Application.Service
                 var listaEtapas = await _generalPort.GetEtapas();
                 var codPerfil = listaPerfiles.Find(x => x.Id == objNotificacion.IdPerfil).CodigoPerfil;
                 var nomFrecuencia = listaFrecuencias.Find(x => x.Id == objNotificacion.IdFrecuencia).Frecuencia;
-                var nomRegistro = listaRegistros.Find(x => x.Id == objNotificacion.IdProgramacionRegistro).ProgramacionRegistro;
+                if (listaRegistros.FindAll(x => x.Id == objNotificacion.IdProgramacionRegistro).Count()>0) {
+                    nomRegistro = listaRegistros.Find(x => x.Id == objNotificacion.IdProgramacionRegistro).ProgramacionRegistro;
+                }
+                else {
+                    nomRegistro = "";
+                }                
                 var nomEtapa = listaEtapas.Find(x => x.Id == objNotificacion.IdEtapa).Etapa;
 
                 long idPerfil = 0;
@@ -154,6 +160,7 @@ namespace Application.Service
                     throw new NotDataFoundException("No se encontraron datos registrados");
 
                 }
+                Utils.registrarLog("Se remitió la notificación de manera exitosa", "NotificarNotificacionxId", "SUCCESSFUL");
                 return notificacion;
             }
             catch (WebException ex)

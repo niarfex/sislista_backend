@@ -8,5 +8,6 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<GestionRegistroModel>> GetAll(string param, string uuid);
         Task<GestionRegistroEntity> GetGestionRegistroxUUID(string uuid);
         Task<GestionRegistroModel> GetUUIDCuestionario(string numDoc, long idPeriodo);
+        Task<List<ArchivoModel>> GetArchivosCuestionario(string uuid);
     }
 }

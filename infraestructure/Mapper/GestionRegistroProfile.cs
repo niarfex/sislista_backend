@@ -20,6 +20,9 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<FundoModel, FundoGetDto>();
             CreateMap<CampoModel, CampoGetDto>();
             CreateMap<InformanteModel, InformanteGetDto>();
+            CreateMap<InformanteEntity, InformanteModel>();
+            CreateMap<ArchivoModel, ArchivoGetDto>();
+            CreateMap<ArchivoEntity, ArchivoModel>();
         }
     }
 }

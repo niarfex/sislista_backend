@@ -46,6 +46,11 @@ namespace Infra.MarcoLista.Output.Repository
                             join a in _db.Anio on m.IdAnio equals a.Id
                             join te in _db.TipoExplotacion on m.IdTipoExplotacion equals te.Id
                             from cu in _db.GestionRegistro.Where(x => x.IdMarcoLista == m.Id).DefaultIfEmpty()
+                            from info in _db.Informante.Where(x => x.IdCuestionario == m.Id).DefaultIfEmpty()
+                            from eEnt in _db.Estado.Where(x => x.Id == info.IdEstado).DefaultIfEmpty()
+                            from eSup in _db.Estado.Where(x => x.Id==cu.EstadoSupervision).DefaultIfEmpty()
+                            from eVal in _db.Estado.Where(x => x.Id == cu.EstadoValidacion).DefaultIfEmpty()
+                            from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
                             select new GestionRegistroModel
                             {
                                 CodigoUUID = cu.CodigoUUID,
@@ -54,10 +59,14 @@ namespace Infra.MarcoLista.Output.Repository
                                 NombreCompleto = pe.RazonSocial.IsNullOrEmpty() ? (pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno) : pe.RazonSocial,
                                 NumeroDocumento = pe.NumeroDocumento,
                                 TipoExplotacion = te.TipoExplotacion,
-                                EstadoEntrevista = cu != null ? 0 : 0,
-                                EstadoSupervision = cu != null ? 0 : 0,
-                                EstadoValidacion = cu != null ? 0 : 0,
-                                EstadoRegistro = cu != null ? 0 : 0,
+                                CodigoEstadoEntrevista = eEnt != null ? eEnt.CodigoEstado : null,
+                                CodigoEstadoSupervision =  eSup !=null?eSup.CodigoEstado:null,
+                                CodigoEstadoValidacion = eVal != null ? eVal.CodigoEstado : null,
+                                CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null,
+                                NombreEstadoEntrevista = eEnt != null ? eEnt.TipoEstado : null,
+                                NombreEstadoSupervision = eSup != null ? eSup.TipoEstado : null,
+                                NombreEstadoValidacion = eVal != null ? eVal.TipoEstado : null,
+                                NombreEstadoRegistro = eReg != null ? eReg.TipoEstado : "Por registrar",
                                 Clasificacion = "",
                                 UsuarioCreacion = cu != null ? cu.UsuarioCreacion : "",
                             };
@@ -71,6 +80,11 @@ namespace Infra.MarcoLista.Output.Repository
                             join a in _db.Anio on m.IdAnio equals a.Id
                             join te in _db.TipoExplotacion on m.IdTipoExplotacion equals te.Id
                             from cu in _db.GestionRegistro.Where(x => x.IdMarcoLista == m.Id).DefaultIfEmpty()
+                            from info in _db.Informante.Where(x => x.IdCuestionario == m.Id).DefaultIfEmpty()
+                            from eEnt in _db.Estado.Where(x => x.Id == info.IdEstado).DefaultIfEmpty()
+                            from eSup in _db.Estado.Where(x => x.Id == cu.EstadoSupervision).DefaultIfEmpty()
+                            from eVal in _db.Estado.Where(x => x.Id == cu.EstadoValidacion).DefaultIfEmpty()
+                            from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
                             where u.CodigoUUID.ToString() == uuid
                             select new GestionRegistroModel
                             {
@@ -80,10 +94,14 @@ namespace Infra.MarcoLista.Output.Repository
                                 NombreCompleto = pe.RazonSocial == "" ? (pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno) : pe.RazonSocial,
                                 NumeroDocumento = pe.NumeroDocumento,
                                 TipoExplotacion = te.TipoExplotacion,
-                                EstadoEntrevista = cu != null ? 0 : 0,
-                                EstadoSupervision = cu != null ? 0 : 0,
-                                EstadoValidacion = cu != null ? 0 : 0,
-                                EstadoRegistro = cu != null ? 0 : 0,
+                                CodigoEstadoEntrevista = eEnt != null ? eEnt.CodigoEstado : null,
+                                CodigoEstadoSupervision = eSup != null ? eSup.CodigoEstado : null,
+                                CodigoEstadoValidacion = eVal != null ? eVal.CodigoEstado : null,
+                                CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null,
+                                NombreEstadoEntrevista = eEnt != null ? eEnt.TipoEstado : null,
+                                NombreEstadoSupervision = eSup != null ? eSup.TipoEstado : null,
+                                NombreEstadoValidacion = eVal != null ? eVal.TipoEstado : null,
+                                NombreEstadoRegistro = eReg != null ? eReg.TipoEstado : "Por registrar",
                                 Clasificacion = "",
                                 UsuarioCreacion = cu != null ? cu.UsuarioCreacion : "",
                             };
@@ -171,5 +189,26 @@ namespace Infra.MarcoLista.Output.Repository
             }
 
         }
+
+
+        public async Task<List<ArchivoModel>> GetArchivosCuestionario(string uuid)
+        {
+            List<GestionRegistroModel> listaCuestionarios = new List<GestionRegistroModel>();
+            var query = from c in _db.GestionRegistro
+                           join ar in _db.Archivo on c.Id equals ar.IdCuestionario
+                           join tp in _db.TipoInformacion on ar.IdTipoInformacion equals tp.Id
+                           where c.CodigoUUID.ToString() == uuid
+                           select new ArchivoModel { 
+                           Id=ar.Id,
+                           NombreArchivo=ar.NombreArchivo,
+                           DescripcionArchivo=ar.DescripcionArchivo,
+                           TipoInformacion=tp.TipoInformacion,
+                           Peso=ar.Peso
+                           };
+            
+            return query.ToList();
+        }
+
+
     }
 }

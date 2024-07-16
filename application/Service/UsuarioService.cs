@@ -180,6 +180,7 @@ namespace Application.Service
                         }
                     }
                 }
+                Utils.registrarLog("Se remitió la notificación de manera exitosa", "SendCredenciales", "SUCCESSFUL");
                 return true;
             }
             catch (WebException ex)
