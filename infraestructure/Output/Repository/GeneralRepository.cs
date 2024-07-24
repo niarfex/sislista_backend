@@ -7,6 +7,7 @@ using Infra.MarcoLista.Input.Dto;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Reflection.Metadata;
@@ -273,6 +274,22 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<TipoInformacionEntity>> GetTipoInformacion()
         {
             return _db.TipoInformacion.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<LineaProduccionEntity>> GetLineaProduccion()
+        {
+            return _db.LineaProduccion.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<EspecieEntity>> GetEspecies()
+        {
+            return _db.Especie.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<SeccionEntity>> GetSecciones()
+        {
+            return _db.Seccion.Where(x => x.Estado == 1).ToList();
+        }
+        public async Task<List<EstadoEntity>> GetEstadosCuestionario()
+        {
+            return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre== "ESTADOSUPERVISION" || x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();
         }
     }
 }

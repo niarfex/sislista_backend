@@ -18,11 +18,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public PanelRegistroRepository(IConfiguration configuracion, IMapper mapper)
+        public PanelRegistroRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -37,6 +41,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreatePanelRegistro(PanelRegistroModel model)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {
                 var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == model.Id).FirstOrDefault();
@@ -49,7 +54,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objPanelRegistro.Objetivo = model.Objetivo;
                 objPanelRegistro.EnteRector = model.EnteRector;
                 objPanelRegistro.FechaActualizacion = DateTime.Now;
-                objPanelRegistro.UsuarioActualizacion = "";
+                objPanelRegistro.UsuarioActualizacion = usuario.Usuario; ;
                 _db.PanelRegistro.Update(objPanelRegistro);
                 _db.SaveChanges();
                 return objPanelRegistro.Id;
@@ -69,7 +74,7 @@ namespace Infra.MarcoLista.Output.Repository
                     EstadoProgramacion=1,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario,
                 };
                 _db.PanelRegistro.Add(objPanelRegistro);
                 _db.SaveChanges();
@@ -80,41 +85,45 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> DeletePanelRegistroxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
             objPanelRegistro.Estado = 2;
             objPanelRegistro.EstadoProgramacion = 5;
             objPanelRegistro.FechaActualizacion = DateTime.Now;
-            objPanelRegistro.UsuarioActualizacion = "";
+            objPanelRegistro.UsuarioActualizacion = usuario.Usuario; ;
             _db.PanelRegistro.Update(objPanelRegistro);
             _db.SaveChanges();
             return objPanelRegistro.Id;
         }
         public async Task<long> PublicarPanelRegistroxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
             objPanelRegistro.EstadoProgramacion = 2;
             objPanelRegistro.FechaActualizacion = DateTime.Now;
-            objPanelRegistro.UsuarioActualizacion = "";
+            objPanelRegistro.UsuarioActualizacion = usuario.Usuario; ;
             _db.PanelRegistro.Update(objPanelRegistro);
             _db.SaveChanges();
             return objPanelRegistro.Id;
         }
         public async Task<long> PausarPanelRegistroxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
             objPanelRegistro.EstadoProgramacion=4;
             objPanelRegistro.FechaActualizacion = DateTime.Now;
-            objPanelRegistro.UsuarioActualizacion = "";
+            objPanelRegistro.UsuarioActualizacion = usuario.Usuario; ;
             _db.PanelRegistro.Update(objPanelRegistro);
             _db.SaveChanges();
             return objPanelRegistro.Id;
         }
         public async Task<long> ReiniciarPanelRegistroxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPanelRegistro = _db.PanelRegistro.Where(x => x.Id == id).FirstOrDefault();
             objPanelRegistro.EstadoProgramacion = 2;
             objPanelRegistro.FechaActualizacion = DateTime.Now;
-            objPanelRegistro.UsuarioActualizacion = "";
+            objPanelRegistro.UsuarioActualizacion = usuario.Usuario; ;
             _db.PanelRegistro.Update(objPanelRegistro);
             _db.SaveChanges();
             return objPanelRegistro.Id;

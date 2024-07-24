@@ -30,6 +30,10 @@ namespace Application.Input
         Task<List<SelectTipoModel>> GetUsoNoAgricolas();
         Task<List<SelectTipoModel>> GetEstadoEntrevista();
         Task<List<SelectTipoModel>> GetTipoInformacion();
+        Task<List<SelectTipoModel>> GetLineaProduccion();
+        Task<List<SelectTipoModel>> GetEspecies();
+        Task<List<SelectTipoModel>> GetSecciones();
+        Task<List<SelectTipoModel>> GetEstadosCuestionario();
         Task<object> GetDatosRENIEC(string dni);
         Task<object> GetDatosSUNAT(string ruc);
     }

@@ -11,6 +11,8 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("IDE_FUNDO")]
         public long? IdFundo { get; set; }
+        [Column("IDE_CAMPO")]
+        public long? IdCampo { get; set; }
         [Column("IDE_SISTEMA_PECUARIO")]
         public long? IdSistemaPecuario { get; set; }
         [Column("IDE_LINEA_PRODUCCION")]

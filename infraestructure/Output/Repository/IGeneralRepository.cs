@@ -25,5 +25,9 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas();
         Task<List<EstadoEntity>> GetEstadoEntrevista();
         Task<List<TipoInformacionEntity>> GetTipoInformacion();
+        Task<List<LineaProduccionEntity>> GetLineaProduccion();
+        Task<List<EspecieEntity>> GetEspecies();
+        Task<List<SeccionEntity>> GetSecciones();
+        Task<List<EstadoEntity>> GetEstadosCuestionario();
     }
 }

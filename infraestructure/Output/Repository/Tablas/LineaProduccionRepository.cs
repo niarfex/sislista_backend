@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dapper;
+using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Contextos;
 using Infra.MarcoLista.GeneralSQL;
@@ -19,11 +20,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public LineaProduccionRepository(IConfiguration configuracion, IMapper mapper)
+        public LineaProduccionRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -39,6 +44,14 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreateLineaProduccion(LineaProduccionModel model)
         {
+            var objRegistroCod = _db.LineaProduccion.Where(x => x.CodigoLineaProduccion == model.CodigoLineaProduccion
+            && model.CodigoLineaProduccion != "" && x.Id != model.Id).FirstOrDefault();
+            if (objRegistroCod != null)
+            {
+                throw new CodigoExistException("EL Código ya se encuentra registrado");
+            }
+
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {
                 var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == model.Id).FirstOrDefault();
@@ -46,7 +59,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objLineaProduccion.LineaProduccion = model.LineaProduccion;
                 objLineaProduccion.DescripcionLineaProduccion = model.DescripcionLineaProduccion;               
                 objLineaProduccion.FechaActualizacion = DateTime.Now;
-                objLineaProduccion.UsuarioActualizacion = "";
+                objLineaProduccion.UsuarioActualizacion = usuario.Usuario;
                 _db.LineaProduccion.Update(objLineaProduccion);
                 _db.SaveChanges();
                 return objLineaProduccion.Id;
@@ -60,7 +73,7 @@ namespace Infra.MarcoLista.Output.Repository
                     DescripcionLineaProduccion = model.DescripcionLineaProduccion,                 
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.LineaProduccion.Add(objLineaProduccion);
                 _db.SaveChanges();
@@ -71,10 +84,11 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> DeleteLineaProduccionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
             objLineaProduccion.Estado = 2;
             objLineaProduccion.FechaActualizacion = DateTime.Now;
-            objLineaProduccion.UsuarioActualizacion = "";
+            objLineaProduccion.UsuarioActualizacion = usuario.Usuario;
             _db.LineaProduccion.Update(objLineaProduccion);
             _db.SaveChanges();
             return objLineaProduccion.Id;
@@ -82,10 +96,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> ActivarLineaProduccionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
             objLineaProduccion.Estado = 1;
             objLineaProduccion.FechaActualizacion = DateTime.Now;
-            objLineaProduccion.UsuarioActualizacion = "";
+            objLineaProduccion.UsuarioActualizacion = usuario.Usuario;
             _db.LineaProduccion.Update(objLineaProduccion);
             _db.SaveChanges();
             return objLineaProduccion.Id;
@@ -93,10 +108,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> DesactivarLineaProduccionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objLineaProduccion = _db.LineaProduccion.Where(x => x.Id == id).FirstOrDefault();
             objLineaProduccion.Estado = 0;
             objLineaProduccion.FechaActualizacion = DateTime.Now;
-            objLineaProduccion.UsuarioActualizacion = "";
+            objLineaProduccion.UsuarioActualizacion = usuario.Usuario;
             _db.LineaProduccion.Update(objLineaProduccion);
             _db.SaveChanges();
             return objLineaProduccion.Id;

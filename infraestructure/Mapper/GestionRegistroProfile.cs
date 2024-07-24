@@ -11,18 +11,32 @@ namespace Infra.MarcoLista.Mapper
         {
             CreateMap<TenenciaEntity, TenenciaModel>();
             CreateMap<UsoTierraEntity, UsoTierraModel>();
-            CreateMap<UsoNoAgricolaEntity, UsoNoAgricolaModel>();
+            CreateMap<UsoNoAgricolaEntity, UsoNoAgricolaModel>();            
             CreateMap<EstadoEntity, EstadoModel>();
             CreateMap<TipoInformacionEntity, TipoInformacionModel>();
             CreateMap<CultivoModel, CultivoListDto>();
+            CreateMap<SeccionEntity, SeccionModel>();
             CreateMap<GestionRegistroModel, GestionRegistroListDto>();
             CreateMap<GestionRegistroModel, GestionRegistroGetDto>();
+            CreateMap<GestionRegistroCreateUpdateDto, GestionRegistroModel>();
             CreateMap<FundoModel, FundoGetDto>();
-            CreateMap<CampoModel, CampoGetDto>();
+            CreateMap<FundoCreateUpdateDto, FundoModel>();
+            CreateMap<FundoEntity, FundoModel>();
+            CreateMap<CampoModel, CampoGetDto>();            
+            CreateMap<CampoEntity, CampoModel>();
+            CreateMap<CampoGetDto, CampoModel>();
             CreateMap<InformanteModel, InformanteGetDto>();
             CreateMap<InformanteEntity, InformanteModel>();
+            CreateMap<InformanteGetDto, InformanteModel>();
             CreateMap<ArchivoModel, ArchivoGetDto>();
             CreateMap<ArchivoEntity, ArchivoModel>();
+            CreateMap<ArchivoGetDto, ArchivoModel>();
+            CreateMap<PecuarioModel, PecuarioGetDto>();
+            CreateMap<PecuarioEntity, PecuarioModel>();
+            CreateMap<PecuarioGetDto, PecuarioModel>();
+            CreateMap<TrazabilidadModel, TrazabilidadGetDto>();
+            CreateMap<TrazabilidadEntity, TrazabilidadModel>();
+            CreateMap<TrazabilidadGetDto, TrazabilidadModel>();
         }
     }
 }

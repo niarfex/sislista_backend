@@ -5,6 +5,7 @@ using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
 using Domain.Model.ExportExcel;
+using Infra.Helpers;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -13,6 +14,7 @@ namespace Infra.MarcoLista.Input.Controllers
 {
     [Route("/v1/especie")]
     [ApiController]
+    [Authorize]
     public class EspecieController : ControllerBase
     {
         private readonly IEspecieService _especieService;
@@ -116,6 +118,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
 
             }
+            catch (CodigoExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
             catch (Exception e)
             {
                 respuesta.success = false;
@@ -135,6 +143,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.data = await _especieService.DeleteEspeciexId(id);
                 return respuesta;
 
+            }
+            catch (RelatedDataFoundException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
             }
             catch (Exception e)
             {

@@ -14,6 +14,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<EspecieListDto, EspecieExcel>();
             CreateMap<LineaProduccionListDto, LineaProduccionExcel>();
             CreateMap<MarcoListaListDto, MarcoListaExcel>();
+            CreateMap<GestionRegistroListDto, GestionRegistroExcel>();
             CreateMap<NotificacionListDto, NotificacionExcel>();
             CreateMap<OrganizacionListDto, OrganizacionExcel>();
             CreateMap<PanelRegistroListDto, PanelRegistroExcel>();

@@ -128,6 +128,18 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
 
             }
+            catch (EmailExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
+            catch (DocExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
             catch (Exception e)
             {
                 respuesta.success = false;
@@ -147,6 +159,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.data = await _usuarioService.DeleteUsuarioxUUID(uuid);
                 return respuesta;
 
+            }
+            catch (RelatedDataFoundException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
             }
             catch (Exception e)
             {
@@ -192,6 +210,34 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al deshabilitar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetMenuItemxUsuario")]
+        public async Task<ResponseModel> GetMenuItemxUsuario()
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var menus = await _usuarioService.GetMenuItemxUsuario(0);
+                respuesta.success = true;
+                if (menus != null)
+                {
+                    respuesta.data = _mapper.Map<List<MenuItemGetDto>>(menus);
+                }
+                else
+                {
+                    respuesta.data = null;
+                }
+                respuesta.message = "Se listan los datos correctamente";
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al consultar el listado";
                 return respuesta;
             }
         }

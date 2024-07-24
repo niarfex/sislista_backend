@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Domain.Model
 {
@@ -37,6 +38,14 @@ namespace Domain.Model
         public string? UsuarioCreacion { get; set; }
         public DateTime? FechaActualizacion { get; set; }
         public string? UsuarioActualizacion { get; set; }
+        //
+
+        public List<FundoModel> ListFundos { get; set; }
+        public List<PecuarioModel> ListPecuarios { get; set; }
+        public List<ArchivoModel> ListArchivos { get; set; }
+        public List<InformanteModel> ListInformantes { get; set; }
+        public List<TrazabilidadModel> ListObservaciones { get; set; }
+
         //Listado
         public long? IdPeriodo { get; set; }
         public string? Periodo { get; set; }

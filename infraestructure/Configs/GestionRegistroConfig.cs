@@ -20,7 +20,7 @@ namespace Infra.MarcoLista.Configs
             builder.Property(c => c.ApellidoMaterno).HasColumnType("VARCHAR2");
             builder.Property(c => c.RazonSocial).HasColumnType("VARCHAR2");
             builder.Property(c => c.NombreRepLegal).HasColumnType("VARCHAR2");
-
+            builder.Property(c => c.CodigoUUID).HasColumnType("VARCHAR2");
         }
     }
 }

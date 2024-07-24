@@ -44,7 +44,7 @@ namespace Infra.MarcoLista.Input.Controllers
             try
             {
                 var ubigeos = await _organizacionService.GetAll(param);
-                respuesta.success = true;                
+                respuesta.success = true;
                 if (ubigeos != null)
                 {
                     respuesta.data = _mapper.Map<List<OrganizacionListDto>>(ubigeos);
@@ -53,10 +53,10 @@ namespace Infra.MarcoLista.Input.Controllers
                 {
                     respuesta.data = null;
                 }
-                respuesta.message="Se listan los datos correctamente";
+                respuesta.message = "Se listan los datos correctamente";
                 return respuesta;
 
-            }
+            }            
             catch (Exception e)
             {
                 respuesta.success = false;
@@ -122,12 +122,24 @@ namespace Infra.MarcoLista.Input.Controllers
             ResponseModel respuesta = new ResponseModel();
             try
             {
-                var id = await _organizacionService.CreateOrganizacion(_mapper.Map<OrganizacionModel>(dto));             
+                var id = await _organizacionService.CreateOrganizacion(_mapper.Map<OrganizacionModel>(dto));
                 respuesta.success = true;
                 respuesta.message = "Se registraron los datos correctamente";
                 respuesta.data = id;
                 return respuesta;
 
+            }
+            catch (EmailExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
+            catch (DocExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
             }
             catch (Exception e)
             {
@@ -148,6 +160,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.data = await _organizacionService.DeleteOrganizacionxId(id);
                 return respuesta;
 
+            }
+            catch (RelatedDataFoundException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
             }
             catch (Exception e)
             {

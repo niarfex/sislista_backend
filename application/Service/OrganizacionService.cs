@@ -2,6 +2,9 @@
 using Application.Output;
 using Domain.Exceptions;
 using Domain.Model;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using System.Net;
 
 namespace Application.Service
 {
@@ -10,17 +13,21 @@ namespace Application.Service
         private readonly IOrganizacionPort _organizacionPort;
         private readonly IUsuarioPort _usuarioPort;
         private readonly IGeneralPort _generalPort;
+        private readonly IConfiguration _appConfiguration;
 
         public OrganizacionService(IOrganizacionPort organizacionPort,
             IUsuarioPort usuarioPort,
-            IGeneralPort generalPort)
+            IGeneralPort generalPort,
+            IConfiguration appConfiguration)
         {
             _organizacionPort = organizacionPort ?? throw new ArgumentNullException(nameof(organizacionPort));
             _usuarioPort = usuarioPort ?? throw new ArgumentNullException(nameof(usuarioPort));
             _generalPort = generalPort ?? throw new ArgumentNullException(nameof(generalPort));
+            _appConfiguration = appConfiguration;
         }
         public async Task<List<OrganizacionModel>> GetAll(string param)
-        {
+        {        
+
             var organizacions = await _organizacionPort.GetAll(param);
             var tipoOrganizacion = await _generalPort.GetTipoOrganizacion();
             var departamentos = await _generalPort.GetDepartamentos(1, "");
@@ -92,6 +99,46 @@ namespace Application.Service
                 throw new NotDataFoundException("No se encontraron datos registrados");
 
             }
+            /****** Envio de correo ******/
+            var concopia = _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
+
+            var usuariosDestinatarios = await _usuarioPort.GetCorreosUsuariosxOrganizacion(id);
+            string correosDest = "";
+            foreach (var correo in usuariosDestinatarios)
+            {
+                correosDest = correosDest == "" ? correo.CorreoElectronico : correosDest + "," + correo.CorreoElectronico;
+            }
+            var asunto = "Deshabilitación de usuario";
+            var mensaje = $"Estimados(as) usuarios, se le notifica que la organización vinculada a su usuario ha sido habilitada por ende su respectivo " +
+                $"usuario tambien ha sido habilitado, cualquier consulta por favor contactarse con el administrador del sistema" + "<br><br>";
+            var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
+                $"\"vto\":\"{correosDest + concopia}\"," +
+                $"\"vasunto\":\"{asunto}\"," +
+                $"\"vmensaje\":\"{mensaje}\"}}";
+
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.Accept = "application/json";
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            {
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+            using (WebResponse response = request.GetResponse())
+            {
+                using (Stream strReader = response.GetResponseStream())
+                {
+                    if (strReader == null) return 0;
+                    using (StreamReader objReader = new StreamReader(strReader))
+                    {
+                        string responseBody = await objReader.ReadToEndAsync();
+                    }
+                }
+            }
+            /****** Envio de correo ******/
             return organizacion;
         }
         public async Task<long> DesactivarOrganizacionxId(long id)
@@ -103,6 +150,46 @@ namespace Application.Service
                 throw new NotDataFoundException("No se encontraron datos registrados");
 
             }
+            /****** Envio de correo ******/
+            var concopia = _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];       
+         
+            var usuariosDestinatarios = await _usuarioPort.GetCorreosUsuariosxOrganizacion(id);
+            string correosDest = "";
+            foreach (var correo in usuariosDestinatarios)
+            {
+                correosDest = correosDest == "" ? correo.CorreoElectronico : correosDest + "," + correo.CorreoElectronico;
+            }
+            var asunto = "Deshabilitación de usuario";
+            var mensaje = $"Estimados(as) usuarios, se le notifica que la organización vinculada a su usuario ha sido deshabilitada por ende su respectivo " +
+                $"usuario tambien ha sido deshabilitado, cualquier consulta por favor contactarse con el administrador del sistema" + "<br><br>";
+            var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
+                $"\"vto\":\"{correosDest + concopia}\"," +
+                $"\"vasunto\":\"{asunto}\"," +
+                $"\"vmensaje\":\"{mensaje}\"}}";
+
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.Accept = "application/json";
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            {
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+            using (WebResponse response = request.GetResponse())
+            {
+                using (Stream strReader = response.GetResponseStream())
+                {
+                    if (strReader == null) return 0;
+                    using (StreamReader objReader = new StreamReader(strReader))
+                    {
+                        string responseBody = await objReader.ReadToEndAsync();
+                    }
+                }
+            }
+            /****** Envio de correo ******/
             return organizacion;
         }
     }

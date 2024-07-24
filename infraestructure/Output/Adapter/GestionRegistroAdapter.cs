@@ -66,5 +66,18 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<string> CreateCuestionario(GestionRegistroModel model)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.CreateCuestionario(model);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }

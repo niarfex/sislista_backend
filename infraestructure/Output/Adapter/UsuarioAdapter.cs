@@ -3,7 +3,7 @@ using AutoMapper;
 using Domain.Model;
 using Infra.MarcoLista.Output.Repository;
 
-namespace infraestructure.Output.Adapter
+namespace Infra.MarcoLista.Output.Adapter
 {
     public class UsuarioAdapter: IUsuarioPort
     {
@@ -109,6 +109,45 @@ namespace infraestructure.Output.Adapter
         public async Task<List<UsuarioModel>> GetCorreosUsuariosxPerfil(long idPerfil)
         {
             var usuarioEntity = await _usuarioRepository.GetCorreosUsuariosxPerfil(idPerfil);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<UsuarioModel>> GetCorreosUsuariosxOrganizacion(long idOrganizacion)
+        {
+            var usuarioEntity = await _usuarioRepository.GetCorreosUsuariosxOrganizacion(idOrganizacion);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<UsuarioModel>> GetCorreosUsuariosxMarcoLista(long idMarcoLista)
+        {
+            var usuarioEntity = await _usuarioRepository.GetCorreosUsuariosxMarcoLista(idMarcoLista);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<MenuItemModel>> GetMenuItemxUsuario(long idPadre)
+        {
+            var usuarioEntity = await _usuarioRepository.GetMenuItemxUsuario(idPadre);
 
             if (usuarioEntity != null)
             {

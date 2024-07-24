@@ -290,5 +290,57 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<LineaProduccionModel>> GetLineaProduccion()
+        {
+            var objetoEntity = await _generalRepository.GetLineaProduccion();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<LineaProduccionModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<EspecieModel>> GetEspecies()
+        {
+            var objetoEntity = await _generalRepository.GetEspecies();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<EspecieModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<SeccionModel>> GetSecciones()
+        {
+            var objetoEntity = await _generalRepository.GetSecciones();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<SeccionModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<EstadoModel>> GetEstadosCuestionario()
+        {
+            var objetoEntity = await _generalRepository.GetEstadosCuestionario();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<EstadoModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

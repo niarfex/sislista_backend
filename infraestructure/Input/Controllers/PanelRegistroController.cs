@@ -5,6 +5,7 @@ using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
 using Domain.Model.ExportExcel;
+using Infra.Helpers;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -13,6 +14,7 @@ namespace Infra.MarcoLista.Input.Controllers
 {
     [Route("/v1/panelregistro")]
     [ApiController]
+    [Authorize]
     public class PanelRegistroController : ControllerBase
     {
         private readonly IPanelRegistroService _panelregistroService;
@@ -142,6 +144,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.data = await _panelregistroService.DeletePanelRegistroxId(id);
                 return respuesta;
 
+            }
+            catch (RelatedDataFoundException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
             }
             catch (Exception e)
             {

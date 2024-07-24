@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dapper;
+using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Contextos;
 using Infra.MarcoLista.GeneralSQL;
@@ -18,11 +19,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public EspecieRepository(IConfiguration configuracion, IMapper mapper)
+        public EspecieRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -38,6 +43,14 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreateEspecie(EspecieModel model)
         {
+            var objRegistroCod = _db.Especie.Where(x => x.CodigoEspecie == model.CodigoEspecie
+            && model.CodigoEspecie != "" && x.Id != model.Id).FirstOrDefault();
+            if (objRegistroCod != null)
+            {
+                throw new CodigoExistException("EL Código ya se encuentra registrado");
+            }
+
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {
                 var objEspecie = _db.Especie.Where(x => x.Id == model.Id).FirstOrDefault();
@@ -45,7 +58,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objEspecie.Especie = model.Especie;
                 objEspecie.DescripcionEspecie = model.DescripcionEspecie;
                 objEspecie.FechaActualizacion = DateTime.Now;
-                objEspecie.UsuarioActualizacion = "";
+                objEspecie.UsuarioActualizacion = usuario.Usuario;
                 _db.Especie.Update(objEspecie);
                 _db.SaveChanges();
                 return objEspecie.Id;
@@ -59,7 +72,7 @@ namespace Infra.MarcoLista.Output.Repository
                     DescripcionEspecie = model.DescripcionEspecie,  
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.Especie.Add(objEspecie);
                 _db.SaveChanges();
@@ -70,10 +83,11 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> DeleteEspeciexId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objEspecie = _db.Especie.Where(x => x.Id == id).FirstOrDefault();
             objEspecie.Estado = 2;
             objEspecie.FechaActualizacion = DateTime.Now;
-            objEspecie.UsuarioActualizacion = "";
+            objEspecie.UsuarioActualizacion = usuario.Usuario;
             _db.Especie.Update(objEspecie);
             _db.SaveChanges();
             return objEspecie.Id;
@@ -81,10 +95,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> ActivarEspeciexId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objEspecie = _db.Especie.Where(x => x.Id == id).FirstOrDefault();
             objEspecie.Estado = 1;
             objEspecie.FechaActualizacion = DateTime.Now;
-            objEspecie.UsuarioActualizacion = "";
+            objEspecie.UsuarioActualizacion = usuario.Usuario;
             _db.Especie.Update(objEspecie);
             _db.SaveChanges();
             return objEspecie.Id;
@@ -92,10 +107,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> DesactivarEspeciexId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objEspecie = _db.Especie.Where(x => x.Id == id).FirstOrDefault();
             objEspecie.Estado = 0;
             objEspecie.FechaActualizacion = DateTime.Now;
-            objEspecie.UsuarioActualizacion = "";
+            objEspecie.UsuarioActualizacion = usuario.Usuario;
             _db.Especie.Update(objEspecie);
             _db.SaveChanges();
             return objEspecie.Id;

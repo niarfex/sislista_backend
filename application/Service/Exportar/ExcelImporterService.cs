@@ -32,6 +32,9 @@ namespace Application.Service.Exportar
             var listDepartamentos = await _generalService.GetDepartamentos();
             var listTipoDocumento = await _generalService.GetTipoDocumento();
             var listTipoExplotacion = await _generalService.GetTipoExplotacion();
+            var listMarcoListas = await _marcolistaservice.GetAll("");
+            var listPeriodos = await _generalService.GetPeriodos();
+            var maxPeriodo = listPeriodos.OrderByDescending(x => x.label).FirstOrDefault();
 
             var tipoSAA = long.Parse(listCondicionJuridica.Find(x => x.codigo == "SAA").value);//S.A.A.
             var tipoSAC = long.Parse(listCondicionJuridica.Find(x => x.codigo == "SAC").value);//S.A.C.
@@ -60,7 +63,7 @@ namespace Application.Service.Exportar
 
                     obj = new MarcoListaModel();
                     obj.NumeroDocumento = row.GetCell(1).StringCellValue;
-
+                    obj.IdAnio = long.Parse(maxPeriodo.value);
                     if (obj.NumeroDocumento.Trim().Length == 11)
                     {
                         obj.IdTipoDocumento = Convert.ToInt32(listTipoDocumento.Find(x => x.codigo.ToUpper() == "RUC").value);
@@ -69,9 +72,11 @@ namespace Application.Service.Exportar
                             obj.RazonSocial = "";
                             obj.IdCondicionJuridica = tipoOTROS;
                         }
-                        else {
+                        else
+                        {
                             obj.RazonSocial = row.GetCell(2).StringCellValue;
-                            if (row.GetCell(2).StringCellValue.Contains("S.C.R.L.") || row.GetCell(2).StringCellValue.Contains("S.R.L.")) {
+                            if (row.GetCell(2).StringCellValue.Contains("S.C.R.L.") || row.GetCell(2).StringCellValue.Contains("S.R.L."))
+                            {
                                 obj.IdCondicionJuridica = tipoSRL;
                             }
                             else if (row.GetCell(2).StringCellValue.Contains("E.I.R.L."))
@@ -95,55 +100,74 @@ namespace Application.Service.Exportar
                                 obj.IdCondicionJuridica = tipoOTROS;
                             }
                         }
-                        
+
                         obj.DireccionFiscalDomicilio = row.GetCell(3).StringCellValue;
-                        obj.NombreRepLegal = row.GetCell(4) == null ? null : row.GetCell(4).StringCellValue;                     
-                        
-                        obj.Telefono = row.GetCell(6).StringCellValue.Trim().Length > 20 ? row.GetCell(6).StringCellValue.Trim().Substring(0,20): row.GetCell(6).StringCellValue.Trim();
-                        obj.Celular = row.GetCell(7) == null ? null :(row.GetCell(7).StringCellValue.Trim().Length > 10 ? row.GetCell(7).StringCellValue.Trim().Substring(0, 10) : row.GetCell(7).StringCellValue.Trim());
+                        obj.NombreRepLegal = row.GetCell(4) == null ? null : row.GetCell(4).StringCellValue;
+
+                        obj.Telefono = row.GetCell(6).StringCellValue.Trim().Length > 20 ? row.GetCell(6).StringCellValue.Trim().Substring(0, 20) : row.GetCell(6).StringCellValue.Trim();
+                        obj.Celular = row.GetCell(7) == null ? null : (row.GetCell(7).StringCellValue.Trim().Length > 10 ? row.GetCell(7).StringCellValue.Trim().Substring(0, 10) : row.GetCell(7).StringCellValue.Trim());
                         obj.CorreoElectronico = row.GetCell(8).StringCellValue.Replace("/", ",");
                         if (listTipoExplotacion.FindAll(x => Regex.Replace(x.label.ToUpper().Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "") == Regex.Replace(row.GetCell(9).StringCellValue.ToUpper().Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "")).Count > 0)
                         {
                             obj.IdTipoExplotacion = Convert.ToInt32(listTipoExplotacion.Find(x => Regex.Replace(x.label.ToUpper().Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "") == Regex.Replace(row.GetCell(9).StringCellValue.ToUpper().Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "")).value);
                         }
-                        else {
+                        else
+                        {
                             obj.IdTipoExplotacion = null;
-                            result = result + "Error con el tipo de explótación de la fila " + currentRow.ToString() + "; "; 
+                            result = result + "Error con el tipo de explótación de la fila " + currentRow.ToString() + ";\n";
                         }
-                        obj.IdUbigeo = listDepartamentos.Find(x => x.label.ToUpper() == row.GetCell(10).StringCellValue.ToUpper()).value;
-                        var listProvincias = await _generalService.GetProvincias(obj.IdUbigeo);
-                        if (listProvincias.FindAll(x => x.label.ToUpper() == row.GetCell(11).StringCellValue.ToUpper()).Count()>0) {
-                            obj.IdUbigeo = listProvincias.Find(x => x.label.ToUpper() == row.GetCell(11).StringCellValue.ToUpper()).value;
-                            var listDistritos = await _generalService.GetDistritos(obj.IdUbigeo);
-                            if (listDistritos.FindAll(x => x.label.ToUpper() == row.GetCell(12).StringCellValue.ToUpper()).Count() > 0)
+                        if (listDepartamentos.FindAll(x => x.label.ToUpper() == row.GetCell(10).StringCellValue.ToUpper()).Count() > 0)
+                        {
+                            obj.IdUbigeo = listDepartamentos.Find(x => x.label.ToUpper() == row.GetCell(10).StringCellValue.ToUpper()).value;
+                            obj.IdDepartamento = obj.IdUbigeo;
+                            var listProvincias = await _generalService.GetProvincias(obj.IdUbigeo);
+                            if (listProvincias.FindAll(x => x.label.ToUpper() == row.GetCell(11).StringCellValue.ToUpper()).Count() > 0)
                             {
-                                obj.IdUbigeo = listDistritos.Find(x => x.label.ToUpper() == row.GetCell(12).StringCellValue.ToUpper()).value;
+                                obj.IdUbigeo = listProvincias.Find(x => x.label.ToUpper() == row.GetCell(11).StringCellValue.ToUpper()).value;
+                                var listDistritos = await _generalService.GetDistritos(obj.IdUbigeo);
+                                if (listDistritos.FindAll(x => x.label.ToUpper() == row.GetCell(12).StringCellValue.ToUpper()).Count() > 0)
+                                {
+                                    obj.IdUbigeo = listDistritos.Find(x => x.label.ToUpper() == row.GetCell(12).StringCellValue.ToUpper()).value;
+                                }
+                                else
+                                {
+                                    obj.IdUbigeo = "";
+                                    result = result + "Error con el distrito de la fila " + currentRow.ToString() + ";\n";
+                                }
                             }
                             else
                             {
                                 obj.IdUbigeo = "";
-                                result = result + "Error con el distrito de la fila " + currentRow.ToString() + "; ";
+                                result = result + "Error con la provincia de la fila " + currentRow.ToString() + ";\n";
                             }
                         }
-                        else {
+                        else
+                        {
                             obj.IdUbigeo = "";
-                            result = result + "Error con la provincia de la fila " + currentRow.ToString() + "; ";
-                        }  
+                            result = result + "Error con el departamento de la fila " + currentRow.ToString() + ";\n";
+                        }
+
                         if (obj.IdUbigeo.Trim().Length < 6)
                         {
-                            result = result + "Error con el ubigeo de la fila " + currentRow.ToString() + "; ";
+                            result = result + "Error con el ubigeo de la fila " + currentRow.ToString() + ";\n";
                             obj.IdUbigeo = null;
                         }
-                        var resultado = await _marcolistaservice.CreateMarcoLista(obj);
-                        if (resultado > 0)
+                        if (listMarcoListas.FindAll(x => x.IdAnio==obj.IdAnio && x.NumeroDocumento==obj.NumeroDocumento && x.IdDepartamento==obj.IdDepartamento).Count() > 0)
                         {
-                            result = result + "Fila " + currentRow.ToString() + " exitosa; ";
+                            result = result + "Error con el número de documento del elemento de marco de lista de la fila " + currentRow.ToString() + " ya se encuentra registrado en un mismo Periodo y Departamento;\n" ;
                         }
-                        else { result = result + "Error al registrar la fila " + currentRow.ToString()+"; "; }
+                        else {
+                            var resultado = await _marcolistaservice.CreateMarcoLista(obj);
+                            if (resultado > 0)
+                            {
+                                result = result + "Fila " + currentRow.ToString() + " exitosa;\n";
+                            }
+                            else { result = result + "Error al registrar la fila " + currentRow.ToString() + ";\n"; }
+                        }         
                     }
                     else
                     {
-                        result = result + "Error con el RUC de la fila " + currentRow.ToString()+"; ";
+                        result = result + "Error con el RUC de la fila " + currentRow.ToString() + ";\n";
                     }
                     //listaMarcos.Add(obj);
                     currentRow++;

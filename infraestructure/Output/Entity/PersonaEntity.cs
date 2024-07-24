@@ -21,7 +21,7 @@ namespace Infra.MarcoLista.Output.Entity
         public long? IdCondicionJuridicaOtros { get; set; }
         [Column("IDE_UBIGEO")]        
         public string? IdUbigeo { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("TXT_CODIGO_UUID")]
         public string? CodigoUUID { get; set; }
         [Column("TXT_NUMERO_DOCUMENTO")]

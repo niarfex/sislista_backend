@@ -11,6 +11,7 @@ using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Xml.Linq;
 using static Dapper.SqlMapper;
+using Domain.Exceptions;
 
 namespace Infra.MarcoLista.Output.Repository
 {
@@ -18,11 +19,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public OrganizacionRepository(IConfiguration configuracion, IMapper mapper)
+        public OrganizacionRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -39,8 +44,22 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreateOrganizacion(OrganizacionModel model)
         {
-            if (model.Id > 0)
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
+
+            var objRegistroRUC = _db.Organizacion.Where(x => x.NumeroDocumento == model.NumeroDocumento &&  x.Id != model.Id).FirstOrDefault();
+            if (objRegistroRUC != null)
             {
+                throw new DocExistException("EL Número de RUC ya se encuentra registrado");
+            }
+            var objRegistroEmail = _db.Organizacion.Where(x => x.CorreoElectronico.ToUpper() == model.CorreoElectronico.ToUpper() && model.CorreoElectronico.ToUpper() != "" && x.Id != model.Id).FirstOrDefault();
+            if (objRegistroEmail != null)
+            {
+                throw new EmailExistException("EL correo electrónico ya se encuentra registrado en otra organización");
+            }
+
+            if (model.Id > 0)
+            {               
+
                 var objOrganizacion = _db.Organizacion.Where(x => x.Id == model.Id).FirstOrDefault();
                 objOrganizacion.IdTipoOrganizacion = model.IdTipoOrganizacion;
                 objOrganizacion.NumeroDocumento = model.NumeroDocumento;
@@ -51,13 +70,13 @@ namespace Infra.MarcoLista.Output.Repository
                 objOrganizacion.PaginaWeb = model.PaginaWeb;
                 objOrganizacion.CorreoElectronico = model.CorreoElectronico;
                 objOrganizacion.FechaActualizacion = DateTime.Now;
-                objOrganizacion.UsuarioActualizacion = "";
+                objOrganizacion.UsuarioActualizacion = usuario.Usuario;
                 _db.Organizacion.Update(objOrganizacion);
                 _db.SaveChanges();
                 return objOrganizacion.Id;
             }
             else
-            {
+            {       
                 var objOrganizacion = new OrganizacionEntity()
                 {
                     IdTipoOrganizacion = model.IdTipoOrganizacion,
@@ -70,7 +89,7 @@ namespace Infra.MarcoLista.Output.Repository
                     CorreoElectronico = model.CorreoElectronico,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario,
                 };
                 _db.Organizacion.Add(objOrganizacion);
                 _db.SaveChanges();
@@ -81,34 +100,60 @@ namespace Infra.MarcoLista.Output.Repository
         }       
         public async Task<long> DeleteOrganizacionxId(long id)
         {
+            var objOrgPers = _db.Persona.Where(x => x.IdOrganizacion == id).FirstOrDefault();
+
+            if (objOrgPers != null) {
+                throw new RelatedDataFoundException("No se puede eliminar la organización existen registros de usuarios asociados a esta organizacion");
+            }
+
             var objOrganizacion = _db.Organizacion.Where(x => x.Id == id).FirstOrDefault();
-            objOrganizacion.Estado = 2;      
-            objOrganizacion.FechaActualizacion = DateTime.Now;
-            objOrganizacion.UsuarioActualizacion = "";
-            _db.Organizacion.Update(objOrganizacion);
+            _db.Organizacion.Remove(objOrganizacion);   
             _db.SaveChanges();
             return objOrganizacion.Id;
         }
 
         public async Task<long> ActivarOrganizacionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objOrganizacion = _db.Organizacion.Where(x => x.Id == id).FirstOrDefault();
             objOrganizacion.Estado = 1;
             objOrganizacion.FechaActualizacion = DateTime.Now;
-            objOrganizacion.UsuarioActualizacion = "";
+            objOrganizacion.UsuarioActualizacion = usuario.Usuario; 
             _db.Organizacion.Update(objOrganizacion);
             _db.SaveChanges();
+
+            var objUsuarios = _db.Usuario.Where(x => x.DetallePersona.IdOrganizacion == id).ToList();
+            foreach (var objUsu in objUsuarios)
+            {
+                objUsu.Estado = 1;
+                objUsu.FechaActualizacion = DateTime.Now;
+                objUsu.UsuarioActualizacion = usuario.Usuario; 
+                _db.Usuario.Update(objUsu);
+                _db.SaveChanges();
+            }
+
             return objOrganizacion.Id;
         }
 
         public async Task<long> DesactivarOrganizacionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objOrganizacion = _db.Organizacion.Where(x => x.Id == id).FirstOrDefault();
             objOrganizacion.Estado = 0;
             objOrganizacion.FechaActualizacion = DateTime.Now;
-            objOrganizacion.UsuarioActualizacion = "";
+            objOrganizacion.UsuarioActualizacion = usuario.Usuario; 
             _db.Organizacion.Update(objOrganizacion);
             _db.SaveChanges();
+
+            var objUsuarios = _db.Usuario.Where(x => x.DetallePersona.IdOrganizacion == id).ToList();
+            foreach (var objUsu in objUsuarios) {
+                objUsu.Estado = 0;
+                objUsu.FechaActualizacion = DateTime.Now;
+                objUsu.UsuarioActualizacion = usuario.Usuario; 
+                _db.Usuario.Update(objUsu);
+                _db.SaveChanges();
+            }
+
             return objOrganizacion.Id;
         }
     }

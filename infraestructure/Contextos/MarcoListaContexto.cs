@@ -42,6 +42,7 @@ namespace Infra.MarcoLista.Contextos
         public DbSet<PersonaEntity> Permiso { get; set; }
         public DbSet<PersonaEntity> Persona { get; set; }
         public DbSet<PlantillaEntity> Plantilla { get; set; }
+        public DbSet<SeccionEntity> Seccion { get; set; }
         public DbSet<SesionEntity> Sesion { get; set; }
         public DbSet<SistemaPecuarioEntity> SistemaPecuario { get; set; }
         public DbSet<TenenciaEntity> Tenencia { get; set; }
@@ -49,6 +50,7 @@ namespace Infra.MarcoLista.Contextos
         public DbSet<TipoExplotacionEntity> TipoExplotacion { get; set; }
         public DbSet<TipoInformacionEntity> TipoInformacion { get; set; }
         public DbSet<TipoOrganizacionEntity> TipoOrganizacion { get; set; }
+        public DbSet<TrazabilidadEntity> Trazabilidad { get; set; }
         public DbSet<UsoNoAgricolaEntity> UsoNoAgricola { get; set; }
         public DbSet<UsoTierraEntity> UsoTierra { get; set; }
         public DbSet<UsuarioEntity> Usuario { get; set; }
@@ -91,6 +93,7 @@ namespace Infra.MarcoLista.Contextos
             builder.ApplyConfiguration(new PermisoConfig());
             builder.ApplyConfiguration(new PersonaConfig());  
             builder.ApplyConfiguration(new PlantillaConfig());
+            builder.ApplyConfiguration(new SeccionConfig());
             builder.ApplyConfiguration(new SesionConfig());
             builder.ApplyConfiguration(new SistemaPecuarioConfig());
             builder.ApplyConfiguration(new TenenciaConfig());
@@ -98,6 +101,7 @@ namespace Infra.MarcoLista.Contextos
             builder.ApplyConfiguration(new TipoExplotacionConfig());
             builder.ApplyConfiguration(new TipoInformacionConfig());
             builder.ApplyConfiguration(new TipoOrganizacionConfig());
+            builder.ApplyConfiguration(new TrazabilidadConfig());
             builder.ApplyConfiguration(new UsoNoAgricolaConfig());
             builder.ApplyConfiguration(new UsoTierraConfig());
             builder.ApplyConfiguration(new UsuarioConfig());

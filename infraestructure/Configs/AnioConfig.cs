@@ -15,7 +15,7 @@ namespace Infra.MarcoLista.Configs
         {
             builder.ToTable("TG_ANIO");
             builder.HasKey(c => c.Id);
-
+            builder.Property(c => c.Anio).HasColumnType("VARCHAR2");
         }
     }
 }

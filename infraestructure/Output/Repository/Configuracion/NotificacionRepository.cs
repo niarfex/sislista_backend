@@ -18,11 +18,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public NotificacionRepository(IConfiguration configuracion, IMapper mapper)
+        public NotificacionRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -36,6 +40,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreateNotificacion(NotificacionModel model)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {
                 var objNotificacion = _db.Notificacion.Where(x => x.Id == model.Id).FirstOrDefault();
@@ -46,7 +51,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objNotificacion.Descripcion = model.Descripcion;
                 objNotificacion.IdPerfil = model.IdPerfil;
                 objNotificacion.FechaActualizacion = DateTime.Now;
-                objNotificacion.UsuarioActualizacion = "";
+                objNotificacion.UsuarioActualizacion = usuario.Usuario;
                 _db.Notificacion.Update(objNotificacion);
                 _db.SaveChanges();
                 return objNotificacion.Id;
@@ -64,7 +69,7 @@ namespace Infra.MarcoLista.Output.Repository
                     EstadoNotificacion = 1,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.Notificacion.Add(objNotificacion);
                 _db.SaveChanges();
@@ -75,21 +80,24 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> DeleteNotificacionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objNotificacion = _db.Notificacion.Where(x => x.Id == id).FirstOrDefault();
             objNotificacion.Estado = 2;
             objNotificacion.EstadoNotificacion = 3;
             objNotificacion.FechaActualizacion = DateTime.Now;
-            objNotificacion.UsuarioActualizacion = "";
+            objNotificacion.UsuarioActualizacion = usuario.Usuario;
             _db.Notificacion.Update(objNotificacion);
             _db.SaveChanges();
             return objNotificacion.Id;
         }
         public async Task<long> NotificarNotificacionxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objNotificacion = _db.Notificacion.Where(x => x.Id == id).FirstOrDefault();      
             objNotificacion.EstadoNotificacion = 2;
             objNotificacion.FechaActualizacion = DateTime.Now;
-            objNotificacion.UsuarioActualizacion = "";
+            objNotificacion.FechaNotificacion= DateTime.Now;
+            objNotificacion.UsuarioActualizacion = usuario.Usuario;
             _db.Notificacion.Update(objNotificacion);
             _db.SaveChanges();
             return objNotificacion.Id;

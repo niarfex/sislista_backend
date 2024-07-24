@@ -55,5 +55,15 @@ namespace Application.Service
             }
             return gestionregistros;
         }
+        public async Task<string> CreateCuestionario(GestionRegistroModel model)
+        {
+            var uuid = await _gestionregistroPort.CreateCuestionario(model);
+            if (uuid == null)
+            {
+                throw new NotDataFoundException("No se registraron los datos");
+
+            }
+            return uuid;
+        }
     }
 }

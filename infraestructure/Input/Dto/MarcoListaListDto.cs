@@ -22,5 +22,7 @@ namespace Infra.MarcoLista.Input.Dto
         public string? Departamento { get; set; }
         [JsonPropertyName("Estado")]
         public int Estado { get; set; }
+        [JsonPropertyName("IdUbigeo")]
+        public string? IdUbigeo { get; set; }
     }
 }

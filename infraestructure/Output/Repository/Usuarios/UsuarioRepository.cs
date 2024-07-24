@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dapper;
+using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Contextos;
 using Infra.MarcoLista.GeneralSQL;
@@ -22,11 +23,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         private DBOracle dBOracle = new DBOracle();
-        public UsuarioRepository(IConfiguration configuracion, IMapper mapper)
+        public UsuarioRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -66,6 +71,7 @@ namespace Infra.MarcoLista.Output.Repository
                         {
                             Id = u.Id,
                             CodigoUUIDUsuario = u.CodigoUUID.ToString(),
+                            CodigoUUIDPersona = pe.CodigoUUID.ToString(),
                             Usuario = u.Usuario,
                             Clave= u.Clave,
                             IdPerfil = up.IdPerfil,
@@ -111,6 +117,19 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<string> CreateUsuario(UsuarioModel model)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
+
+            var objRegistroRUC = _db.Usuario.Where(x => x.DetallePersona.NumeroDocumento == model.NumeroDocumento && (model.CodigoUUIDUsuario.IsNullOrEmpty() || x.CodigoUUID!= model.CodigoUUIDUsuario)).FirstOrDefault();
+            if (objRegistroRUC != null)
+            {
+                throw new DocExistException("EL Número de Documento ya se encuentra registrado con otro usuario");
+            }
+            var objRegistroEmail = _db.Usuario.Where(x => x.DetallePersona.CorreoElectronico.ToUpper() == model.CorreoElectronico.ToUpper() && model.CorreoElectronico.ToUpper() != "" && (model.CodigoUUIDUsuario.IsNullOrEmpty() || x.CodigoUUID != model.CodigoUUIDUsuario)).FirstOrDefault();
+            if (objRegistroEmail != null)
+            {
+                throw new EmailExistException("EL correo electrónico ya se encuentra registrado con otro usuario");
+            }
+
             //Registramos o actualizamos los datos de la persona
             long personaId;
             var persona = _db.Persona.Where(x => (x.CodigoUUID.ToString() == model.CodigoUUIDPersona && model.CodigoUUIDPersona.Trim() != "")
@@ -119,6 +138,7 @@ namespace Infra.MarcoLista.Output.Repository
             {//Si la persona no existe                 
                 var objPersona = new PersonaEntity()
                 {
+                    CodigoUUID = Guid.NewGuid().ToString(),
                     IdTipoDocumento = model.IdTipoDocumento,
                     NumeroDocumento = model.NumeroDocumento, 
                     Nombre = model.Nombre,
@@ -131,7 +151,7 @@ namespace Infra.MarcoLista.Output.Repository
                     Cargo = model.Cargo,                    
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.Persona.Add(objPersona);
                 _db.SaveChanges();
@@ -151,7 +171,7 @@ namespace Infra.MarcoLista.Output.Repository
                 persona.OficinaArea = model.OficinaArea;
                 persona.Cargo = model.Cargo;
                 persona.FechaActualizacion = DateTime.Now;
-                persona.UsuarioActualizacion = "";
+                persona.UsuarioActualizacion = usuario.Usuario;
                 _db.Persona.Update(persona);
                 _db.SaveChanges();
                 personaId = persona.Id;
@@ -164,14 +184,14 @@ namespace Infra.MarcoLista.Output.Repository
                 objUsuario.IdPersona = personaId;     
                 
                 objUsuario.FechaActualizacion = DateTime.Now;
-                objUsuario.UsuarioActualizacion = "";
+                objUsuario.UsuarioActualizacion = usuario.Usuario;
                 _db.Usuario.Update(objUsuario);
                 _db.SaveChanges();
 
                 var objUsuarioPerfil = _db.UsuarioPerfil.Where(x => x.IdUsuario == objUsuario.Id).FirstOrDefault();
                 objUsuarioPerfil.IdPerfil = model.IdPerfil;
                 objUsuarioPerfil.FechaActualizacion = DateTime.Now;
-                objUsuarioPerfil.UsuarioActualizacion = "";
+                objUsuarioPerfil.UsuarioActualizacion = usuario.Usuario;
                 _db.UsuarioPerfil.Update(objUsuarioPerfil);
                 _db.SaveChanges();
                 registrarMarcoListaAsignado(objUsuario,model);
@@ -184,12 +204,13 @@ namespace Infra.MarcoLista.Output.Repository
 
                 var objUsuario = new UsuarioEntity()
                 {
+                    CodigoUUID = Guid.NewGuid().ToString(),
                     IdPersona = personaId,
                     Usuario = model.NumeroDocumento,
                     Clave = claveCifrada,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.Usuario.Add(objUsuario);
                 _db.SaveChanges();
@@ -200,7 +221,7 @@ namespace Infra.MarcoLista.Output.Repository
                     IdPerfil = model.IdPerfil,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.UsuarioPerfil.Add(objUsuarioPerfil);
                 _db.SaveChanges();
@@ -210,6 +231,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         private void registrarMarcoListaAsignado(UsuarioEntity objUsuario,UsuarioModel model)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var filas = from mu in _db.UsuarioMarcoLista
                         where mu.IdUsuario == objUsuario.Id
                         select mu;
@@ -223,7 +245,7 @@ namespace Infra.MarcoLista.Output.Repository
                     IdMarcoLista = marco.Id,
                     Estado=1,
                     FechaRegistro=DateTime.Now,
-                    UsuarioCreacion=""
+                    UsuarioCreacion= usuario.Usuario
                 };
                 _db.UsuarioMarcoLista.Add(objMarcoUsuario);
                 _db.SaveChanges();
@@ -246,10 +268,11 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<string> DeleteUsuarioxUUID(string uuid)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
             objUsuario.Estado = 2;
             objUsuario.FechaActualizacion = DateTime.Now;
-            objUsuario.UsuarioActualizacion = "";
+            objUsuario.UsuarioActualizacion = usuario.Usuario;
             _db.Usuario.Update(objUsuario);
             _db.SaveChanges();
             return objUsuario.CodigoUUID.ToString();
@@ -257,10 +280,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<string> ActivarUsuarioxUUID(string uuid)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
             objUsuario.Estado = 1;
             objUsuario.FechaActualizacion = DateTime.Now;
-            objUsuario.UsuarioActualizacion = "";
+            objUsuario.UsuarioActualizacion = usuario.Usuario;
             _db.Usuario.Update(objUsuario);
             _db.SaveChanges();
             return objUsuario.CodigoUUID.ToString();
@@ -268,10 +292,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<string> DesactivarUsuarioxUUID(string uuid)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
             objUsuario.Estado = 0;
             objUsuario.FechaActualizacion = DateTime.Now;
-            objUsuario.UsuarioActualizacion = "";
+            objUsuario.UsuarioActualizacion = usuario.Usuario;
             _db.Usuario.Update(objUsuario);
             _db.SaveChanges();
             return objUsuario.CodigoUUID.ToString();
@@ -310,6 +335,90 @@ namespace Infra.MarcoLista.Output.Repository
             }
             
         }
+        public async Task<List<UsuarioModel>> GetCorreosUsuariosxOrganizacion(long idOrganizacion)
+        {
+            var usuarios = from u in _db.Usuario
+                           join p in _db.Persona on u.IdPersona equals p.Id               
+                           where p.Estado == 1 && p.IdOrganizacion==idOrganizacion
+                           select new UsuarioModel
+                           {
+                               CodigoUUIDPersona = p.CodigoUUID,
+                               Nombre = p.Nombre,
+                               ApellidoPaterno = p.ApellidoPaterno,
+                               ApellidoMaterno = p.ApellidoMaterno,
+                               CorreoElectronico = p.CorreoElectronico
+                           };
+            return usuarios.ToList();
+        }
+        public async Task<List<UsuarioModel>> GetCorreosUsuariosxMarcoLista(long idMarcoLista)
+        {
+            var usuarios = from u in _db.Usuario
+                           join p in _db.Persona on u.IdPersona equals p.Id
+                           join um in _db.UsuarioMarcoLista on u.Id equals um.IdUsuario
+                           where p.Estado == 1 && um.IdMarcoLista == idMarcoLista
+                           select new UsuarioModel
+                           {
+                               CodigoUUIDPersona = p.CodigoUUID,
+                               Nombre = p.Nombre,
+                               ApellidoPaterno = p.ApellidoPaterno,
+                               ApellidoMaterno = p.ApellidoMaterno,
+                               CorreoElectronico = p.CorreoElectronico
+                           };
+            return usuarios.ToList();
+        }
+        public async Task<List<MenuItemModel>> GetMenuItemxUsuario(long idPadre)
+        {
+            List<MenuItemModel> menus = new List<MenuItemModel>();
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
+
+            if (idPadre == 0) {
+                menus = (from u in _db.Usuario
+                         join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                         join p in _db.Perfil on up.IdPerfil equals p.Id
+                         join pm in _db.PerfilMenu on p.Id equals pm.IdPerfil
+                         join m in _db.Menu on pm.IdMenu equals m.Id
+                         where u.Estado == 1 && up.Estado == 1 && p.Estado == 1
+                         && pm.Estado == 1 && m.Estado == 1 && m.IdMenuPadre == null
+                         && u.CodigoUUID == usuario.CodigoUUID
+                         select new MenuItemModel
+                         {
+                             id = m.Id,
+                             label = m.Menu,
+                             link = m.Enlace,
+                             icon = "",
+                             isTitle = true,
+                             parentId = m.IdMenuPadre,
+                             subItems = null//GetMenuItemxUsuario(m.Id)
+                         }).OrderBy(x => x.id).ToList();
+            }
+            else {
+                menus = (from u in _db.Usuario
+                        join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                        join p in _db.Perfil on up.IdPerfil equals p.Id
+                        join pm in _db.PerfilMenu on p.Id equals pm.IdPerfil
+                        join m in _db.Menu on pm.IdMenu equals m.Id
+                        where u.Estado == 1 && up.Estado == 1 && p.Estado == 1
+                        && pm.Estado == 1 && m.Estado == 1 && m.IdMenuPadre==idPadre
+                        && u.CodigoUUID == usuario.CodigoUUID
+                        select new MenuItemModel
+                        {
+                            id = m.Id,
+                            label = m.Menu,
+                            link = m.Enlace,
+                            icon = "bx-wrench",
+                            isTitle = false,
+                            parentId = m.IdMenuPadre,
+                            subItems = null//GetMenuItemxUsuario(m.Id)
+                        }).OrderBy(x => x.id).ToList();
+            }
+
+            
+            return menus;
+
+        }
+
+
+
         public async Task<bool> ActualizarRefreshToken(string uuid, DateTime expiracion, string refreshToken) {
 
             var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();

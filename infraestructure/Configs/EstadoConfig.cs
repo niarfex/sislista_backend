@@ -16,6 +16,7 @@ namespace Infra.MarcoLista.Configs
             builder.ToTable("TG_ESTADO");
             builder.HasKey(c => c.Id);
             builder.Property(c => c.CodigoEstado).HasColumnType("VARCHAR2");
+            builder.Property(c => c.CodigoEstadoPadre).HasColumnType("VARCHAR2");
             builder.Property(c => c.TipoEstado).HasColumnType("VARCHAR2");
 
         }

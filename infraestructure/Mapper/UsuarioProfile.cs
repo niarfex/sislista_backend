@@ -14,6 +14,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<UsuarioModel, UsuarioGetDto>();
             CreateMap<UsuarioCreateUpdateDto, UsuarioModel>();
             CreateMap<PerfilEntity, PerfilModel>();
+            CreateMap<MenuItemModel, MenuItemGetDto>();
         }
     }
 }

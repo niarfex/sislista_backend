@@ -5,6 +5,7 @@ using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
 using Domain.Model.ExportExcel;
+using Infra.Helpers;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -13,6 +14,7 @@ namespace Infra.MarcoLista.Input.Controllers
 {
     [Route("/v1/notificacion")]
     [ApiController]
+    [Authorize]
     public class NotificacionController : ControllerBase
     {
         private readonly INotificacionService _notificacionService;
@@ -146,6 +148,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.data = await _notificacionService.DeleteNotificacionxId(id);
                 return respuesta;
 
+            }
+            catch (RelatedDataFoundException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
             }
             catch (Exception e)
             {

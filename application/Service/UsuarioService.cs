@@ -101,6 +101,21 @@ namespace Application.Service
             }
             return usuario;
         }
+        public async Task<List<MenuItemModel>> GetMenuItemxUsuario(long idPadre)
+        {
+            var menus = await _usuarioPort.GetMenuItemxUsuario(idPadre);
+
+            for (var i=0; i<menus.Count();i++) {
+                menus[i].subItems = await GetMenuItemxUsuario((long)menus[i].id);
+            }
+
+            if (menus == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return menus;
+        }
         public async Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid)
         {
             var marcolistas = await _usuarioPort.GetUsuarioMarcoLista(uuid);

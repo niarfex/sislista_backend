@@ -1,6 +1,7 @@
 ﻿using Application.Output;
 using AutoMapper;
 using Dapper;
+using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Contextos;
 using Infra.MarcoLista.GeneralSQL;
@@ -20,11 +21,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public MarcoListaRepository(IConfiguration configuracion, IMapper mapper)
+        public MarcoListaRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -47,7 +52,9 @@ namespace Infra.MarcoLista.Output.Repository
                             NombreCompleto= p.RazonSocial.IsNullOrEmpty()?(p.Nombre+" "+p.ApellidoPaterno+" "+p.ApellidoMaterno):p.RazonSocial,
                             CondicionJuridica=c.CondicionJuridica,
                             NombreRepLegal=p.NombreRepLegal,  
-                            IdDepartamento=m.IdDepartamento,                            
+                            IdDepartamento=m.IdDepartamento,  
+                            IdUbigeo=p.IdUbigeo,
+                            IdAnio=m.IdAnio,
                             Estado=m.Estado
                         };
             return query.ToList();
@@ -96,6 +103,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreateMarcoLista(MarcoListaModel model)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             //Registramos o actualizamos los datos de la persona
             long personaId;
             if (model.CodigoUUIDPersona == null) { model.CodigoUUIDPersona = ""; }
@@ -103,7 +111,8 @@ namespace Infra.MarcoLista.Output.Repository
             || (x.NumeroDocumento==model.NumeroDocumento && x.IdTipoDocumento==model.IdTipoDocumento && model.NumeroDocumento.Trim() != "")).FirstOrDefault();
             if (persona == null) {//Si la persona no existe                 
                 var objPersona = new PersonaEntity()
-                {            
+                {
+                    CodigoUUID = Guid.NewGuid().ToString(),
                     IdTipoDocumento = model.IdTipoDocumento,
                     NumeroDocumento = model.NumeroDocumento,
                     IdCondicionJuridica = model.IdCondicionJuridica,
@@ -124,7 +133,7 @@ namespace Infra.MarcoLista.Output.Repository
                     CorreoRepLegal = model.CorreoRepLegal,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario,
                 };
                 _db.Persona.Add(objPersona);
                 _db.SaveChanges();
@@ -150,7 +159,7 @@ namespace Infra.MarcoLista.Output.Repository
                 persona.CelularRepLegal = model.CelularRepLegal;
                 persona.CorreoRepLegal = model.CorreoRepLegal;
                 persona.FechaActualizacion = DateTime.Now;
-                persona.UsuarioActualizacion = "";
+                persona.UsuarioActualizacion = usuario.Usuario; ;
                 _db.Persona.Update(persona);
                 _db.SaveChanges();
                 personaId = persona.Id;
@@ -165,7 +174,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objMarcoLista.IdPersona = personaId;
                 objMarcoLista.Direccion = model.Direccion;
                 objMarcoLista.FechaActualizacion = DateTime.Now;
-                objMarcoLista.UsuarioActualizacion = "";
+                objMarcoLista.UsuarioActualizacion = usuario.Usuario; ;
                 _db.MarcoLista.Update(objMarcoLista);
                 _db.SaveChanges();
                 return objMarcoLista.Id;
@@ -181,7 +190,7 @@ namespace Infra.MarcoLista.Output.Repository
                     Direccion = model.Direccion,               
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario,
                 };
                 _db.MarcoLista.Add(objMarcoLista);
                 _db.SaveChanges();
@@ -191,10 +200,19 @@ namespace Infra.MarcoLista.Output.Repository
         
         public async Task<long> DeleteMarcoListaxId(long id)
         {
+            var objMLUsuarios = _db.UsuarioMarcoLista.Where(x => x.IdMarcoLista == id).ToList();
+            if (objMLUsuarios.Count()>0)
+            {
+                throw new RelatedDataFoundException("No se puede eliminar el Marco de Lista porque existen registros de usuarios asociados al marco de lista");
+            }
+            var objMLCuestionarios = _db.GestionRegistro.Where(x => x.IdMarcoLista == id).ToList();
+            if (objMLCuestionarios.Count() > 0)
+            {
+                throw new RelatedDataFoundException("No se puede eliminar el Marco de Lista porque existen registros de cuestionarios asociados al marco de lista");
+            }
+
             var objMarcoLista = _db.MarcoLista.Where(x => x.Id == id).FirstOrDefault();
-            objMarcoLista.Estado = 2;
-            objMarcoLista.FechaActualizacion = DateTime.Now;
-            objMarcoLista.UsuarioActualizacion = "";
+            _db.MarcoLista.Remove(objMarcoLista);
             _db.MarcoLista.Update(objMarcoLista);
             _db.SaveChanges();
             return objMarcoLista.Id;
@@ -202,10 +220,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> ActivarMarcoListaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objMarcoLista = _db.MarcoLista.Where(x => x.Id == id).FirstOrDefault();
             objMarcoLista.Estado = 1;
             objMarcoLista.FechaActualizacion = DateTime.Now;
-            objMarcoLista.UsuarioActualizacion = "";
+            objMarcoLista.UsuarioActualizacion = usuario.Usuario; 
             _db.MarcoLista.Update(objMarcoLista);
             _db.SaveChanges();
             return objMarcoLista.Id;
@@ -213,10 +232,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> DesactivarMarcoListaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objMarcoLista = _db.MarcoLista.Where(x => x.Id == id).FirstOrDefault();
             objMarcoLista.Estado = 0;
             objMarcoLista.FechaActualizacion = DateTime.Now;
-            objMarcoLista.UsuarioActualizacion = "";
+            objMarcoLista.UsuarioActualizacion = usuario.Usuario; 
             _db.MarcoLista.Update(objMarcoLista);
             _db.SaveChanges();
             return objMarcoLista.Id;

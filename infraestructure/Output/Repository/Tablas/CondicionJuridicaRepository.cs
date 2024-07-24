@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dapper;
+using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Contextos;
 using Infra.MarcoLista.GeneralSQL;
@@ -18,11 +19,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         //private DBOracle dBOracle = new DBOracle();
-        public CondicionJuridicaRepository(IConfiguration configuracion, IMapper mapper)
+        public CondicionJuridicaRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -38,6 +43,14 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreateCondicionJuridica(CondicionJuridicaModel model)
         {
+            var objRegistroCod = _db.CondicionJuridica.Where(x => x.CodigoCondicionJuridica == model.CodigoCondicionJuridica 
+            && model.CodigoCondicionJuridica!="" && x.Id != model.Id).FirstOrDefault();
+            if (objRegistroCod != null)
+            {
+                throw new CodigoExistException("EL Código ya se encuentra registrado");
+            }
+
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {
                 var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == model.Id).FirstOrDefault();
@@ -46,7 +59,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objCondicionJuridica.DescripcionCondicionJuridica = model.DescripcionCondicionJuridica;
                 objCondicionJuridica.Otros = model.Otros;
                 objCondicionJuridica.FechaActualizacion = DateTime.Now;
-                objCondicionJuridica.UsuarioActualizacion = "";
+                objCondicionJuridica.UsuarioActualizacion = usuario.Usuario;
                 _db.CondicionJuridica.Update(objCondicionJuridica);
                 _db.SaveChanges();
                 return objCondicionJuridica.Id;
@@ -61,7 +74,7 @@ namespace Infra.MarcoLista.Output.Repository
                     Otros = model.Otros,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario
                 };
                 _db.CondicionJuridica.Add(objCondicionJuridica);
                 _db.SaveChanges();
@@ -72,10 +85,11 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> DeleteCondicionJuridicaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
             objCondicionJuridica.Estado = 2;
             objCondicionJuridica.FechaActualizacion = DateTime.Now;
-            objCondicionJuridica.UsuarioActualizacion = "";
+            objCondicionJuridica.UsuarioActualizacion = usuario.Usuario;
             _db.CondicionJuridica.Update(objCondicionJuridica);
             _db.SaveChanges();
             return objCondicionJuridica.Id;
@@ -83,10 +97,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> ActivarCondicionJuridicaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
             objCondicionJuridica.Estado = 1;
             objCondicionJuridica.FechaActualizacion = DateTime.Now;
-            objCondicionJuridica.UsuarioActualizacion = "";
+            objCondicionJuridica.UsuarioActualizacion = usuario.Usuario;
             _db.CondicionJuridica.Update(objCondicionJuridica);
             _db.SaveChanges();
             return objCondicionJuridica.Id;
@@ -94,10 +109,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> DesactivarCondicionJuridicaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCondicionJuridica = _db.CondicionJuridica.Where(x => x.Id == id).FirstOrDefault();
             objCondicionJuridica.Estado = 0;
             objCondicionJuridica.FechaActualizacion = DateTime.Now;
-            objCondicionJuridica.UsuarioActualizacion = "";
+            objCondicionJuridica.UsuarioActualizacion = usuario.Usuario;
             _db.CondicionJuridica.Update(objCondicionJuridica);
             _db.SaveChanges();
             return objCondicionJuridica.Id;

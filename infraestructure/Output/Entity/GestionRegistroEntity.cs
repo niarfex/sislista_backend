@@ -17,7 +17,7 @@ namespace Infra.MarcoLista.Output.Entity
         public long? IdCondicionJuridica { get; set; }
         [Column("IDE_TIPO_DOCUMENTO")]
         public long? IdTipoDocumento { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("TXT_CODIGO_UUID")]
         public string? CodigoUUID { get; set; }
         [Column("TXT_CODIGO_IDENTIFICACION")]
@@ -67,10 +67,10 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("TXT_USUARIO_ACTUALIZACION")]
         public string? UsuarioActualizacion { get; set; }
         [Column("IDE_ESTADO_REGISTRO")]
-        public int EstadoRegistro { get; set; }
+        public long? EstadoRegistro { get; set; }
         [Column("IDE_ESTADO_SUPERVISION")]
-        public int EstadoSupervision { get; set; }
+        public long? EstadoSupervision { get; set; }
         [Column("IDE_ESTADO_VALIDACION")]
-        public int EstadoValidacion { get; set; }
+        public long? EstadoValidacion { get; set; }
     }
 }

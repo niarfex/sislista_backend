@@ -3,7 +3,7 @@ using AutoMapper;
 using Domain.Model;
 using Infra.MarcoLista.Output.Repository;
 
-namespace infraestructure.Output.Adapter
+namespace Infra.MarcoLista.Output.Adapter
 {
     public class PlantillaAdapter : IPlantillaPort
     {

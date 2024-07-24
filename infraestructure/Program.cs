@@ -8,7 +8,6 @@ using Infra.MarcoLista.Mapper;
 using Infra.MarcoLista.Output.Adapter;
 using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
-using infraestructure.Output.Adapter;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -37,6 +36,15 @@ builder.Services
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Authentication:JwtBearer:SecurityKey"]))
         };
     });
+
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 builder.Services.AddAutoMapper(typeof(OrganizacionProfile));
 
@@ -70,6 +78,7 @@ var mapperConfig = new MapperConfiguration(m =>
     m.AddProfile(new PlantillaProfile());
     m.AddProfile(new TipoExplotacionProfile());
     m.AddProfile(new UsuarioProfile());
+    m.AddProfile(new ReporteProfile());
 });
 IMapper mapper = mapperConfig.CreateMapper();
 // Registrar las interfaces y sus implementaciones
@@ -114,6 +123,9 @@ builder.Services.AddScoped<IPlantillaRepository, PlantillaRepository>();
 builder.Services.AddScoped<IGestionRegistroService, GestionRegistroService>();
 builder.Services.AddScoped<IGestionRegistroPort, GestionRegistroAdapter>();
 builder.Services.AddScoped<IGestionRegistroRepository, GestionRegistroRepository>();
+builder.Services.AddScoped<IReporteService, ReporteService>();
+builder.Services.AddScoped<IReportePort, ReporteAdapter>();
+builder.Services.AddScoped<IReporteRepository, ReporteRepository>();
 
 var app = builder.Build();
 
@@ -134,8 +146,10 @@ app.UseCors(builder => builder.WithOrigins(urlAceptadas)
                       );
 app.UseMiddleware<JwtMiddleware>();
 app.UseCors();
+
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession();
 app.MapControllers();
 
 app.Run();

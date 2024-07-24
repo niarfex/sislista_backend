@@ -567,6 +567,90 @@ namespace Application.Service
             }
             return listaTipos;
         }
+        public async Task<List<SelectTipoModel>> GetLineaProduccion()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetLineaProduccion();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.LineaProduccion;
+                list.codigo = dep.CodigoLineaProduccion;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetEspecies()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetEspecies();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.Especie;
+                list.codigo = dep.CodigoEspecie;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetSecciones()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetSecciones();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.Seccion;
+                list.codigo = dep.CodigoSeccion;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
+        public async Task<List<SelectTipoModel>> GetEstadosCuestionario()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetEstadosCuestionario();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.TipoEstado;
+                list.codigo = dep.CodigoEstado;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
         public async Task<object> GetDatosRENIEC(string dni)
         {         
             var url = $"{_appConfiguration[$"enlacesSISLISTA:dniReniec"]}";

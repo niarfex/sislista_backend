@@ -5,6 +5,7 @@ using AutoMapper;
 using Domain.Exceptions;
 using Domain.Model;
 using Domain.Model.ExportExcel;
+using Infra.Helpers;
 using Infra.MarcoLista.Input.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
@@ -12,6 +13,7 @@ namespace Infra.MarcoLista.Input.Controllers
 {
     [Route("/v1/ubigeo")]
     [ApiController]
+    [Authorize]
     public class UbigeoController : ControllerBase
     {
         private readonly IGeneralService _generalService;

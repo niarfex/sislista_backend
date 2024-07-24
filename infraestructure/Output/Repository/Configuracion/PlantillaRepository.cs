@@ -18,11 +18,15 @@ namespace Infra.MarcoLista.Output.Repository
     {
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
         private DBOracle dBOracle = new DBOracle();
-        public PlantillaRepository(IConfiguration configuracion, IMapper mapper)
+        public PlantillaRepository(IConfiguration configuracion,
+            IHttpContextAccessor httpContextAccessor,
+            IMapper mapper)
         {
             _configuracion = configuracion;
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
         }
@@ -36,6 +40,7 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreatePlantilla(PlantillaModel model)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {
                 var objPlantilla = _db.Plantilla.Where(x => x.Id == model.Id).FirstOrDefault();
@@ -43,7 +48,7 @@ namespace Infra.MarcoLista.Output.Repository
                 objPlantilla.Descripcion = model.Descripcion;
                 objPlantilla.NumCuestionario = model.NumCuestionario;
                 objPlantilla.FechaActualizacion = DateTime.Now;
-                objPlantilla.UsuarioActualizacion = "";
+                objPlantilla.UsuarioActualizacion = usuario.Usuario;
                 _db.Plantilla.Update(objPlantilla);
                 _db.SaveChanges();
                 return objPlantilla.Id;
@@ -57,7 +62,7 @@ namespace Infra.MarcoLista.Output.Repository
                     NumCuestionario = model.NumCuestionario,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
-                    UsuarioCreacion = ""
+                    UsuarioCreacion = usuario.Usuario,
                 };
                 _db.Plantilla.Add(objPlantilla);
                 _db.SaveChanges();
@@ -68,10 +73,11 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> DeletePlantillaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPlantilla = _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
             objPlantilla.Estado = 2;
             objPlantilla.FechaActualizacion = DateTime.Now;
-            objPlantilla.UsuarioActualizacion = "";
+            objPlantilla.UsuarioActualizacion = usuario.Usuario; 
             _db.Plantilla.Update(objPlantilla);
             _db.SaveChanges();
             return objPlantilla.Id;
@@ -79,10 +85,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> ActivarPlantillaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPlantilla = _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
             objPlantilla.Estado = 1;
             objPlantilla.FechaActualizacion = DateTime.Now;
-            objPlantilla.UsuarioActualizacion = "";
+            objPlantilla.UsuarioActualizacion = usuario.Usuario; 
             _db.Plantilla.Update(objPlantilla);
             _db.SaveChanges();
             return objPlantilla.Id;
@@ -90,10 +97,11 @@ namespace Infra.MarcoLista.Output.Repository
 
         public async Task<long> DesactivarPlantillaxId(long id)
         {
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objPlantilla = _db.Plantilla.Where(x => x.Id == id).FirstOrDefault();
             objPlantilla.Estado = 0;
             objPlantilla.FechaActualizacion = DateTime.Now;
-            objPlantilla.UsuarioActualizacion = "";
+            objPlantilla.UsuarioActualizacion = usuario.Usuario; 
             _db.Plantilla.Update(objPlantilla);
             _db.SaveChanges();
             return objPlantilla.Id;

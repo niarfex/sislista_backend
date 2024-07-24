@@ -26,6 +26,7 @@ namespace Infra.MarcoLista.Input.Dto
         public double? Superficie { get; set; }
         [JsonPropertyName("SuperficieCultivada")]
         public double? SuperficieCultivada { get; set; }
-
+        [JsonPropertyName("Orden")]
+        public int? Orden { get; set; }
     }
 }

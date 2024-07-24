@@ -16,6 +16,6 @@ namespace Domain.Model
         public double? SuperficieAgricola { get; set; }
         public string? IdUbigeo { get; set; }
         public string? Observacion { get; set; }
-        
+        public List<CampoModel> ListCampos { get; set; }
     }
 }

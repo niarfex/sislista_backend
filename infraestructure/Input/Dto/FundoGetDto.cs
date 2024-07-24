@@ -19,6 +19,8 @@ namespace Infra.MarcoLista.Input.Dto
         public string? IdUbigeo { get; set; }
         [JsonPropertyName("Observacion")]
         public string? Observacion { get; set; }
+        [JsonPropertyName("Orden")]
+        public int? Orden { get; set; }
         [JsonPropertyName("ListDepartamento")]
         public List<SelectTipoDto> ListDepartamento { get; set; }
         [JsonPropertyName("ListProvincia")]
@@ -26,7 +28,6 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("ListDistrito")]
         public List<SelectTipoDto> ListDistrito { get; set; }
         [JsonPropertyName("ListCampos")]
-        public List<CampoGetDto> ListCampos { get; set; }
-
+        public List<CampoGetDto> ListCampos { get; set; }        
     }
 }
