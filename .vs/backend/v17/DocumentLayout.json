@@ -1267,12 +1267,12 @@
               "Title": "TcpTransportAdapter.cs",
               "DocumentMoniker": "C:\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\286e7c2064b90294010e2d52f29a6e3e264a8cd0153e76d1249fe5bf93cad87f\\TcpTransportAdapter.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\286e7c2064b90294010e2d52f29a6e3e264a8cd0153e76d1249fe5bf93cad87f\\TcpTransportAdapter.cs",
-              "ToolTip": "C:\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\286e7c2064b90294010e2d52f29a6e3e264a8cd0153e76d1249fe5bf93cad87f\\TcpTransportAdapter.cs [Solo lectura]",
-              "RelativeToolTip": "..\\..\\..\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\286e7c2064b90294010e2d52f29a6e3e264a8cd0153e76d1249fe5bf93cad87f\\TcpTransportAdapter.cs [Solo lectura]",
+              "ToolTip": "C:\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\286e7c2064b90294010e2d52f29a6e3e264a8cd0153e76d1249fe5bf93cad87f\\TcpTransportAdapter.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\286e7c2064b90294010e2d52f29a6e3e264a8cd0153e76d1249fe5bf93cad87f\\TcpTransportAdapter.cs",
               "ViewState": "AQIAABICAAAAAAAAAAAEwCMCAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T11:10:59.961Z",
-              "EditorCaption": " [Solo lectura]"
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1284,8 +1284,7 @@
               "RelativeToolTip": "application\\Service\\Exportar\\ExcelExporterService.cs",
               "ViewState": "AQIAAFMAAAAAAAAAAAAEwGQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T09:32:18.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T09:32:18.682Z"
             },
             {
               "$type": "Document",
@@ -1297,8 +1296,7 @@
               "RelativeToolTip": "domain\\Model\\GestionRegistroModel.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAuwBIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T10:59:43.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T10:59:43.177Z"
             },
             {
               "$type": "Document",
@@ -1310,8 +1308,7 @@
               "RelativeToolTip": "domain\\Model\\ExportExcel\\EspecieExcel.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwAsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T01:01:19.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T01:01:19.296Z"
             },
             {
               "$type": "Document",
@@ -1336,8 +1333,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\MarcoListaProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T22:58:01.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T22:58:01.866Z"
             },
             {
               "$type": "Document",
@@ -1349,8 +1345,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\ExcelProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:20:18.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:20:18.098Z"
             },
             {
               "$type": "Document",
@@ -1362,8 +1357,7 @@
               "RelativeToolTip": "domain\\Model\\ExportExcel\\MarcoListaExcel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T23:54:54.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T23:54:54.997Z"
             },
             {
               "$type": "Document",
@@ -1375,8 +1369,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
               "ViewState": "AQIAAGkAAAAAAAAAAAAnwFUAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:48:04.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:48:04.33Z"
             },
             {
               "$type": "Document",
@@ -1388,8 +1381,7 @@
               "RelativeToolTip": "domain\\Model\\ExportExcel\\GestionRegistroExcel.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwA0AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T21:31:01.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T21:31:01.034Z"
             },
             {
               "$type": "Document",
@@ -1401,8 +1393,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAQwCkAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:18:41.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:18:41.309Z"
             },
             {
               "$type": "Document",
@@ -1427,8 +1418,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\LineaProduccionRepository.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAQwC4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:43:07.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:43:07.597Z"
             },
             {
               "$type": "Document",
@@ -1440,8 +1430,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\TipoExplotacionController.cs",
               "ViewState": "AQIAAF4AAAAAAAAAAAAkwHcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:25:12.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T09:25:12.048Z"
             },
             {
               "$type": "Document",
@@ -1453,8 +1442,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\TipoExplotacionRepository.cs",
               "ViewState": "AQIAABoAAAAAAAAAAAAQwC8AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:43:31.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:43:31.577Z"
             },
             {
               "$type": "Document",
@@ -1466,8 +1454,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\LineaProduccionController.cs",
               "ViewState": "AQIAAGEAAAAAAAAAAAAkwHwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:23:57.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T09:23:57.124Z"
             },
             {
               "$type": "Document",
@@ -1479,8 +1466,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\EspecieController.cs",
               "ViewState": "AQIAAFsAAAAAAAAAAAAkwH0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:23:20.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T09:23:20.784Z"
             },
             {
               "$type": "Document",
@@ -1505,8 +1491,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\CondicionJuridicaController.cs",
               "ViewState": "AQIAAGYAAAAAAAAAAAAYwHgAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:22:55.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T09:22:55.311Z"
             },
             {
               "$type": "Document",
@@ -1518,8 +1503,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\EspecieRepository.cs",
               "ViewState": "AQIAABoAAAAAAAAAAAAQwC0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:54:58.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:54:58.686Z"
             },
             {
               "$type": "Document",
@@ -1531,8 +1515,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\CondicionJuridicaRepository.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAQwC0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:41:57.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:41:57.915Z"
             },
             {
               "$type": "Document",
@@ -1544,8 +1527,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAA1wDAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T20:42:57.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T20:42:57.915Z"
             },
             {
               "$type": "Document",
@@ -1557,8 +1539,7 @@
               "RelativeToolTip": "domain\\Exceptions\\CodigoExistException.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T21:02:23.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T21:02:23.4Z"
             },
             {
               "$type": "Document",
@@ -1570,8 +1551,7 @@
               "RelativeToolTip": "domain\\Exceptions\\DocExistException.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:52:03.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T11:52:03.426Z"
             },
             {
               "$type": "Document",
@@ -1583,8 +1563,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
               "ViewState": "AQIAAEcAAAAAAAAAAAAcwFkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:46:20.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:46:20.952Z"
             },
             {
               "$type": "Document",
@@ -1596,8 +1575,7 @@
               "RelativeToolTip": "application\\Output\\INotificacionPort.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T08:15:49.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T08:15:49.651Z"
             },
             {
               "$type": "Document",
@@ -1609,8 +1587,7 @@
               "RelativeToolTip": "application\\Service\\NotificacionService.cs",
               "ViewState": "AQIAAIAAAAAAAAAAAAAswJsAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T07:54:25.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T07:54:25.982Z"
             },
             {
               "$type": "Document",
@@ -1622,8 +1599,7 @@
               "RelativeToolTip": "application\\Service\\UsuarioService.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAcwD4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:03:30.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:03:30.051Z"
             },
             {
               "$type": "Document",
@@ -1635,8 +1611,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
               "ViewState": "AQIAACUAAAAAAAAAAAAcwDoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:00:49.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:00:49.671Z"
             },
             {
               "$type": "Document",
@@ -1674,8 +1649,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\NotificacionAdapter.cs",
               "ViewState": "AQIAAC4AAAAAAAAAAAAmwEcAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T16:42:55.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T16:42:55.234Z"
             },
             {
               "$type": "Document",
@@ -1687,8 +1661,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\UsuarioEntity.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T13:05:46.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T13:05:46.594Z"
             },
             {
               "$type": "Document",
@@ -1713,8 +1686,7 @@
               "RelativeToolTip": "application\\Service\\MarcoListaService.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwDEAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:03:43.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:03:43.95Z"
             },
             {
               "$type": "Document",
@@ -1726,8 +1698,7 @@
               "RelativeToolTip": "application\\Service\\LineaProduccionService.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T07:52:57.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T07:52:57.13Z"
             },
             {
               "$type": "Document",
@@ -1739,8 +1710,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
               "ViewState": "AQIAAE4AAAAAAAAAAAAowGMAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:47:09.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:47:09.78Z"
             },
             {
               "$type": "Document",
@@ -1752,8 +1722,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
               "ViewState": "AQIAAC4AAAAAAAAAAAAkwEwAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:46:47.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:46:47.96Z"
             },
             {
               "$type": "Document",
@@ -1765,8 +1734,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\MarcoListaAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:00:28.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:00:28.104Z"
             },
             {
               "$type": "Document",
@@ -1778,8 +1746,7 @@
               "RelativeToolTip": "application\\Output\\IUsuarioPort.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T02:55:52.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T02:55:52.894Z"
             },
             {
               "$type": "Document",
@@ -1791,8 +1758,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\IUsuarioRepository.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAiwBAAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:19:42.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:19:42.907Z"
             },
             {
               "$type": "Document",
@@ -1804,8 +1770,7 @@
               "RelativeToolTip": "application\\Common\\Utils.cs.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAQwCQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T15:52:16.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-12T15:52:16.541Z"
             },
             {
               "$type": "Document",
@@ -1817,8 +1782,7 @@
               "RelativeToolTip": "application\\Service\\OrganizacionService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:03:58.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:03:58.126Z"
             },
             {
               "$type": "Document",
@@ -1830,8 +1794,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\MarcoListaListDto.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T22:50:21.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T22:50:21.031Z"
             },
             {
               "$type": "Document",
@@ -1843,8 +1806,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\MarcoListaGetDto.cs",
               "ViewState": "AQIAABwAAAAAAAAAAIA5wCAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T22:50:59.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T22:50:59.395Z"
             },
             {
               "$type": "Document",
@@ -1856,8 +1818,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\GeneralRepository.cs",
               "ViewState": "AQIAAAMBAAAAAAAAAAAmwJwAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T13:43:23.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T13:43:23.862Z"
             },
             {
               "$type": "Document",
@@ -1869,8 +1830,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\PerfilEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T13:23:21.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T13:23:21.467Z"
             },
             {
               "$type": "Document",
@@ -1882,8 +1842,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\PersonaEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T17:12:26.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T17:12:26.953Z"
             },
             {
               "$type": "Document",
@@ -1895,8 +1854,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\SesionEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T12:36:19.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T12:36:19.297Z"
             },
             {
               "$type": "Document",
@@ -1908,8 +1866,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\PermisoEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:43:55.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:43:55.736Z"
             },
             {
               "$type": "Document",
@@ -1947,8 +1904,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\PlantillaController.cs",
               "ViewState": "AQIAAHUAAAAAAAAAAAAowJAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:24:51.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T09:24:51.934Z"
             },
             {
               "$type": "Document",
@@ -1973,8 +1929,7 @@
               "RelativeToolTip": "domain\\Exceptions\\RelatedDataFoundException.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T12:17:13.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T12:17:13.448Z"
             },
             {
               "$type": "Document",
@@ -1986,8 +1941,7 @@
               "RelativeToolTip": "application\\Input\\IUsuarioService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:06:59.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:06:59.672Z"
             },
             {
               "$type": "Document",
@@ -2012,8 +1966,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAuwA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T13:06:13.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T13:06:13.559Z"
             },
             {
               "$type": "Document",
@@ -2025,8 +1978,7 @@
               "RelativeToolTip": "domain\\Exceptions\\NotDataFoundException.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:51:05.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T14:51:05.582Z"
             },
             {
               "$type": "Document",
@@ -2038,8 +1990,7 @@
               "RelativeToolTip": "domain\\Exceptions\\EmailExistException.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T12:02:27.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T12:02:27.596Z"
             },
             {
               "$type": "Document",
@@ -2051,8 +2002,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\MenuItemGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T00:51:55.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T00:51:55.566Z"
             },
             {
               "$type": "Document",
@@ -2064,8 +2014,7 @@
               "RelativeToolTip": "domain\\Model\\MenuItemModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T00:31:03.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T00:31:03.363Z"
             },
             {
               "$type": "Document",
@@ -2077,8 +2026,7 @@
               "RelativeToolTip": "domain\\Model\\ResponseModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T15:25:21.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T15:25:21.251Z"
             },
             {
               "$type": "Document",
@@ -2090,8 +2038,7 @@
               "RelativeToolTip": "domain\\Model\\SeccionModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:31:38.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:31:38.062Z"
             },
             {
               "$type": "Document",
@@ -2103,8 +2050,7 @@
               "RelativeToolTip": "domain\\Model\\SelectTipoModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T14:12:41.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T14:12:41.982Z"
             },
             {
               "$type": "Document",
@@ -2116,8 +2062,7 @@
               "RelativeToolTip": "domain\\Model\\TenenciaModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:04:35.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-06T02:04:35.136Z"
             },
             {
               "$type": "Document",
@@ -2129,8 +2074,7 @@
               "RelativeToolTip": "domain\\Model\\TipoDocumentoModel.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T14:18:14.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T14:18:14.014Z"
             },
             {
               "$type": "Document",
@@ -2142,8 +2086,7 @@
               "RelativeToolTip": "domain\\Model\\TipoExplotacionModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T11:01:49.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T11:01:49.645Z"
             },
             {
               "$type": "Document",
@@ -2155,8 +2098,7 @@
               "RelativeToolTip": "domain\\Model\\TipoInformacionModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:10:53.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T16:10:53.369Z"
             },
             {
               "$type": "Document",
@@ -2168,8 +2110,7 @@
               "RelativeToolTip": "domain\\Model\\TipoOrganizacionModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T16:19:50.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T16:19:50.377Z"
             },
             {
               "$type": "Document",
@@ -2181,8 +2122,7 @@
               "RelativeToolTip": "domain\\Model\\TrazabilidadModel.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:31:27.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:31:27.263Z"
             },
             {
               "$type": "Document",
@@ -2194,8 +2134,7 @@
               "RelativeToolTip": "domain\\Model\\UbigeoFiltro.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T13:26:27.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T13:26:27.183Z"
             },
             {
               "$type": "Document",
@@ -2207,8 +2146,7 @@
               "RelativeToolTip": "domain\\Model\\UbigeoModel.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAiwA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T12:04:56.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T12:04:56.135Z"
             },
             {
               "$type": "Document",
@@ -2220,8 +2158,7 @@
               "RelativeToolTip": "domain\\Model\\UsoTierraModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:04:48.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-06T02:04:48.062Z"
             },
             {
               "$type": "Document",
@@ -2233,8 +2170,7 @@
               "RelativeToolTip": "domain\\Model\\UsuarioModel.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAmwB0AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:01:13.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:01:13.993Z"
             },
             {
               "$type": "Document",
@@ -2246,8 +2182,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\UsuarioProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T00:41:42.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T00:41:42.716Z"
             },
             {
               "$type": "Document",
@@ -2259,8 +2194,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\GestionRegistroEntity.cs",
               "ViewState": "AQIAADsAAAAAAAAAAAAAAEkAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T20:18:02.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T20:18:02.708Z"
             },
             {
               "$type": "Document",
@@ -2272,8 +2206,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\CampoEntity.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T20:48:41.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T20:48:41.554Z"
             },
             {
               "$type": "Document",
@@ -2285,8 +2218,7 @@
               "RelativeToolTip": "domain\\Model\\LoginModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T16:17:44.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T16:17:44.272Z"
             },
             {
               "$type": "Document",
@@ -2298,8 +2230,7 @@
               "RelativeToolTip": "domain\\Model\\MarcoListaModel.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAqwBQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:01:35.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:01:35.583Z"
             },
             {
               "$type": "Document",
@@ -2311,8 +2242,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\MarcoListaEntity.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAA3wAwAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T20:41:00.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T20:41:00.813Z"
             },
             {
               "$type": "Document",
@@ -2324,8 +2254,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Operativo\\IGestionRegistroRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:48:16.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:48:16.701Z"
             },
             {
               "$type": "Document",
@@ -2337,8 +2266,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\GestionRegistroAdapter.cs",
               "ViewState": "AQIAAEgAAAAAAAAAAADwv0YAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T00:05:22.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T00:05:22.703Z"
             },
             {
               "$type": "Document",
@@ -2350,8 +2278,7 @@
               "RelativeToolTip": "application\\Input\\IGestionRegistroService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T10:54:21.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T10:54:21.983Z"
             },
             {
               "$type": "Document",
@@ -2363,8 +2290,7 @@
               "RelativeToolTip": "application\\Service\\GestionRegistroService.cs",
               "ViewState": "AQIAAC8AAAAAAAAAAAAxwDkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T07:53:48.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T07:53:48.777Z"
             },
             {
               "$type": "Document",
@@ -2376,8 +2302,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\AnioEntity.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAxwAoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:11:04.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:11:04.443Z"
             },
             {
               "$type": "Document",
@@ -2389,8 +2314,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PecuarioGetDto.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAowBAAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T09:27:39.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T09:27:39.982Z"
             },
             {
               "$type": "Document",
@@ -2402,8 +2326,7 @@
               "RelativeToolTip": "application\\Output\\IGestionRegistroPort.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T08:15:00.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T08:15:00.743Z"
             },
             {
               "$type": "Document",
@@ -2415,8 +2338,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\GestionRegistroCreateUpdateDto.cs",
               "ViewState": "AQIAADYAAAAAAAAAAAA0wEAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T19:04:42.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T19:04:42.205Z"
             },
             {
               "$type": "Document",
@@ -2428,8 +2350,7 @@
               "RelativeToolTip": "domain\\Model\\FundoModel.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T16:28:31.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T16:28:31.5Z"
             },
             {
               "$type": "Document",
@@ -2441,8 +2362,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\FundoCreateUpdateDto.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAUwBgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T17:04:07.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T17:04:07.258Z"
             },
             {
               "$type": "Document",
@@ -2454,8 +2374,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\GestionRegistroProfile.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAwCYAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T13:26:59.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T13:26:59.425Z"
             },
             {
               "$type": "Document",
@@ -2467,8 +2386,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\CampoGetDto.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAQwB0AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T17:58:56.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-12T17:58:56.511Z"
             },
             {
               "$type": "Document",
@@ -2480,8 +2398,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\FundoGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T16:59:50.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T16:59:50.212Z"
             },
             {
               "$type": "Document",
@@ -2493,8 +2410,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\TrazabilidadGetDto.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:35:14.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:35:14.052Z"
             },
             {
               "$type": "Document",
@@ -2506,8 +2422,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\GestionRegistroGetDto.cs",
               "ViewState": "AQIAACwAAAAAAAAAAAAxwDoAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T16:36:43.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T16:36:43.315Z"
             },
             {
               "$type": "Document",
@@ -2519,8 +2434,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\EstadoConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:15:05.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T16:15:05.692Z"
             },
             {
               "$type": "Document",
@@ -2532,8 +2446,7 @@
               "RelativeToolTip": "infraestructure\\Contextos\\MarcoListaContexto.cs",
               "ViewState": "AQIAAE8AAAAAAAAAAAAWwF8AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:31:40.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:31:40.442Z"
             },
             {
               "$type": "Document",
@@ -2545,8 +2458,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\SeccionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:41:11.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:41:11.221Z"
             },
             {
               "$type": "Document",
@@ -2558,8 +2470,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\TrazabilidadConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:41:30.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:41:30.025Z"
             },
             {
               "$type": "Document",
@@ -2571,8 +2482,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\TrazabilidadEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:24:16.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:24:16.246Z"
             },
             {
               "$type": "Document",
@@ -2584,8 +2494,7 @@
               "RelativeToolTip": "application\\Output\\IGeneralPort.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAA6wB4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T14:00:50.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T14:00:50.171Z"
             },
             {
               "$type": "Document",
@@ -2597,8 +2506,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\GeneralAdapter.cs",
               "ViewState": "AQIAADkBAAAAAAAAAAAswEsBAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T13:51:09.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T13:51:09.405Z"
             },
             {
               "$type": "Document",
@@ -2610,8 +2518,7 @@
               "RelativeToolTip": "application\\Input\\IGeneralService.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAA8wCMAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T14:01:45.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T14:01:45.301Z"
             },
             {
               "$type": "Document",
@@ -2623,8 +2530,7 @@
               "RelativeToolTip": "application\\Service\\GeneralService.cs",
               "ViewState": "AQIAAGoCAAAAAAAAAAAwwHgCAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T13:57:59.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T13:57:59.065Z"
             },
             {
               "$type": "Document",
@@ -2636,8 +2542,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\IGeneralRepository.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAA2wB4AAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:04:08.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T19:04:08.138Z"
             },
             {
               "$type": "Document",
@@ -2649,8 +2554,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\SeccionEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:24:50.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:24:50.525Z"
             },
             {
               "$type": "Document",
@@ -2662,8 +2566,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\EstadoEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T15:58:21.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T15:58:21.635Z"
             },
             {
               "$type": "Document",
@@ -2675,8 +2578,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\UsuarioPerfilConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T08:39:42.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T08:39:42.434Z"
             },
             {
               "$type": "Document",
@@ -2688,8 +2590,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\SesionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:16:38.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:16:38.493Z"
             },
             {
               "$type": "Document",
@@ -2701,8 +2602,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\TipoOrganizacionEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T12:24:19.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T12:24:19.384Z"
             },
             {
               "$type": "Document",
@@ -2714,8 +2614,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\UbigeoListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T16:08:16.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T16:08:16.837Z"
             },
             {
               "$type": "Document",
@@ -2727,8 +2626,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\UsuarioGetDto.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAA0wBoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T23:39:45.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T23:39:45.981Z"
             },
             {
               "$type": "Document",
@@ -2740,8 +2638,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\UsuarioCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T23:39:35.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T23:39:35.048Z"
             },
             {
               "$type": "Document",
@@ -2753,8 +2650,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\ReporteRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAJkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T02:11:13.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T02:11:13.755Z"
             },
             {
               "$type": "Document",
@@ -2766,8 +2662,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\IReporteRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T02:11:28.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T02:11:28.106Z"
             },
             {
               "$type": "Document",
@@ -2792,8 +2687,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\ReporteProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T07:43:16.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T07:43:16.029Z"
             },
             {
               "$type": "Document",
@@ -2805,8 +2699,7 @@
               "RelativeToolTip": "infraestructure\\Program.cs",
               "ViewState": "AQIAAGAAAAAAAAAAAAAAAH8AAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T20:03:11.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T20:03:11.373Z"
             },
             {
               "$type": "Document",
@@ -2830,8 +2723,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\Reporte\\ReporteGetDto.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAA2wCoAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T07:38:44.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T07:38:44.867Z"
             },
             {
               "$type": "Document",
@@ -2843,8 +2735,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\Reporte\\ReporteUsuarioListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T01:56:03.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T01:56:03.709Z"
             },
             {
               "$type": "Document",
@@ -2892,8 +2783,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\ReporteAdapter.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAA5wB0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T22:30:51.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T22:30:51.967Z"
             },
             {
               "$type": "Document",
@@ -2917,8 +2807,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\Reporte\\MejorTiempoListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T07:39:09.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T07:39:09.683Z"
             },
             {
               "$type": "Document",
@@ -2930,8 +2819,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\Reporte\\RankingRegCerradosListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T07:38:41.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T07:38:41.263Z"
             },
             {
               "$type": "Document",
@@ -2943,8 +2831,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\Reporte\\FlujoValidacionListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T01:57:26.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T01:57:26.536Z"
             },
             {
               "$type": "Document",
@@ -3256,8 +3143,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\ICondicionJuridicaRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:42:12.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:42:12.521Z"
             },
             {
               "$type": "Document",
@@ -3281,8 +3167,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\PlantillaAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T16:43:03.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T16:43:03.964Z"
             },
             {
               "$type": "Document",
@@ -3294,8 +3179,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\TipoExplotacionAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T23:56:10.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T23:56:10.496Z"
             },
             {
               "$type": "Document",
@@ -3307,8 +3191,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\PanelRegistroAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T16:43:21.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T16:43:21.85Z"
             },
             {
               "$type": "Document",
@@ -3320,8 +3203,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:00:40.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T23:00:40.147Z"
             },
             {
               "$type": "Document",
@@ -3333,8 +3215,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\LineaProduccionAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T23:55:53.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T23:55:53.343Z"
             },
             {
               "$type": "Document",
@@ -3346,8 +3227,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\EspecieAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:53:16.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:53:16.894Z"
             },
             {
               "$type": "Document",
@@ -3359,8 +3239,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Adapter\\CondicionJuridicaAdapter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T23:56:26.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T23:56:26.657Z"
             },
             {
               "$type": "Document",
@@ -3384,8 +3263,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\UbigeoController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T00:12:20.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T00:12:20.201Z"
             },
             {
               "$type": "Document",
@@ -3409,8 +3287,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\AuthController.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAA4AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T20:23:02.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T20:23:02.032Z"
             },
             {
               "$type": "Document",
@@ -3422,8 +3299,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PersonaConfig.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T16:08:00.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T16:08:00.949Z"
             },
             {
               "$type": "Document",
@@ -3435,8 +3311,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\EntidadConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:14:04.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:14:04.336Z"
             },
             {
               "$type": "Document",
@@ -3448,8 +3323,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\AuditoriaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:13:50.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:13:50.24Z"
             },
             {
               "$type": "Document",
@@ -3461,8 +3335,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\ArchivoConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T13:20:37.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T13:20:37.673Z"
             },
             {
               "$type": "Document",
@@ -3474,8 +3347,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\GestionRegistroConfig.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:14:48.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:14:48.271Z"
             },
             {
               "$type": "Document",
@@ -3487,8 +3359,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\CampoConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T18:26:19.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T18:26:19.719Z"
             },
             {
               "$type": "Document",
@@ -3500,8 +3371,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\AnioConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T18:24:10.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-17T18:24:10.416Z"
             },
             {
               "$type": "Document",
@@ -3513,8 +3383,7 @@
               "RelativeToolTip": "infraestructure\\Helpers\\AuthorizeAttribute.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T01:46:58.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T01:46:58.198Z"
             },
             {
               "$type": "Document",
@@ -3526,8 +3395,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\GestionRegistroListDto.cs",
               "ViewState": "AQIAABoAAAAAAAAAAAAmwCIAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T00:29:42.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T00:29:42.736Z"
             },
             {
               "$type": "Document",
@@ -3539,8 +3407,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PanelRegistroListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:16:38.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:16:38.021Z"
             },
             {
               "$type": "Document",
@@ -3552,8 +3419,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\PlantillaProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T16:48:22.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T16:48:22.654Z"
             },
             {
               "$type": "Document",
@@ -3565,8 +3431,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\ArchivoGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T17:58:46.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-12T17:58:46.736Z"
             },
             {
               "$type": "Document",
@@ -3590,8 +3455,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\FileCuestionarioDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T16:34:45.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T16:34:45.497Z"
             },
             {
               "$type": "Document",
@@ -3627,8 +3491,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\InformanteGetDto.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAA/wBkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T21:04:27.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T21:04:27.018Z"
             },
             {
               "$type": "Document",
@@ -3640,8 +3503,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PanelRegistroGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:16:48.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:16:48.052Z"
             },
             {
               "$type": "Document",
@@ -3677,8 +3539,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\EspecieGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:27:20.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:27:20.425Z"
             },
             {
               "$type": "Document",
@@ -3690,8 +3551,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\ITipoExplotacionRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:43:50.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:43:50.202Z"
             },
             {
               "$type": "Document",
@@ -3703,8 +3563,7 @@
               "RelativeToolTip": "infraestructure\\General\\DBOracle.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAHQBAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T21:49:08.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T21:49:08.982Z"
             },
             {
               "$type": "Document",
@@ -3716,8 +3575,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\TipoInformacionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:15:15.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T16:15:15.309Z"
             },
             {
               "$type": "Document",
@@ -3729,8 +3587,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\TipoExplotacionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:45:57.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:45:57.611Z"
             },
             {
               "$type": "Document",
@@ -3742,8 +3599,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\EtapaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:14:19.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:14:19.856Z"
             },
             {
               "$type": "Document",
@@ -3755,8 +3611,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\EspecieConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:56:41.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:56:41.722Z"
             },
             {
               "$type": "Document",
@@ -3768,8 +3623,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\TipoInformacionEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T15:58:11.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T15:58:11.325Z"
             },
             {
               "$type": "Document",
@@ -3781,8 +3635,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\EspecieEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T10:56:36.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T10:56:36.696Z"
             },
             {
               "$type": "Document",
@@ -3794,8 +3647,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\OrganizacionProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T15:03:28.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T15:03:28.743Z"
             },
             {
               "$type": "Document",
@@ -3807,8 +3659,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\UsoTierraConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:34:42.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:34:42.547Z"
             },
             {
               "$type": "Document",
@@ -3820,8 +3671,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\EspecieListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:27:08.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:27:08.885Z"
             },
             {
               "$type": "Document",
@@ -3833,8 +3683,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\SistemaPecuarioConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:29:51.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:29:51.619Z"
             },
             {
               "$type": "Document",
@@ -3846,8 +3695,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\TenenciaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:32:44.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:32:44.676Z"
             },
             {
               "$type": "Document",
@@ -3859,8 +3707,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\UsoNoAgricolaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:33:39.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:33:39.447Z"
             },
             {
               "$type": "Document",
@@ -3872,8 +3719,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PecuarioConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:28:46.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:28:46.423Z"
             },
             {
               "$type": "Document",
@@ -3885,8 +3731,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\InformanteConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T22:27:54.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T22:27:54.31Z"
             },
             {
               "$type": "Document",
@@ -3898,8 +3743,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\LineaProduccionEntity.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:50:54.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:50:54.725Z"
             },
             {
               "$type": "Document",
@@ -3911,8 +3755,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\UsuarioMarcoListaEntity.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAuwAsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T14:05:28.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T14:05:28.381Z"
             },
             {
               "$type": "Document",
@@ -3924,8 +3767,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\AuditoriaEntity.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAA3wAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T13:21:38.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T13:21:38.297Z"
             },
             {
               "$type": "Document",
@@ -3937,8 +3779,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\FrecuenciaEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:21:57.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:21:57.558Z"
             },
             {
               "$type": "Document",
@@ -3950,8 +3791,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\CondicionJuridicaEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:50:30.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:50:30.707Z"
             },
             {
               "$type": "Document",
@@ -3963,8 +3803,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\OrganizacionGetDto.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAkwBwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T03:30:15.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T03:30:15.877Z"
             },
             {
               "$type": "Document",
@@ -3976,8 +3815,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\LineaProduccionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:45:45.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:45:45.63Z"
             },
             {
               "$type": "Document",
@@ -3989,8 +3827,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\LineaProduccionProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:01:16.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:01:16.022Z"
             },
             {
               "$type": "Document",
@@ -4002,8 +3839,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\NotificacionListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:15:14.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:15:14.971Z"
             },
             {
               "$type": "Document",
@@ -4015,8 +3851,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\IPanelRegistroRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:46:58.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:46:58.563Z"
             },
             {
               "$type": "Document",
@@ -4028,8 +3863,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\PlantillaEntity.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAzwBEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:49:05.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:49:05.842Z"
             },
             {
               "$type": "Document",
@@ -4041,8 +3875,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\MarcoListaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:46:10.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:46:10.252Z"
             },
             {
               "$type": "Document",
@@ -4054,8 +3887,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\NotificacionCreateUpdateDto.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAowBUAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:15:40.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:15:40.147Z"
             },
             {
               "$type": "Document",
@@ -4067,8 +3899,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\MarcoListaCreateUpdateDto.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAgwBgAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T22:50:39.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T22:50:39.07Z"
             },
             {
               "$type": "Document",
@@ -4092,8 +3923,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\INotificacionRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:46:34.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:46:34.837Z"
             },
             {
               "$type": "Document",
@@ -4129,8 +3959,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\IEspecieRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:55:11.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:55:11.728Z"
             },
             {
               "$type": "Document",
@@ -4142,8 +3971,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\CondicionJuridicaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:45:09.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:45:09.54Z"
             },
             {
               "$type": "Document",
@@ -4203,8 +4031,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\EspecieCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:27:33.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:27:33.319Z"
             },
             {
               "$type": "Document",
@@ -4216,8 +4043,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\CondicionJuridicaGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:04:33.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:04:33.354Z"
             },
             {
               "$type": "Document",
@@ -4229,8 +4055,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\EspecieProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T11:24:58.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T11:24:58.249Z"
             },
             {
               "$type": "Document",
@@ -4242,8 +4067,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\CondicionJuridicaProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:01:01.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:01:01.416Z"
             },
             {
               "$type": "Document",
@@ -4255,8 +4079,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\CondicionJuridicaListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:04:51.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:04:51.499Z"
             },
             {
               "$type": "Document",
@@ -4268,8 +4091,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\CondicionJuridicaCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:04:19.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:04:19.266Z"
             },
             {
               "$type": "Document",
@@ -4281,8 +4103,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\LineaProduccionCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:05:10.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:05:10.335Z"
             },
             {
               "$type": "Document",
@@ -4414,8 +4235,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\EtapaEntity.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:28:34.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:28:34.963Z"
             },
             {
               "$type": "Document",
@@ -4427,8 +4247,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\EntidadEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:44:22.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:44:22.12Z"
             },
             {
               "$type": "Document",
@@ -4440,8 +4259,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PerfilConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T08:30:55.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T08:30:55.279Z"
             },
             {
               "$type": "Document",
@@ -4453,8 +4271,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\PersonaProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T14:23:41.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T14:23:41.128Z"
             },
             {
               "$type": "Document",
@@ -4490,8 +4307,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\IMarcoListaRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:19:29.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:19:29.754Z"
             },
             {
               "$type": "Document",
@@ -4503,8 +4319,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\TipoExplotacionGetDto.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAuwA8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:06:06.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:06:06.991Z"
             },
             {
               "$type": "Document",
@@ -4516,8 +4331,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\TipoExplotacionCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:05:52.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:05:52.208Z"
             },
             {
               "$type": "Document",
@@ -4529,8 +4343,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\CultivoListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T08:10:14.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T08:10:14.774Z"
             },
             {
               "$type": "Document",
@@ -4554,8 +4367,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\NotificacionEntity.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAswCEAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:21:35.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:21:35.207Z"
             },
             {
               "$type": "Document",
@@ -4567,8 +4379,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\NotificacionProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T16:47:59.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T16:47:59.79Z"
             },
             {
               "$type": "Document",
@@ -4580,8 +4391,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\FrecuenciaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:14:30.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:14:30.3Z"
             },
             {
               "$type": "Document",
@@ -4593,8 +4403,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PlantillaCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:16:19.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:16:19.609Z"
             },
             {
               "$type": "Document",
@@ -4618,8 +4427,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\UsuarioListDto.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwBEAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T23:39:57.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T23:39:57.82Z"
             },
             {
               "$type": "Document",
@@ -4631,8 +4439,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\UsuarioPerfilEntity.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAxwBQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T08:35:50.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T08:35:50.751Z"
             },
             {
               "$type": "Document",
@@ -4644,8 +4451,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PlantillaListDto.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwBMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:15:51.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:15:51.191Z"
             },
             {
               "$type": "Document",
@@ -4657,8 +4463,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PlantillaGetDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBJwA0AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:16:05.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:16:05.06Z"
             },
             {
               "$type": "Document",
@@ -4670,8 +4475,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\NotificacionGetDto.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAswBUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:15:25.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:15:25.861Z"
             },
             {
               "$type": "Document",
@@ -4683,8 +4487,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\PanelRegistroCreateUpdateDto.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwA4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:17:01.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:17:01.868Z"
             },
             {
               "$type": "Document",
@@ -4696,8 +4499,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\PanelRegistroProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T16:48:29.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T16:48:29.767Z"
             },
             {
               "$type": "Document",
@@ -4709,8 +4511,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\OrganizacionCreateUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T17:39:23.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T17:39:23.276Z"
             },
             {
               "$type": "Document",
@@ -4722,8 +4523,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\IPlantillaRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:47:21.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:47:21.815Z"
             },
             {
               "$type": "Document",
@@ -4747,8 +4547,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\IOrganizacionRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:19:15.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:19:15.368Z"
             },
             {
               "$type": "Document",
@@ -4772,8 +4571,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\MenuConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:15:02.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:15:02.231Z"
             },
             {
               "$type": "Document",
@@ -4785,8 +4583,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\NotificacionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:44:14.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:44:14.531Z"
             },
             {
               "$type": "Document",
@@ -4798,8 +4595,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\OrganizacionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:46:20.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:46:20.212Z"
             },
             {
               "$type": "Document",
@@ -4811,8 +4607,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PerfilMenuConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:15:21.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:15:21.478Z"
             },
             {
               "$type": "Document",
@@ -4824,8 +4619,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PerfilPermisoEntidadConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:15:43.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:15:43.927Z"
             },
             {
               "$type": "Document",
@@ -4837,8 +4631,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PermisoConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:16:05.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:16:05.844Z"
             },
             {
               "$type": "Document",
@@ -4850,8 +4643,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\PlantillaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T23:44:47.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T23:44:47.532Z"
             },
             {
               "$type": "Document",
@@ -4863,8 +4655,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\TipoDocumentoConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T13:39:43.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T13:39:43.821Z"
             },
             {
               "$type": "Document",
@@ -4876,8 +4667,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\PerfilPermisoEntidadEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:44:11.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T15:44:11.58Z"
             },
             {
               "$type": "Document",
@@ -4889,8 +4679,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\PerfilMenuEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T17:06:45.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T17:06:45.57Z"
             },
             {
               "$type": "Document",
@@ -4902,8 +4691,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\MenuEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T17:07:11.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T17:07:11.563Z"
             },
             {
               "$type": "Document",
@@ -4915,8 +4703,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Entity\\TipoDocumentoEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBJwAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T13:34:19.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T13:34:19.861Z"
             },
             {
               "$type": "Document",
@@ -4928,8 +4715,7 @@
               "RelativeToolTip": "infraestructure\\Mapper\\TipoExplotacionProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:01:33.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:01:33.417Z"
             },
             {
               "$type": "Document",
@@ -4941,8 +4727,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\UsuarioMarcoListaConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T14:29:30.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T14:29:30.449Z"
             },
             {
               "$type": "Document",
@@ -4954,8 +4739,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\TipoExplotacionListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:06:25.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:06:25.074Z"
             },
             {
               "$type": "Document",
@@ -4967,8 +4751,7 @@
               "RelativeToolTip": "infraestructure\\Configs\\TipoOrganizacionConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T16:00:49.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T16:00:49.79Z"
             },
             {
               "$type": "Document",
@@ -4980,8 +4763,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\LineaProduccionGetDto.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAqwA8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:05:21.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:05:21.923Z"
             },
             {
               "$type": "Document",
@@ -4993,8 +4775,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\LineaProduccionListDto.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAqwA8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:05:34.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T01:05:34.846Z"
             },
             {
               "$type": "Document",
@@ -5006,8 +4787,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\OrganizacionListDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T22:59:54.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T22:59:54.216Z"
             },
             {
               "$type": "Document",
@@ -5031,8 +4811,7 @@
               "RelativeToolTip": "infraestructure\\Output\\Repository\\Tablas\\ILineaProduccionRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:43:18.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T23:43:18.13Z"
             },
             {
               "$type": "Document",
@@ -5092,8 +4871,7 @@
               "RelativeToolTip": "infraestructure\\Input\\Dto\\SelectTipoDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T03:46:00.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T03:46:00.698Z"
             }
           ]
         }
