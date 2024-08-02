@@ -53,6 +53,58 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<FundoModel>> GetFundosCuestionario(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetFundosCuestionario(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<InformanteModel>> GetInformantesCuestionario(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetInformantesCuestionario(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<PecuarioModel>> GetPecuariosCuestionario(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetPecuariosCuestionario(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<TrazabilidadModel>> GetObservacionesCuestionario(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetObservacionesCuestionario(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<List<ArchivoModel>> GetArchivosCuestionario(string uuid)
         {
             var gestionregistroEntity = await _gestionregistroRepository.GetArchivosCuestionario(uuid);
@@ -69,6 +121,97 @@ namespace Infra.MarcoLista.Output.Adapter
         public async Task<string> CreateCuestionario(GestionRegistroModel model)
         {
             var gestionregistroEntity = await _gestionregistroRepository.CreateCuestionario(model);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> DesaprobarCuestionario(GestionRegistroModel model)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.DesaprobarCuestionario(model);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> InvalidarCuestionario(GestionRegistroModel model)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.InvalidarCuestionario(model);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> AprobarCuestionarioxUUID(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.AprobarCuestionarioxUUID(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> RatificarCuestionarioxUUID(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.RatificarCuestionarioxUUID(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> DerivarCuestionarioxUUID(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.DerivarCuestionarioxUUID(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> ValidarCuestionarioxUUID(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.ValidarCuestionarioxUUID(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public async Task<string> DescartarCuestionarioxUUID(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.DescartarCuestionarioxUUID(uuid);
 
             if (gestionregistroEntity != null)
             {

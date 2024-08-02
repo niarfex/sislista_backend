@@ -6,6 +6,7 @@ namespace Application.Input
     {
         Task<List<UsuarioModel>> GetAll(string param);
         Task<UsuarioModel> GetUsuarioxUUID(string uuid);
+        Task<UsuarioModel> GetUsuarioxCorreo(string correo);
         Task<LoginModel> GetUsuarioLoginxUUID(string uuid);
         Task<string> CreateUsuario(UsuarioModel model);
         Task<string> DeleteUsuarioxUUID(string uuid);
@@ -14,6 +15,9 @@ namespace Application.Input
         Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid);
         Task<List<MenuItemModel>> GetMenuItemxUsuario(long idPadre);
         Task<bool> SendCredenciales(string uuid);
+        Task<bool> ReestablecerClave(string correo);
         Task<LoginModel> datosInicioSesion(AuthModel auth);
+        Task<bool> ValidarTokenReseteo(string token);
+        Task<bool> ActualizarClave(ResetAuthModel reset);
     }
 }

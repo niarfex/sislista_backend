@@ -10,7 +10,7 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("IDE_TRAZABILIDAD")]
         public long Id { get; set; }
         [Column("IDE_CUESTIONARIO")]
-        public long? Cuestionario { get; set; }
+        public long? IdCuestionario { get; set; }
         [Column("TXT_OBSERVACION")]
         public string? Observacion { get; set; }
         [Column("FLG_ESTADO")]
@@ -26,7 +26,7 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("IDE_ESTADO_RESULTADO")]
         public long? EstadoResultado { get; set; }
         [Column("IDE_SECCION")]
-        public long? Seccion { get; set; }
+        public long? IdSeccion { get; set; }
         [Column("TXT_PERFIL")]
         public string? Perfil { get; set; }
     }

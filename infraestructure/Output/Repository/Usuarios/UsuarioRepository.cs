@@ -24,16 +24,19 @@ namespace Infra.MarcoLista.Output.Repository
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IConfiguration _appConfiguration;
         private readonly IMapper _mapper;
         private DBOracle dBOracle = new DBOracle();
         public UsuarioRepository(IConfiguration configuracion,
             IHttpContextAccessor httpContextAccessor,
+            IConfiguration appConfiguration,
             IMapper mapper)
         {
             _configuracion = configuracion;
             _httpContextAccessor = httpContextAccessor;
+            _appConfiguration = appConfiguration;
             _mapper = mapper;
-            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionSISLISTA"]);
         }
         public async Task<List<UsuarioModel>> GetAll(string param)
         {
@@ -92,6 +95,95 @@ namespace Infra.MarcoLista.Output.Repository
             objUsuario.Clave = await GetClaveDesencriptada(objUsuario.Clave);         
             return objUsuario;
         }
+        public async Task<UsuarioModel> GetUsuarioxCorreo(string correo)
+        {
+            var query = (from u in _db.Usuario
+                        join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                        join pe in _db.Persona on u.IdPersona equals pe.Id
+                        where u.Estado == 1 && up.Estado == 1 &&  pe.Estado == 1 
+                        && pe.CorreoElectronico==correo && correo.Trim()!=""
+                        select new UsuarioModel
+                        {
+                            Id = u.Id,
+                            CorreoElectronico=pe.CorreoElectronico,
+                            CodigoUUIDUsuario = u.CodigoUUID.ToString(),                            
+                            Usuario = u.Usuario                            
+                        }).FirstOrDefault();
+
+            if (query == null) {
+                return null;
+            }
+
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == query.CodigoUUIDUsuario).FirstOrDefault();
+                    
+            objUsuario.TokenReseteoClave= GetRandomToken(60);
+            objUsuario.FechaTokenReseteoExpiracion= DateTime.UtcNow.AddMinutes(double.Parse(_appConfiguration[$"Authentication:Reseteo:Duracion"].ToString()));
+            _db.Usuario.Update(objUsuario);
+            _db.SaveChanges();
+            query.TokenReseteoClave = objUsuario.TokenReseteoClave;
+            return query;
+        }
+        public async Task<bool> ValidarTokenReseteo(string token)
+        {
+            var query = (from u in _db.Usuario
+                         where u.Estado == 1 && u.TokenReseteoClave == token 
+                         select new UsuarioModel
+                         {
+                             Id = u.Id,
+                             CodigoUUIDUsuario = u.CodigoUUID.ToString(),
+                             Usuario = u.Usuario
+                         }).FirstOrDefault();
+
+            if (query == null)
+            {
+                throw new TokenExistException("El token proporcionado no es válido");
+            }
+
+            var query2 = (from u in _db.Usuario
+                         where u.Estado == 1 && u.TokenReseteoClave == token &&
+                         ((DateTime)u.FechaTokenReseteoExpiracion).AddMinutes(double.Parse(_appConfiguration[$"Authentication:Reseteo:Duracion"].ToString())) >= DateTime.UtcNow
+                         select new UsuarioModel
+                         {
+                             Id = u.Id,
+                             CodigoUUIDUsuario = u.CodigoUUID.ToString(),
+                             FechaTokenReseteoExpiracion=u.FechaTokenReseteoExpiracion,
+                             Usuario = u.Usuario
+                         }).FirstOrDefault();
+
+            if (query2 == null)
+            {
+                throw new TokenExpireException("El token proporcionado ha expirado, solicite nuevamente reestablecer la contraseña");
+            }
+
+            return true;
+        }
+        public async Task<bool> ActualizarClave(ResetAuthModel reset)
+        {
+            var query = (from u in _db.Usuario
+                         where u.Estado == 1 && u.TokenReseteoClave == reset.Token &&
+                         ((DateTime)u.FechaTokenReseteoExpiracion).AddMinutes(double.Parse(_appConfiguration[$"Authentication:Reseteo:Duracion"].ToString())) >= DateTime.UtcNow
+                         select new UsuarioModel
+                         {
+                             Id = u.Id,
+                             CodigoUUIDUsuario = u.CodigoUUID.ToString(),
+                             Usuario = u.Usuario
+                         }).FirstOrDefault();
+
+            if (query == null || reset.NewPassword!=reset.ReNewPassword)
+            {
+                throw new TokenExistException("No se pudo realizar la operación porque token proporcionado no es válido o los datos ingresados no son válidos");
+            }
+
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == query.CodigoUUIDUsuario).FirstOrDefault();
+
+            var claveCifrada = await GetClaveEncriptada(reset.NewPassword);
+
+            objUsuario.Clave = claveCifrada;
+            _db.Usuario.Update(objUsuario);
+            _db.SaveChanges();
+
+            return true;
+        }
         public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
         {
             var query = from u in _db.Usuario
@@ -132,7 +224,7 @@ namespace Infra.MarcoLista.Output.Repository
 
             //Registramos o actualizamos los datos de la persona
             long personaId;
-            var persona = _db.Persona.Where(x => (x.CodigoUUID.ToString() == model.CodigoUUIDPersona && model.CodigoUUIDPersona.Trim() != "")
+            var persona = _db.Persona.Where(x => (x.CodigoUUID.ToString() == model.CodigoUUIDPersona && !model.CodigoUUIDPersona.IsNullOrEmpty())
             || (x.NumeroDocumento == model.NumeroDocumento && x.IdTipoDocumento == model.IdTipoDocumento && model.NumeroDocumento.Trim() != "")).FirstOrDefault();
             if (persona == null)
             {//Si la persona no existe                 
@@ -178,7 +270,7 @@ namespace Infra.MarcoLista.Output.Repository
             }
 
 
-            if (model.CodigoUUIDUsuario != null)
+            if (!model.CodigoUUIDUsuario.IsNullOrEmpty())
             {
                 var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == model.CodigoUUIDUsuario).FirstOrDefault();
                 objUsuario.IdPersona = personaId;     
@@ -254,6 +346,21 @@ namespace Infra.MarcoLista.Output.Repository
         private static string GetRandomPassword(int length)
         {
             const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!¡#$%&()=¿?";
+
+            StringBuilder sb = new StringBuilder();
+            Random rnd = new Random();
+
+            for (int i = 0; i < length; i++)
+            {
+                int index = rnd.Next(chars.Length);
+                sb.Append(chars[index]);
+            }
+
+            return sb.ToString();
+        }
+        private static string GetRandomToken(int length)
+        {
+            const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
 
             StringBuilder sb = new StringBuilder();
             Random rnd = new Random();
@@ -452,7 +559,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<string> GetClaveEncriptada(string clave)
         {
             OracleTransaction tr = null; 
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             string claveEncriptada;
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
@@ -479,7 +586,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<string> GetClaveDesencriptada(string claveEncriptada)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             CifradoClave objClave = new CifradoClave();
@@ -504,7 +611,7 @@ namespace Infra.MarcoLista.Output.Repository
         /*public async Task<string> GetClaveUsuario(long idUsuario)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             try
@@ -536,7 +643,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<LoginModel> datosInicioSesion(AuthModel auth)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             try

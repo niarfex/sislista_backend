@@ -334,7 +334,7 @@
       },
       "Domain/1.0.0": {
         "runtime": {
-          "domain.dll": {}
+          "Domain.dll": {}
         }
       }
     }

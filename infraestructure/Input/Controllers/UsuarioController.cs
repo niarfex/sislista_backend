@@ -91,12 +91,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 var listTipoDocumento = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTipoDocumentoPN());
                 var listPerfil = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetPerfiles());
                 var listOrganizacion = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetOrganizaciones());
-                var listDepartamentos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDepartamentosMarcoLista());
                 if (uuid!="")
                 {
                     objUsuario = _mapper.Map<UsuarioGetDto>(await _usuarioService.GetUsuarioxUUID(uuid));
                     objUsuario.ListMarcoListaAsignados = _mapper.Map< List<MarcoListaListDto>>(await _usuarioService.GetUsuarioMarcoLista(uuid));
                 }
+                var listDepartamentos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDepartamentosMarcoLista(objUsuario.IdPerfil==null?0: objUsuario.IdPerfil));
                 objUsuario.ListTipoDocumento=listTipoDocumento;
                 objUsuario.ListPerfil = listPerfil;
                 objUsuario.ListOrganizacion = listOrganizacion;
@@ -104,6 +104,34 @@ namespace Infra.MarcoLista.Input.Controllers
                 respuesta.success = true;
                 respuesta.message = "Se listan los datos correctamente";
                 respuesta.data = objUsuario;
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al consultar el listado";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("GetDepartamentosMarcoLista")]
+        public async Task<ResponseModel> GetDepartamentosMarcoLista(long idPerfil)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var ubigeos = await _generalService.GetDepartamentosMarcoLista(idPerfil);
+                respuesta.success = true;
+                if (ubigeos != null)
+                {
+                    respuesta.data = _mapper.Map<List<SelectTipoDto>>(ubigeos);
+                }
+                else
+                {
+                    respuesta.data = null;
+                }
+                respuesta.message = "Se listan los datos correctamente";
                 return respuesta;
 
             }
@@ -320,5 +348,6 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
             }
         }
+        
     }
 }

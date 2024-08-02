@@ -105,51 +105,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 var listPeriodos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetPeriodos());
                 var listSecciones = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetSecciones());
                 var listEstadosCuestionario = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetEstadosCuestionario());
-                //var listFundos = new List<FundoGetDto>();
-
-                /*var campo1 = new CampoGetDto { Campo = "Campo 1", Superficie = 1, SuperficieCultivada = 0.1, Observacion = "Campo 1x" };
-                var campo2 = new CampoGetDto { Campo = "Campo 2", Superficie = 1, SuperficieCultivada = 0.2, Observacion = "Campo 2x" };
-                var campo3 = new CampoGetDto { Campo = "Campo 3", Superficie = 2, SuperficieCultivada = 0.3, Observacion = "Campo 3x" };
-                var campo4 = new CampoGetDto { Campo = "Campo 4", Superficie = 3, SuperficieCultivada = 0.4, Observacion = "Campo 4x" };
-                var campo5 = new CampoGetDto { Campo = "Campo 5", Superficie = 4, SuperficieCultivada = 0.5, Observacion = "Campo 5x" };
-                var campo6 = new CampoGetDto { Campo = "Campo 6", Superficie = 5, SuperficieCultivada = 0.6, Observacion = "Campo 6x" };
-                var campo7 = new CampoGetDto { Campo = "Campo 7", Superficie = 6, SuperficieCultivada = 0.7, Observacion = "Campo 7x" };
-                var campoFundo1 = new List<CampoGetDto>();
-                var campoFundo2 = new List<CampoGetDto>();
-                var campoFundo3 = new List<CampoGetDto>();
-                campoFundo1.Add(campo1); campoFundo1.Add(campo2); campoFundo1.Add(campo3);
-                campoFundo2.Add(campo4); campoFundo2.Add(campo5); 
-                campoFundo3.Add(campo6); campoFundo3.Add(campo7); 
-
-                var fundo1=new FundoGetDto{ 
-                    Fundo="Fundo A",SuperficieAgricola=5.24,SuperficieTotal=6.24,
-                    Observacion="Observación",IdUbigeo= "051008"
-                    ,ListDepartamento=listDepartamentos
-                    ,ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias("05".Substring(0, 2)))
-                    ,ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos("0510".Substring(0, 4)))
-                    ,ListCampos= campoFundo1
-                };
-                var fundo2 = new FundoGetDto
-                {
-                    Fundo = "Fundo B",SuperficieAgricola = 3.24,SuperficieTotal = 3.24,
-                    Observacion = "Observación",IdUbigeo = "060301"
-                    ,ListDepartamento = listDepartamentos
-                    ,ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias("06".Substring(0, 2)))
-                    ,ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos("0603".Substring(0, 4)))
-                    ,ListCampos = campoFundo2
-                };
-                var fundo3 = new FundoGetDto
-                {
-                    Fundo = "Fundo C",SuperficieAgricola = 1.24,SuperficieTotal = 4.24,
-                    Observacion = "Observación",IdUbigeo = "080306"
-                    ,ListDepartamento = listDepartamentos
-                    ,ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias("08".Substring(0, 2)))
-                    ,ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos("0803".Substring(0, 4)))
-                    ,ListCampos = campoFundo3
-                };
-                listFundos.Add(fundo1);
-                listFundos.Add(fundo2);
-                listFundos.Add(fundo3);*/
+               
                 var listTenencia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetTenencias());
                 var listUsoTierra = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetUsoTierras());
                 var listCultivo = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetCultivos());
@@ -159,9 +115,10 @@ namespace Infra.MarcoLista.Input.Controllers
                 var listLineaProduccion = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetLineaProduccion());
                 var listEspecies = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetEspecies());
 
+                objGestionRegistro = _mapper.Map<GestionRegistroGetDto>(objGestionRegistroML);
                 if (objGestionRegistroML.CodigoUUID.IsNullOrEmpty())
                 {
-                    objGestionRegistro = _mapper.Map<GestionRegistroGetDto>(objGestionRegistroML);
+                    
                     objGestionRegistro.ListFundos = new List<FundoGetDto>();
                     objGestionRegistro.ListArchivos = new List<ArchivoGetDto>();
                     objGestionRegistro.ListInformantes = new List<InformanteGetDto>();
@@ -170,12 +127,29 @@ namespace Infra.MarcoLista.Input.Controllers
                 }
                 else
                 {
-                    objGestionRegistro = _mapper.Map<GestionRegistroGetDto>(await _gestionregistroService.GetGestionRegistroxUUID(objGestionRegistroML.CodigoUUID));
-                    objGestionRegistro.ListFundos = new List<FundoGetDto>();
+                    objGestionRegistro.ListFundos = _mapper.Map<List<FundoGetDto>>(await _gestionregistroService.GetFundosCuestionario(objGestionRegistro.CodigoUUID));
                     objGestionRegistro.ListArchivos = _mapper.Map<List<ArchivoGetDto>>(await _gestionregistroService.GetArchivosCuestionario(objGestionRegistro.CodigoUUID));
-                    objGestionRegistro.ListInformantes = new List<InformanteGetDto>();
-                    objGestionRegistro.ListPecuarios = new List<PecuarioGetDto>();
-                    objGestionRegistro.ListObservaciones = new List<TrazabilidadGetDto>();
+                    objGestionRegistro.ListInformantes = _mapper.Map<List<InformanteGetDto>>(await _gestionregistroService.GetInformantesCuestionario(objGestionRegistro.CodigoUUID));
+                    objGestionRegistro.ListPecuarios = _mapper.Map<List<PecuarioGetDto>>(await _gestionregistroService.GetPecuariosCuestionario(objGestionRegistro.CodigoUUID));
+                    objGestionRegistro.ListObservaciones = _mapper.Map<List<TrazabilidadGetDto>>(await _gestionregistroService.GetObservacionesCuestionario(objGestionRegistro.CodigoUUID));
+                    for (int i = 0; i < objGestionRegistro.ListFundos.Count(); i++) {
+                        objGestionRegistro.ListFundos[i].Orden = i + 1;
+                        objGestionRegistro.ListFundos[i].ListDepartamento = listDepartamentos;
+                        objGestionRegistro.ListFundos[i].ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias(objGestionRegistro.ListFundos[i].IdUbigeo.Substring(0, 2)));
+                        objGestionRegistro.ListFundos[i].ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos(objGestionRegistro.ListFundos[i].IdUbigeo.Substring(0, 4)));
+                        for (int j = 0; j < objGestionRegistro.ListFundos[i].ListCampos.Count(); j++) {
+                            objGestionRegistro.ListFundos[i].ListCampos[j].Orden = j + 1;
+                            foreach (var pecu in objGestionRegistro.ListPecuarios.FindAll(x => x.IdFundo == objGestionRegistro.ListFundos[i].Id
+                            && x.IdCampo == objGestionRegistro.ListFundos[i].ListCampos[j].Id))
+                            {
+                                pecu.OrdenFundo = i + 1;
+                                pecu.OrdenCampo = j + 1;
+                            }
+                        }
+                    }
+                
+                
+                
                 }
                 objGestionRegistro.ListProvincia = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetProvincias(objGestionRegistro.IdUbigeo.Substring(0, 2)));
                 objGestionRegistro.ListDistrito = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetDistritos(objGestionRegistro.IdUbigeo.Substring(0, 4)));
@@ -246,7 +220,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 var uuid = await _gestionregistroService.CreateCuestionario(_mapper.Map<GestionRegistroModel>(dto));
                 respuesta.success = true;
                 respuesta.message = "Se registraron los datos correctamente";
-                respuesta.data = "x";
+                respuesta.data = uuid;
                 return respuesta;
 
             }
@@ -254,6 +228,148 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 respuesta.success = false;
                 respuesta.message = "Ocurrió un error al registrar los datos";
+                return respuesta;
+            }
+        }
+        [HttpPost]
+        [Route("DesaprobarCuestionario")]
+        public async Task<ResponseModel> DesaprobarCuestionario(GestionRegistroCreateUpdateDto dto)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var uuid = await _gestionregistroService.DesaprobarCuestionario(_mapper.Map<GestionRegistroModel>(dto));
+                respuesta.success = true;
+                respuesta.message = "Se registraron los datos correctamente";
+                respuesta.data = uuid;
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al registrar los datos";
+                return respuesta;
+            }
+        }
+        [HttpPost]
+        [Route("InvalidarCuestionario")]
+        public async Task<ResponseModel> InvalidarCuestionario(GestionRegistroCreateUpdateDto dto)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var uuid = await _gestionregistroService.InvalidarCuestionario(_mapper.Map<GestionRegistroModel>(dto));
+                respuesta.success = true;
+                respuesta.message = "Se registraron los datos correctamente";
+                respuesta.data = uuid;
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al registrar los datos";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("AprobarCuestionarioxUUID")]
+        public async Task<ResponseModel> AprobarCuestionarioxUUID(string uuid)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se aprobó el registro correctamente";
+                respuesta.data = await _gestionregistroService.AprobarCuestionarioxUUID(uuid);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al aprobar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("RatificarCuestionarioxUUID")]
+        public async Task<ResponseModel> RatificarCuestionarioxUUID(string uuid)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se ratificó el registro correctamente";
+                respuesta.data = await _gestionregistroService.RatificarCuestionarioxUUID(uuid);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al ratificar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("DerivarCuestionarioxUUID")]
+        public async Task<ResponseModel> DerivarCuestionarioxUUID(string uuid)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se derivó el registro correctamente";
+                respuesta.data = await _gestionregistroService.DerivarCuestionarioxUUID(uuid);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al derivar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("ValidarCuestionarioxUUID")]
+        public async Task<ResponseModel> ValidarCuestionarioxUUID(string uuid)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se validó el registro correctamente";
+                respuesta.data = await _gestionregistroService.ValidarCuestionarioxUUID(uuid);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al validar el registro";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("DescartarCuestionarioxUUID")]
+        public async Task<ResponseModel> DescartarCuestionarioxUUID(string uuid)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = true;
+                respuesta.message = "Se descartó el registro correctamente";
+                respuesta.data = await _gestionregistroService.DescartarCuestionarioxUUID(uuid);
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al descartar el registro";
                 return respuesta;
             }
         }

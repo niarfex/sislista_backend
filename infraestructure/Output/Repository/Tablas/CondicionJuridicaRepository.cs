@@ -29,7 +29,7 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
-            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionSISLISTA"]);
         }
         public async Task<List<CondicionJuridicaEntity>> GetAll(string param)
         {

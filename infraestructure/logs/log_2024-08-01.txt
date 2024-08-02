@@ -1,0 +1,13 @@
+[1/08/2024 04:51:47] ERROR: {SendCredenciales} The remote server returned an error: (400) Bad Request.
+[1/08/2024 04:52:02] ERROR: {SendCredenciales} The remote server returned an error: (400) Bad Request.
+[1/08/2024 04:52:58] ERROR: {SendCredenciales} The remote server returned an error: (400) Bad Request.
+[1/08/2024 04:53:28] ERROR: {SendCredenciales} The remote server returned an error: (400) Bad Request.
+[1/08/2024 04:55:11] ERROR: {SendCredenciales} The remote server returned an error: (400) Bad Request.
+[1/08/2024 04:56:54] ERROR: {ReestablecerClave} The remote server returned an error: (400) Bad Request.
+[1/08/2024 04:58:05] ERROR: {ReestablecerClave} The remote server returned an error: (400) Bad Request.
+[1/08/2024 05:02:18] SUCCESSFUL: {ReestablecerClave} Se remitió la notificación de manera exitosa
+[1/08/2024 05:04:15] SUCCESSFUL: {ReestablecerClave} Se remitió la notificación de manera exitosa
+[1/08/2024 09:24:51] SUCCESSFUL: {ReestablecerClave} Se remitió la notificación de manera exitosa
+[1/08/2024 16:35:45] SUCCESSFUL: {ReestablecerClave} Se remitió la notificación de manera exitosa
+[1/08/2024 16:38:13] SUCCESSFUL: {ReestablecerClave} Se remitió la notificación de manera exitosa
+[1/08/2024 16:39:11] SUCCESSFUL: {ReestablecerClave} Se remitió la notificación de manera exitosa

@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Domain;
 using Application.Common;
+using System.Runtime.CompilerServices;
 
 namespace Application.Service
 {
@@ -47,6 +48,17 @@ namespace Application.Service
             }
             return usuario;
         }
+        public async Task<UsuarioModel> GetUsuarioxCorreo(string correo)
+        {
+            var usuario = await _usuarioPort.GetUsuarioxCorreo(correo);
+
+            if (usuario == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return usuario;
+        }
         public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
         {
             var usuario = await _usuarioPort.GetUsuarioLoginxUUID(uuid);
@@ -60,13 +72,21 @@ namespace Application.Service
         }
         public async Task<string> CreateUsuario(UsuarioModel model)
         {
-            var uuid = await _usuarioPort.CreateUsuario(model);
-            if (uuid == null)
+            try
             {
-                throw new NotDataFoundException("No se registraron los datos");
+                var uuid = await _usuarioPort.CreateUsuario(model);
+                if (uuid == null)
+                {
+                    throw new NotDataFoundException("No se registraron los datos");
 
+                }
+                return uuid;
             }
-            return uuid;
+            catch (Exception ex)
+            {
+                Utils.registrarLog(ex.Message, "CreateUsuario", "ERROR");
+                throw ex;
+            }
         }
         public async Task<string> DeleteUsuarioxUUID(string uuid)
         {
@@ -116,6 +136,7 @@ namespace Application.Service
             }
             return menus;
         }
+        
         public async Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid)
         {
             var marcolistas = await _usuarioPort.GetUsuarioMarcoLista(uuid);
@@ -147,7 +168,7 @@ namespace Application.Service
             string asunto = "";
             string mensaje = "";
             string concopia = "";
-            concopia = _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
+            concopia = "";// _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
             try
             {
                 var objUsuario = await GetUsuarioxUUID(uuid);
@@ -203,6 +224,80 @@ namespace Application.Service
                 Utils.registrarLog(ex.Message, "SendCredenciales", "ERROR");
                 throw ex;
             }
+        }
+        public async Task<bool> ReestablecerClave(string correo)
+        {
+            string asunto = "";
+            string mensaje = "";
+            string concopia = "";
+            concopia = "";// _appConfiguration[$"configCorreo:concopia"] == "" ? "" : "," + _appConfiguration[$"configCorreo:concopia"];
+            try
+            {
+                var objUsuario = await GetUsuarioxCorreo(correo);
+                
+                asunto = "Reestablecer contraseña de acceso al Sistema de Marco de Lista";
+                mensaje = $"Estimado(a) usuario(a) para reestablecer su contraseña de acceso al sistema de Marco de Lista debe acceder al siguiente enlace: {_appConfiguration[$"Authentication:Reseteo:Enlace"]}/{objUsuario.TokenReseteoClave}" + "<br><br>" +
+                        $"El enlace remitido solo tiene una vigencia de 15 minutos, pasado el tiempo deberá solicitar un nuevo enlace." + "<br><br>";
+
+                
+                var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                string json = $"{{\"from\":\"{_appConfiguration[$"configCorreo:remitente"]}\"," +
+                    $"\"vto\":\"{objUsuario.CorreoElectronico + concopia}\"," +
+                    $"\"vasunto\":\"{asunto}\"," +
+                    $"\"vmensaje\":\"{mensaje}\"}}";
+
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                request.Accept = "application/json";
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    using (Stream strReader = response.GetResponseStream())
+                    {
+                        if (strReader == null) return false;
+                        using (StreamReader objReader = new StreamReader(strReader))
+                        {
+                            string responseBody = await objReader.ReadToEndAsync();
+                        }
+                    }
+                }
+                Utils.registrarLog("Se remitió la notificación de manera exitosa", "ReestablecerClave", "SUCCESSFUL");
+                return true;
+            }
+            catch (WebException ex)
+            {
+                Utils.registrarLog(ex.Message, "ReestablecerClave", "ERROR");
+                throw ex;
+            }
+        }
+        public async Task<bool> ValidarTokenReseteo(string token)
+        {
+            var usuario = await _usuarioPort.ValidarTokenReseteo(token);
+
+            if (usuario == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return usuario;
+        }
+        public async Task<bool> ActualizarClave(ResetAuthModel reset)
+        {
+            var usuario = await _usuarioPort.ActualizarClave(reset);
+
+            if (usuario == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            return usuario;
         }
         public async Task<LoginModel> datosInicioSesion(AuthModel auth)
         {

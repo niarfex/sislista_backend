@@ -7,7 +7,7 @@ namespace Application.Input
         Task<List<CultivoModel>> GetAllCultivos(string param);
         Task<List<UbigeoModel>> GetAllUbigeo(string param);
         Task<List<SelectTipoModel>> GetDepartamentos();
-        Task<List<SelectTipoModel>> GetDepartamentosMarcoLista();
+        Task<List<SelectTipoModel>> GetDepartamentosMarcoLista(long idPerfil);
         Task<List<SelectTipoModel>> GetProvincias(string idUbigeo);
         Task<List<SelectTipoModel>> GetDistritos(string idUbigeo);
         Task<List<SelectTipoModel>> GetTipoOrganizacion();

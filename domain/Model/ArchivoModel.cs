@@ -21,7 +21,7 @@ namespace Domain.Model
         public DateTime? FechaActualizacion { get; set; }
         public string? UsuarioActualizacion { get; set; }
         public long? IdTipoInformacion { get; set; }
-        public long? Peso { get; set; }
+        public double? Peso { get; set; }
         public string? TipoInformacion { get; set; }
     }
 }

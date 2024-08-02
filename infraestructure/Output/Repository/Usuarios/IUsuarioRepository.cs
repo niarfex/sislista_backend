@@ -7,6 +7,7 @@ namespace Infra.MarcoLista.Output.Repository
     {
         Task<List<UsuarioModel>> GetAll(string param);
         Task<UsuarioModel> GetUsuarioxUUID(string uuid);
+        Task<UsuarioModel> GetUsuarioxCorreo(string correo);
         Task<LoginModel> GetUsuarioLoginxUUID(string uuid);
         Task<string> CreateUsuario(UsuarioModel model);
         Task<string> DeleteUsuarioxUUID(string uuid);
@@ -22,5 +23,7 @@ namespace Infra.MarcoLista.Output.Repository
         Task<string> GetClaveDesencriptada(string claveEncriptada);
         //Task<string> GetClaveUsuario(long idUsuario);
         Task<LoginModel> datosInicioSesion(AuthModel auth);
+        Task<bool> ValidarTokenReseteo(string token);
+        Task<bool> ActualizarClave(ResetAuthModel reset);
     }
 }

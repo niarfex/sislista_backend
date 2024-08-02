@@ -6,6 +6,7 @@ namespace Application.Output
     {
         Task<List<UsuarioModel>> GetAll(string param);
         Task<UsuarioModel> GetUsuarioxUUID(string uuid);
+        Task<UsuarioModel> GetUsuarioxCorreo(string correo);
         Task<LoginModel> GetUsuarioLoginxUUID(string uuid);
         Task<string> CreateUsuario(UsuarioModel model);
         Task<string> DeleteUsuarioxUUID(string uuid);
@@ -18,5 +19,7 @@ namespace Application.Output
         Task<bool> ActualizarRefreshToken(string uuid, DateTime expiracion, string refreshToken);
         Task<List<MarcoListaModel>> GetUsuarioMarcoLista(string uuid);
         Task<LoginModel> datosInicioSesion(AuthModel auth);
+        Task<bool> ValidarTokenReseteo(string token);
+        Task<bool> ActualizarClave(ResetAuthModel reset);
     }
 }

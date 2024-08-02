@@ -71,15 +71,16 @@ namespace Application.Service
             }
             return listaUbigeos;
         }
-        public async Task<List<SelectTipoModel>> GetDepartamentosMarcoLista()
+        public async Task<List<SelectTipoModel>> GetDepartamentosMarcoLista(long idPerfil)
         {
             List<SelectTipoModel> listaUbigeos = new List<SelectTipoModel>();
             var ubigeos = await _generalPort.GetDepartamentos(1,"");
-            var marcolista = await _marcolistaPort.GetAll("");
+            var marcolista = await _marcolistaPort.GetMarcoListasinAginarxPerfil(idPerfil);
 
             var query = from u in ubigeos
                         join m in marcolista on u.Id equals m.IdDepartamento
                         where m.Estado==1 || m.Estado==0
+                        orderby u.Departamento
                         select new UbigeoModel
                         {
                             Id=u.Id,

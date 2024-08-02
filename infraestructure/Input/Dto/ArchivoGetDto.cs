@@ -19,7 +19,7 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("IdTipoInformacion")]
         public long? IdTipoInformacion { get; set; }
         [JsonPropertyName("Peso")]
-        public long? Peso { get; set; }
+        public double? Peso { get; set; }
         [JsonPropertyName("TipoInformacion")]
         public string? TipoInformacion { get; set; }
     }

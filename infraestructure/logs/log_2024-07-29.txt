@@ -1,0 +1,1 @@
+[29/07/2024 17:28:31] SUCCESSFUL: {SendCredenciales} Se remitió la notificación de manera exitosa

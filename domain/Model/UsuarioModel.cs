@@ -15,7 +15,7 @@ namespace Domain.Model
         public string CodigoUUIDUsuario { get; set; }
         public string? Usuario { get; set; }
         public string? Clave { get; set; }
-        public long? TokenReseteoClave { get; set; }
+        public string? TokenReseteoClave { get; set; }
         public DateTime? FechaTokenReseteoExpiracion { get; set; }
         public int Estado { get; set; }
         //Perfil y persona

@@ -28,6 +28,19 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<MarcoListaModel>> GetMarcoListasinAginarxPerfil(long idPerfil)
+        {
+            var marcolistaEntity = await _marcolistaRepository.GetMarcoListasinAginarxPerfil(idPerfil);
+
+            if (marcolistaEntity != null)
+            {
+                return marcolistaEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<MarcoListaModel> GetMarcoListaxId(long id)
         {
             var marcolistaEntity = await _marcolistaRepository.GetMarcoListaxId(id);

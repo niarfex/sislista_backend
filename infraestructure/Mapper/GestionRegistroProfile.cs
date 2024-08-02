@@ -16,6 +16,7 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<TipoInformacionEntity, TipoInformacionModel>();
             CreateMap<CultivoModel, CultivoListDto>();
             CreateMap<SeccionEntity, SeccionModel>();
+            CreateMap<GestionRegistroEntity, GestionRegistroModel>();
             CreateMap<GestionRegistroModel, GestionRegistroListDto>();
             CreateMap<GestionRegistroModel, GestionRegistroGetDto>();
             CreateMap<GestionRegistroCreateUpdateDto, GestionRegistroModel>();
@@ -31,12 +32,15 @@ namespace Infra.MarcoLista.Mapper
             CreateMap<ArchivoModel, ArchivoGetDto>();
             CreateMap<ArchivoEntity, ArchivoModel>();
             CreateMap<ArchivoGetDto, ArchivoModel>();
+            CreateMap<ArchivoCreateUpdateDto, ArchivoModel>();
             CreateMap<PecuarioModel, PecuarioGetDto>();
             CreateMap<PecuarioEntity, PecuarioModel>();
             CreateMap<PecuarioGetDto, PecuarioModel>();
+            CreateMap<PecuarioCreateUpdateDto, PecuarioModel>();
             CreateMap<TrazabilidadModel, TrazabilidadGetDto>();
             CreateMap<TrazabilidadEntity, TrazabilidadModel>();
             CreateMap<TrazabilidadGetDto, TrazabilidadModel>();
+            CreateMap<TrazabilidadCreateUpdateDto, TrazabilidadModel>();
         }
     }
 }

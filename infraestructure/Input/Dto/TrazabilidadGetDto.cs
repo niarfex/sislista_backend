@@ -12,10 +12,10 @@ namespace Infra.MarcoLista.Input.Dto
         public string? Observacion { get; set; }
         [JsonPropertyName("EstadoResultado")]
         public long? EstadoResultado { get; set; }
+        [JsonPropertyName("IdSeccion")]
+        public long? IdSeccion { get; set; }
         [JsonPropertyName("Seccion")]
-        public long? Seccion { get; set; }
-        [JsonPropertyName("TipoSeccion")]
-        public string? TipoSeccion { get; set; }
+        public string? Seccion { get; set; }
         [JsonPropertyName("Perfil")]
         public string? Perfil { get; set; }
     }

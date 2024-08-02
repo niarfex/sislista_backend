@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Reflection.Metadata;
 using System.Xml.Linq;
 using static Dapper.SqlMapper;
@@ -21,17 +22,21 @@ namespace Infra.MarcoLista.Output.Repository
         private MarcoListaContexto _db;
         private readonly IConfiguration _configuracion;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private DBOracle dBOracle = new DBOracle();
-        public GeneralRepository(IConfiguration configuracion, IMapper mapper)
+        public GeneralRepository(IConfiguration configuracion
+            , IMapper mapper
+            , IHttpContextAccessor httpContextAccessor)
         {
             _configuracion = configuracion;
             _mapper = mapper;
-            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
+            _httpContextAccessor = httpContextAccessor;
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionSISLISTA"]);
         }
         public async Task<List<CultivoModel>> GetAllCultivos()
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             List<CultivoModel> listCultivos = new List<CultivoModel>();
@@ -67,7 +72,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<UbigeoModel>> GetAllUbigeo(int idTipo, string idUbigeo)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             List<UbigeoModel> listUbigeos = new List<UbigeoModel>();
@@ -106,7 +111,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<UbigeoModel>> GetDepartamentos(int idTipo,string idUbigeo)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             List<UbigeoModel> listUbigeos = new List<UbigeoModel>();
@@ -143,7 +148,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<UbigeoModel>> GetProvincias(int idTipo, string idUbigeo)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             List<UbigeoModel> listUbigeos = new List<UbigeoModel>();
@@ -180,7 +185,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<UbigeoModel>> GetDistritos(int idTipo, string idUbigeo)
         {
             //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionString1"];
+            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
             var conn = new OracleConnection(strCon);
             await conn.OpenAsync();
             List<UbigeoModel> listUbigeos = new List<UbigeoModel>();
@@ -289,7 +294,18 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<EstadoEntity>> GetEstadosCuestionario()
         {
-            return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre== "ESTADOSUPERVISION" || x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();
+            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
+            if (usuario.CodigoPerfil == "PERFILSUP")
+            {
+                return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION")).ToList();
+            }
+            else if (usuario.CodigoPerfil == "PERFILESP")
+            {
+                return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();
+            }
+            else {
+                return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION" || x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();
+            }
         }
     }
 }

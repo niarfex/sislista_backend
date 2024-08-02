@@ -32,6 +32,6 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("IDE_TIPO_INFORMACION")]
         public long? IdTipoInformacion { get; set; }
         [Column("NUM_PESO")]
-        public long? Peso { get; set; }
+        public double? Peso { get; set; }
     }
 }

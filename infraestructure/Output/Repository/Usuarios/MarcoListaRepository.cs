@@ -10,6 +10,7 @@ using Infra.MarcoLista.Output.Entity;
 using Infra.MarcoLista.Output.Repository;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
+using NPOI.XSSF;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Xml.Linq;
@@ -31,7 +32,7 @@ namespace Infra.MarcoLista.Output.Repository
             _configuracion = configuracion;
             _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
-            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionSISLISTA"]);
         }
         public async Task<List<MarcoListaModel>> GetAll(string param)
         {
@@ -58,6 +59,57 @@ namespace Infra.MarcoLista.Output.Repository
                             Estado=m.Estado
                         };
             return query.ToList();
+        }
+        public async Task<List<MarcoListaModel>> GetMarcoListasinAginarxPerfil(long idPerfil)
+        {
+            List<MarcoListaModel> resultado = new List<MarcoListaModel>();
+            var listML = (from m in _db.MarcoLista
+                        join p in _db.Persona on m.IdPersona equals p.Id
+                        join c in _db.CondicionJuridica on p.IdCondicionJuridica equals c.Id
+                        where  m.Estado == 1 && p.Estado == 1                        
+                        select new MarcoListaModel
+                        {
+                            Id = m.Id,
+                            NumeroDocumento = p.NumeroDocumento,
+                            NombreCompleto = p.RazonSocial.IsNullOrEmpty() ? (p.Nombre + " " + p.ApellidoPaterno + " " + p.ApellidoMaterno) : p.RazonSocial,
+                            CondicionJuridica = c.CondicionJuridica,
+                            NombreRepLegal = p.NombreRepLegal,
+                            IdDepartamento = m.IdDepartamento,
+                            IdUbigeo = p.IdUbigeo,
+                            IdAnio = m.IdAnio,
+                            Estado = m.Estado
+                        }).ToList();
+
+            var listMLAsig = (from m in _db.MarcoLista
+                          join pe in _db.Persona on m.IdPersona equals pe.Id
+                          join c in _db.CondicionJuridica on pe.IdCondicionJuridica equals c.Id
+                          join um in _db.UsuarioMarcoLista on m.Id equals um.IdMarcoLista
+                          join u in _db.Usuario on um.IdUsuario equals u.Id
+                          join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                          join p in _db.Perfil on up.IdPerfil equals p.Id
+                          where m.Estado == 1 && pe.Estado == 1 && u.Estado == 1 
+                          && p.Estado == 1 && um.Estado==1 && up.Estado==1
+                          && p.Id==idPerfil
+                          select new MarcoListaModel
+                          {
+                              Id = m.Id,
+                              NumeroDocumento = pe.NumeroDocumento,
+                              NombreCompleto = pe.RazonSocial.IsNullOrEmpty() ? (pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno) : pe.RazonSocial,
+                              CondicionJuridica = c.CondicionJuridica,
+                              NombreRepLegal = pe.NombreRepLegal,
+                              IdDepartamento = m.IdDepartamento,
+                              IdUbigeo = pe.IdUbigeo,
+                              IdAnio = m.IdAnio,
+                              Estado = m.Estado
+                          }).ToList();
+
+            foreach (var ml in listML) {
+                if (listMLAsig.FindAll(x=> x.Id==ml.Id).Count()==0) {
+                    resultado.Add(ml);
+                }
+            }
+
+            return resultado;
         }
         public async Task<MarcoListaModel> GetMarcoListaxId(long id)
         {      

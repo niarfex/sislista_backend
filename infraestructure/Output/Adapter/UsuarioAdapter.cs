@@ -41,6 +41,19 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<UsuarioModel> GetUsuarioxCorreo(string correo)
+        {
+            var usuarioEntity = await _usuarioRepository.GetUsuarioxCorreo(correo);
+
+            if (usuarioEntity != null)
+            {
+                return usuarioEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<LoginModel> GetUsuarioLoginxUUID(string uuid)
         {
             var usuarioEntity = await _usuarioRepository.GetUsuarioLoginxUUID(uuid);
@@ -65,6 +78,32 @@ namespace Infra.MarcoLista.Output.Adapter
             else
             {
                 return "";
+            }
+        }
+        public async Task<bool> ValidarTokenReseteo(string token)
+        {
+            var usuarioEntity = await _usuarioRepository.ValidarTokenReseteo(token);
+
+            if (usuarioEntity != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public async Task<bool> ActualizarClave(ResetAuthModel reset)
+        {
+            var usuarioEntity = await _usuarioRepository.ActualizarClave(reset);
+
+            if (usuarioEntity != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         public async Task<string> DeleteUsuarioxUUID(string uuid)

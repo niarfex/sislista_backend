@@ -26,7 +26,7 @@ namespace Infra.MarcoLista.Output.Repository
         {
             _configuracion = configuracion;
             _mapper = mapper;
-            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionString1"]);
+            _db = new MarcoListaContexto(_configuracion[$"DatabaseSettings:ConnectionSISLISTA"]);
         }
         public async Task<ReporteModel> GetAll(string valCodigo)
         {

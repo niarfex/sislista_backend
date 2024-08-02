@@ -86,6 +86,34 @@ namespace Infra.MarcoLista.Input.Controllers
                 return null;
             }
         }
+        [HttpGet]
+        [Route("GetMarcoListasinAginarxPerfil")]
+        public async Task<ResponseModel> GetMarcoListasinAginarxPerfil(long idPerfil)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                var listML = await _marcolistaService.GetMarcoListasinAginarxPerfil(idPerfil);
+                respuesta.success = true;
+                if (listML != null)
+                {
+                    respuesta.data = _mapper.Map<List<MarcoListaListDto>>(listML);
+                }
+                else
+                {
+                    respuesta.data = null;
+                }
+                respuesta.message = "Se listan los datos correctamente";
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al consultar el listado";
+                return respuesta;
+            }
+        }
         [HttpPost]
         [Route("Importar")]
         public async Task<string> Importar(IFormFile file)

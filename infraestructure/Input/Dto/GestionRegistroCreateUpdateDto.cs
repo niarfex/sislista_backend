@@ -61,13 +61,13 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("ListFundos")]
         public List<FundoCreateUpdateDto> ListFundos { get; set; }
         [JsonPropertyName("ListPecuarios")]
-        public List<PecuarioGetDto> ListPecuarios { get; set; }
+        public List<PecuarioCreateUpdateDto> ListPecuarios { get; set; }
         [JsonPropertyName("ListArchivos")]
-        public List<ArchivoGetDto> ListArchivos { get; set; }
+        public List<ArchivoCreateUpdateDto> ListArchivos { get; set; }
         [JsonPropertyName("ListInformantes")]
         public List<InformanteGetDto> ListInformantes { get; set; }       
         [JsonPropertyName("ListObservaciones")]
-        public List<TrazabilidadGetDto> ListObservaciones { get; set; }
+        public List<TrazabilidadCreateUpdateDto> ListObservaciones { get; set; }
         
     }
 }

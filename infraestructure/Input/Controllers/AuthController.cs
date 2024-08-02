@@ -44,6 +44,93 @@ namespace Infra.MarcoLista.Input.Controllers
             {
                 return new JsonResult((new { success = false, usuario = param.username }));
             }           
-        }        
+        }
+        [HttpGet]
+        [Route("ReestablecerClave")]
+        public async Task<ResponseModel> ReestablecerClave(string correo)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = await _usuarioService.ReestablecerClave(correo);
+                if (respuesta.success) { respuesta.message = "Se envió el enlace para reestablecer la contraseña"; }
+                else { respuesta.message = "No existe el correo indicado"; }
+                respuesta.data = null;
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al enviar las credenciales";
+                return respuesta;
+            }
+        }
+        [HttpGet]
+        [Route("ValidarTokenReseteo")]
+        public async Task<ResponseModel> ValidarTokenReseteo(string token)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = await _usuarioService.ValidarTokenReseteo(token);
+                if (respuesta.success) { respuesta.message = "El token proporcionado es válido"; }
+                else { respuesta.message = "El token proporcionado es inválido"; }
+                respuesta.data = null;
+                return respuesta;
+
+            }
+            catch (TokenExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
+            catch (TokenExpireException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al enviar las credenciales";
+                return respuesta;
+            }
+        }
+        [HttpPost]
+        [Route("ActualizarClave")]
+        public async Task<ResponseModel> ActualizarClave(ResetAuthModel reset)
+        {
+            ResponseModel respuesta = new ResponseModel();
+            try
+            {
+                respuesta.success = await _usuarioService.ActualizarClave(reset);
+                if (respuesta.success) { respuesta.message = "Se actualizó la contraseña correctamente"; }
+                else { respuesta.message = "No se actualizó la contraseña"; }
+                respuesta.data = null;
+                return respuesta;
+
+            }
+            catch (TokenExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
+            catch (TokenExpireException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.success = false;
+                respuesta.message = "Ocurrió un error al actualizar la contraseña";
+                return respuesta;
+            }
+        }
     }
 }

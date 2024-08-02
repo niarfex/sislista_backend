@@ -53,6 +53,34 @@ namespace Application.Service
 
             return query.ToList();
         }
+        public async Task<List<MarcoListaModel>> GetMarcoListasinAginarxPerfil(long idPerfil)
+        {
+            var marcolistas = await _marcolistaPort.GetMarcoListasinAginarxPerfil(idPerfil);
+            var departamentos = await _generalPort.GetDepartamentos(1, "");
+            if (marcolistas == null)
+            {
+                throw new NotDataFoundException("No se encontraron datos registrados");
+
+            }
+            var query = from m in marcolistas
+                        from d in departamentos.Where(x => x.Id == m.IdDepartamento).DefaultIfEmpty()
+                        orderby m.NombreCompleto
+                        select new MarcoListaModel
+                        {
+                            Id = m.Id,
+                            NumeroDocumento = m.NumeroDocumento,
+                            NombreCompleto = m.NombreCompleto,
+                            CondicionJuridica = m.CondicionJuridica,
+                            NombreRepLegal = m.NombreRepLegal,
+                            IdDepartamento = d != null ? m.IdDepartamento : null,
+                            Departamento = d != null ? d.Departamento : null,
+                            Estado = m.Estado,
+                            IdAnio = m.IdAnio,
+                            IdUbigeo = m.IdUbigeo
+                        };
+
+            return query.ToList();
+        }
         public async Task<MarcoListaModel> GetMarcoListaxId(long id)
         {
             var marcolista = await _marcolistaPort.GetMarcoListaxId(id);           

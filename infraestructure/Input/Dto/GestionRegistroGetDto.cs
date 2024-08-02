@@ -57,7 +57,12 @@ namespace Infra.MarcoLista.Input.Dto
         public int? EstadoEntrevista { get; set; }
         [JsonPropertyName("IdPeriodo")]
         public long? IdPeriodo { get; set; }
-
+        [JsonPropertyName("CodigoEstadoSupervision")]
+        public string? CodigoEstadoSupervision { get; set; }
+        [JsonPropertyName("CodigoEstadoValidacion")]
+        public string? CodigoEstadoValidacion { get; set; }
+        [JsonPropertyName("CodigoEstadoRegistro")]
+        public string? CodigoEstadoRegistro { get; set; }
         [JsonPropertyName("ListCondicionJuridica")]
         public List<SelectTipoDto> ListCondicionJuridica { get; set; }
         [JsonPropertyName("ListCondicionJuridicaOtros")]

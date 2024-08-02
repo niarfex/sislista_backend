@@ -11,8 +11,8 @@ namespace Domain.Model
         public long? Cuestionario { get; set; }
         public string? Observacion { get; set; }   
         public long? EstadoResultado { get; set; }
-        public long? Seccion { get; set; }
-        public string? TipoSeccion { get; set; }
+        public long? IdSeccion { get; set; }
+        public string? Seccion { get; set; }
         public string? Perfil { get; set; }
     }
 }
