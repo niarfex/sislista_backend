@@ -27,9 +27,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
-        public async Task<List<ReporteModel>> GetReporteUsuarioList(string valCodigo)
+        public async Task<List<ReporteModel>> GetReporteUsuarioList(string valCodigo, string param, long idPeriodo)
         {
-            var reporteEntity = await _reporteRepository.GetReporteUsuarioList(valCodigo);
+            var reporteEntity = await _reporteRepository.GetReporteUsuarioList(valCodigo, param, idPeriodo);
 
             if (reporteEntity != null)
             {

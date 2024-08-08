@@ -22,12 +22,13 @@ namespace Application.Output
         Task<List<TenenciaModel>> GetTenencias();
         Task<List<UsoTierraModel>> GetUsoTierras();
         Task<List<CultivoModel>> GetCultivos();
+        Task<List<UsoNoAgricolaModel>> GetUsoAgricolas();
         Task<List<UsoNoAgricolaModel>> GetUsoNoAgricolas();
         Task<List<EstadoModel>> GetEstadoEntrevista();
         Task<List<TipoInformacionModel>> GetTipoInformacion();
         Task<List<LineaProduccionModel>> GetLineaProduccion();
         Task<List<EspecieModel>> GetEspecies();
         Task<List<SeccionModel>> GetSecciones();
-        Task<List<EstadoModel>> GetEstadosCuestionario();
+        Task<List<EstadoModel>> GetEstadosCuestionario(long idCuestionario, string estadoRegistro, string estadoSupervision, string estadoValidacion);
     }
 }

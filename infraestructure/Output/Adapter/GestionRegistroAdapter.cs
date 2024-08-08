@@ -14,6 +14,20 @@ namespace Infra.MarcoLista.Output.Adapter
             _gestionregistroRepository = gestionregistroRepository;
             _mapper = mapper;
         }
+
+        public async Task<GestionRegistroModel> GetEstadosCuestionario(string uuid)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetEstadosCuestionario(uuid);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<List<GestionRegistroModel>> GetAll(string param, string uuid)
         {
             var gestionregistroEntity = await _gestionregistroRepository.GetAll(param,uuid);
@@ -34,6 +48,20 @@ namespace Infra.MarcoLista.Output.Adapter
             if (gestionregistroEntity != null)
             {
                 return _mapper.Map<GestionRegistroModel>(gestionregistroEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<PersonaModel> GetDatosPersonaCuestionario(string numDoc, long idPeriodo, string perfil)
+        {
+            var gestionregistroEntity = await _gestionregistroRepository.GetDatosPersonaCuestionario(numDoc, idPeriodo, perfil);
+
+            if (gestionregistroEntity != null)
+            {
+                return gestionregistroEntity;
             }
             else
             {
@@ -157,9 +185,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return "";
             }
         }
-        public async Task<string> AprobarCuestionarioxUUID(string uuid)
+        public async Task<string> AprobarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
-            var gestionregistroEntity = await _gestionregistroRepository.AprobarCuestionarioxUUID(uuid);
+            var gestionregistroEntity = await _gestionregistroRepository.AprobarCuestionarioxUUID(uuid, fechaInicio);
 
             if (gestionregistroEntity != null)
             {
@@ -170,9 +198,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return "";
             }
         }
-        public async Task<string> RatificarCuestionarioxUUID(string uuid)
+        public async Task<string> RatificarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
-            var gestionregistroEntity = await _gestionregistroRepository.RatificarCuestionarioxUUID(uuid);
+            var gestionregistroEntity = await _gestionregistroRepository.RatificarCuestionarioxUUID(uuid, fechaInicio);
 
             if (gestionregistroEntity != null)
             {
@@ -183,9 +211,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return "";
             }
         }
-        public async Task<string> DerivarCuestionarioxUUID(string uuid)
+        public async Task<string> DerivarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
-            var gestionregistroEntity = await _gestionregistroRepository.DerivarCuestionarioxUUID(uuid);
+            var gestionregistroEntity = await _gestionregistroRepository.DerivarCuestionarioxUUID(uuid, fechaInicio);
 
             if (gestionregistroEntity != null)
             {
@@ -196,9 +224,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return "";
             }
         }
-        public async Task<string> ValidarCuestionarioxUUID(string uuid)
+        public async Task<string> ValidarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
-            var gestionregistroEntity = await _gestionregistroRepository.ValidarCuestionarioxUUID(uuid);
+            var gestionregistroEntity = await _gestionregistroRepository.ValidarCuestionarioxUUID(uuid, fechaInicio);
 
             if (gestionregistroEntity != null)
             {
@@ -209,9 +237,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return "";
             }
         }
-        public async Task<string> DescartarCuestionarioxUUID(string uuid)
+        public async Task<string> DescartarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
-            var gestionregistroEntity = await _gestionregistroRepository.DescartarCuestionarioxUUID(uuid);
+            var gestionregistroEntity = await _gestionregistroRepository.DescartarCuestionarioxUUID(uuid, fechaInicio);
 
             if (gestionregistroEntity != null)
             {

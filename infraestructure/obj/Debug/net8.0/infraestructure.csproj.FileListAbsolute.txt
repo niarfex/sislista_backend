@@ -122,3 +122,5 @@ C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Debug\net8.0\SixLabors.Fon
 C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Debug\net8.0\SixLabors.ImageSharp.dll
 C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Debug\net8.0\OKMRest.dll
 C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Debug\net8.0\RestSharp.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Debug\net8.0\System.DirectoryServices.dll
+C:\REPO\SISLISTA\sislista_backend\infraestructure\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.DirectoryServices.dll

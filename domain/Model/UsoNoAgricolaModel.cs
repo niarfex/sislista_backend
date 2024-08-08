@@ -11,5 +11,6 @@ namespace Domain.Model
     {
         public long Id { get; set; }
         public string? UsoNoAgricola { get; set; }
+        public string? CodigoUsoNoAgricola { get; set; }
     }
 }

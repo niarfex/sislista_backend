@@ -22,12 +22,13 @@ namespace Infra.MarcoLista.Output.Repository
         Task<List<EtapaEntity>> GetEtapas();
         Task<List<TenenciaEntity>> GetTenencias();
         Task<List<UsoTierraEntity>> GetUsoTierras();
+        Task<List<UsoNoAgricolaEntity>> GetUsoAgricolas();
         Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas();
         Task<List<EstadoEntity>> GetEstadoEntrevista();
         Task<List<TipoInformacionEntity>> GetTipoInformacion();
         Task<List<LineaProduccionEntity>> GetLineaProduccion();
         Task<List<EspecieEntity>> GetEspecies();
         Task<List<SeccionEntity>> GetSecciones();
-        Task<List<EstadoEntity>> GetEstadosCuestionario();
+        Task<List<EstadoEntity>> GetEstadosCuestionario(long idCuestionario, string estadoRegistro, string estadoSupervision, string estadoValidacion);
     }
 }

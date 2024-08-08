@@ -17,6 +17,7 @@ using com.openkm.sdk4csharp;
 using com.openkm.sdk4csharp.bean;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using NPOI.SS.Formula.Functions;
 
 namespace Infra.MarcoLista.Output.Repository
 {
@@ -43,6 +44,35 @@ namespace Infra.MarcoLista.Output.Repository
             _hostOKM = _configuracion[$"openKMconf:rutaServer"];
             _userOKM = _configuracion[$"openKMconf:usuario"];
             _passOKM = _configuracion[$"openKMconf:clave"];
+        }
+        public async Task<GestionRegistroModel> GetEstadosCuestionario(string uuid)
+        {
+            var query = (from cu in _db.GestionRegistro
+                         join m in _db.MarcoLista on cu.IdMarcoLista equals m.Id
+                         join a in _db.Anio on m.IdAnio equals a.Id
+                         join p in _db.Persona on m.IdPersona equals p.Id
+                         from info in _db.Informante.Where(x => x.IdCuestionario == cu.Id).DefaultIfEmpty()
+                         from eEnt in _db.Estado.Where(x => x.Id == info.IdEstado).DefaultIfEmpty()
+                         from eSup in _db.Estado.Where(x => x.Id == cu.EstadoSupervision).DefaultIfEmpty()
+                         from eVal in _db.Estado.Where(x => x.Id == cu.EstadoValidacion).DefaultIfEmpty()
+                         from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
+                         where cu.CodigoUUID == uuid && cu.Estado == 1 && m.Estado == 1 && p.Estado == 1
+                         select new GestionRegistroModel
+                         {
+                             CodigoUUID = cu.CodigoUUID,
+                             IdPeriodo = a.Id,
+                             NombreCompleto = p.RazonSocial.IsNullOrEmpty() ? (p.Nombre + " " + p.ApellidoPaterno + " " + p.ApellidoMaterno) : p.RazonSocial,
+                             NumeroDocumento = p.NumeroDocumento,
+                             CodigoEstadoEntrevista = eEnt != null ? eEnt.CodigoEstado : null,
+                             CodigoEstadoSupervision = eSup != null ? eSup.CodigoEstado : null,
+                             CodigoEstadoValidacion = eVal != null ? eVal.CodigoEstado : null,
+                             CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null,
+                             NombreEstadoEntrevista = eEnt != null ? eEnt.TipoEstado : null,
+                             NombreEstadoSupervision = eSup != null ? eSup.TipoEstado : null,
+                             NombreEstadoValidacion = eVal != null ? eVal.TipoEstado : null,
+                             NombreEstadoRegistro = eReg != null ? eReg.TipoEstado : "POR REGISTRAR"
+                         }).FirstOrDefault();
+            return query;
         }
         public async Task<List<GestionRegistroModel>> GetAll(string param, string uuid)
         {
@@ -77,7 +107,7 @@ namespace Infra.MarcoLista.Output.Repository
                             pe.Nombre.ToUpper().Contains(param.Trim().ToUpper()) ||
                             pe.ApellidoPaterno.ToUpper().Contains(param.Trim().ToUpper()) ||
                             pe.ApellidoMaterno.ToUpper().Contains(param.Trim().ToUpper())
-                            orderby (cu.FechaRegistro == null ? m.FechaRegistro : cu.FechaRegistro) descending
+                            orderby (cu.FechaRegistro == null ? (m.FechaActualizacion==null? m.FechaRegistro: m.FechaActualizacion) : (cu.FechaActualizacion==null? cu.FechaRegistro: cu.FechaActualizacion)) descending
                             select new GestionRegistroModel
                             {
                                 CodigoUUID = cu.CodigoUUID,
@@ -85,7 +115,7 @@ namespace Infra.MarcoLista.Output.Repository
                                 Periodo = a.Anio,
                                 NombreCompleto = pe.RazonSocial.IsNullOrEmpty() ? (pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno) : pe.RazonSocial,
                                 NumeroDocumento = pe.NumeroDocumento,
-                                TipoExplotacion = tec.TipoExplotacion==null?te.TipoExplotacion: tec.TipoExplotacion,
+                                TipoExplotacion = tec.TipoExplotacion == null ? te.TipoExplotacion : tec.TipoExplotacion,
                                 UsuarioCreacion = cu != null ? cu.UsuarioCreacion : "",
                                 FechaRegistro = cu != null ? cu.FechaRegistro : null,
                                 UsuarioActualizacion = cu != null ? cu.UsuarioActualizacion : "",
@@ -125,7 +155,7 @@ namespace Infra.MarcoLista.Output.Repository
                             pe.ApellidoPaterno.ToUpper().Contains(param.Trim().ToUpper()) ||
                             pe.ApellidoMaterno.ToUpper().Contains(param.Trim().ToUpper()) ||
                             te.TipoExplotacion.ToUpper().Contains(param.Trim().ToUpper()))
-                            orderby (cu.FechaRegistro == null ? m.FechaRegistro : cu.FechaRegistro) descending
+                            orderby (cu.FechaRegistro == null ? (m.FechaActualizacion == null ? m.FechaRegistro : m.FechaActualizacion) : (cu.FechaActualizacion == null ? cu.FechaRegistro : cu.FechaActualizacion)) descending
                             select new GestionRegistroModel
                             {
                                 CodigoUUID = cu.CodigoUUID,
@@ -157,9 +187,33 @@ namespace Infra.MarcoLista.Output.Repository
 
             return _db.GestionRegistro.Where(x => x.CodigoUUID == uuid).FirstOrDefault();
         }
+        public async Task<PersonaModel> GetDatosPersonaCuestionario(string numDoc, long idPeriodo, string perfil)
+        {
+            var queryPersona = (from c in _db.GestionRegistro
+                                join m in _db.MarcoLista on c.IdMarcoLista equals m.Id
+                                join um in _db.UsuarioMarcoLista on m.Id equals um.IdMarcoLista
+                                join u in _db.Usuario on um.IdUsuario equals u.Id
+                                join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                                join p in _db.Perfil on up.IdPerfil equals p.Id
+                                join pe in _db.Persona on u.IdPersona equals pe.Id
+                                where c.NumeroDocumento == numDoc && m.IdAnio == idPeriodo
+                                && p.CodigoPerfil == perfil && c.Estado == 1 && m.Estado == 1 && um.Estado == 1
+                                && u.Estado == 1 && up.Estado == 1 && p.Estado == 1 && pe.Estado == 1
+                                select new PersonaModel
+                                {
+                                    Nombre = pe.Nombre,
+                                    ApellidoPaterno = pe.ApellidoPaterno,
+                                    ApellidoMaterno = pe.ApellidoMaterno,
+                                    CorreoElectronico = pe.CorreoElectronico
+                                }).FirstOrDefault();
+
+            return queryPersona;
+        }
         public async Task<GestionRegistroModel> GetUUIDCuestionario(string numDoc, long idPeriodo)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
+
+            
 
             var query = from c in _db.GestionRegistro
                         join m in _db.MarcoLista on c.IdMarcoLista equals m.Id
@@ -193,7 +247,7 @@ namespace Infra.MarcoLista.Output.Repository
                             CorreoRepLegal = c.CorreoRepLegal,
                             CelularRepLegal = c.CelularRepLegal,
                             TieneRuc = c.TieneRuc,
-                            FechaActualizacion = c.FechaActualizacion,
+                            FechaActualizacion = c.FechaActualizacion,           
                             CodigoEstadoSupervision = eSup != null ? eSup.CodigoEstado : null,
                             CodigoEstadoValidacion = eVal != null ? eVal.CodigoEstado : null,
                             CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null
@@ -285,7 +339,8 @@ namespace Infra.MarcoLista.Output.Repository
                                         IdUsoTierra=ca.IdUsoTierra == null ? 0 : ca.IdUsoTierra,
                                         IdCultivo=ca.IdCultivo == null ? 0 : ca.IdCultivo,
                                         SuperficieCultivada=ca.SuperficieCultivada,
-                                        IdUsoNoAgricola=ca.IdUsoNoAgricola == null ? 0 : ca.IdUsoNoAgricola,
+                                        IdUsoNoAgricola=String.Join(",",(from tu in _db.TipoUso where tu.IdCampo==ca.Id
+                                                         select tu.IdUsoNoAgricola.ToString()).ToArray()),
                                         Observacion=ca.Observacion,
                                         }).ToList()
                         };
@@ -330,7 +385,6 @@ namespace Infra.MarcoLista.Output.Repository
                         where p.Estado == 1 && cu.CodigoUUID == uuid
                         select new PecuarioModel { 
                         Id=p.Id,
-                        IdFundo=f.Id,
                         IdCampo=c.Id,
                         Campo=c.Campo,
                         IdSistemaPecuario=p.IdSistemaPecuario,
@@ -368,7 +422,8 @@ namespace Infra.MarcoLista.Output.Repository
                                  select ent).FirstOrDefault().CodigoEstado;
             if (codEntrevista == "ESTADOENTREVISTACOMPLETO")
             {
-                estadoRegistro = "PARAREVISAR";
+                if (model.ListArchivos.Count() > 0) { estadoRegistro = "TRABAJOGABINETE"; }
+                else { estadoRegistro = "PARAREVISAR"; }                
                 //Como resultado se debe notificar al supervisor
             }
             else if (codEntrevista == "ESTADOENTREVISTAINCOMPLETO")
@@ -410,14 +465,22 @@ namespace Infra.MarcoLista.Output.Repository
                 objCuestionario.CorreoRepLegal = model.CorreoRepLegal;
                 objCuestionario.CelularRepLegal = model.CelularRepLegal;
                 objCuestionario.CantidadFundo = model.CantidadFundo;
-                objCuestionario.TieneRuc = model.TieneRuc;
-
-
+                objCuestionario.TieneRuc = model.TieneRuc;                
+                //objCuestionario.FechaInicioRegistro= model.FechaInicio;
+                //objCuestionario.FechaFinRegistro = DateTime.Now;
                 objCuestionario.EstadoRegistro = (int)idEstado;
                 objCuestionario.FechaActualizacion = DateTime.Now;
                 objCuestionario.UsuarioActualizacion = usuario.Usuario;
                 _db.GestionRegistro.Update(objCuestionario);
                 _db.SaveChanges();
+
+                //Para la trazabilidad de estados del cuestionario
+                var objObservacion = new TrazabilidadEntity()
+                {
+                    IdCuestionario = objCuestionario.Id,EstadoResultado = idEstado,
+                    Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+                };
+                _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
 
                 //return objCuestionario.CodigoUUID.ToString();
             }
@@ -452,22 +515,41 @@ namespace Infra.MarcoLista.Output.Repository
                     EstadoSupervision = null,
                     EstadoValidacion = null,
                     Estado = 1,
+                    FechaInicioRegistro = model.FechaInicio.LocalDateTime,
+                    FechaFinRegistro = DateTime.Now,
                     FechaRegistro = DateTime.Now,
                     UsuarioCreacion = usuario.Usuario
                 };
                 _db.GestionRegistro.Add(objCuestionario);
                 _db.SaveChanges();
+
+                //Para la trazabilidad de estados del cuestionario
+                var objObservacion = new TrazabilidadEntity()
+                {
+                    IdCuestionario = objCuestionario.Id,EstadoResultado = idEstado,
+                    Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+                };
+                _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+
             }
             //Registro de Fundos
 
             //Registro de Pecuarios dentro del registro de Campos de los Fundos
-
             var filasPecuario = from inf in _db.Pecuario
                                 join cam in _db.Campo on inf.IdCampo equals cam.Id
                                 join fun in _db.Fundo on cam.IdFundo equals fun.Id
                                 where fun.IdCuestionario == objCuestionario.Id
                                 select inf;
             _db.Pecuario.RemoveRange(filasPecuario);
+            _db.SaveChanges();
+
+            //Para registrar los tipos de uso
+            var filasTipoUso = from tu in _db.TipoUso
+                               join cam in _db.Campo on tu.IdCampo equals cam.Id
+                               join fun in _db.Fundo on cam.IdFundo equals fun.Id
+                               where fun.IdCuestionario == objCuestionario.Id
+                               select tu;
+            _db.TipoUso.RemoveRange(filasTipoUso);
             _db.SaveChanges();
 
             foreach (var fundo in model.ListFundos)
@@ -494,12 +576,51 @@ namespace Infra.MarcoLista.Output.Repository
                             objCampo.IdTenencia = campo.IdTenencia == 0 ? null : campo.IdTenencia;
                             objCampo.IdUsoTierra = campo.IdUsoTierra == 0 ? null : campo.IdUsoTierra;
                             objCampo.IdCultivo = campo.IdCultivo == 0 ? null : campo.IdCultivo;
-                            objCampo.IdUsoNoAgricola = campo.IdUsoNoAgricola == 0 ? null : campo.IdUsoNoAgricola;
+                            //objCampo.IdUsoNoAgricola = campo.IdUsoNoAgricola == 0 ? null : campo.IdUsoNoAgricola;
                             objCampo.Observacion = campo.Observacion;
                             objCampo.Superficie = campo.Superficie;
                             objCampo.SuperficieCultivada = campo.SuperficieCultivada;
                             objCampo.FechaActualizacion = DateTime.Now;
                             objCampo.UsuarioActualizacion = usuario.Usuario;
+                            _db.Campo.Update(objCampo);
+                            _db.SaveChanges();
+
+                            //Para registrar los tipos de uso 
+                            if (campo.IdUsoNoAgricola.Trim().Length > 0)
+                            {
+                                foreach (var item in campo.IdUsoNoAgricola.Split(","))
+                                {
+                                    var objTipoUso = new TipoUsoEntity()
+                                    {
+                                        IdCampo = objCampo.Id,
+                                        IdUsoNoAgricola = int.Parse(item),
+                                        Estado = 1,
+                                        UsuarioCreacion = usuario.Usuario,
+                                        FechaRegistro = DateTime.Now
+                                    };
+                                    _db.TipoUso.Add(objTipoUso);
+                                    _db.SaveChanges();
+                                }
+                            }
+
+                            //Registrar los Pecuarios
+                            foreach (var pecu in model.ListPecuarios.FindAll(x => x.OrdenFundo == fundo.Orden && x.OrdenCampo == campo.Orden))
+                            {
+                                var objPecuario = new PecuarioEntity()
+                                {
+                                    IdCampo = objCampo.Id,
+                                    IdSistemaPecuario = pecu.SistemaPecuario == "LÍNEA DE PRODUCCIÓN" ? 1 : (pecu.SistemaPecuario == "ESPECIE" ? 2 : null),
+                                    IdLineaProduccion = pecu.IdLineaProduccion == 0 ? null : pecu.IdLineaProduccion,
+                                    IdEspecie = pecu.IdEspecie == 0 ? null : pecu.IdEspecie,
+                                    Cantidad = pecu.Cantidad,
+                                    Estado = 1,
+                                    FechaRegistro = DateTime.Now,
+                                    UsuarioCreacion = usuario.Usuario
+                                };
+                                _db.Pecuario.Add(objPecuario);
+                                _db.SaveChanges();
+                            }
+
                         }
                         else
                         {
@@ -510,7 +631,7 @@ namespace Infra.MarcoLista.Output.Repository
                                 IdTenencia = campo.IdTenencia == 0 ? null : campo.IdTenencia,
                                 IdUsoTierra = campo.IdUsoTierra == 0 ? null : campo.IdUsoTierra,
                                 IdCultivo = campo.IdCultivo == 0 ? null : campo.IdCultivo,
-                                IdUsoNoAgricola = campo.IdUsoNoAgricola == 0 ? null : campo.IdUsoNoAgricola,
+                                //IdUsoNoAgricola = campo.IdUsoNoAgricola == 0 ? null : campo.IdUsoNoAgricola,
                                 Observacion = campo.Observacion,
                                 Superficie = campo.Superficie,
                                 SuperficieCultivada = campo.SuperficieCultivada,
@@ -520,9 +641,44 @@ namespace Infra.MarcoLista.Output.Repository
                             };
                             _db.Campo.Add(objCampo);
                             _db.SaveChanges();
+
+                            //Para registrar los tipos de uso                            
+                            if (campo.IdUsoNoAgricola.Trim().Length > 0)
+                            {
+                                foreach (var item in campo.IdUsoNoAgricola.Split(","))
+                                {
+                                    var objTipoUso = new TipoUsoEntity()
+                                    {
+                                        IdCampo = objCampo.Id,
+                                        IdUsoNoAgricola = int.Parse(item),
+                                        Estado = 1,
+                                        UsuarioCreacion = usuario.Usuario,
+                                        FechaRegistro = DateTime.Now
+                                    };
+                                    _db.TipoUso.Add(objTipoUso);
+                                    _db.SaveChanges();
+                                }
+                            }
+
+                            //Registrar los Pecuarios
+                            foreach (var pecu in model.ListPecuarios.FindAll(x => x.OrdenFundo == fundo.Orden && x.OrdenCampo == campo.Orden))
+                            {
+                                var objPecuario = new PecuarioEntity()
+                                {
+                                    IdCampo = objCampo.Id,
+                                    IdSistemaPecuario = pecu.SistemaPecuario == "LÍNEA DE PRODUCCIÓN" ? 1 : (pecu.SistemaPecuario == "ESPECIE" ? 2 : null),
+                                    IdLineaProduccion = pecu.IdLineaProduccion == 0 ? null : pecu.IdLineaProduccion,
+                                    IdEspecie = pecu.IdEspecie == 0 ? null : pecu.IdEspecie,
+                                    Cantidad = pecu.Cantidad,
+                                    Estado = 1,
+                                    FechaRegistro = DateTime.Now,
+                                    UsuarioCreacion = usuario.Usuario
+                                };
+                                _db.Pecuario.Add(objPecuario);
+                                _db.SaveChanges();
+                            }
                         }
                     }
-
                 }
                 else
                 {
@@ -550,7 +706,7 @@ namespace Infra.MarcoLista.Output.Repository
                             IdTenencia = campo.IdTenencia == 0 ? null : campo.IdTenencia,
                             IdUsoTierra = campo.IdUsoTierra == 0 ? null : campo.IdUsoTierra,
                             IdCultivo = campo.IdCultivo == 0 ? null : campo.IdCultivo,
-                            IdUsoNoAgricola = campo.IdUsoNoAgricola == 0 ? null : campo.IdUsoNoAgricola,
+                            //IdUsoNoAgricola = campo.IdUsoNoAgricola == 0 ? null : campo.IdUsoNoAgricola,
                             Observacion = campo.Observacion,
                             Superficie = campo.Superficie,
                             SuperficieCultivada = campo.SuperficieCultivada,
@@ -561,16 +717,33 @@ namespace Infra.MarcoLista.Output.Repository
                         _db.Campo.Add(objCampo);
                         _db.SaveChanges();
 
+                        //Para registrar los tipos de uso 
+                        if (campo.IdUsoNoAgricola.Trim().Length > 0)
+                        {
+                            foreach (var item in campo.IdUsoNoAgricola.Split(","))
+                            {
+                                var objTipoUso = new TipoUsoEntity()
+                                {
+                                    IdCampo = objCampo.Id,
+                                    IdUsoNoAgricola = int.Parse(item),
+                                    Estado = 1,
+                                    UsuarioCreacion = usuario.Usuario,
+                                    FechaRegistro = DateTime.Now
+                                };
+                                _db.TipoUso.Add(objTipoUso);
+                                _db.SaveChanges();
+                            }
+                        }
+
                         //Registrar los Pecuarios
                         foreach (var pecu in model.ListPecuarios.FindAll(x => x.OrdenFundo == fundo.Orden && x.OrdenCampo == campo.Orden))
                         {
                             var objPecuario = new PecuarioEntity()
                             {
-                                IdFundo = objFundo.Id,
                                 IdCampo = objCampo.Id,
                                 IdSistemaPecuario = pecu.SistemaPecuario == "LÍNEA DE PRODUCCIÓN" ? 1 : (pecu.SistemaPecuario == "ESPECIE" ? 2 : null),
-                                IdLineaProduccion = pecu.IdLineaProduccion==0?null: pecu.IdLineaProduccion,
-                                IdEspecie = pecu.IdEspecie==0?null: pecu.IdEspecie,
+                                IdLineaProduccion = pecu.IdLineaProduccion == 0 ? null : pecu.IdLineaProduccion,
+                                IdEspecie = pecu.IdEspecie == 0 ? null : pecu.IdEspecie,
                                 Cantidad = pecu.Cantidad,
                                 Estado = 1,
                                 FechaRegistro = DateTime.Now,
@@ -579,10 +752,8 @@ namespace Infra.MarcoLista.Output.Repository
                             _db.Pecuario.Add(objPecuario);
                             _db.SaveChanges();
                         }
-
                     }
                 }
-
             }
 
             //Registro de Archivos
@@ -726,7 +897,7 @@ namespace Infra.MarcoLista.Output.Repository
                 };
                 _db.Informante.Add(objInformante);
                 _db.SaveChanges();
-            }
+            }           
 
             return objCuestionario.CodigoUUID.ToString();
 
@@ -743,8 +914,44 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoSupervision = (int)idEstadoSup;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioSupervision == null)
+            {
+                objCuestionario.FechaInicioSupervision = model.FechaInicio.LocalDateTime;
+                objCuestionario.FechaFinSupervision = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
+
+            foreach (var obs in model.ListObservaciones) {
+                var objObserv = new TrazabilidadEntity()
+                {
+                    IdCuestionario = objCuestionario.Id,
+                    Observacion=obs.Observacion,
+                    Perfil="SUPERVISAR",
+                    IdSeccion=obs.IdSeccion,
+                    EstadoResultado = null,
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = usuario.Usuario
+                };
+                _db.Trazabilidad.Add(objObserv);
+                _db.SaveChanges();
+            }
+
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoSup,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
 
             return objCuestionario.CodigoUUID.ToString();
         }
@@ -760,12 +967,49 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoValidacion = (int)idEstadoEsp;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioValidacion == null)
+            {
+                objCuestionario.FechaInicioValidacion = model.FechaInicio.LocalDateTime;
+                objCuestionario.FechaFinValidacion = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
 
+            foreach (var obs in model.ListObservaciones)
+            {
+                var objObserv = new TrazabilidadEntity()
+                {
+                    IdCuestionario = objCuestionario.Id,
+                    Observacion = obs.Observacion,
+                    Perfil = "VALIDAR",
+                    IdSeccion = obs.IdSeccion,
+                    EstadoResultado=null,
+                    Estado = 1,
+                    FechaRegistro = DateTime.Now,
+                    UsuarioCreacion = usuario.Usuario
+                };
+                _db.Trazabilidad.Add(objObserv);
+                _db.SaveChanges();
+            }
+
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoEsp,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+
             return objCuestionario.CodigoUUID.ToString();
         }
-        public async Task<string> AprobarCuestionarioxUUID(string uuid)
+        public async Task<string> AprobarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCuestionario = _db.GestionRegistro.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
@@ -777,12 +1021,32 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoSupervision = (int)idEstadoSup;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioSupervision == null)
+            {
+                objCuestionario.FechaInicioSupervision = fechaInicio;
+                objCuestionario.FechaFinSupervision = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
 
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoSup,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+
             return objCuestionario.CodigoUUID.ToString();
         }
-        public async Task<string> RatificarCuestionarioxUUID(string uuid)
+        public async Task<string> RatificarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCuestionario = _db.GestionRegistro.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
@@ -794,12 +1058,32 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoSupervision = (int)idEstadoSup;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioSupervision == null)
+            {
+                objCuestionario.FechaInicioSupervision = fechaInicio;
+                objCuestionario.FechaFinSupervision = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
 
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoSup,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+
             return objCuestionario.CodigoUUID.ToString();
         }
-        public async Task<string> DerivarCuestionarioxUUID(string uuid)
+        public async Task<string> DerivarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCuestionario = _db.GestionRegistro.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
@@ -811,12 +1095,32 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoSupervision = (int)idEstadoSup;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioSupervision == null)
+            {
+                objCuestionario.FechaInicioSupervision = fechaInicio;
+                objCuestionario.FechaFinSupervision = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
 
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoSup,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+
             return objCuestionario.CodigoUUID.ToString();
         }
-        public async Task<string> ValidarCuestionarioxUUID(string uuid)
+        public async Task<string> ValidarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCuestionario = _db.GestionRegistro.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
@@ -828,12 +1132,32 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoValidacion = (int)idEstadoEsp;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioValidacion == null)
+            {
+                objCuestionario.FechaInicioValidacion = fechaInicio;
+                objCuestionario.FechaFinValidacion = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
 
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoEsp,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+
             return objCuestionario.CodigoUUID.ToString();
         }
-        public async Task<string> DescartarCuestionarioxUUID(string uuid)
+        public async Task<string> DescartarCuestionarioxUUID(string uuid, DateTime fechaInicio)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             var objCuestionario = _db.GestionRegistro.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
@@ -845,8 +1169,28 @@ namespace Infra.MarcoLista.Output.Repository
             objCuestionario.EstadoValidacion = (int)idEstadoEsp;
             objCuestionario.FechaActualizacion = DateTime.Now;
             objCuestionario.UsuarioActualizacion = usuario.Usuario;
+            if (objCuestionario.FechaInicioValidacion == null)
+            {
+                objCuestionario.FechaInicioValidacion = fechaInicio;
+                objCuestionario.FechaFinValidacion = DateTime.Now;
+            }
             _db.GestionRegistro.Update(objCuestionario);
             _db.SaveChanges();
+
+            //Para la trazabilidad de estados del cuestionario
+            var objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoReg,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
+            //
+            objObservacion = new TrazabilidadEntity()
+            {
+                IdCuestionario = objCuestionario.Id,EstadoResultado = idEstadoEsp,
+                Estado = 1,FechaRegistro = DateTime.Now,UsuarioCreacion = usuario.Usuario
+            };
+            _db.Trazabilidad.Add(objObservacion); _db.SaveChanges();
 
             return objCuestionario.CodigoUUID.ToString();
         }

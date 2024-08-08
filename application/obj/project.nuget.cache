@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ejn3vVzPNbs=",
+  "dgSpecHash": "o4qYeEjmWnA=",
   "success": true,
   "projectFilePath": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Application.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\efrai\\.nuget\\packages\\sixlabors.fonts\\1.0.1\\sixlabors.fonts.1.0.1.nupkg.sha512",
     "C:\\Users\\efrai\\.nuget\\packages\\sixlabors.imagesharp\\2.1.7\\sixlabors.imagesharp.2.1.7.nupkg.sha512",
     "C:\\Users\\efrai\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\efrai\\.nuget\\packages\\system.directoryservices\\8.0.0\\system.directoryservices.8.0.0.nupkg.sha512",
     "C:\\Users\\efrai\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\efrai\\.nuget\\packages\\system.formats.asn1\\6.0.0\\system.formats.asn1.6.0.0.nupkg.sha512",
     "C:\\Users\\efrai\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",

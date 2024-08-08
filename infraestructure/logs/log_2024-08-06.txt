@@ -1,0 +1,4 @@
+[6/08/2024 07:47:56] SUCCESSFUL: {SendCredenciales} Se remitió la notificación de manera exitosa
+[6/08/2024 08:12:06] SUCCESSFUL: {SendCredenciales} Se remitió la notificación de manera exitosa
+[6/08/2024 08:12:31] SUCCESSFUL: {SendCredenciales} Se remitió la notificación de manera exitosa
+[6/08/2024 10:22:42] ERROR: {CreateUsuario} EL correo electrónico ya se encuentra registrado con otro usuario

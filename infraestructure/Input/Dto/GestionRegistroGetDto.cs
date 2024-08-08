@@ -97,6 +97,8 @@ namespace Infra.MarcoLista.Input.Dto
         public List<SelectTipoDto> ListUsoTierra { get; set; }
         [JsonPropertyName("ListCultivo")]
         public List<SelectTipoDto> ListCultivo { get; set; }
+        [JsonPropertyName("ListUsoAgricola")]
+        public List<SelectTipoDto> ListUsoAgricola { get; set; }
         [JsonPropertyName("ListUsoNoAgricola")]
         public List<SelectTipoDto> ListUsoNoAgricola { get; set; }
         [JsonPropertyName("ListEstadoEntrevista")]

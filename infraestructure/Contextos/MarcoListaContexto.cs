@@ -50,6 +50,7 @@ namespace Infra.MarcoLista.Contextos
         public DbSet<TipoExplotacionEntity> TipoExplotacion { get; set; }
         public DbSet<TipoInformacionEntity> TipoInformacion { get; set; }
         public DbSet<TipoOrganizacionEntity> TipoOrganizacion { get; set; }
+        public DbSet<TipoUsoEntity> TipoUso { get; set; }
         public DbSet<TrazabilidadEntity> Trazabilidad { get; set; }
         public DbSet<UsoNoAgricolaEntity> UsoNoAgricola { get; set; }
         public DbSet<UsoTierraEntity> UsoTierra { get; set; }
@@ -101,6 +102,7 @@ namespace Infra.MarcoLista.Contextos
             builder.ApplyConfiguration(new TipoExplotacionConfig());
             builder.ApplyConfiguration(new TipoInformacionConfig());
             builder.ApplyConfiguration(new TipoOrganizacionConfig());
+            builder.ApplyConfiguration(new TipoUsoConfig());
             builder.ApplyConfiguration(new TrazabilidadConfig());
             builder.ApplyConfiguration(new UsoNoAgricolaConfig());
             builder.ApplyConfiguration(new UsoTierraConfig());

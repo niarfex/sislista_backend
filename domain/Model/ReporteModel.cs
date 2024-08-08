@@ -40,6 +40,11 @@ namespace Domain.Model
         public string? Empresa { get; set; }
         public long? NumTiempo { get; set; }
         public string? Tiempo { get; set; }
+        //Auxiliares
+        public string? CodigoEstadoRegistro { get; set; }
+        public long? IdMarcoLista { get; set; }
+        public DateTime FechaInicioRegistro { get; set; }
+        public DateTime FechaFinValidacion { get; set; }
         //Lista-Empadronador-Registros-Cerrados
         //Lista-Mejores-Tiempos-Registro
         //Lista-Supervisor-Registros-Cerrados

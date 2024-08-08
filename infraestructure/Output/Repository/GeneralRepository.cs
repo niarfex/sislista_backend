@@ -268,6 +268,10 @@ namespace Infra.MarcoLista.Output.Repository
         {
             return _db.UsoTierra.Where(x => x.Estado == 1).ToList();
         }
+        public async Task<List<UsoNoAgricolaEntity>> GetUsoAgricolas()
+        {
+            return _db.UsoNoAgricola.Where(x => x.Estado == 1 && x.Agricola==1).ToList();
+        }
         public async Task<List<UsoNoAgricolaEntity>> GetUsoNoAgricolas()
         {
             return _db.UsoNoAgricola.Where(x => x.Estado == 1).ToList();
@@ -292,16 +296,38 @@ namespace Infra.MarcoLista.Output.Repository
         {
             return _db.Seccion.Where(x => x.Estado == 1).ToList();
         }
-        public async Task<List<EstadoEntity>> GetEstadosCuestionario()
+        public async Task<List<EstadoEntity>> GetEstadosCuestionario(long idCuestionario,string estadoRegistro,string estadoSupervision, string estadoValidacion)
         {
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (usuario.CodigoPerfil == "PERFILSUP")
             {
-                return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION")).ToList();
+                var idEnAlerta = _db.Estado.Where(x => x.CodigoEstado == "ENALERTA").FirstOrDefault().Id;
+                var cant = _db.Trazabilidad.Where(x => x.IdCuestionario == idCuestionario && (long)x.EstadoResultado==idEnAlerta && (x.Observacion==null || x.Observacion=="")
+                            && (x.Perfil==null || x.Perfil=="")).ToList().Count();
+
+                if (estadoRegistro == "ENALERTA" && cant==1)//Por primera vez
+                {
+                    return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION") && x.CodigoEstado!= "DERIVADO").ToList();
+                }
+                else if (estadoRegistro == "ENALERTA" && cant>1)//Por segunda vez
+                {
+                    return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION") && x.CodigoEstado!= "RATIFICADO").ToList();
+                }
+                else {
+                    return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION") 
+                    && x.CodigoEstado != "DERIVADO" && x.CodigoEstado != "RATIFICADO").ToList();
+                }                
             }
             else if (usuario.CodigoPerfil == "PERFILESP")
             {
-                return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();
+                if (estadoRegistro == "ARBITRAJE") {
+                    return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();
+                }
+                else {
+                    return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOVALIDACION")
+                     && x.CodigoEstado != "SUSTITUIR" && x.CodigoEstado != "DESCARTAR").ToList();
+                }
+                    
             }
             else {
                 return _db.Estado.Where(x => x.Estado == 1 && (x.CodigoEstadoPadre == "ESTADOSUPERVISION" || x.CodigoEstadoPadre == "ESTADOVALIDACION")).ToList();

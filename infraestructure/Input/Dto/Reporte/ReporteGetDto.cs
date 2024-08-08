@@ -21,7 +21,7 @@ namespace Infra.MarcoLista.Input.Dto
         //Cantidades-Empadronador
         [JsonPropertyName("CantParaRevisar")]
         public long? CantParaRevisar { get; set; }
-        [JsonPropertyName("NumTiempo")]
+        [JsonPropertyName("CantTrabajoGabinete")]
         public long? CantTrabajoGabinete { get; set; }
         [JsonPropertyName("CantEnAlerta")]
         public long? CantEnAlerta { get; set; }
@@ -50,7 +50,8 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("ListRegCerrados")]
         public List<RankingRegCerradosListDto> ListRegCerrados { get; set; }
         [JsonPropertyName("ListMejorTiempo")]
-        public List<MejorTiempoListDto> ListMejorTiempo { get; set; }       
-   
+        public List<MejorTiempoListDto> ListMejorTiempo { get; set; }
+        [JsonPropertyName("ListPeriodos")]
+        public List<SelectTipoDto> ListPeriodos { get; set; }
     }
 }

@@ -9,8 +9,6 @@ namespace Infra.MarcoLista.Output.Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("IDE_PECUARIO")]
         public long Id { get; set; }
-        [Column("IDE_FUNDO")]
-        public long? IdFundo { get; set; }
         [Column("IDE_CAMPO")]
         public long? IdCampo { get; set; }
         [Column("IDE_SISTEMA_PECUARIO")]

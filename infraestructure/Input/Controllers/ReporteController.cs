@@ -24,33 +24,40 @@ namespace Infra.MarcoLista.Input.Controllers
         private readonly IReporteService _reporteService;
         private readonly IExcelExporterService _excelexporterService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IGeneralService _generalService;
         private readonly IMapper _mapper;
 
         public ReporteController(IReporteService reporteService,
             IExcelExporterService excelexporterService,
-
             IHttpContextAccessor httpContextAccessor,
+            IGeneralService generalService,
             IMapper mapper)
         {
             _reporteService = reporteService;
             _excelexporterService = excelexporterService;
             _httpContextAccessor = httpContextAccessor;
+            _generalService = generalService;
             _mapper = mapper;
         }
         [HttpGet]
         [Route("GetAll")]
-        public async Task<ResponseModel> GetAll()
+        public async Task<ResponseModel> GetAll(long idPeriodo, string param="")
         {
             ResponseModel respuesta = new ResponseModel();
             try
-            {
+            {                
                 ReporteGetDto reporte = new ReporteGetDto();
+                var listPeriodos = _mapper.Map<List<SelectTipoDto>>(await _generalService.GetPeriodos());
+                if (idPeriodo == 0) {
+                    idPeriodo = long.Parse(listPeriodos.FirstOrDefault().value);
+                }
                 var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
                 reporte = _mapper.Map<ReporteGetDto>(await _reporteService.GetAll(usuario.CodigoPerfil));
                 reporte.ListFlujoValidacion = _mapper.Map<List<FlujoValidacionListDto>>(await _reporteService.GetFlujoValidacionList(usuario.CodigoPerfil));
-                reporte.ListReporteUsuarios = _mapper.Map<List<ReporteUsuarioListDto>>(await _reporteService.GetReporteUsuarioList(usuario.CodigoPerfil));
+                reporte.ListReporteUsuarios = _mapper.Map<List<ReporteUsuarioListDto>>(await _reporteService.GetReporteUsuarioList(usuario.CodigoPerfil,param,idPeriodo));
                 reporte.ListRegCerrados = _mapper.Map<List<RankingRegCerradosListDto>>(await _reporteService.GetRankingRegCerradosList(usuario.CodigoPerfil));
                 reporte.ListMejorTiempo = _mapper.Map<List<MejorTiempoListDto>>(await _reporteService.GetMejorTiempoList(usuario.CodigoPerfil));
+                reporte.ListPeriodos = listPeriodos;
                 respuesta.success = true;
                 if (reporte != null)
                 {

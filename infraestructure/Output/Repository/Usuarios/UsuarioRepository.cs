@@ -16,6 +16,8 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Xml.Linq;
 using static Dapper.SqlMapper;
+using System.DirectoryServices;
+using DirectoryEntry = System.DirectoryServices.DirectoryEntry;
 
 namespace Infra.MarcoLista.Output.Repository
 {
@@ -91,8 +93,12 @@ namespace Infra.MarcoLista.Output.Repository
                             Estado=u.Estado
                         };
 
-            var objUsuario= query.FirstOrDefault();
-            objUsuario.Clave = await GetClaveDesencriptada(objUsuario.Clave);         
+            var objUsuario = query.FirstOrDefault();
+            var dominioCorreo = _appConfiguration[$"Authentication:Institucional:DominioMIDAGRI"];
+            if (!objUsuario.CorreoElectronico.Contains(dominioCorreo))
+            {
+                objUsuario.Clave = await GetClaveDesencriptada(objUsuario.Clave);
+            }        
             return objUsuario;
         }
         public async Task<UsuarioModel> GetUsuarioxCorreo(string correo)
@@ -291,14 +297,25 @@ namespace Infra.MarcoLista.Output.Repository
             }
             else
             {
-                var clave = GetRandomPassword(12);
-                var claveCifrada = await GetClaveEncriptada(clave);
+                string clave = "";
+                string claveCifrada = "";
+                string nomUsuario = "";
+                string dominioCorreo = _configuracion[$"Authentication:Institucional:DominioMIDAGRI"];
+                if (model.CorreoElectronico.Contains(dominioCorreo))
+                {
+                    nomUsuario = model.CorreoElectronico.Substring(0, model.CorreoElectronico.IndexOf("@"));
+                }
+                else {
+                    clave = GetRandomPassword(12);
+                    claveCifrada = await GetClaveEncriptada(clave);
+                    nomUsuario = model.NumeroDocumento;
+                }                
 
                 var objUsuario = new UsuarioEntity()
                 {
                     CodigoUUID = Guid.NewGuid().ToString(),
                     IdPersona = personaId,
-                    Usuario = model.NumeroDocumento,
+                    Usuario = nomUsuario,
                     Clave = claveCifrada,
                     Estado = 1,
                     FechaRegistro = DateTime.Now,
@@ -608,76 +625,115 @@ namespace Infra.MarcoLista.Output.Repository
                 throw ex;
             }
         }
-        /*public async Task<string> GetClaveUsuario(long idUsuario)
-        {
-            //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
-            var conn = new OracleConnection(strCon);
-            await conn.OpenAsync();
-            try
-            {
-                GetClave param = new GetClave();
-                param.IdUsuario = idUsuario;
-                string clave = "";
-                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "PKG_SEGURIDAD.SP_R_CLAVE_USUARIO", param))
-                {
-                    if (dr != null)
-                    {
-                        if (dr.HasRows)
-                        {                
-                            while (dr.Read())
-                            {                     
-                                clave= dr["TXT_CLAVE"].ToString();                       
-                            }
-                        }
-                    }
-                }
-                conn.Close();
-                return clave;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }*/
         public async Task<LoginModel> datosInicioSesion(AuthModel auth)
         {
-            //return _db.Ubigeo.ToList().FindAll(x => x.Id.ToUpper().Contains(param.ToUpper()) || x.Departamento.ToUpper().Contains(param.ToUpper()) || x.Provincia.ToUpper().Contains(param.ToUpper()) || x.Distrito.ToUpper().Contains(param.ToUpper()));
-            string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
-            var conn = new OracleConnection(strCon);
-            await conn.OpenAsync();
             try
             {
-                LoginModel login = new LoginModel();
-                using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "PKG_SEGURIDAD.SP_R_INICIAR_SESION", auth))
+                string dominioCorreo = _configuracion[$"Authentication:Institucional:DominioMIDAGRI"];
+                var query = (from u in _db.Usuario
+                             join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
+                             join p in _db.Perfil on up.IdPerfil equals p.Id
+                             join pe in _db.Persona on u.IdPersona equals pe.Id
+                             where u.Usuario == auth.username && u.Estado == 1 &&
+                             p.Estado == 1 && up.Estado == 1 && pe.Estado == 1
+                             && pe.CorreoElectronico.Contains(dominioCorreo)
+
+                             select new LoginModel
+                             {
+                                 CodigoUUID = u.CodigoUUID,
+                                 Usuario = u.Usuario,
+                                 NumeroDocumento = pe.NumeroDocumento,
+                                 Nombre = pe.Nombre,
+                                 ApellidoPaterno = pe.ApellidoPaterno,
+                                 ApellidoMaterno = pe.ApellidoMaterno,
+                                 IdPerfil = p.Id,
+                                 CodigoPerfil = p.CodigoPerfil,
+                                 Perfil = p.Perfil
+                             }).FirstOrDefault();
+
+                if (query != null)//Para iniciar sesión con LDAP con las cuentas de dominio
                 {
-                    if (dr != null)
+                    string dominioLDAP = _configuracion[$"Authentication:Institucional:DominioLDAP"];
+                    var result = LDAP_autenticacion(dominioLDAP, auth.username, auth.password);
+                    if (result)
                     {
-                        login = new LoginModel();
-                        if (dr.HasRows)
+                        if (query == null)
                         {
-                            while (dr.Read())
+                            return null;
+                        }
+                        else
+                        {
+                            return query;
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    string strCon = _configuracion.GetSection("DatabaseSettings")["ConnectionSISLISTA"];
+                    var conn = new OracleConnection(strCon);
+                    await conn.OpenAsync();
+
+                    LoginModel login = new LoginModel();
+                    using (OracleDataReader dr = dBOracle.SelDrdResult(conn, null, "PKG_SEGURIDAD.SP_R_INICIAR_SESION", auth))
+                    {
+                        if (dr != null)
+                        {
+                            login = new LoginModel();
+                            if (dr.HasRows)
                             {
-                                login.CodigoUUID = dr["TXT_CODIGO_UUID"].ToString();
-                                login.Usuario = dr["TXT_USUARIO"].ToString();
-                                login.NumeroDocumento = dr["TXT_NUMERO_DOCUMENTO"].ToString();
-                                login.Nombre = dr["TXT_NOMBRE"].ToString();            
-                                login.ApellidoPaterno = dr["TXT_APELLIDO_PATERNO"].ToString();
-                                login.ApellidoMaterno = dr["TXT_APELLIDO_MATERNO"].ToString();
-                                login.IdPerfil = long.Parse(dr["IDE_PERFIL"].ToString());
-                                login.CodigoPerfil = dr["TXT_CODIGO_PERFIL"].ToString();
-                                login.Perfil = dr["TXT_PERFIL"].ToString();
+                                while (dr.Read())
+                                {
+                                    login.CodigoUUID = dr["TXT_CODIGO_UUID"].ToString();
+                                    login.Usuario = dr["TXT_USUARIO"].ToString();
+                                    login.NumeroDocumento = dr["TXT_NUMERO_DOCUMENTO"].ToString();
+                                    login.Nombre = dr["TXT_NOMBRE"].ToString();
+                                    login.ApellidoPaterno = dr["TXT_APELLIDO_PATERNO"].ToString();
+                                    login.ApellidoMaterno = dr["TXT_APELLIDO_MATERNO"].ToString();
+                                    login.IdPerfil = long.Parse(dr["IDE_PERFIL"].ToString());
+                                    login.CodigoPerfil = dr["TXT_CODIGO_PERFIL"].ToString();
+                                    login.Perfil = dr["TXT_PERFIL"].ToString();
+                                }
                             }
                         }
                     }
-                }
-                conn.Close();
-                return login;
+                    conn.Close();
+                    return login;
+                }                
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }   
+        private static Boolean LDAP_autenticacion(string domain, string usuario, string password)
+        {
+            try
+            {
+                using (DirectoryEntry entry = new DirectoryEntry(domain, usuario, password))
+                {
+                    using (DirectorySearcher searcher = new(searchRoot: entry))
+                    {
+                        //Buscamos por la propiedad SamAccountName
+                        searcher.Filter = "(samaccountname=" + usuario + ")";
+                        //Buscamos el usuario con la cuenta indicada
+                        var result = searcher.FindOne();
+                        if (result != null)
+                            return true;
+                        else
+                            throw new("Credenciales no validas");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new(ex.Message, ex);
+            }
         }
+
     }
 }

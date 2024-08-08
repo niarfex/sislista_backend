@@ -58,8 +58,7 @@ namespace Infra.MarcoLista.Output.Repository
             }
 
             if (model.Id > 0)
-            {               
-
+            {   
                 var objOrganizacion = _db.Organizacion.Where(x => x.Id == model.Id).FirstOrDefault();
                 objOrganizacion.IdTipoOrganizacion = model.IdTipoOrganizacion;
                 objOrganizacion.NumeroDocumento = model.NumeroDocumento;

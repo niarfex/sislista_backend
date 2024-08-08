@@ -134,7 +134,7 @@ namespace Infra.MarcoLista.Output.Repository
             return reporte;
 
         }
-        public async Task<List<ReporteModel>> GetReporteUsuarioList(string valCodigo)
+        public async Task<List<ReporteModel>> GetReporteUsuarioList(string valCodigo, string param, long idPeriodo)
         {
             List<ReporteModel> retorno = new List<ReporteModel>();
             if (valCodigo == "PERFILADM")
@@ -145,28 +145,26 @@ namespace Infra.MarcoLista.Output.Repository
                            join pe in _db.Persona on u.IdPersona equals pe.Id
                            join um in _db.UsuarioMarcoLista on u.Id equals um.IdUsuario
                            join m in _db.MarcoLista on um.IdMarcoLista equals m.Id
-                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1 && um.Estado == 1 && m.Estado == 1
+                           from cu in _db.GestionRegistro.Where(x => x.IdMarcoLista == m.Id).DefaultIfEmpty()
+                           from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
+                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1 && um.Estado == 1 
+                           && m.Estado == 1 && m.IdAnio==idPeriodo //&& cu.Estado==1
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Avance = 0,
-                               Cambio = 0,
-                               CantMarcoLista = 0,
+                               IdMarcoLista=m.Id,
                                Perfil = p.Perfil,
-                               RegCerrados = 0
-                           })
-                             .AsEnumerable()
+                               CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null,
+                           }).AsEnumerable()
                             .GroupBy(x => new { x.Usuario,x.Perfil })
                             .Select(x => new ReporteModel
                             {
                                 Usuario = x.Key.Usuario,
-                                Avance = 0,
-                                Cambio = 0,
-                                Perfil=x.Key.Perfil,
+                                Avance = (Double.Parse(x.Count(a => a.CodigoEstadoRegistro == "CERRADO").ToString()) * 100) / x.Count(),
+                                Perfil = x.Key.Perfil,
                                 CantMarcoLista = x.Count(),
-                                RegCerrados = 0
-                            })
-                                               .ToList();
+                                RegCerrados = x.Count(a => a.CodigoEstadoRegistro == "CERRADO"),
+                            }).Where(y => y.Usuario.ToUpper().Contains(param.ToUpper())).ToList();
             }
             else if (valCodigo == "PERFILEMP")
             {
@@ -174,17 +172,29 @@ namespace Infra.MarcoLista.Output.Repository
                            join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
                            join p in _db.Perfil on up.IdPerfil equals p.Id
                            join pe in _db.Persona on u.IdPersona equals pe.Id
-                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1
+                           join um in _db.UsuarioMarcoLista on u.Id equals um.IdUsuario
+                           join m in _db.MarcoLista on um.IdMarcoLista equals m.Id
+                           from cu in _db.GestionRegistro.Where(x => x.IdMarcoLista == m.Id).DefaultIfEmpty()
+                           from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
+                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1 && um.Estado == 1
+                           && m.Estado == 1 && m.IdAnio == idPeriodo //&& cu.Estado == 1
                            && p.CodigoPerfil == "PERFILEMP"
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Avance = 0,
-                               Cambio = 0,
-                               CantMarcoLista = 0,
+                               IdMarcoLista=m.Id,
                                Perfil = p.Perfil,
-                               RegCerrados = 0
-                           }).ToList();
+                               CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null
+                           }).AsEnumerable()
+                            .GroupBy(x => new { x.Usuario, x.Perfil })
+                            .Select(x => new ReporteModel
+                            {
+                                Usuario = x.Key.Usuario,
+                                Avance = (Double.Parse(x.Count(a => a.CodigoEstadoRegistro == "CERRADO").ToString()) * 100) / x.Count(),
+                                Perfil = x.Key.Perfil,
+                                CantMarcoLista = x.Count(),
+                                RegCerrados = x.Count(a => a.CodigoEstadoRegistro== "CERRADO"),
+                            }).Where(y => y.Usuario.ToUpper().Contains(param.ToUpper())).ToList();
             }
             else if (valCodigo == "PERFILSUP")
             {
@@ -192,17 +202,29 @@ namespace Infra.MarcoLista.Output.Repository
                            join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
                            join p in _db.Perfil on up.IdPerfil equals p.Id
                            join pe in _db.Persona on u.IdPersona equals pe.Id
-                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1
-                           && p.CodigoPerfil == "PERFILSUP"
+                           join um in _db.UsuarioMarcoLista on u.Id equals um.IdUsuario
+                           join m in _db.MarcoLista on um.IdMarcoLista equals m.Id
+                           from cu in _db.GestionRegistro.Where(x => x.IdMarcoLista == m.Id).DefaultIfEmpty()
+                           from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
+                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1 && um.Estado == 1
+                           && m.Estado == 1 && m.IdAnio == idPeriodo //&& cu.Estado == 1
+                           && p.CodigoPerfil  == "PERFILSUP"
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Avance = 0,
-                               Cambio = 0,
-                               CantMarcoLista = 0,
+                               IdMarcoLista = m.Id,
                                Perfil = p.Perfil,
-                               RegCerrados = 0
-                           }).ToList();
+                               CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null
+                           }).AsEnumerable()
+                            .GroupBy(x => new { x.Usuario, x.Perfil })
+                            .Select(x => new ReporteModel
+                            {
+                                Usuario = x.Key.Usuario,
+                                Avance = (Double.Parse(x.Count(a => a.CodigoEstadoRegistro == "CERRADO").ToString()) * 100) / x.Count(),
+                                Perfil = x.Key.Perfil,
+                                CantMarcoLista = x.Count(),
+                                RegCerrados = x.Count(a => a.CodigoEstadoRegistro == "CERRADO"),
+                            }).Where(y => y.Usuario.ToUpper().Contains(param.ToUpper())).ToList();
             }
             else if (valCodigo == "PERFILESP")
             {
@@ -210,17 +232,29 @@ namespace Infra.MarcoLista.Output.Repository
                            join up in _db.UsuarioPerfil on u.Id equals up.IdUsuario
                            join p in _db.Perfil on up.IdPerfil equals p.Id
                            join pe in _db.Persona on u.IdPersona equals pe.Id
-                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1
+                           join um in _db.UsuarioMarcoLista on u.Id equals um.IdUsuario
+                           join m in _db.MarcoLista on um.IdMarcoLista equals m.Id
+                           from cu in _db.GestionRegistro.Where(x => x.IdMarcoLista == m.Id).DefaultIfEmpty()
+                           from eReg in _db.Estado.Where(x => x.Id == cu.EstadoRegistro).DefaultIfEmpty()
+                           where u.Estado == 1 && up.Estado == 1 && p.Estado == 1 && um.Estado == 1
+                           && m.Estado == 1 && m.IdAnio == idPeriodo //&& cu.Estado == 1
                            && p.CodigoPerfil == "PERFILESP"
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Avance = 0,
-                               Cambio = 0,
-                               CantMarcoLista = 0,
+                               IdMarcoLista = m.Id,
                                Perfil = p.Perfil,
-                               RegCerrados = 0
-                           }).ToList();
+                               CodigoEstadoRegistro = eReg != null ? eReg.CodigoEstado : null
+                           }).AsEnumerable()
+                            .GroupBy(x => new { x.Usuario, x.Perfil })
+                            .Select(x => new ReporteModel
+                            {
+                                Usuario = x.Key.Usuario,
+                                Avance = (Double.Parse(x.Count(a => a.CodigoEstadoRegistro == "CERRADO").ToString()) * 100) / x.Count(),
+                                Perfil = x.Key.Perfil,
+                                CantMarcoLista = x.Count(),
+                                RegCerrados = x.Count(a => a.CodigoEstadoRegistro == "CERRADO"),
+                            }).Where(y => y.Usuario.ToUpper().Contains(param.ToUpper())).ToList();
             }
             return retorno;
         }
@@ -230,13 +264,14 @@ namespace Infra.MarcoLista.Output.Repository
             if (valCodigo == "PERFILADM")
             {
                 retorno = (from c in _db.GestionRegistro
-                           where c.Estado == 1
+                           join e in _db.Estado on c.EstadoValidacion equals e.Id
+                           where c.Estado == 1 && e.CodigoEstado== "VALIDO"
                            select new ReporteModel
                            {
                                Empresa = c.RazonSocial.IsNullOrEmpty() ? (c.Nombre + " " + c.ApellidoPaterno + " " + c.ApellidoMaterno) : c.RazonSocial,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               Tiempo = Math.Round(((DateTime)c.FechaFinValidacion).Subtract((DateTime)c.FechaInicioRegistro).TotalMinutes,2).ToString() + " minutos",
+                               NumTiempo = (long)((DateTime)c.FechaFinValidacion).Subtract((DateTime)c.FechaInicioRegistro).TotalMinutes
+                           }).ToList().OrderBy(x => x.NumTiempo).ToList();
             }
             return retorno;
         }
@@ -258,10 +293,18 @@ namespace Infra.MarcoLista.Output.Repository
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               CantMarcoLista = 0,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               IdMarcoLista = m.Id,
+                               FechaInicioRegistro=(DateTime)c.FechaInicioRegistro,
+                               FechaFinValidacion=(DateTime)c.FechaFinValidacion
+                           }).AsEnumerable()
+                            .GroupBy(x => new { x.Usuario })
+                            .Select(x => new ReporteModel
+                            {
+                                Usuario = x.Key.Usuario,                         
+                                CantMarcoLista = x.Count(),
+                                Tiempo = Math.Round(((DateTime)x.Max(a=>a.FechaFinValidacion)).Subtract((DateTime)x.Min(a => a.FechaInicioRegistro)).TotalMinutes, 2).ToString() + " minutos",
+                                NumTiempo = (long)((DateTime)x.Max(a => a.FechaFinValidacion)).Subtract((DateTime)x.Min(a => a.FechaInicioRegistro)).TotalMinutes
+                            }).ToList().OrderBy(x => x.NumTiempo).ToList();
             }
             else if (valCodigo == "PERFILSUP")
             {
@@ -278,10 +321,18 @@ namespace Infra.MarcoLista.Output.Repository
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               CantMarcoLista = 0,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               IdMarcoLista = m.Id,
+                               FechaInicioRegistro = (DateTime)c.FechaInicioRegistro,
+                               FechaFinValidacion = (DateTime)c.FechaFinValidacion
+                           }).AsEnumerable()
+                            .GroupBy(x => new { x.Usuario })
+                            .Select(x => new ReporteModel
+                            {
+                                Usuario = x.Key.Usuario,
+                                CantMarcoLista = x.Count(),
+                                Tiempo = Math.Round(((DateTime)x.Max(a => a.FechaFinValidacion)).Subtract((DateTime)x.Min(a => a.FechaInicioRegistro)).TotalMinutes, 2).ToString() + " minutos",
+                                NumTiempo = (long)((DateTime)x.Max(a => a.FechaFinValidacion)).Subtract((DateTime)x.Min(a => a.FechaInicioRegistro)).TotalMinutes
+                            }).ToList().OrderBy(x => x.NumTiempo).ToList();
             }
             else if (valCodigo == "PERFILESP")
             {
@@ -298,10 +349,18 @@ namespace Infra.MarcoLista.Output.Repository
                            select new ReporteModel
                            {
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               CantMarcoLista = 0,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               IdMarcoLista = m.Id,
+                               FechaInicioRegistro = (DateTime)c.FechaInicioRegistro,
+                               FechaFinValidacion = (DateTime)c.FechaFinValidacion
+                           }).AsEnumerable()
+                            .GroupBy(x => new { x.Usuario })
+                            .Select(x => new ReporteModel
+                            {
+                                Usuario = x.Key.Usuario,
+                                CantMarcoLista = x.Count(),
+                                Tiempo = Math.Round(((DateTime)x.Max(a => a.FechaFinValidacion)).Subtract((DateTime)x.Min(a => a.FechaInicioRegistro)).TotalMinutes, 2).ToString() + " minutos",
+                                NumTiempo = (long)((DateTime)x.Max(a => a.FechaFinValidacion)).Subtract((DateTime)x.Min(a => a.FechaInicioRegistro)).TotalMinutes
+                            }).ToList().OrderBy(x => x.NumTiempo).ToList();
             }
             return retorno;
         }
@@ -319,17 +378,16 @@ namespace Infra.MarcoLista.Output.Repository
                            join p in _db.Perfil on up.IdPerfil equals p.Id
                            join pe in _db.Persona on u.IdPersona equals pe.Id
                            where c.Estado == 1
-                           && (e.CodigoEstado == "PARAREVISAR" || e.CodigoEstado == "OBSERVADOSUPERVISOR"
-                           || e.CodigoEstado == "PARAVALIDAR")
+                           && (e.CodigoEstado == "PARAREVISAR" || e.CodigoEstado == "PARAVALIDAR" || e.CodigoEstado == "CERRADO")
                            && p.CodigoPerfil == "PERFILEMP"
                            && um.Estado == 1 && m.Estado == 1 && u.Estado == 1 && up.Estado == 1 && p.Estado == 1
                            select new ReporteModel
                            {
                                Empresa = c.RazonSocial.IsNullOrEmpty() ? (c.Nombre + " " + c.ApellidoPaterno + " " + c.ApellidoMaterno) : c.RazonSocial,
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               Tiempo = Math.Round(((DateTime)c.FechaFinRegistro).Subtract((DateTime)c.FechaInicioRegistro).TotalMinutes, 2).ToString() + " minutos",
+                               NumTiempo = (long)((DateTime)c.FechaFinRegistro).Subtract((DateTime)c.FechaInicioRegistro).TotalMinutes
+                           }).ToList().OrderBy(x => x.NumTiempo).ToList();
             }
             else if (valCodigo == "PERFILSUP")
             {
@@ -342,17 +400,16 @@ namespace Infra.MarcoLista.Output.Repository
                            join p in _db.Perfil on up.IdPerfil equals p.Id
                            join pe in _db.Persona on u.IdPersona equals pe.Id
                            where c.Estado == 1
-                           && (e.CodigoEstado == "PARAREVISAR" || e.CodigoEstado == "OBSERVADOSUPERVISOR"
-                           || e.CodigoEstado == "PARAVALIDAR")
+                           && (e.CodigoEstado == "PARAVALIDAR" || e.CodigoEstado == "CERRADO")
                            && p.CodigoPerfil == "PERFILSUP"
                            && um.Estado == 1 && m.Estado == 1 && u.Estado == 1 && up.Estado == 1 && p.Estado == 1
                            select new ReporteModel
                            {
                                Empresa = c.RazonSocial.IsNullOrEmpty() ? (c.Nombre + " " + c.ApellidoPaterno + " " + c.ApellidoMaterno) : c.RazonSocial,
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               Tiempo = Math.Round(((DateTime)c.FechaFinSupervision).Subtract((DateTime)c.FechaInicioSupervision).TotalMinutes, 2).ToString() + " minutos",
+                               NumTiempo = (long)((DateTime)c.FechaFinSupervision).Subtract((DateTime)c.FechaInicioSupervision).TotalMinutes
+                           }).ToList().OrderBy(x => x.NumTiempo).ToList();
             }
             else if (valCodigo == "PERFILESP")
             {
@@ -365,17 +422,16 @@ namespace Infra.MarcoLista.Output.Repository
                            join p in _db.Perfil on up.IdPerfil equals p.Id
                            join pe in _db.Persona on u.IdPersona equals pe.Id
                            where c.Estado == 1
-                           && (e.CodigoEstado == "PARAREVISAR" || e.CodigoEstado == "OBSERVADOSUPERVISOR"
-                           || e.CodigoEstado == "PARAVALIDAR")
+                           && ( e.CodigoEstado == "CERRADO")
                            && p.CodigoPerfil == "PERFILESP"
                            && um.Estado == 1 && m.Estado == 1 && u.Estado == 1 && up.Estado == 1 && p.Estado == 1
                            select new ReporteModel
                            {
                                Empresa = c.RazonSocial.IsNullOrEmpty() ? (c.Nombre + " " + c.ApellidoPaterno + " " + c.ApellidoMaterno) : c.RazonSocial,
                                Usuario = pe.Nombre + " " + pe.ApellidoPaterno + " " + pe.ApellidoMaterno,
-                               Tiempo = "0 días",
-                               NumTiempo = 0
-                           }).ToList();
+                               Tiempo = Math.Round(((DateTime)c.FechaFinValidacion).Subtract((DateTime)c.FechaInicioValidacion).TotalMinutes, 2).ToString() + " minutos",
+                               NumTiempo = (long)((DateTime)c.FechaFinValidacion).Subtract((DateTime)c.FechaInicioValidacion).TotalMinutes
+                           }).ToList().OrderBy(x=>x.NumTiempo).ToList();
             }
             return retorno;
         }

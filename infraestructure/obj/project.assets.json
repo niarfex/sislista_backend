@@ -737,6 +737,28 @@
           }
         }
       },
+      "System.DirectoryServices/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.DirectoryServices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.DirectoryServices.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.DirectoryServices.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.DirectoryServices.Protocols/8.0.0": {
         "type": "package",
         "compile": {
@@ -925,7 +947,8 @@
           "Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
-          "NPOI": "2.7.0"
+          "NPOI": "2.7.0",
+          "System.DirectoryServices": "8.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -2284,6 +2307,39 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.DirectoryServices/8.0.0": {
+      "sha512": "7nit//efUTy1OsAKco2f02PMrwsR2S234N0dVVp84udC77YcvpOQDz5znAWMtgMWBzY1aRJvUW61jo/7vQRfXg==",
+      "type": "package",
+      "path": "system.directoryservices/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.DirectoryServices.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.DirectoryServices.dll",
+        "lib/net6.0/System.DirectoryServices.xml",
+        "lib/net7.0/System.DirectoryServices.dll",
+        "lib/net7.0/System.DirectoryServices.xml",
+        "lib/net8.0/System.DirectoryServices.dll",
+        "lib/net8.0/System.DirectoryServices.xml",
+        "lib/netstandard2.0/System.DirectoryServices.dll",
+        "lib/netstandard2.0/System.DirectoryServices.xml",
+        "runtimes/win/lib/net6.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net6.0/System.DirectoryServices.xml",
+        "runtimes/win/lib/net7.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net7.0/System.DirectoryServices.xml",
+        "runtimes/win/lib/net8.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net8.0/System.DirectoryServices.xml",
+        "system.directoryservices.8.0.0.nupkg.sha512",
+        "system.directoryservices.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.DirectoryServices.Protocols/8.0.0": {
       "sha512": "puwJxURHDrYLGTQdsHyeMS72ClTqYa4lDYz6LHSbkZEk5hq8H8JfsO4MyYhB5BMMxg93jsQzLUwrnCumj11UIg==",
       "type": "package",
@@ -2604,7 +2660,8 @@
       "Oracle.EntityFrameworkCore >= 8.23.40",
       "Oracle.ManagedDataAccess.Core >= 23.4.0",
       "RestSharp >= 106.11.7",
-      "Swashbuckle.AspNetCore >= 6.4.0"
+      "Swashbuckle.AspNetCore >= 6.4.0",
+      "System.DirectoryServices >= 8.0.0"
     ]
   },
   "packageFolders": {
@@ -2699,6 +2756,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.4.0, )"
+          },
+          "System.DirectoryServices": {
+            "target": "Package",
+            "version": "[8.0.0, )"
           }
         },
         "imports": [

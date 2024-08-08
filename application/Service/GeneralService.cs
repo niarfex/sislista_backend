@@ -505,6 +505,27 @@ namespace Application.Service
             }
             return listaTipos;
         }
+        public async Task<List<SelectTipoModel>> GetUsoAgricolas()
+        {
+            List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
+            var tipos = await _generalPort.GetUsoAgricolas();
+            if (tipos == null)
+            {
+                throw new NotDataFoundException("Listado no encontrado");
+
+            }
+            SelectTipoModel list;
+            //listaTipos.Add(new SelectTipoModel("-- Seleccionar --", null,""));
+            foreach (var dep in tipos)
+            {
+                list = new SelectTipoModel();
+                list.value = dep.Id.ToString();
+                list.label = dep.UsoNoAgricola;
+                list.codigo = dep.CodigoUsoNoAgricola;
+                listaTipos.Add(list);
+            }
+            return listaTipos;
+        }
         public async Task<List<SelectTipoModel>> GetUsoNoAgricolas()
         {
             List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
@@ -521,7 +542,7 @@ namespace Application.Service
                 list = new SelectTipoModel();
                 list.value = dep.Id.ToString();
                 list.label = dep.UsoNoAgricola;
-                list.codigo = dep.UsoNoAgricola;
+                list.codigo = dep.CodigoUsoNoAgricola;
                 listaTipos.Add(list);
             }
             return listaTipos;
@@ -631,10 +652,10 @@ namespace Application.Service
             }
             return listaTipos;
         }
-        public async Task<List<SelectTipoModel>> GetEstadosCuestionario()
+        public async Task<List<SelectTipoModel>> GetEstadosCuestionario(long idCuestionario, string estadoRegistro, string estadoSupervision, string estadoValidacion)
         {
             List<SelectTipoModel> listaTipos = new List<SelectTipoModel>();
-            var tipos = await _generalPort.GetEstadosCuestionario();
+            var tipos = await _generalPort.GetEstadosCuestionario(idCuestionario, estadoRegistro, estadoSupervision, estadoValidacion);
             if (tipos == null)
             {
                 throw new NotDataFoundException("Listado no encontrado");

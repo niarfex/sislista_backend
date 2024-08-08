@@ -19,7 +19,7 @@ namespace Infra.MarcoLista.Input.Dto
         [JsonPropertyName("IdCultivo")]
         public long? IdCultivo { get; set; }
         [JsonPropertyName("IdUsoNoAgricola")]
-        public long? IdUsoNoAgricola { get; set; }
+        public string? IdUsoNoAgricola { get; set; }
         [JsonPropertyName("Observacion")]
         public string? Observacion { get; set; }
         [JsonPropertyName("Superficie")]
@@ -28,5 +28,7 @@ namespace Infra.MarcoLista.Input.Dto
         public double? SuperficieCultivada { get; set; }
         [JsonPropertyName("Orden")]
         public int? Orden { get; set; }
+        [JsonPropertyName("ListTipoUso")]
+        public List<SelectTipoDto>? ListTipoUso { get; set; }
     }
 }

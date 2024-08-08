@@ -24,9 +24,9 @@ namespace Application.Service
 
             return reportes;
         }
-        public async Task<List<ReporteModel>> GetReporteUsuarioList(string valCodigo)
+        public async Task<List<ReporteModel>> GetReporteUsuarioList(string valCodigo, string param, long idPeriodo)
         {
-            var reportes = await _reportePort.GetReporteUsuarioList(valCodigo);
+            var reportes = await _reportePort.GetReporteUsuarioList(valCodigo, param, idPeriodo);
             if (reportes == null)
             {
                 throw new NotDataFoundException("No se encontraron datos registrados");

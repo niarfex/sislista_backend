@@ -15,7 +15,7 @@ namespace Domain.Model
         public long? IdTenencia { get; set; }
         public long? IdUsoTierra { get; set; }
         public long? IdCultivo { get; set; }
-        public long? IdUsoNoAgricola { get; set; }
+        public string? IdUsoNoAgricola { get; set; }
         public string? Observacion { get; set; }
         public int? Orden { get; set; }
         public double? Superficie { get; set; }

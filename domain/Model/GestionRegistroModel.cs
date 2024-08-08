@@ -38,6 +38,7 @@ namespace Domain.Model
         public string? UsuarioCreacion { get; set; }
         public DateTime? FechaActualizacion { get; set; }
         public string? UsuarioActualizacion { get; set; }
+        public DateTimeOffset FechaInicio { get; set; }
         //
 
         public List<FundoModel> ListFundos { get; set; }

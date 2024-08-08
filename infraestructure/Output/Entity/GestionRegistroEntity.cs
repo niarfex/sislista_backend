@@ -72,5 +72,17 @@ namespace Infra.MarcoLista.Output.Entity
         public long? EstadoSupervision { get; set; }
         [Column("IDE_ESTADO_VALIDACION")]
         public long? EstadoValidacion { get; set; }
+        [Column("FEC_INICIO")]
+        public DateTime? FechaInicioRegistro { get; set; }
+        [Column("FEC_FIN")]
+        public DateTime? FechaFinRegistro { get; set; }
+        [Column("FEC_INICIO_SUPERVISION")]
+        public DateTime? FechaInicioSupervision { get; set; }
+        [Column("FEC_FIN_SUPERVISION")]
+        public DateTime? FechaFinSupervision { get; set; }
+        [Column("FEC_INICIO_VALIDACION")]
+        public DateTime? FechaInicioValidacion { get; set; }
+        [Column("FEC_FIN_VALIDACION")]
+        public DateTime? FechaFinValidacion { get; set; }
     }
 }

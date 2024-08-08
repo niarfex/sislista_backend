@@ -14,6 +14,8 @@ namespace Infra.MarcoLista.Input.Dto
         public long? EstadoResultado { get; set; }
         [JsonPropertyName("IdSeccion")]
         public long? IdSeccion { get; set; }
+        [JsonPropertyName("Seccion")]
+        public string? Seccion { get; set; }
         [JsonPropertyName("Perfil")]
         public string? Perfil { get; set; }
     }

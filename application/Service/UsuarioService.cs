@@ -12,6 +12,7 @@ using Domain;
 using Application.Common;
 using System.Runtime.CompilerServices;
 
+
 namespace Application.Service
 {
     public class UsuarioService:IUsuarioService
@@ -182,11 +183,22 @@ namespace Application.Service
                 else if (objUsuario.Estado == 1)//Estado Activo 
                 {
                     asunto = "Credenciales de acceso para el Sistema de Marco de Lista";
-                    mensaje = $"Bienvenido(a) {objUsuario.Nombre} al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria" + "<br><br>" +
-                        $"Para acceder debe ingresar al siguiente enlace de acceso al sistema: {_appConfiguration[$"enlacesSISLISTA:urlApp"]}" + "<br><br>" +
-                        $"Sus credenciales de acceso son las siguientes: " + "<br>" +
-                        $"Usuario: {objUsuario.Usuario} " + "<br>" +
-                        $"Contraseña: {objUsuario.Clave}" + "<br><br>";
+
+                    var dominioCorreo= _appConfiguration[$"Authentication:Institucional:DominioMIDAGRI"];
+                    if (objUsuario.CorreoElectronico.Contains(dominioCorreo))
+                    {
+                        mensaje = $"Bienvenido(a) {objUsuario.Nombre} al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria" + "<br><br>" +
+                            $"Para acceder debe ingresar al siguiente enlace de acceso al sistema: {_appConfiguration[$"enlacesSISLISTA:urlApp"]}" + "<br><br>" +
+                            $"Sus credenciales de acceso son las mismas de la red administrada";
+                    }
+                    else {                        
+                        mensaje = $"Bienvenido(a) {objUsuario.Nombre} al Sistema del Marco de Lista de Encuesta Nacional Agropecuaria" + "<br><br>" +
+                            $"Para acceder debe ingresar al siguiente enlace de acceso al sistema: {_appConfiguration[$"enlacesSISLISTA:urlApp"]}" + "<br><br>" +
+                            $"Sus credenciales de acceso son las siguientes: " + "<br>" +
+                            $"Usuario: {objUsuario.Usuario} " + "<br>" +
+                            $"Contraseña: {objUsuario.Clave}" + "<br><br>";
+                    }
+                    
                 }
                 var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
                 var request = (HttpWebRequest)WebRequest.Create(url);
@@ -234,11 +246,16 @@ namespace Application.Service
             try
             {
                 var objUsuario = await GetUsuarioxCorreo(correo);
-                
                 asunto = "Reestablecer contraseña de acceso al Sistema de Marco de Lista";
-                mensaje = $"Estimado(a) usuario(a) para reestablecer su contraseña de acceso al sistema de Marco de Lista debe acceder al siguiente enlace: {_appConfiguration[$"Authentication:Reseteo:Enlace"]}/{objUsuario.TokenReseteoClave}" + "<br><br>" +
-                        $"El enlace remitido solo tiene una vigencia de 15 minutos, pasado el tiempo deberá solicitar un nuevo enlace." + "<br><br>";
 
+                var dominioCorreo = _appConfiguration[$"Authentication:Institucional:DominioMIDAGRI"];
+                if (objUsuario.CorreoElectronico.Contains(dominioCorreo)) {
+                    mensaje = $"Estimado(a) usuario(a) al contar con una cuenta institucional, debe contactarse con el equipo de OGTI del MIDAGRI para poder reestablecer su contraseña, para este caso, no se puede reestablecer su contraseña mediante el Sistema de Marco de Lista";
+                }
+                else {
+                    mensaje = $"Estimado(a) usuario(a) para reestablecer su contraseña de acceso al sistema de Marco de Lista debe acceder al siguiente enlace: {_appConfiguration[$"Authentication:Reseteo:Enlace"]}/{objUsuario.TokenReseteoClave}" + "<br><br>" +
+                            $"El enlace remitido solo tiene una vigencia de 15 minutos, pasado el tiempo deberá solicitar un nuevo enlace." + "<br><br>";
+                }  
                 
                 var url = $"{_appConfiguration[$"configCorreo:endpoint"]}";
                 var request = (HttpWebRequest)WebRequest.Create(url);
@@ -318,7 +335,7 @@ namespace Application.Service
             {
                 return null;
             }            
-        }
+        }        
         private async Task<TokenModel> GenerateJWTToken(LoginModel usuario)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appConfiguration[$"Authentication:JwtBearer:SecurityKey"]));

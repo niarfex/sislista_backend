@@ -15,10 +15,10 @@ namespace Application.Input
         Task<string> CreateCuestionario(GestionRegistroModel model);
         Task<string> DesaprobarCuestionario(GestionRegistroModel model);
         Task<string> InvalidarCuestionario(GestionRegistroModel model);
-        Task<string> AprobarCuestionarioxUUID(string uuid);
-        Task<string> RatificarCuestionarioxUUID(string uuid);
-        Task<string> DerivarCuestionarioxUUID(string uuid);
-        Task<string> ValidarCuestionarioxUUID(string uuid);
-        Task<string> DescartarCuestionarioxUUID(string uuid);
+        Task<string> AprobarCuestionarioxUUID(string uuid, DateTime fechaInicio);
+        Task<string> RatificarCuestionarioxUUID(string uuid, DateTime fechaInicio);
+        Task<string> DerivarCuestionarioxUUID(string uuid, DateTime fechaInicio);
+        Task<string> ValidarCuestionarioxUUID(string uuid, DateTime fechaInicio);
+        Task<string> DescartarCuestionarioxUUID(string uuid, DateTime fechaInicio);
     }
 }

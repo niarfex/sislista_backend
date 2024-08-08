@@ -251,6 +251,19 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
+        public async Task<List<UsoNoAgricolaModel>> GetUsoAgricolas()
+        {
+            var objetoEntity = await _generalRepository.GetUsoAgricolas();
+
+            if (objetoEntity != null)
+            {
+                return _mapper.Map<List<UsoNoAgricolaModel>>(objetoEntity);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async Task<List<UsoNoAgricolaModel>> GetUsoNoAgricolas()
         {
             var objetoEntity = await _generalRepository.GetUsoNoAgricolas();
@@ -329,9 +342,9 @@ namespace Infra.MarcoLista.Output.Adapter
                 return null;
             }
         }
-        public async Task<List<EstadoModel>> GetEstadosCuestionario()
+        public async Task<List<EstadoModel>> GetEstadosCuestionario(long idCuestionario, string estadoRegistro, string estadoSupervision, string estadoValidacion)
         {
-            var objetoEntity = await _generalRepository.GetEstadosCuestionario();
+            var objetoEntity = await _generalRepository.GetEstadosCuestionario(idCuestionario, estadoRegistro, estadoSupervision, estadoValidacion);
 
             if (objetoEntity != null)
             {

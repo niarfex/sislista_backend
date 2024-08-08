@@ -8,8 +8,6 @@ namespace Infra.MarcoLista.Input.Dto
     {
         [JsonPropertyName("Id")]
         public long Id { get; set; }
-        [JsonPropertyName("IdFundo")]
-        public long? IdFundo { get; set; }
         [JsonPropertyName("IdCampo")]
         public long? IdCampo { get; set; }
         [JsonPropertyName("IdSistemaPecuario")]

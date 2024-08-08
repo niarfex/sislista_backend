@@ -11,9 +11,7 @@ namespace Domain.Model
     public class PecuarioModel
     {
         public long Id { get; set; }
-        public long? IdFundo { get; set; }
-        public long? IdCampo { get; set; }       
-
+        public long? IdCampo { get; set; }  
         public long? IdSistemaPecuario { get; set; }
         public long? IdLineaProduccion { get; set; }
         public long? IdEspecie { get; set; }

@@ -18,9 +18,7 @@ namespace Infra.MarcoLista.Output.Entity
         [Column("IDE_USO_TIERRA")]
         public long? IdUsoTierra { get; set; }
         [Column("IDE_CULTIVO")]
-        public long? IdCultivo { get; set; }
-        [Column("IDE_USO_NO_AGRICOLA")]
-        public long? IdUsoNoAgricola { get; set; }
+        public long? IdCultivo { get; set; }        
         [Column("TXT_OBSERVACION")]
         public string? Observacion { get; set; }
         [Column("NUM_SUPERFICIE")]

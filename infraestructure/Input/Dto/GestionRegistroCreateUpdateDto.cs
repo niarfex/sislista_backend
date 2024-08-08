@@ -57,17 +57,19 @@ namespace Infra.MarcoLista.Input.Dto
         public int? EstadoEntrevista { get; set; }
         [JsonPropertyName("IdPeriodo")]
         public long? IdPeriodo { get; set; }
+        [JsonPropertyName("FechaInicio")]
+        public DateTimeOffset FechaInicio { get; set; }
 
         [JsonPropertyName("ListFundos")]
-        public List<FundoCreateUpdateDto> ListFundos { get; set; }
+        public List<FundoCreateUpdateDto>? ListFundos { get; set; }
         [JsonPropertyName("ListPecuarios")]
-        public List<PecuarioCreateUpdateDto> ListPecuarios { get; set; }
+        public List<PecuarioCreateUpdateDto>? ListPecuarios { get; set; }
         [JsonPropertyName("ListArchivos")]
-        public List<ArchivoCreateUpdateDto> ListArchivos { get; set; }
+        public List<ArchivoCreateUpdateDto>? ListArchivos { get; set; }
         [JsonPropertyName("ListInformantes")]
-        public List<InformanteGetDto> ListInformantes { get; set; }       
+        public List<InformanteGetDto>? ListInformantes { get; set; }       
         [JsonPropertyName("ListObservaciones")]
-        public List<TrazabilidadCreateUpdateDto> ListObservaciones { get; set; }
+        public List<TrazabilidadCreateUpdateDto>? ListObservaciones { get; set; }
         
     }
 }

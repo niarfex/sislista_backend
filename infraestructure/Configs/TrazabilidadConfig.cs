@@ -15,7 +15,8 @@ namespace Infra.MarcoLista.Configs
         {
             builder.ToTable("TMM_TRAZABILIDAD");
             builder.HasKey(c => c.Id);
-
+            builder.Property(c => c.Perfil).HasColumnType("VARCHAR2");
+            builder.Property(c => c.Observacion).HasColumnType("VARCHAR2");
         }
     }
 }

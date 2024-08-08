@@ -11,6 +11,10 @@ namespace Infra.MarcoLista.Output.Entity
         public long Id { get; set; }
         [Column("TXT_USO_NO_AGRICOLA")]
         public string? UsoNoAgricola { get; set; }
+        [Column("TXT_CODIGO_USO_NO_AGRICOLA")]
+        public string? CodigoUsoNoAgricola { get; set; }
+        [Column("FLG_AGRICOLA")]
+        public int Agricola { get; set; }
         [Column("FLG_ESTADO")]
         public int Estado { get; set; }
         [Column("FEC_CREACION")]
