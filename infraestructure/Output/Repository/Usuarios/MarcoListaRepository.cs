@@ -44,8 +44,8 @@ namespace Infra.MarcoLista.Output.Repository
                         p.RazonSocial.ToUpper().Contains(param.Trim().ToUpper()) ||
                         p.Nombre.ToUpper().Contains(param.Trim().ToUpper()) ||
                         p.ApellidoPaterno.ToUpper().Contains(param.Trim().ToUpper()) ||
-                        p.ApellidoMaterno.ToUpper().Contains(param.Trim().ToUpper())
-                        )
+                        p.ApellidoMaterno.ToUpper().Contains(param.Trim().ToUpper())                        
+                        ) orderby m.FechaActualizacion.HasValue?m.FechaActualizacion:m.FechaRegistro descending
                         select new MarcoListaModel
                         { 
                             Id=m.Id,

@@ -18,6 +18,7 @@ using System.Xml.Linq;
 using static Dapper.SqlMapper;
 using System.DirectoryServices;
 using DirectoryEntry = System.DirectoryServices.DirectoryEntry;
+using NPOI.SS.Formula.Functions;
 
 namespace Infra.MarcoLista.Output.Repository
 {
@@ -51,7 +52,7 @@ namespace Infra.MarcoLista.Output.Repository
                         where (u.Usuario.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pf.Perfil.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
                         pe.Nombre.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.ApellidoMaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
                         pe.ApellidoPaterno.ToUpper().Trim().Contains(param.ToUpper().Trim()) || pe.CorreoElectronico.ToUpper().Trim().Contains(param.ToUpper().Trim()))
-                        orderby u.Id descending
+                        orderby u.FechaActualizacion.HasValue?u.FechaActualizacion:u.FechaRegistro descending
                         select new UsuarioModel
                         {
                             Id = u.Id,
@@ -392,14 +393,29 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<string> DeleteUsuarioxUUID(string uuid)
         {
-            var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
-            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
-            objUsuario.Estado = 2;
-            objUsuario.FechaActualizacion = DateTime.Now;
-            objUsuario.UsuarioActualizacion = usuario.Usuario;
-            _db.Usuario.Update(objUsuario);
+
+            var objUsuML = from um in _db.UsuarioMarcoLista
+                           join u in _db.Usuario on um.IdUsuario equals u.Id
+                           where u.CodigoUUID == uuid
+                           select um;
+
+            if (objUsuML.Count()>0)
+            {
+                throw new RelatedDataFoundException("No se puede eliminar el usuario porque tiene registros de marco de lista asignados");
+            }
+
+            var usuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+
+            var objUsuarioPerfil = _db.UsuarioPerfil.Where(x => x.IdUsuario==usuario.Id).FirstOrDefault();
+            _db.UsuarioPerfil.Remove(objUsuarioPerfil);
             _db.SaveChanges();
-            return objUsuario.CodigoUUID.ToString();
+
+
+            var objUsuario = _db.Usuario.Where(x => x.CodigoUUID.ToString() == uuid).FirstOrDefault();
+            _db.Usuario.Remove(objUsuario);
+            _db.SaveChanges();
+            return objUsuario.CodigoUUID;
+
         }
 
         public async Task<string> ActivarUsuarioxUUID(string uuid)

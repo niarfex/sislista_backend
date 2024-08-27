@@ -32,7 +32,8 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<PlantillaEntity>> GetAll(string param)
         {
-            return _db.Plantilla.Where(x=> (x.Estado==0 || x.Estado==1) && (x.Plantilla.ToUpper().Trim().Contains(param.ToUpper().Trim()))).ToList();
+            return _db.Plantilla.Where(x=> (x.Estado==0 || x.Estado==1) && (x.Plantilla.ToUpper().Trim().Contains(param.ToUpper().Trim())))
+                .OrderByDescending(x=>x.FechaActualizacion.HasValue?x.FechaActualizacion:x.FechaRegistro).ToList();
         }
         public async Task<PlantillaEntity> GetPlantillaxId(long id)
         {

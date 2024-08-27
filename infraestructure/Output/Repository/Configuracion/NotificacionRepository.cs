@@ -32,7 +32,9 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<List<NotificacionEntity>> GetAll(string param)
         {
-            return _db.Notificacion.Where(x => x.Estado==0 || x.Estado==1 || x.Estado==2).ToList();
+            return _db.Notificacion.Where(x => x.Estado==0 || x.Estado==1 || x.Estado==2
+             && (x.Asunto.ToUpper().Trim().Contains(param.ToUpper().Trim()) || x.Descripcion.ToUpper().Trim().Contains(param.ToUpper().Trim())))
+                .OrderByDescending(x=>x.FechaActualizacion.HasValue?x.FechaActualizacion:x.FechaRegistro).ToList();
         }
         public async Task<NotificacionEntity> GetNotificacionxId(long id)
         {

@@ -3,16 +3,71 @@
   "WorkspaceRootPath": "C:\\REPO\\SISLISTA\\sislista_backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\reporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\reporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\configuracion\\notificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\configuracion\\notificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\configuracion\\panelregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\configuracion\\panelregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\panelregistrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\panelregistrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\organizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuarios\\organizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuarios\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\configuracion\\plantillarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\configuracion\\plantillarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\marcolistarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuarios\\marcolistarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\operativo\\gestionregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\operativo\\gestionregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\especiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\especiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\gestionregistrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\gestionregistrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\operativo\\gestionregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\operativo\\gestionregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\gestionregistroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\service\\gestionregistroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\reporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\reporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\dto\\gestionregistrocreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,27 +86,12 @@
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\organizacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\ubigeocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\ubigeocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\helpers\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\helpers\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\reportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\reportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\ireporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,10 +137,6 @@
       "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\input\\igestionregistroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\gestionregistroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\service\\gestionregistroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\output\\igestionregistroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\output\\igestionregistroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -117,16 +153,8 @@
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\entity\\gestionregistroentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuarios\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\output\\ilineaproduccionport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\output\\ilineaproduccionport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\adapter\\usuarioadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -186,10 +214,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\igeneralrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\igeneralrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\organizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuarios\\organizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\Domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\trazabilidadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -264,24 +288,8 @@
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\entity\\pecuarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\Domain.csproj|c:\\repo\\sislista\\sislista_backend\\domain\\model\\authmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{493F80AF-31B8-44A8-A606-4DCF697CA159}|domain\\Domain.csproj|solutionrelative:domain\\model\\authmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\configuracion\\panelregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\configuracion\\panelregistrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\configuracion\\notificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\configuracion\\notificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\configuracion\\plantillarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\configuracion\\plantillarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\tablas\\condicionjuridicarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -298,10 +306,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\tablas\\tipoexplotacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\tablas\\tipoexplotacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\marcolistarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\repository\\usuarios\\marcolistarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\repository\\usuarios\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -338,10 +342,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\entity\\usuarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\entity\\usuarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\marcolistaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -458,10 +458,6 @@
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\cultivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\especiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\especiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\tipoexplotacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\tipoexplotacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -490,10 +486,6 @@
       "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\service\\lineaproduccionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\service\\organizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\service\\organizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|c:\\repo\\sislista\\sislista_backend\\application\\common\\utils.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66BC04DC-A63A-47AB-8C2D-536D17925968}|application\\Application.csproj|solutionrelative:application\\common\\utils.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -520,10 +512,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\output\\entity\\personaentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\output\\entity\\personaentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\panelregistrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\input\\controllers\\panelregistrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE98B092-60C0-4276-BD7A-6CE5AEF39053}|infraestructure\\Infraestructure.csproj|c:\\repo\\sislista\\sislista_backend\\infraestructure\\input\\controllers\\plantillacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -1256,7 +1244,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -1312,44 +1300,218 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificacionRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwB8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T11:21:03.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PanelRegistroRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA2wCQAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T23:46:47.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
+              "ViewState": "AQIAAM0AAAAAAAAAAAAYwNwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T11:52:53.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAowKQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T22:50:43.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MarcoListaRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwC8AAABvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:18:41.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlantillaRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAUwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T23:47:09.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrganizacionRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAuwCwAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T20:42:57.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PanelRegistroController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAuwIQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T09:24:37.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GestionRegistroRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAgwG0AAADYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T23:48:04.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EspecieController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\EspecieController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\EspecieController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\EspecieController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\EspecieController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAArwFUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T09:23:20.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAqwCMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T20:23:02.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AuthorizeAttribute.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Helpers\\AuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Helpers\\AuthorizeAttribute.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Helpers\\AuthorizeAttribute.cs",
+              "RelativeToolTip": "infraestructure\\Helpers\\AuthorizeAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T01:46:58.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ValueTask.cs",
+              "DocumentMoniker": "C:\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
+              "ToolTip": "C:\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
+              "ViewState": "AQIAAB4DAAAAAAAAAAAuwC0DAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T23:02:27.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GestionRegistroService.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\GestionRegistroService.cs",
+              "RelativeDocumentMoniker": "application\\Service\\GestionRegistroService.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\GestionRegistroService.cs",
+              "RelativeToolTip": "application\\Service\\GestionRegistroService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEBAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T07:53:48.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReporteRepository.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ReporteRepository.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\ReporteRepository.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ReporteRepository.cs",
+              "RelativeToolTip": "infraestructure\\Output\\Repository\\ReporteRepository.cs",
+              "ViewState": "AQIAAIwBAAAAAAAAAAAowJ8BAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T02:11:13.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "GestionRegistroController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\GestionRegistroController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\GestionRegistroController.cs",
               "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\GestionRegistroController.cs",
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\GestionRegistroController.cs",
-              "ViewState": "AQIAAOkAAAAAAAAAAAAswAoBAAAJAAAA",
+              "ViewState": "AQIAABMBAAAAAAAAAAASwCQBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T10:15:49.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAAACMAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T20:23:02.032Z"
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\appsettings.json",
+              "RelativeDocumentMoniker": "infraestructure\\appsettings.json",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\appsettings.json",
+              "RelativeToolTip": "infraestructure\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-01T21:47:30.102Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NotificacionController.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\NotificacionController.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\NotificacionController.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\NotificacionController.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Controllers\\NotificacionController.cs",
-              "ViewState": "AQIAAKEAAAAAAAAAAAAswJwAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:24:22.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 18,
               "Title": "MarcoListaController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\MarcoListaController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\MarcoListaController.cs",
@@ -1357,36 +1519,25 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\MarcoListaController.cs",
               "ViewState": "AQIAAAEBAAAAAAAAAAAowHMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T02:58:56.745Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAEkBAAAAAAAAAAAmwF8AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T22:50:43.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReporteRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ReporteRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\ReporteRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\ReporteRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\ReporteRepository.cs",
-              "ViewState": "AQIAAIwBAAAAAAAAAAAowKgBAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T02:11:13.755Z",
+              "WhenOpened": "2024-07-26T02:58:56.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
+              "Title": "NotificacionController.cs",
+              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\NotificacionController.cs",
+              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\NotificacionController.cs",
+              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\NotificacionController.cs",
+              "RelativeToolTip": "infraestructure\\Input\\Controllers\\NotificacionController.cs",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAswJwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T09:24:22.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "UbigeoController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\UbigeoController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\UbigeoController.cs",
@@ -1398,31 +1549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GestionRegistroRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Operativo\\GestionRegistroRepository.cs",
-              "ViewState": "AQIAAFoEAAAAAAAAAIAwwHQEAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:48:04.33Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "JwtMiddleware.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Helpers\\JwtMiddleware.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Helpers\\JwtMiddleware.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Helpers\\JwtMiddleware.cs",
-              "RelativeToolTip": "infraestructure\\Helpers\\JwtMiddleware.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwBsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T11:53:26.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "IReporteRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IReporteRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IReporteRepository.cs",
@@ -1434,7 +1561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
               "Title": "GestionRegistroCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\GestionRegistroCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\GestionRegistroCreateUpdateDto.cs",
@@ -1446,7 +1573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
               "Title": "OrganizacionController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\OrganizacionController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\OrganizacionController.cs",
@@ -1454,11 +1581,12 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\OrganizacionController.cs",
               "ViewState": "AQIAAMEAAAAAAAAAAAAwwCgAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T12:02:23.204Z"
+              "WhenOpened": "2024-06-28T12:02:23.204Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "IReportePort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IReportePort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IReportePort.cs",
@@ -1470,7 +1598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "ReporteAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\ReporteAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\ReporteAdapter.cs",
@@ -1482,7 +1610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "IReporteService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IReporteService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IReporteService.cs",
@@ -1494,7 +1622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "ReporteController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\ReporteController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\ReporteController.cs",
@@ -1502,23 +1630,12 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\ReporteController.cs",
               "ViewState": "AQIAADoAAAAAAAAAAAAtwEsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T21:58:29.376Z"
+              "WhenOpened": "2024-07-18T21:58:29.376Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ValueTask.cs",
-              "DocumentMoniker": "C:\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
-              "ToolTip": "C:\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
-              "RelativeToolTip": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\20ad077fe09ab84dac07bf73aff288963e6ce3461d6be253fcae6a94f39bdf9f\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\ValueTask.cs",
-              "ViewState": "AQIAAAsDAAAAAAAAAAAcwCsDAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T23:02:27.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "ReporteService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\ReporteService.cs",
               "RelativeDocumentMoniker": "application\\Service\\ReporteService.cs",
@@ -1530,7 +1647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "ReporteGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\Reporte\\ReporteGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\Reporte\\ReporteGetDto.cs",
@@ -1542,7 +1659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "GestionRegistroGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\GestionRegistroGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\GestionRegistroGetDto.cs",
@@ -1554,7 +1671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 31,
               "Title": "ReporteModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ReporteModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ReporteModel.cs",
@@ -1566,7 +1683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 30,
               "Title": "StateManager.cs",
               "DocumentMoniker": "C:\\Users\\efrai\\AppData\\Local\\SourceServer\\5b8f264358ae4c3c4a2b3f6980c280465fbc20f04c6b46b0f04cfcc2dee879ed\\src\\EFCore\\ChangeTracking\\Internal\\StateManager.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\5b8f264358ae4c3c4a2b3f6980c280465fbc20f04c6b46b0f04cfcc2dee879ed\\src\\EFCore\\ChangeTracking\\Internal\\StateManager.cs",
@@ -1574,11 +1691,12 @@
               "RelativeToolTip": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\5b8f264358ae4c3c4a2b3f6980c280465fbc20f04c6b46b0f04cfcc2dee879ed\\src\\EFCore\\ChangeTracking\\Internal\\StateManager.cs",
               "ViewState": "AQIAAF4FAAAAAAAAAAAswG8FAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T16:55:36.922Z"
+              "WhenOpened": "2024-07-19T16:55:36.922Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "GestionRegistroAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\GestionRegistroAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\GestionRegistroAdapter.cs",
@@ -1590,7 +1708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "IGestionRegistroRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Operativo\\IGestionRegistroRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Operativo\\IGestionRegistroRepository.cs",
@@ -1602,7 +1720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 32,
               "Title": "GestionRegistroModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\GestionRegistroModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\GestionRegistroModel.cs",
@@ -1614,7 +1732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "IGestionRegistroPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IGestionRegistroPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IGestionRegistroPort.cs",
@@ -1626,19 +1744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GestionRegistroService.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\GestionRegistroService.cs",
-              "RelativeDocumentMoniker": "application\\Service\\GestionRegistroService.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\GestionRegistroService.cs",
-              "RelativeToolTip": "application\\Service\\GestionRegistroService.cs",
-              "ViewState": "AQIAAP8AAAAAAAAAAAAUwBEBAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T07:53:48.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 33,
               "Title": "IGestionRegistroService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IGestionRegistroService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IGestionRegistroService.cs",
@@ -1650,7 +1756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "GestionRegistroEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\GestionRegistroEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\GestionRegistroEntity.cs",
@@ -1662,7 +1768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "TrazabilidadCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\TrazabilidadCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\TrazabilidadCreateUpdateDto.cs",
@@ -1674,31 +1780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "application\\Service\\UsuarioService.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\UsuarioService.cs",
-              "RelativeToolTip": "application\\Service\\UsuarioService.cs",
-              "ViewState": "AQIAAO0AAAAAAAAAAAAvwPoAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:03:30.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\UsuarioRepository.cs",
-              "ViewState": "AQIAALsAAAAAAAAAAAAQwNUAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T11:52:53.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "ILineaProduccionPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\ILineaProduccionPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\ILineaProduccionPort.cs",
@@ -1710,7 +1792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "UsuarioAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\UsuarioAdapter.cs",
@@ -1722,7 +1804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "CampoGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\CampoGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\CampoGetDto.cs",
@@ -1734,7 +1816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "TrazabilidadEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\TrazabilidadEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\TrazabilidadEntity.cs",
@@ -1746,7 +1828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "FundoCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\FundoCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\FundoCreateUpdateDto.cs",
@@ -1758,7 +1840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "TrazabilidadConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TrazabilidadConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TrazabilidadConfig.cs",
@@ -1770,7 +1852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\LoginModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\LoginModel.cs",
@@ -1782,7 +1864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "GeneralRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\GeneralRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\GeneralRepository.cs",
@@ -1794,7 +1876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 48,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\efrai\\AppData\\Local\\SourceServer\\c75aa356edec767b51f5a216e8840b72dfc2f411a04fee95c6bdb5a5093eeeef\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\Task.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Users\\efrai\\AppData\\Local\\SourceServer\\c75aa356edec767b51f5a216e8840b72dfc2f411a04fee95c6bdb5a5093eeeef\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\Tasks\\Task.cs",
@@ -1806,7 +1888,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "UsuarioConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\UsuarioConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\UsuarioConfig.cs",
@@ -1818,7 +1900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 49,
               "Title": "IGeneralService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IGeneralService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IGeneralService.cs",
@@ -1830,7 +1912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "GeneralService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\GeneralService.cs",
               "RelativeDocumentMoniker": "application\\Service\\GeneralService.cs",
@@ -1842,7 +1924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "IGeneralPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IGeneralPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IGeneralPort.cs",
@@ -1854,7 +1936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "GeneralAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\GeneralAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\GeneralAdapter.cs",
@@ -1866,7 +1948,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 53,
               "Title": "IGeneralRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\IGeneralRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\IGeneralRepository.cs",
@@ -1878,7 +1960,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 54,
               "Title": "TrazabilidadModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\TrazabilidadModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\TrazabilidadModel.cs",
@@ -1890,7 +1972,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 55,
               "Title": "TrazabilidadGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\TrazabilidadGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\TrazabilidadGetDto.cs",
@@ -1902,19 +1984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "OrganizacionRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\OrganizacionRepository.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAYwDwAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T20:42:57.915Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "PersonaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\PersonaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\PersonaModel.cs",
@@ -1926,7 +1996,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 58,
               "Title": "CampoEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\CampoEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\CampoEntity.cs",
@@ -1938,7 +2008,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "CampoModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\CampoModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\CampoModel.cs",
@@ -1950,7 +2020,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 59,
               "Title": "LineaProduccionController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\LineaProduccionController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\LineaProduccionController.cs",
@@ -1962,7 +2032,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 62,
               "Title": "UsoNoAgricolaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsoNoAgricolaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\UsoNoAgricolaEntity.cs",
@@ -1974,7 +2044,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 71,
               "Title": "PecuarioEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PecuarioEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PecuarioEntity.cs",
@@ -1986,7 +2056,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 61,
               "Title": "UsoNoAgricolaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\UsoNoAgricolaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\UsoNoAgricolaModel.cs",
@@ -1998,7 +2068,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 60,
               "Title": "GestionRegistroListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\GestionRegistroListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\GestionRegistroListDto.cs",
@@ -2010,7 +2080,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 70,
               "Title": "PecuarioModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\PecuarioModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\PecuarioModel.cs",
@@ -2022,7 +2092,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 69,
               "Title": "PecuarioGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PecuarioGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PecuarioGetDto.cs",
@@ -2034,7 +2104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 67,
               "Title": "TipoOrganizacionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\TipoOrganizacionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\TipoOrganizacionEntity.cs",
@@ -2046,7 +2116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 64,
               "Title": "TipoOrganizacionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TipoOrganizacionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TipoOrganizacionConfig.cs",
@@ -2058,7 +2128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 65,
               "Title": "MarcoListaContexto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Contextos\\MarcoListaContexto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Contextos\\MarcoListaContexto.cs",
@@ -2070,7 +2140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 66,
               "Title": "TipoUsoEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\TipoUsoEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\TipoUsoEntity.cs",
@@ -2082,7 +2152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 63,
               "Title": "TipoUsoConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TipoUsoConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TipoUsoConfig.cs",
@@ -2094,7 +2164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 68,
               "Title": "PecuarioCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PecuarioCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PecuarioCreateUpdateDto.cs",
@@ -2106,7 +2176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 72,
               "Title": "AuthModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\AuthModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\AuthModel.cs",
@@ -2118,55 +2188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
-              "Title": "PanelRegistroRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\PanelRegistroRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAUwB4AAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:46:47.96Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\appsettings.json",
-              "RelativeDocumentMoniker": "infraestructure\\appsettings.json",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\appsettings.json",
-              "RelativeToolTip": "infraestructure\\appsettings.json",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-01T21:47:30.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
-              "Title": "NotificacionRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\NotificacionRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAUwBgAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:46:20.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 70,
-              "Title": "PlantillaRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Configuracion\\PlantillaRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAUwB4AAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T23:47:09.78Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "CondicionJuridicaRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\CondicionJuridicaRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\CondicionJuridicaRepository.cs",
@@ -2178,7 +2200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "EspecieRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\EspecieRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\EspecieRepository.cs",
@@ -2190,7 +2212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "LineaProduccionRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\LineaProduccionRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\LineaProduccionRepository.cs",
@@ -2202,7 +2224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "TipoExplotacionRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\TipoExplotacionRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\TipoExplotacionRepository.cs",
@@ -2214,19 +2236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
-              "Title": "MarcoListaRepository.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
-              "RelativeToolTip": "infraestructure\\Output\\Repository\\Usuarios\\MarcoListaRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAIBJwBEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:18:41.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 77,
               "Title": "IUsuarioRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\IUsuarioRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\IUsuarioRepository.cs",
@@ -2238,7 +2248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 79,
               "Title": "IUsuarioPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IUsuarioPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IUsuarioPort.cs",
@@ -2250,7 +2260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 78,
               "Title": "IUsuarioService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IUsuarioService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IUsuarioService.cs",
@@ -2262,7 +2272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 80,
               "Title": "TokenExistException.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\TokenExistException.cs",
               "RelativeDocumentMoniker": "domain\\Exceptions\\TokenExistException.cs",
@@ -2274,7 +2284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "TokenExpireException.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\TokenExpireException.cs",
               "RelativeDocumentMoniker": "domain\\Exceptions\\TokenExpireException.cs",
@@ -2286,7 +2296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "EmailExistException.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\EmailExistException.cs",
               "RelativeDocumentMoniker": "domain\\Exceptions\\EmailExistException.cs",
@@ -2298,7 +2308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 83,
               "Title": "ResetAuthModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ResetAuthModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ResetAuthModel.cs",
@@ -2310,7 +2320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 84,
               "Title": "UsuarioModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\UsuarioModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\UsuarioModel.cs",
@@ -2322,7 +2332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 85,
               "Title": "UsuarioEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsuarioEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\UsuarioEntity.cs",
@@ -2331,18 +2341,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAIBJwBcAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T13:05:46.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 85,
-              "Title": "AuthorizeAttribute.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Helpers\\AuthorizeAttribute.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Helpers\\AuthorizeAttribute.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Helpers\\AuthorizeAttribute.cs",
-              "RelativeToolTip": "infraestructure\\Helpers\\AuthorizeAttribute.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T01:46:58.198Z"
             },
             {
               "$type": "Document",
@@ -2670,7 +2668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 115,
               "Title": "TipoExplotacionController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\TipoExplotacionController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\TipoExplotacionController.cs",
@@ -2682,18 +2680,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
-              "Title": "EspecieController.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\EspecieController.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\EspecieController.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\EspecieController.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Controllers\\EspecieController.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAkwH0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:23:20.784Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 114,
               "Title": "CultivoController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\CultivoController.cs",
@@ -2702,7 +2688,8 @@
               "RelativeToolTip": "infraestructure\\Input\\Controllers\\CultivoController.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAAwA8AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:23:06.929Z"
+              "WhenOpened": "2024-06-10T09:23:06.929Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2718,7 +2705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 116,
               "Title": "CodigoExistException.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\CodigoExistException.cs",
               "RelativeDocumentMoniker": "domain\\Exceptions\\CodigoExistException.cs",
@@ -2730,7 +2717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 117,
               "Title": "DocExistException.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\DocExistException.cs",
               "RelativeDocumentMoniker": "domain\\Exceptions\\DocExistException.cs",
@@ -2742,7 +2729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 119,
               "Title": "INotificacionPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\INotificacionPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\INotificacionPort.cs",
@@ -2754,7 +2741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 118,
               "Title": "NotificacionAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\NotificacionAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\NotificacionAdapter.cs",
@@ -2766,7 +2753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 120,
               "Title": "ExcelImporterService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\Exportar\\ExcelImporterService.cs",
               "RelativeDocumentMoniker": "application\\Service\\Exportar\\ExcelImporterService.cs",
@@ -2774,11 +2761,12 @@
               "RelativeToolTip": "application\\Service\\Exportar\\ExcelImporterService.cs",
               "ViewState": "AQIAAIEAAAAAAAAAAAAiwJwAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T19:25:46.876Z"
+              "WhenOpened": "2024-07-02T19:25:46.876Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 121,
               "Title": "LineaProduccionService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\LineaProduccionService.cs",
               "RelativeDocumentMoniker": "application\\Service\\LineaProduccionService.cs",
@@ -2790,7 +2778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 122,
               "Title": "Utils.cs.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Common\\Utils.cs.cs",
               "RelativeDocumentMoniker": "application\\Common\\Utils.cs.cs",
@@ -2803,18 +2791,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 123,
-              "Title": "OrganizacionService.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\OrganizacionService.cs",
-              "RelativeDocumentMoniker": "application\\Service\\OrganizacionService.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\OrganizacionService.cs",
-              "RelativeToolTip": "application\\Service\\OrganizacionService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T23:03:58.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 125,
               "Title": "MarcoListaListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\MarcoListaListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\MarcoListaListDto.cs",
@@ -2826,7 +2802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 124,
               "Title": "MarcoListaGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\MarcoListaGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\MarcoListaGetDto.cs",
@@ -2838,7 +2814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 127,
               "Title": "PerfilEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PerfilEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PerfilEntity.cs",
@@ -2850,7 +2826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 128,
               "Title": "PersonaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PersonaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PersonaEntity.cs",
@@ -2862,7 +2838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 125,
               "Title": "SesionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\SesionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\SesionEntity.cs",
@@ -2874,7 +2850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 126,
               "Title": "PermisoEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PermisoEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PermisoEntity.cs",
@@ -2886,19 +2862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
-              "Title": "PanelRegistroController.cs",
-              "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
-              "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
-              "ToolTip": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
-              "RelativeToolTip": "infraestructure\\Input\\Controllers\\PanelRegistroController.cs",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAowJgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:24:37.717Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 129,
               "Title": "PlantillaController.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Controllers\\PlantillaController.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Controllers\\PlantillaController.cs",
@@ -2910,7 +2874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 131,
               "Title": "Socket.cs",
               "DocumentMoniker": "C:\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\740beada5725dc022580ec44ef5fe7a2b1b39328351b57c90490b5c45fa8571a\\Socket.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Users\\efrai\\AppData\\Local\\Temp\\.vsdbgsrc\\740beada5725dc022580ec44ef5fe7a2b1b39328351b57c90490b5c45fa8571a\\Socket.cs",
@@ -2922,7 +2886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 132,
               "Title": "OrganizacionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\OrganizacionEntity.cs",
@@ -2934,7 +2898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 130,
               "Title": "NotDataFoundException.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Exceptions\\NotDataFoundException.cs",
               "RelativeDocumentMoniker": "domain\\Exceptions\\NotDataFoundException.cs",
@@ -2946,7 +2910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 134,
               "Title": "MenuItemGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\MenuItemGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\MenuItemGetDto.cs",
@@ -2958,7 +2922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 133,
               "Title": "MenuItemModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\MenuItemModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\MenuItemModel.cs",
@@ -2970,7 +2934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 135,
               "Title": "ResponseModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ResponseModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ResponseModel.cs",
@@ -2982,7 +2946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 136,
               "Title": "SeccionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\SeccionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\SeccionModel.cs",
@@ -2994,7 +2958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 137,
               "Title": "SelectTipoModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\SelectTipoModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\SelectTipoModel.cs",
@@ -3006,7 +2970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 138,
               "Title": "TenenciaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\TenenciaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\TenenciaModel.cs",
@@ -3018,7 +2982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 139,
               "Title": "TipoDocumentoModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\TipoDocumentoModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\TipoDocumentoModel.cs",
@@ -3030,7 +2994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 140,
               "Title": "TipoExplotacionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\TipoExplotacionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\TipoExplotacionModel.cs",
@@ -3042,7 +3006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 141,
               "Title": "TipoInformacionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\TipoInformacionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\TipoInformacionModel.cs",
@@ -3054,7 +3018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 142,
               "Title": "TipoOrganizacionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\TipoOrganizacionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\TipoOrganizacionModel.cs",
@@ -3066,7 +3030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 143,
               "Title": "UbigeoFiltro.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\UbigeoFiltro.cs",
               "RelativeDocumentMoniker": "domain\\Model\\UbigeoFiltro.cs",
@@ -3078,7 +3042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 144,
               "Title": "UbigeoModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\UbigeoModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\UbigeoModel.cs",
@@ -3090,7 +3054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 145,
               "Title": "UsoTierraModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\UsoTierraModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\UsoTierraModel.cs",
@@ -3102,7 +3066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 146,
               "Title": "UsuarioProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\UsuarioProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\UsuarioProfile.cs",
@@ -3114,7 +3078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 147,
               "Title": "MarcoListaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\MarcoListaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\MarcoListaModel.cs",
@@ -3126,7 +3090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 148,
               "Title": "FundoGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\FundoGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\FundoGetDto.cs",
@@ -3138,7 +3102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 149,
               "Title": "EstadoConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\EstadoConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\EstadoConfig.cs",
@@ -3150,7 +3114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 150,
               "Title": "SeccionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\SeccionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\SeccionConfig.cs",
@@ -3162,7 +3126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 152,
               "Title": "SeccionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\SeccionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\SeccionEntity.cs",
@@ -3174,7 +3138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 151,
               "Title": "EstadoEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\EstadoEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\EstadoEntity.cs",
@@ -3186,7 +3150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 153,
               "Title": "UsuarioPerfilConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\UsuarioPerfilConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\UsuarioPerfilConfig.cs",
@@ -3198,7 +3162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 154,
               "Title": "SesionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\SesionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\SesionConfig.cs",
@@ -3210,7 +3174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 155,
               "Title": "UbigeoListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\UbigeoListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\UbigeoListDto.cs",
@@ -3222,7 +3186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 157,
               "Title": "UsuarioGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\UsuarioGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\UsuarioGetDto.cs",
@@ -3234,7 +3198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 156,
               "Title": "UsuarioCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\UsuarioCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\UsuarioCreateUpdateDto.cs",
@@ -3246,7 +3210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 163,
+              "DocumentIndex": 160,
               "Title": "ReporteProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\ReporteProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\ReporteProfile.cs",
@@ -3258,7 +3222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 162,
+              "DocumentIndex": 159,
               "Title": "ReporteUsuarioListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\Reporte\\ReporteUsuarioListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\Reporte\\ReporteUsuarioListDto.cs",
@@ -3270,7 +3234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 164,
+              "DocumentIndex": 161,
               "Title": "PlantillaService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\PlantillaService.cs",
               "RelativeDocumentMoniker": "application\\Service\\PlantillaService.cs",
@@ -3282,7 +3246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 165,
+              "DocumentIndex": 162,
               "Title": "MejorTiempoListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\Reporte\\MejorTiempoListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\Reporte\\MejorTiempoListDto.cs",
@@ -3294,7 +3258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 166,
+              "DocumentIndex": 163,
               "Title": "RankingRegCerradosListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\Reporte\\RankingRegCerradosListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\Reporte\\RankingRegCerradosListDto.cs",
@@ -3306,7 +3270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 167,
+              "DocumentIndex": 164,
               "Title": "FlujoValidacionListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\Reporte\\FlujoValidacionListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\Reporte\\FlujoValidacionListDto.cs",
@@ -3318,7 +3282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 168,
+              "DocumentIndex": 165,
               "Title": "PlantillaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\PlantillaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\PlantillaModel.cs",
@@ -3330,7 +3294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 169,
+              "DocumentIndex": 166,
               "Title": "PerfilModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\PerfilModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\PerfilModel.cs",
@@ -3342,7 +3306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 170,
+              "DocumentIndex": 167,
               "Title": "ParamBusqueda.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ParamBusqueda.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ParamBusqueda.cs",
@@ -3354,7 +3318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 171,
+              "DocumentIndex": 168,
               "Title": "PanelRegistroModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\PanelRegistroModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\PanelRegistroModel.cs",
@@ -3366,7 +3330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 172,
+              "DocumentIndex": 169,
               "Title": "OrganizacionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\OrganizacionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\OrganizacionModel.cs",
@@ -3378,7 +3342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 173,
+              "DocumentIndex": 170,
               "Title": "NotificacionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\NotificacionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\NotificacionModel.cs",
@@ -3390,7 +3354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 174,
+              "DocumentIndex": 171,
               "Title": "LineaProduccionModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\LineaProduccionModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\LineaProduccionModel.cs",
@@ -3402,7 +3366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 175,
+              "DocumentIndex": 172,
               "Title": "InformanteModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\InformanteModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\InformanteModel.cs",
@@ -3414,7 +3378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 176,
+              "DocumentIndex": 173,
               "Title": "GetClave.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\GetClave.cs",
               "RelativeDocumentMoniker": "domain\\Model\\GetClave.cs",
@@ -3426,7 +3390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 177,
+              "DocumentIndex": 174,
               "Title": "FrecuenciaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\FrecuenciaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\FrecuenciaModel.cs",
@@ -3438,7 +3402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 178,
+              "DocumentIndex": 175,
               "Title": "EtapaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\EtapaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\EtapaModel.cs",
@@ -3450,7 +3414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 179,
+              "DocumentIndex": 176,
               "Title": "EstadoModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\EstadoModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\EstadoModel.cs",
@@ -3462,7 +3426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 180,
+              "DocumentIndex": 177,
               "Title": "EspecieModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\EspecieModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\EspecieModel.cs",
@@ -3474,7 +3438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 181,
+              "DocumentIndex": 178,
               "Title": "CultivoModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\CultivoModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\CultivoModel.cs",
@@ -3486,7 +3450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 182,
+              "DocumentIndex": 179,
               "Title": "CultivoFiltro.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\CultivoFiltro.cs",
               "RelativeDocumentMoniker": "domain\\Model\\CultivoFiltro.cs",
@@ -3498,7 +3462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 183,
+              "DocumentIndex": 180,
               "Title": "CondicionJuridicaModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\CondicionJuridicaModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\CondicionJuridicaModel.cs",
@@ -3510,7 +3474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 184,
+              "DocumentIndex": 181,
               "Title": "CifradoClave.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\CifradoClave.cs",
               "RelativeDocumentMoniker": "domain\\Model\\CifradoClave.cs",
@@ -3522,7 +3486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 185,
+              "DocumentIndex": 182,
               "Title": "AnioModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\AnioModel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\AnioModel.cs",
@@ -3534,7 +3498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 186,
+              "DocumentIndex": 183,
               "Title": "ICondicionJuridicaRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\ICondicionJuridicaRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\ICondicionJuridicaRepository.cs",
@@ -3546,7 +3510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 187,
+              "DocumentIndex": 184,
               "Title": "IPlantillaPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IPlantillaPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IPlantillaPort.cs",
@@ -3558,7 +3522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 188,
+              "DocumentIndex": 185,
               "Title": "PlantillaAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\PlantillaAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\PlantillaAdapter.cs",
@@ -3570,7 +3534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 189,
+              "DocumentIndex": 186,
               "Title": "TipoExplotacionAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\TipoExplotacionAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\TipoExplotacionAdapter.cs",
@@ -3582,7 +3546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 190,
+              "DocumentIndex": 187,
               "Title": "PanelRegistroAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\PanelRegistroAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\PanelRegistroAdapter.cs",
@@ -3594,7 +3558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 191,
+              "DocumentIndex": 188,
               "Title": "OrganizacionAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\OrganizacionAdapter.cs",
@@ -3606,7 +3570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 192,
+              "DocumentIndex": 189,
               "Title": "LineaProduccionAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\LineaProduccionAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\LineaProduccionAdapter.cs",
@@ -3618,7 +3582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 193,
+              "DocumentIndex": 190,
               "Title": "EspecieAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\EspecieAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\EspecieAdapter.cs",
@@ -3630,7 +3594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 194,
+              "DocumentIndex": 191,
               "Title": "CondicionJuridicaAdapter.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Adapter\\CondicionJuridicaAdapter.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Adapter\\CondicionJuridicaAdapter.cs",
@@ -3642,7 +3606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 196,
+              "DocumentIndex": 193,
               "Title": "IPlantillaService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IPlantillaService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IPlantillaService.cs",
@@ -3654,7 +3618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 195,
+              "DocumentIndex": 192,
               "Title": "CondicionJuridicaService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\CondicionJuridicaService.cs",
               "RelativeDocumentMoniker": "application\\Service\\CondicionJuridicaService.cs",
@@ -3666,7 +3630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 201,
+              "DocumentIndex": 198,
               "Title": "PersonaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PersonaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PersonaConfig.cs",
@@ -3678,7 +3642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 158,
               "Title": "EntidadConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\EntidadConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\EntidadConfig.cs",
@@ -3690,7 +3654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 198,
+              "DocumentIndex": 195,
               "Title": "AuditoriaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\AuditoriaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\AuditoriaConfig.cs",
@@ -3702,7 +3666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 199,
+              "DocumentIndex": 196,
               "Title": "ArchivoConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\ArchivoConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\ArchivoConfig.cs",
@@ -3714,7 +3678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 200,
+              "DocumentIndex": 197,
               "Title": "GestionRegistroConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\GestionRegistroConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\GestionRegistroConfig.cs",
@@ -3726,7 +3690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 197,
+              "DocumentIndex": 194,
               "Title": "CampoConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\CampoConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\CampoConfig.cs",
@@ -3738,7 +3702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 202,
+              "DocumentIndex": 199,
               "Title": "PanelRegistroListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PanelRegistroListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PanelRegistroListDto.cs",
@@ -3750,7 +3714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 203,
+              "DocumentIndex": 200,
               "Title": "PlantillaProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\PlantillaProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\PlantillaProfile.cs",
@@ -3762,7 +3726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 204,
+              "DocumentIndex": 201,
               "Title": "FileCuestionarioDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\FileCuestionarioDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\FileCuestionarioDto.cs",
@@ -3774,7 +3738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 205,
+              "DocumentIndex": 202,
               "Title": "INotificacionService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\INotificacionService.cs",
               "RelativeDocumentMoniker": "application\\Input\\INotificacionService.cs",
@@ -3786,7 +3750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 206,
+              "DocumentIndex": 203,
               "Title": "ICondicionJuridicaService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\ICondicionJuridicaService.cs",
               "RelativeDocumentMoniker": "application\\Input\\ICondicionJuridicaService.cs",
@@ -3798,7 +3762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 207,
+              "DocumentIndex": 204,
               "Title": "PanelRegistroGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PanelRegistroGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PanelRegistroGetDto.cs",
@@ -3810,7 +3774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 208,
+              "DocumentIndex": 205,
               "Title": "IExcelExporterService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\Exportar\\IExcelExporterService.cs",
               "RelativeDocumentMoniker": "application\\Service\\Exportar\\IExcelExporterService.cs",
@@ -3822,7 +3786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 209,
+              "DocumentIndex": 206,
               "Title": "IExcelImporterService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\Exportar\\IExcelImporterService.cs",
               "RelativeDocumentMoniker": "application\\Service\\Exportar\\IExcelImporterService.cs",
@@ -3834,7 +3798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 210,
+              "DocumentIndex": 207,
               "Title": "EspecieGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\EspecieGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\EspecieGetDto.cs",
@@ -3846,7 +3810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 211,
+              "DocumentIndex": 208,
               "Title": "ITipoExplotacionRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\ITipoExplotacionRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\ITipoExplotacionRepository.cs",
@@ -3858,7 +3822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 212,
+              "DocumentIndex": 209,
               "Title": "DBOracle.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\General\\DBOracle.cs",
               "RelativeDocumentMoniker": "infraestructure\\General\\DBOracle.cs",
@@ -3870,7 +3834,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 311,
+              "DocumentIndex": 308,
               "Title": "TipoInformacionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TipoInformacionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TipoInformacionConfig.cs",
@@ -3882,7 +3846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 213,
+              "DocumentIndex": 210,
               "Title": "TipoExplotacionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TipoExplotacionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TipoExplotacionConfig.cs",
@@ -3894,7 +3858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 214,
+              "DocumentIndex": 211,
               "Title": "EtapaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\EtapaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\EtapaConfig.cs",
@@ -3906,7 +3870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 215,
+              "DocumentIndex": 212,
               "Title": "EspecieConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\EspecieConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\EspecieConfig.cs",
@@ -3918,7 +3882,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 312,
+              "DocumentIndex": 309,
               "Title": "TipoInformacionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\TipoInformacionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\TipoInformacionEntity.cs",
@@ -3930,7 +3894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 216,
+              "DocumentIndex": 213,
               "Title": "EspecieEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\EspecieEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\EspecieEntity.cs",
@@ -3942,7 +3906,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 217,
+              "DocumentIndex": 214,
               "Title": "OrganizacionProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\OrganizacionProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\OrganizacionProfile.cs",
@@ -3954,7 +3918,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 218,
+              "DocumentIndex": 215,
               "Title": "UsoTierraConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\UsoTierraConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\UsoTierraConfig.cs",
@@ -3966,7 +3930,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 219,
+              "DocumentIndex": 216,
               "Title": "EspecieListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\EspecieListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\EspecieListDto.cs",
@@ -3978,7 +3942,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 222,
+              "DocumentIndex": 219,
               "Title": "SistemaPecuarioConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\SistemaPecuarioConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\SistemaPecuarioConfig.cs",
@@ -3990,7 +3954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 221,
+              "DocumentIndex": 218,
               "Title": "TenenciaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TenenciaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TenenciaConfig.cs",
@@ -4002,7 +3966,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 220,
+              "DocumentIndex": 217,
               "Title": "UsoNoAgricolaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\UsoNoAgricolaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\UsoNoAgricolaConfig.cs",
@@ -4014,7 +3978,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 223,
+              "DocumentIndex": 220,
               "Title": "PecuarioConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PecuarioConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PecuarioConfig.cs",
@@ -4026,7 +3990,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 224,
+              "DocumentIndex": 221,
               "Title": "InformanteConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\InformanteConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\InformanteConfig.cs",
@@ -4038,7 +4002,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 225,
+              "DocumentIndex": 222,
               "Title": "LineaProduccionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\LineaProduccionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\LineaProduccionEntity.cs",
@@ -4050,7 +4014,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 228,
+              "DocumentIndex": 225,
               "Title": "AuditoriaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\AuditoriaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\AuditoriaEntity.cs",
@@ -4062,7 +4026,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 226,
+              "DocumentIndex": 223,
               "Title": "FrecuenciaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\FrecuenciaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\FrecuenciaEntity.cs",
@@ -4074,7 +4038,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 227,
+              "DocumentIndex": 224,
               "Title": "CondicionJuridicaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\CondicionJuridicaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\CondicionJuridicaEntity.cs",
@@ -4086,7 +4050,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 229,
+              "DocumentIndex": 226,
               "Title": "OrganizacionGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\OrganizacionGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\OrganizacionGetDto.cs",
@@ -4098,7 +4062,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 230,
+              "DocumentIndex": 227,
               "Title": "LineaProduccionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\LineaProduccionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\LineaProduccionConfig.cs",
@@ -4110,7 +4074,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 231,
+              "DocumentIndex": 228,
               "Title": "LineaProduccionProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\LineaProduccionProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\LineaProduccionProfile.cs",
@@ -4122,7 +4086,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 232,
+              "DocumentIndex": 229,
               "Title": "NotificacionListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\NotificacionListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\NotificacionListDto.cs",
@@ -4134,7 +4098,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 233,
+              "DocumentIndex": 230,
               "Title": "IPanelRegistroRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\IPanelRegistroRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\IPanelRegistroRepository.cs",
@@ -4146,7 +4110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 234,
+              "DocumentIndex": 231,
               "Title": "PlantillaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PlantillaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PlantillaEntity.cs",
@@ -4158,7 +4122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 235,
+              "DocumentIndex": 232,
               "Title": "MarcoListaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\MarcoListaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\MarcoListaConfig.cs",
@@ -4170,7 +4134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 237,
+              "DocumentIndex": 234,
               "Title": "NotificacionCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\NotificacionCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\NotificacionCreateUpdateDto.cs",
@@ -4182,7 +4146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 236,
+              "DocumentIndex": 233,
               "Title": "MarcoListaCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\MarcoListaCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\MarcoListaCreateUpdateDto.cs",
@@ -4194,7 +4158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 238,
+              "DocumentIndex": 235,
               "Title": "PanelRegistroService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Service\\PanelRegistroService.cs",
               "RelativeDocumentMoniker": "application\\Service\\PanelRegistroService.cs",
@@ -4206,7 +4170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 239,
+              "DocumentIndex": 236,
               "Title": "INotificacionRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\INotificacionRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\INotificacionRepository.cs",
@@ -4218,7 +4182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 240,
+              "DocumentIndex": 237,
               "Title": "IPanelRegistroPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IPanelRegistroPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IPanelRegistroPort.cs",
@@ -4230,7 +4194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 241,
+              "DocumentIndex": 238,
               "Title": "IPanelRegistroService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IPanelRegistroService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IPanelRegistroService.cs",
@@ -4242,7 +4206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 242,
+              "DocumentIndex": 239,
               "Title": "IEspecieRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\IEspecieRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\IEspecieRepository.cs",
@@ -4254,7 +4218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 243,
+              "DocumentIndex": 240,
               "Title": "CondicionJuridicaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\CondicionJuridicaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\CondicionJuridicaConfig.cs",
@@ -4266,7 +4230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 245,
+              "DocumentIndex": 242,
               "Title": "ICondicionJuridicaPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\ICondicionJuridicaPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\ICondicionJuridicaPort.cs",
@@ -4278,7 +4242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 244,
+              "DocumentIndex": 241,
               "Title": "IEspeciePort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IEspeciePort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IEspeciePort.cs",
@@ -4290,7 +4254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 246,
+              "DocumentIndex": 243,
               "Title": "IEspecieService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IEspecieService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IEspecieService.cs",
@@ -4302,7 +4266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 247,
+              "DocumentIndex": 244,
               "Title": "EspecieCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\EspecieCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\EspecieCreateUpdateDto.cs",
@@ -4314,7 +4278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 248,
+              "DocumentIndex": 245,
               "Title": "CondicionJuridicaGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\CondicionJuridicaGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\CondicionJuridicaGetDto.cs",
@@ -4326,7 +4290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 249,
+              "DocumentIndex": 246,
               "Title": "EspecieProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\EspecieProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\EspecieProfile.cs",
@@ -4338,7 +4302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 250,
+              "DocumentIndex": 247,
               "Title": "CondicionJuridicaProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\CondicionJuridicaProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\CondicionJuridicaProfile.cs",
@@ -4350,7 +4314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 251,
+              "DocumentIndex": 248,
               "Title": "CondicionJuridicaListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\CondicionJuridicaListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\CondicionJuridicaListDto.cs",
@@ -4362,7 +4326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 252,
+              "DocumentIndex": 249,
               "Title": "LineaProduccionCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\LineaProduccionCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\LineaProduccionCreateUpdateDto.cs",
@@ -4374,7 +4338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 253,
+              "DocumentIndex": 250,
               "Title": "UsuarioExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\UsuarioExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\UsuarioExcel.cs",
@@ -4386,7 +4350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 254,
+              "DocumentIndex": 251,
               "Title": "TipoExplotacionExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\TipoExplotacionExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\TipoExplotacionExcel.cs",
@@ -4398,7 +4362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 255,
+              "DocumentIndex": 252,
               "Title": "LineaProduccionExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\LineaProduccionExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\LineaProduccionExcel.cs",
@@ -4410,7 +4374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 256,
+              "DocumentIndex": 253,
               "Title": "OrganizacionExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\OrganizacionExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\OrganizacionExcel.cs",
@@ -4422,7 +4386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 257,
+              "DocumentIndex": 254,
               "Title": "NotificacionExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\NotificacionExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\NotificacionExcel.cs",
@@ -4434,7 +4398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 258,
+              "DocumentIndex": 255,
               "Title": "CultivoExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\CultivoExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\CultivoExcel.cs",
@@ -4446,7 +4410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 259,
+              "DocumentIndex": 256,
               "Title": "PanelRegistroExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\PanelRegistroExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\PanelRegistroExcel.cs",
@@ -4458,7 +4422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 260,
+              "DocumentIndex": 257,
               "Title": "CondicionJuridicaExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\CondicionJuridicaExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\CondicionJuridicaExcel.cs",
@@ -4470,7 +4434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 261,
+              "DocumentIndex": 258,
               "Title": "PlantillaExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\PlantillaExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\PlantillaExcel.cs",
@@ -4482,7 +4446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 262,
+              "DocumentIndex": 259,
               "Title": "UbigeoExcel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\Model\\ExportExcel\\UbigeoExcel.cs",
               "RelativeDocumentMoniker": "domain\\Model\\ExportExcel\\UbigeoExcel.cs",
@@ -4494,7 +4458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 263,
+              "DocumentIndex": 260,
               "Title": "EtapaEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\EtapaEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\EtapaEntity.cs",
@@ -4506,7 +4470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 264,
+              "DocumentIndex": 261,
               "Title": "EntidadEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\EntidadEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\EntidadEntity.cs",
@@ -4518,7 +4482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 265,
+              "DocumentIndex": 262,
               "Title": "PerfilConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PerfilConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PerfilConfig.cs",
@@ -4530,7 +4494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 266,
+              "DocumentIndex": 263,
               "Title": "PersonaProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\PersonaProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\PersonaProfile.cs",
@@ -4542,7 +4506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 267,
+              "DocumentIndex": 264,
               "Title": "IOrganizacionService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\IOrganizacionService.cs",
               "RelativeDocumentMoniker": "application\\Input\\IOrganizacionService.cs",
@@ -4554,7 +4518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 269,
+              "DocumentIndex": 266,
               "Title": "TipoExplotacionGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\TipoExplotacionGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\TipoExplotacionGetDto.cs",
@@ -4566,7 +4530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 268,
+              "DocumentIndex": 265,
               "Title": "TipoExplotacionCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\TipoExplotacionCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\TipoExplotacionCreateUpdateDto.cs",
@@ -4578,7 +4542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 270,
+              "DocumentIndex": 267,
               "Title": "CultivoListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\CultivoListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\CultivoListDto.cs",
@@ -4590,7 +4554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 271,
+              "DocumentIndex": 268,
               "Title": "TokenModel.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\domain\\TokenModel.cs",
               "RelativeDocumentMoniker": "domain\\TokenModel.cs",
@@ -4602,7 +4566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 272,
+              "DocumentIndex": 269,
               "Title": "NotificacionEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\NotificacionEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\NotificacionEntity.cs",
@@ -4614,7 +4578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 273,
+              "DocumentIndex": 270,
               "Title": "NotificacionProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\NotificacionProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\NotificacionProfile.cs",
@@ -4626,7 +4590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 274,
+              "DocumentIndex": 271,
               "Title": "FrecuenciaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\FrecuenciaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\FrecuenciaConfig.cs",
@@ -4638,7 +4602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 275,
+              "DocumentIndex": 272,
               "Title": "PlantillaCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PlantillaCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PlantillaCreateUpdateDto.cs",
@@ -4650,7 +4614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 276,
+              "DocumentIndex": 273,
               "Title": "Infraestructure.csproj",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Infraestructure.csproj",
               "RelativeDocumentMoniker": "infraestructure\\Infraestructure.csproj",
@@ -4662,7 +4626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 277,
+              "DocumentIndex": 274,
               "Title": "UsuarioListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\UsuarioListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\UsuarioListDto.cs",
@@ -4674,7 +4638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 278,
+              "DocumentIndex": 275,
               "Title": "UsuarioPerfilEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\UsuarioPerfilEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\UsuarioPerfilEntity.cs",
@@ -4686,7 +4650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 279,
+              "DocumentIndex": 276,
               "Title": "PlantillaListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PlantillaListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PlantillaListDto.cs",
@@ -4698,7 +4662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 280,
+              "DocumentIndex": 277,
               "Title": "PlantillaGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PlantillaGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PlantillaGetDto.cs",
@@ -4710,7 +4674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 281,
+              "DocumentIndex": 278,
               "Title": "NotificacionGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\NotificacionGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\NotificacionGetDto.cs",
@@ -4722,7 +4686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 282,
+              "DocumentIndex": 279,
               "Title": "PanelRegistroCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\PanelRegistroCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\PanelRegistroCreateUpdateDto.cs",
@@ -4734,7 +4698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 283,
+              "DocumentIndex": 280,
               "Title": "PanelRegistroProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\PanelRegistroProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\PanelRegistroProfile.cs",
@@ -4746,7 +4710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 284,
+              "DocumentIndex": 281,
               "Title": "OrganizacionCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\OrganizacionCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\OrganizacionCreateUpdateDto.cs",
@@ -4758,7 +4722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 285,
+              "DocumentIndex": 282,
               "Title": "IPlantillaRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Configuracion\\IPlantillaRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Configuracion\\IPlantillaRepository.cs",
@@ -4770,7 +4734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 286,
+              "DocumentIndex": 283,
               "Title": "IOrganizacionPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\IOrganizacionPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\IOrganizacionPort.cs",
@@ -4782,7 +4746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 287,
+              "DocumentIndex": 284,
               "Title": "IOrganizacionRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Usuarios\\IOrganizacionRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Usuarios\\IOrganizacionRepository.cs",
@@ -4794,7 +4758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 288,
+              "DocumentIndex": 285,
               "Title": "MenuConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\MenuConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\MenuConfig.cs",
@@ -4806,7 +4770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 289,
+              "DocumentIndex": 286,
               "Title": "NotificacionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\NotificacionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\NotificacionConfig.cs",
@@ -4818,7 +4782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 290,
+              "DocumentIndex": 287,
               "Title": "OrganizacionConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\OrganizacionConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\OrganizacionConfig.cs",
@@ -4830,7 +4794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 291,
+              "DocumentIndex": 288,
               "Title": "PerfilMenuConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PerfilMenuConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PerfilMenuConfig.cs",
@@ -4842,7 +4806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 292,
+              "DocumentIndex": 289,
               "Title": "PerfilPermisoEntidadConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PerfilPermisoEntidadConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PerfilPermisoEntidadConfig.cs",
@@ -4854,7 +4818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 293,
+              "DocumentIndex": 290,
               "Title": "PermisoConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PermisoConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PermisoConfig.cs",
@@ -4866,7 +4830,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 294,
+              "DocumentIndex": 291,
               "Title": "PlantillaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\PlantillaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\PlantillaConfig.cs",
@@ -4878,7 +4842,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 295,
+              "DocumentIndex": 292,
               "Title": "TipoDocumentoConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\TipoDocumentoConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\TipoDocumentoConfig.cs",
@@ -4890,7 +4854,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 296,
+              "DocumentIndex": 293,
               "Title": "PerfilPermisoEntidadEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PerfilPermisoEntidadEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PerfilPermisoEntidadEntity.cs",
@@ -4902,7 +4866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 297,
+              "DocumentIndex": 294,
               "Title": "PerfilMenuEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\PerfilMenuEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\PerfilMenuEntity.cs",
@@ -4914,7 +4878,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 298,
+              "DocumentIndex": 295,
               "Title": "MenuEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\MenuEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\MenuEntity.cs",
@@ -4926,7 +4890,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 299,
+              "DocumentIndex": 296,
               "Title": "TipoDocumentoEntity.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Entity\\TipoDocumentoEntity.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Entity\\TipoDocumentoEntity.cs",
@@ -4938,7 +4902,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 300,
+              "DocumentIndex": 297,
               "Title": "TipoExplotacionProfile.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Mapper\\TipoExplotacionProfile.cs",
               "RelativeDocumentMoniker": "infraestructure\\Mapper\\TipoExplotacionProfile.cs",
@@ -4950,7 +4914,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 301,
+              "DocumentIndex": 298,
               "Title": "UsuarioMarcoListaConfig.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Configs\\UsuarioMarcoListaConfig.cs",
               "RelativeDocumentMoniker": "infraestructure\\Configs\\UsuarioMarcoListaConfig.cs",
@@ -4962,7 +4926,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 302,
+              "DocumentIndex": 299,
               "Title": "TipoExplotacionListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\TipoExplotacionListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\TipoExplotacionListDto.cs",
@@ -4974,7 +4938,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 303,
+              "DocumentIndex": 300,
               "Title": "LineaProduccionGetDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\LineaProduccionGetDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\LineaProduccionGetDto.cs",
@@ -4986,7 +4950,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 304,
+              "DocumentIndex": 301,
               "Title": "LineaProduccionListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\LineaProduccionListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\LineaProduccionListDto.cs",
@@ -4998,7 +4962,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 305,
+              "DocumentIndex": 302,
               "Title": "OrganizacionListDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\OrganizacionListDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\OrganizacionListDto.cs",
@@ -5010,7 +4974,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 306,
+              "DocumentIndex": 303,
               "Title": "ILineaProduccionRepository.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Output\\Repository\\Tablas\\ILineaProduccionRepository.cs",
               "RelativeDocumentMoniker": "infraestructure\\Output\\Repository\\Tablas\\ILineaProduccionRepository.cs",
@@ -5022,7 +4986,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 307,
+              "DocumentIndex": 304,
               "Title": "ILineaProduccionService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\ILineaProduccionService.cs",
               "RelativeDocumentMoniker": "application\\Input\\ILineaProduccionService.cs",
@@ -5034,7 +4998,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 308,
+              "DocumentIndex": 305,
               "Title": "ITipoExplotacionService.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Input\\ITipoExplotacionService.cs",
               "RelativeDocumentMoniker": "application\\Input\\ITipoExplotacionService.cs",
@@ -5046,7 +5010,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 309,
+              "DocumentIndex": 306,
               "Title": "ITipoExplotacionPort.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\application\\Output\\ITipoExplotacionPort.cs",
               "RelativeDocumentMoniker": "application\\Output\\ITipoExplotacionPort.cs",
@@ -5058,7 +5022,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 310,
+              "DocumentIndex": 307,
               "Title": "SelectTipoDto.cs",
               "DocumentMoniker": "C:\\REPO\\SISLISTA\\sislista_backend\\infraestructure\\Input\\Dto\\SelectTipoDto.cs",
               "RelativeDocumentMoniker": "infraestructure\\Input\\Dto\\SelectTipoDto.cs",

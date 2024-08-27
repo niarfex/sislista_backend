@@ -286,7 +286,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
             }
         }
-        [HttpGet]
+        [HttpPost]
         [Route("AprobarCuestionarioxUUID")]
         public async Task<ResponseModel> AprobarCuestionarioxUUID(GestionRegistroCreateUpdateDto cuestionario)
         {
@@ -306,7 +306,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
             }
         }
-        [HttpGet]
+        [HttpPost]
         [Route("RatificarCuestionarioxUUID")]
         public async Task<ResponseModel> RatificarCuestionarioxUUID(GestionRegistroCreateUpdateDto cuestionario)
         {
@@ -326,7 +326,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
             }
         }
-        [HttpGet]
+        [HttpPost]
         [Route("DerivarCuestionarioxUUID")]
         public async Task<ResponseModel> DerivarCuestionarioxUUID(GestionRegistroCreateUpdateDto cuestionario)
         {
@@ -366,7 +366,7 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
             }
         }
-        [HttpGet]
+        [HttpPost]
         [Route("DescartarCuestionarioxUUID")]
         public async Task<ResponseModel> DescartarCuestionarioxUUID(GestionRegistroCreateUpdateDto cuestionario)
         {

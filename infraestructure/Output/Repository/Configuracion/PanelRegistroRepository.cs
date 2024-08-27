@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dapper;
+using Domain.Exceptions;
 using Domain.Model;
 using Infra.MarcoLista.Contextos;
 using Infra.MarcoLista.GeneralSQL;
@@ -33,7 +34,7 @@ namespace Infra.MarcoLista.Output.Repository
         public async Task<List<PanelRegistroEntity>> GetAll(string param)
         {
             return _db.PanelRegistro.Where(x => (x.Estado==0 || x.Estado==1 || x.Estado==2) 
-            && (x.ProgramacionRegistro.ToUpper().Trim().Contains(param.ToUpper().Trim()))).ToList();
+            && (x.ProgramacionRegistro.ToUpper().Trim().Contains(param.ToUpper().Trim()))).OrderByDescending(x=>x.FechaActualizacion.HasValue?x.FechaActualizacion:x.FechaRegistro).ToList();
         }
         public async Task<PanelRegistroEntity> GetPanelRegistroxId(long id)
         {
@@ -41,6 +42,13 @@ namespace Infra.MarcoLista.Output.Repository
         }
         public async Task<long> CreatePanelRegistro(PanelRegistroModel model)
         {
+            var objProgramacion = _db.PanelRegistro.Where(x => x.ProgramacionRegistro == model.ProgramacionRegistro 
+            && x.FechaInicio==model.FechaInicio && x.FechaFin==model.FechaFin && x.Id != model.Id).FirstOrDefault();
+            if (objProgramacion != null)
+            {
+                throw new DocExistException("Existe otro registro de programación con el mismo nombre y las mismas fechas");
+            }
+
             var usuario = (LoginModel)_httpContextAccessor.HttpContext.Items["User"];
             if (model.Id > 0)
             {

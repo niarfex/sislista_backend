@@ -39,7 +39,7 @@ namespace Application.Service
             var usuarios = await _usuarioPort.GetAll("");
             var queryUsuarios = from o in organizacions
                                 join u in usuarios on o.Id equals u.IdOrganizacion
-                                where u.Estado == 1
+                                where u.Estado == 0 || u.Estado == 1
                                 select o;
 
             var query = from o in organizacions

@@ -36,7 +36,7 @@ namespace Infra.MarcoLista.Output.Repository
             //var query = from o in _db.Organizacion select o;
             //return query.ToList();
             return _db.Organizacion.Where(x => x.Organizacion.ToUpper().Trim().Contains(param.ToUpper().Trim()) || 
-            x.NumeroDocumento.Trim().Contains(param.Trim())).ToList();
+            x.NumeroDocumento.Trim().Contains(param.Trim())).OrderByDescending(x=>x.FechaActualizacion.HasValue?x.FechaActualizacion:x.FechaRegistro).ToList();
         }
         public async Task<OrganizacionEntity> GetOrganizacionxId(long id)
         {

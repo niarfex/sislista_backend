@@ -125,6 +125,12 @@ namespace Infra.MarcoLista.Input.Controllers
                 return respuesta;
 
             }
+            catch (DocExistException e)
+            {
+                respuesta.success = false;
+                respuesta.message = e.Message;
+                return respuesta;
+            }
             catch (Exception e)
             {
                 respuesta.success = false;
