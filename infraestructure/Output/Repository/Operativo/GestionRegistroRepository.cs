@@ -407,6 +407,7 @@ namespace Infra.MarcoLista.Output.Repository
                         Id=t.Id,
                         IdSeccion=s.Id,
                         Seccion=s.Seccion,
+                        CodigoSeccion = s.CodigoSeccion,
                         Observacion=t.Observacion,
                         Perfil=t.Perfil
                         };
@@ -550,6 +551,19 @@ namespace Infra.MarcoLista.Output.Repository
                                where fun.IdCuestionario == objCuestionario.Id
                                select tu;
             _db.TipoUso.RemoveRange(filasTipoUso);
+            _db.SaveChanges();
+
+            var filasCampos = from  cam in _db.Campo
+                               join fun in _db.Fundo on cam.IdFundo equals fun.Id
+                               where fun.IdCuestionario == objCuestionario.Id
+                               select cam;
+            _db.Campo.RemoveRange(filasCampos);
+            _db.SaveChanges();
+
+            var filasFundos = from fun in _db.Fundo 
+                              where fun.IdCuestionario == objCuestionario.Id
+                              select fun;
+            _db.Fundo.RemoveRange(filasFundos);
             _db.SaveChanges();
 
             foreach (var fundo in model.ListFundos)

@@ -12,6 +12,7 @@ namespace Domain.Model
         public string? Observacion { get; set; }   
         public long? EstadoResultado { get; set; }
         public long? IdSeccion { get; set; }
+        public string? CodigoSeccion { get; set; }
         public string? Seccion { get; set; }
         public string? Perfil { get; set; }
     }
